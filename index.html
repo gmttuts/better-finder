@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Better Finder — the Finder, made for media</title>
+  <meta name="description" content="Better Finder replaces Finder for people who work with video, motion and 3D on macOS: hover-scrub, a real player, transcripts, AI review, folder backgrounds.">
+  <meta property="og:title" content="Better Finder">
+  <meta property="og:description" content="The Finder, made for media.">
+  <meta property="og:image" content="assets/icon.png">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="brand" href="#top"><img src="assets/icon.png" alt="" width="28" height="28">Better Finder</a>
+    <nav class="links">
+      <a href="#views" data-i18n="nav.views"></a>
+      <a href="#features" data-i18n="nav.features"></a>
+      <a href="#" data-releases-open data-i18n="nav.new"></a>
+      <a href="#support" data-i18n="nav.support"></a>
+      <a href="#install" data-i18n="nav.install"></a>
+    </nav>
+    <div class="lang" role="group" aria-label="Language">
+      <button data-lang="en">EN</button><button data-lang="vi">VI</button>
+    </div>
+    <a class="btn btn-small" href="#install" data-i18n="nav.download"></a>
+  </header>
+
+  <main id="top">
+    <!-- Hero -->
+    <section class="hero">
+      <div class="glow" aria-hidden="true"></div>
+      <img class="hero-icon reveal" src="assets/icon.png" alt="Better Finder icon" width="132" height="132">
+      <span class="badge reveal"><span data-i18n="hero.badge"></span> · <span data-version></span></span>
+      <h1 class="reveal" data-i18n="hero.title"></h1>
+      <p class="lead reveal" data-i18n="hero.sub"></p>
+      <div class="cta-row reveal">
+        <a class="btn" data-download><span data-i18n="hero.download"></span></a>
+        <a class="btn btn-ghost" href="#features" data-i18n="hero.more"></a>
+      </div>
+      <p class="fine reveal" data-requires></p>
+      <div class="mbp mbp-dark reveal" data-macbook></div>
+      <div class="views-head">
+        <p class="kicker" data-i18n="views.kicker"></p>
+        <h2 data-i18n="views.title"></h2>
+      </div>
+      <div id="views" class="hero-shot">
+        <div class="vd vd-dark" data-views-demo></div>
+        <div class="view-tabs" role="tablist">
+          <button role="tab" data-view="list"><kbd>⌘1</kbd><span data-i18n="views.list"></span></button>
+          <button role="tab" data-view="grid"><kbd>⌘2</kbd><span data-i18n="views.grid"></span></button>
+          <button role="tab" data-view="columns"><kbd>⌘3</kbd><span data-i18n="views.columns"></span></button>
+          <button role="tab" data-view="gallery"><kbd>⌘4</kbd><span data-i18n="views.gallery"></span></button>
+          <button role="tab" data-view="globe"><kbd>⌘5</kbd><span data-i18n="views.globe"></span></button>
+        </div>
+        <p class="view-desc" data-view-desc></p>
+      </div>
+      <dl class="stats">
+        <div><dt>5</dt><dd data-i18n="stats.views"></dd></div>
+        <div><dt>20+</dt><dd data-i18n="stats.formats"></dd></div>
+        <div><dt>3</dt><dd data-i18n="stats.engines"></dd></div>
+        <div><dt data-i18n="stats.freeN"></dt><dd data-i18n="stats.free"></dd></div>
+      </dl>
+    </section>
+
+    <!-- Hover demo with real files -->
+    <section id="demo" class="section">
+      <p class="kicker" data-i18n="demo.kicker"></p>
+      <h2 data-i18n="demo.title"></h2>
+      <p class="lead" data-i18n="demo.sub"></p>
+      <div class="demo-grid" data-demo></div>
+      <div class="formats"><h3 data-i18n="demo.formats.t"></h3><p data-i18n="demo.formats"></p></div>
+    </section>
+
+    <!-- Features -->
+    <section id="features" class="section">
+      <p class="kicker" data-i18n="feat.kicker"></p>
+      <h2 data-i18n="feat.title"></h2>
+      <div class="features" data-features></div>
+    </section>
+
+    <!-- Media player -->
+    <section id="player" class="section">
+      <p class="kicker" data-i18n="mp.kicker"></p>
+      <h2 class="wide" data-i18n="mp.title"></h2>
+      <p class="lead" data-i18n="mp.sub"></p>
+      <div class="vd vd-dark fd mp-win" data-media-demo></div>
+      <div class="mp-points">
+        <div><h3>▶︎ <span data-i18n="mp.p1.t"></span></h3><p data-i18n="mp.p1.d"></p></div>
+        <div><h3>✂︎ <span data-i18n="mp.p2.t"></span></h3><p data-i18n="mp.p2.d"></p></div>
+        <div><h3>⇣ <span data-i18n="mp.p3.t"></span></h3><p data-i18n="mp.p3.d"></p></div>
+      </div>
+    </section>
+
+    <!-- Spotlights -->
+    <section class="section spotlights">
+      <article class="spot reveal">
+        <div class="spot-text">
+          <p class="kicker" data-i18n="spot.player.k"></p>
+          <h3 data-i18n="spot.player.t"></h3>
+          <p data-i18n="spot.player.d"></p>
+        </div>
+        <div class="vd vd-dark fd" data-player-demo></div>
+      </article>
+      <article class="spot flip reveal">
+        <div class="spot-text">
+          <p class="kicker" data-i18n="spot.sort.k"></p>
+          <h3 data-i18n="spot.sort.t"></h3>
+          <p data-i18n="spot.sort.d"></p>
+        </div>
+        <div class="vd vd-dark fd" data-sort-demo></div>
+      </article>
+      <article class="spot reveal">
+        <div class="spot-text">
+          <p class="kicker" data-i18n="spot.bg.k"></p>
+          <h3 data-i18n="spot.bg.t"></h3>
+          <p data-i18n="spot.bg.d"></p>
+        </div>
+        <div class="vd vd-dark fd" data-bg-demo></div>
+      </article>
+      <article class="spot flip reveal">
+        <div class="spot-text">
+          <p class="kicker" data-i18n="spot.search.k"></p>
+          <h3 data-i18n="spot.search.t"></h3>
+          <p data-i18n="spot.search.d"></p>
+        </div>
+        <div class="vd vd-dark fd" data-search-demo></div>
+      </article>
+    </section>
+
+    <!-- Compare -->
+    <section id="compare" class="section narrow">
+      <p class="kicker" data-i18n="cmp.kicker"></p>
+      <h2 data-i18n="cmp.title"></h2>
+      <table class="compare">
+        <thead><tr><th></th><th class="bf"><img src="assets/icon.png" alt="" width="28" height="28">Better Finder</th><th>Finder</th></tr></thead>
+        <tbody data-compare></tbody>
+      </table>
+    </section>
+
+    <!-- Install -->
+    <section id="install" class="section narrow">
+      <p class="kicker" data-i18n="install.kicker"></p>
+      <h2 data-i18n="install.title"></h2>
+      <div class="download-card">
+        <img src="assets/icon.png" alt="" width="64" height="64">
+        <div>
+          <strong>Better Finder <span data-version></span></strong>
+          <span class="fine" data-requires></span>
+        </div>
+        <a class="btn" data-download><span data-i18n="hero.download"></span></a>
+      </div>
+      <ol class="steps">
+        <li><h3 data-i18n="install.1.t"></h3><p data-i18n="install.1.d"></p></li>
+        <li>
+          <h3 data-i18n="install.2.t"></h3><p data-i18n="install.2.d"></p>
+          <p class="fine" data-i18n="install.2.x"></p>
+          <div class="code"><code>xattr -dr com.apple.quarantine "/Applications/Better Finder.app"</code><button data-copy data-i18n="install.copy"></button></div>
+        </li>
+        <li>
+          <h3 data-i18n="install.3.t"></h3><p data-i18n="install.3.d"></p>
+          <div class="code"><code>brew install ffmpeg</code><button data-copy data-i18n="install.copy"></button></div>
+          <div class="code"><code>brew install whisper-cpp</code><button data-copy data-i18n="install.copy"></button></div>
+        </li>
+      </ol>
+      <p class="warn">⚠️ <span data-i18n="install.warn"></span></p>
+    </section>
+
+    <!-- Support the author -->
+    <section id="support" class="section narrow support">
+      <p class="kicker" data-i18n="support.kicker"></p>
+      <h2 data-i18n="support.title"></h2>
+      <p class="lead" data-i18n="support.sub"></p>
+      <div class="cta-row">
+        <button class="btn btn-coffee" data-support="bmc">☕ <span data-i18n="support.bmc"></span></button>
+        <button class="btn btn-momo" data-support="momo"><span class="momo-dot">M</span><span data-i18n="support.momo"></span></button>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section narrow">
+      <h2 data-i18n="faq.title"></h2>
+      <div class="faq">
+        <details><summary data-i18n="faq.1.q"></summary><p data-i18n="faq.1.a"></p></details>
+        <details><summary data-i18n="faq.2.q"></summary><p data-i18n="faq.2.a"></p></details>
+        <details><summary data-i18n="faq.3.q"></summary><p data-i18n="faq.3.a"></p></details>
+        <details><summary data-i18n="faq.4.q"></summary><p data-i18n="faq.4.a"></p></details>
+        <details><summary data-i18n="faq.5.q"></summary><p data-i18n="faq.5.a"></p></details>
+      </div>
+    </section>
+
+    <section class="section final">
+      <img src="assets/icon.png" alt="" width="96" height="96">
+      <h2 data-i18n="cta.title"></h2>
+      <a class="btn" data-download><span data-i18n="hero.download"></span></a>
+      <p class="fine" data-requires></p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <span>© <span data-year></span> Better Finder</span>
+    <a href="#" data-releases-open><span data-i18n="nav.new"></span> · <span data-version></span></a>
+    <span data-i18n="footer.made"></span>
+  </footer>
+
+  <dialog class="support-modal" data-support-modal>
+    <button class="x" data-close aria-label="Close">×</button>
+    <h3 data-support-title></h3>
+    <p class="fine" data-i18n="support.scan"></p>
+    <div class="qr-row" data-support-qr></div>
+    <p class="fine" data-i18n="support.thanks"></p>
+  </dialog>
+
+  <dialog class="rel-modal" data-releases-modal>
+    <header><div><h3 data-i18n="new.title"></h3><p class="fine"><span data-i18n="new.sub"></span> <span data-i18n="new.note"></span></p></div>
+      <button class="x" data-close aria-label="Close">×</button></header>
+    <ol class="releases" data-releases></ol>
+  </dialog>
+
+  <script src="content.js"></script>
+  <script src="data/changelog.js"></script>
+  <script src="main.js"></script>
+  <script src="views-demo.js"></script>
+  <script src="feature-demos.js"></script>
+</body>
+</html>
