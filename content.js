@@ -1,5 +1,5 @@
 // All words and settings of the website live here. Edit this file to change the site;
-// index.html only has the layout. Every text has an English (en) and a Vietnamese (vi) version.
+// the pages (index.html, a.html) only have the layout. Every text has an English (en) and a Vietnamese (vi) version.
 
 window.SITE = {
   // --- Public address of the site (no trailing slash): GitHub Pages of the repo gmttuts/better-finder. ----
@@ -348,7 +348,7 @@ window.SITE = {
     "cmp.price":      { en: "Price", vi: "Giá" },
 
     "support.kicker": { en: "Free, forever", vi: "Miễn phí, mãi mãi" },
-    "support.title":  { en: "Made by one person. Free for everyone.", vi: "Một người làm. Miễn phí cho mọi người." },
+    "support.title":  { en: "Made by one person.<br>Free for everyone.", vi: "Một người làm.<br>Miễn phí cho mọi người." },
     "support.sub":    { en: "Better Finder has no price tag, ads or account. If it saves you time, you can buy the author a coffee. It keeps the updates coming.",
                         vi: "Better Finder không thu phí, không quảng cáo, không cần tài khoản. Nếu app giúp bạn tiết kiệm thời gian, mời tác giả một ly cà phê để các bản cập nhật tiếp tục ra đều." },
     "support.bmc":    { en: "Buy Me a Coffee", vi: "Buy Me a Coffee" },

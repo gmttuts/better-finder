@@ -1,4 +1,4 @@
-// Shared by every design (index.html = A, b.html = B). Fills the page from content.js and data/changelog.js.
+// Shared by every design (index.html = B · Light, the public page; a.html = A · Dark). Fills the page from content.js and data/changelog.js.
 // A page only needs the data-* hooks it uses; missing sections are skipped.
 (() => {
   const S = window.SITE;
@@ -272,10 +272,10 @@
 
   // ---------- Design switcher (only when previewing on this Mac) ----------
   if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
-    const here = location.pathname.endsWith("b.html") ? "B" : "A";
+    const here = location.pathname.endsWith("a.html") ? "A" : "B";
     document.body.insertAdjacentHTML("beforeend", `<div class="dev-switch">Preview:
-      <a href="index.html${location.search}" ${here === "A" ? 'aria-current="page"' : ""}>A · Dark</a>
-      <a href="b.html${location.search}" ${here === "B" ? 'aria-current="page"' : ""}>B · Light</a></div>`);
+      <a href="a.html${location.search}" ${here === "A" ? 'aria-current="page"' : ""}>A · Dark</a>
+      <a href="index.html${location.search}" ${here === "B" ? 'aria-current="page"' : ""}>B · Light</a></div>`);
   }
 
   applyLang();

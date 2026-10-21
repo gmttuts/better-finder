@@ -585,3 +585,6 @@
   .sd2-head, .sd2-row { grid-template-columns: minmax(0, 2fr) .55fr 1.1fr .8fr; }
   .sd2-head .c-dur, .sd2-head .c-size, .sd2-row .c-dur, .sd2-row .c-size { display: none; }
 }
+
+/* headings never leave one short word alone on the last line */
+h1, h2, h3 { text-wrap: pretty; }
