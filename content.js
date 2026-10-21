@@ -9,9 +9,9 @@ window.SITE = {
   // --- The beta that people download -------------------------------------------------------
   download: {
     // DMGs are GitHub Release assets (tag v<version>); scripts/sync-from-app.py --dmg updates these three lines.
-    version: "0.169",                       // "What's new" only shows notes up to this version
-    file: "https://github.com/gmttuts/better-finder/releases/download/v0.169/BetterFinder-0.169.dmg",
-    size: "13.6 MB",
+    version: "0.177",                       // "What's new" only shows notes up to this version
+    file: "https://github.com/gmttuts/better-finder/releases/download/v0.177/BetterFinder-0.177.dmg",
+    size: "13.7 MB",
     requires: { en: "macOS 13 Ventura or later · Apple silicon & Intel", vi: "macOS 13 Ventura trở lên · chip Apple & Intel" },
   },
 
