@@ -588,3 +588,8 @@
 
 /* headings never leave one short word alone on the last line */
 h1, h2, h3 { text-wrap: pretty; }
+
+/* "Windows & Linux coming" note under the macOS requirements */
+.soon { display: inline-flex; align-items: center; gap: 6px; }
+.soon svg { width: 13px; height: 13px; fill: currentColor; opacity: .75; }
+.hero-sky .fine + .fine, .hero .fine + .fine, .final .fine + .fine { margin-top: 4px; }

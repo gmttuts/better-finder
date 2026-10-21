@@ -195,7 +195,7 @@ window.SITE = {
                   vi: ["Kiểu macOS hoặc Windows 11", "Sáng, Tối hay Midnight. Hoặc giao diện Windows 11 với phím tắt kiểu Windows cho ai dùng cả hai."] },
     { icon: "🧩", en: ["No ffmpeg needed", "MOV, MP4, ProRes, HEVC, GIF and audio work out of the box. ffmpeg is optional, only for MKV, WebM and AVI."],
                   vi: ["Không cần ffmpeg", "MOV, MP4, ProRes, HEVC, GIF và nhạc chạy ngay. ffmpeg không bắt buộc, chỉ cần cho MKV, WebM, AVI."] },
-    { icon: "🔒", en: ["Private by default", "Nothing leaves your Mac. Only if you add your own API key does the part you choose go to that service."],
+    { icon: "🔒", en: ["Private by default", "Nothing leaves your computer. Only if you add your own API key does the part you choose go to that service."],
                   vi: ["Riêng tư mặc định", "Không gì rời khỏi máy bạn. Chỉ khi bạn tự nhập API key, phần bạn chọn mới được gửi tới dịch vụ đó."] },
   ],
 
@@ -209,10 +209,11 @@ window.SITE = {
 
     "hero.badge":     { en: "Public beta", vi: "Bản beta" },
     "hero.title":     { en: "Your media deserves a <span class=\"accent\">better Finder.</span>", vi: "File media của bạn xứng đáng có một <span class=\"accent\">Finder tốt hơn.</span>" },
-    "hero.sub":       { en: "A free Finder replacement for video, motion and 3D files on Mac.",
-                        vi: "Trình thay Finder miễn phí cho file video, motion và 3D trên Mac." },
+    "hero.sub":       { en: "A free Finder replacement for video, motion and 3D files. On Mac today, Windows 11 and Linux soon.",
+                        vi: "Trình thay Finder miễn phí cho file video, motion và 3D. Có trên Mac, sắp có cho Windows 11 và Linux." },
     "hero.new":       { en: "New", vi: "Mới" },
     "hero.pill":      { en: "What's new in", vi: "Có gì mới ở" },
+    "req.soon":       { en: "Windows 11 and Linux versions are on the way.", vi: "Bản cho Windows 11 và Linux đang được làm." },
     "hero.download":  { en: "Download for Mac", vi: "Tải cho Mac" },
     "hero.more":      { en: "See what it does", vi: "Xem tính năng" },
 
@@ -310,6 +311,9 @@ window.SITE = {
     "faq.3.a":        { en: "When the update channel is on (Settings ▸ Updates says so), the app tells you about a new version at most once a day; click Download… Then open the new .dmg and drag the app into Applications (choose Replace). Your settings are kept. macOS may block the new version once, like the first install.", vi: "Khi kênh cập nhật đã bật (Settings ▸ Updates sẽ ghi rõ), app tự báo có bản mới, tối đa 1 lần/ngày; bấm Download… Mở file .dmg mới, kéo app vào Applications (chọn Replace). Thiết lập được giữ nguyên. Bản mới có thể bị macOS chặn lần đầu như lúc cài." },
     "faq.4.q":        { en: "How do I remove it?", vi: "Gỡ app thế nào?" },
     "faq.4.a":        { en: "Delete the app from Applications, then the folder ~/.mediaindex (index and thumbnail cache).", vi: "Xoá app trong Applications, rồi xoá thư mục ~/.mediaindex (chỉ mục và cache thumbnail)." },
+    "faq.6.q":        { en: "Is there a Windows or Linux version?", vi: "Có bản cho Windows hay Linux không?" },
+    "faq.6.a":        { en: "They're on the way: Better Finder for Windows 11 and Linux is being built now. The Mac version comes first; the downloads will appear on this page when they're ready.",
+                        vi: "Đang làm: Better Finder cho Windows 11 và Linux đang được phát triển. Bản Mac ra trước; khi bản mới sẵn sàng, link tải sẽ có ngay trên trang này." },
     "faq.5.q":        { en: "Found a bug?", vi: "Gặp lỗi?" },
     "faq.5.a":        { en: "Send the version (Settings ▸ Updates), your macOS and chip, the steps, and a screenshot to whoever gave you the beta. For a crash, add the newest BetterFinder file from ~/Library/Logs/DiagnosticReports.", vi: "Gửi phiên bản (Settings ▸ Updates), macOS và loại chip, các bước gây lỗi và ảnh chụp màn hình cho người đưa bạn bản beta. Nếu app thoát đột ngột, gửi kèm file BetterFinder mới nhất trong ~/Library/Logs/DiagnosticReports." },
 
@@ -378,7 +382,7 @@ window.SITE = {
     "sr.ai":          { en: "Search with AI", vi: "Tìm bằng AI" },
 
     "cta.title":      { en: "Give your files a better home.", vi: "Cho file của bạn một ngôi nhà tốt hơn." },
-    "footer.made":    { en: "A free file browser for media, made on a Mac.", vi: "Trình duyệt file miễn phí cho dân media, làm trên Mac." },
+    "footer.made":    { en: "A free file browser for media. Mac today, Windows 11 and Linux soon.", vi: "Trình duyệt file miễn phí cho dân media. Có trên Mac, sắp có Windows 11 và Linux." },
     "shot.missing":   { en: "Screenshot", vi: "Ảnh chụp màn hình" },
   },
 };
