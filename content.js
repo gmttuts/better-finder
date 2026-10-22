@@ -18,9 +18,9 @@ window.SITE = {
   // --- Windows / Linux (the Tauri app in mediaindex/desktop). Empty version = not released yet: nothing shows.
   // scripts/publish-desktop.sh fills these in when it publishes a release (tag desktop-v<version>).
   desktop: {
-    version: "0.1.0",
-    windows: { exe: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64-setup.exe", msi: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64.msi", size: "94.5 MB" },
-    linux: { appimage: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-linux-x86_64.AppImage", deb: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-linux-amd64.deb", size: "88.6 MB" },
+    version: "0.2.0",
+    windows: { exe: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-windows-x64-setup.exe", msi: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-windows-x64.msi", size: "95.0 MB" },
+    linux: { appimage: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-linux-x86_64.AppImage", deb: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-linux-amd64.deb", size: "89.4 MB" },
     requires: { en: "Windows 10 or 11 (64-bit) · Linux x86-64 (Ubuntu 22.04 or later, Fedora…) · beta",
                 vi: "Windows 10 hoặc 11 (64-bit) · Linux x86-64 (Ubuntu 22.04 trở lên, Fedora…) · bản beta" },
   },

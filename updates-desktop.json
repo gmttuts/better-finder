@@ -1,27 +1,27 @@
 {
- "version": "0.1.0",
- "notes": "First beta for Windows and Linux\n- Browse folders like Explorer or Files: tabs, sidebar, address bar, Details, Large icons, Columns, Gallery and Globe views.\n- Three looks on every system: Windows 11, macOS and Linux (GNOME), each light, dark or Midnight.\n- A media player in the window: plays MP4, MOV, ProRes, MKV and more (a playback copy when needed), frame steps, trim, queue.\n- Hover a video in Large icons or Gallery to scrub through it.\n- Search: this folder, subfolders or the whole PC, Advanced Search, duplicates, Smart Folders, tags and playlists.\n- Transcripts on this PC (whisper.cpp comes with the app) or with OpenAI / Groq, AI Review, subtitles in and out, search by spoken words.\n- Folder backgrounds: colours, gradients, pictures, GIF, video, Lottie and Rive, in layers.\n- The Windows app and the Linux AppImage update themselves.",
- "pub_date": "2026-10-22T11:15:41.627Z",
+ "version": "0.2.0",
+ "notes": "Quick Actions, View Options, Undo, Panes\n- Quick Actions on the right-click menu: Compress Video (presets or your own size), Export as GIF, Remove Audio, Keep Audio Only, Convert Image (JPEG, PNG, WebP, TIFF, BMP) and Create PDF from pictures.\n- View Options (Ctrl+J): a folder can always open in its own view, sort, icon size and columns, its subfolders too if you like. Group the list by type, date or size.\n- Undo and Redo (Ctrl+Z, Ctrl+Y) for rename, move, copy, delete (back from the Recycle Bin), new folder, Tidy Up and Flatten.\n- Panes: split the window (Ctrl+\\ or ⋯ ▸ Split Right / Split Down) into up to four browsers side by side; drag the edge to resize. The window opens again with its panes.\n- Fixes: menus stay inside a small window; the list no longer scrolls sideways in a narrow window.",
+ "pub_date": "2026-10-22T19:59:32.800Z",
  "platforms": {
   "windows-x86_64-nsis": {
-   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0J5VFQwSmV6ZHlrcGo4T1RDRm5Ea0Q2T3EyaWlLVFM2YnJKYmpMOHBRdFpzY3RDNHRxQlBhdHd5YWpnR0k2WU9BMTdJTzUvUG5jdDJlVllMOEFpa3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NzU1CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xLjAKcUFOUGkyY3FSUnhSUHp5YVBuQ2VHdlBsb01VWjFFYTJGblpOTlpmVWIxZlBHaENGdTFkOE5oTEs0VHRKMmhnRE4xOGZZWFc4amxTWTBUdTRjd2FkRFE9PQo=",
-   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64-setup.exe"
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0ZxeWZldDRVWTJ2dTdVckN1TlpaZnNZVy9NUHFyU0t3S1RWVUo1dmJ3TFg0RzJJNHk4Rkx6V3BFMVFBMDQzMzc5YUY2ZThZdXM3VTRlRnV5UmljOXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk2ODU3CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjIuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yLjAKZnRyRFFBNUhWcUswODNLa0hEcmlwOWpKM29MSnpVb1ZVNENhNy9jc1hTL0VOc3QyNUo0VWhiQjVXa1piN2VTRzNKVzFnUW1ocStKS1BRbEk2aG5vQUE9PQo=",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-windows-x64-setup.exe"
   },
   "windows-x86_64-msi": {
-   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0hKTlJ4SWxIL2lyYzFKblhzZ1Q1dC9yOXRSU2dVM2EzL0RsNVYxRmZlNWN3SU1jMTBEQ0pwMjMvbEZ2OEVVKzJZN0VzbDNwMHZvUWpyMFMvOEJYS3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NzU1CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF94NjRfZW4tVVMubXNpCXZlcnNpb246MC4xLjAKWkNBUHdDS2UvV1N5QXN3M0pxNFhpVUNkS1ByYVRabjdBRUdkVktIQzBtR0xEY080NW1ITjNKVDBnMFN5cFVoQnhlbEJlUHJwUkpqRFIzbE92K2x2QlE9PQo=",
-   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64.msi"
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0lxM216eWlzUFJtM3hDc1UxQjkvRlU4N1RWbWkrS1hMMEJ4c0luL2hJSVYxR2JoRlJmd3o0WllJWDZpL0d6U3BybUNpdXZLMlh2alRndnhmMEtKd1FJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk2ODU3CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjIuMF94NjRfZW4tVVMubXNpCXZlcnNpb246MC4yLjAKSmF1VHkwbDhLMStJcGllTnlaUUczUEp4SGlscXhCdUF4akY0VUlGQTBoUzRhNTJhdHBUUFJuN1VPTHN0YU9VQStoSlNhdCtwTEhIQWg4ZlRQTkZRQlE9PQo=",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-windows-x64.msi"
   },
   "linux-x86_64-appimage": {
-   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0l4Z3VNRDh4SHVqdi84U3YzS0RhblFSZFdUd3VrZ2Z5ckNjSFpqV25ScC9TSEtjTWQxTjJpRTc2ejVFVUU5NHVrUm1FUzlGNkhYN3BSeFBwanhWMEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NTA3CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMS4wCkx5UHd6ajJoSzhPM083OGg1akFqRmZISzRNUkNUalNnaDBSc25BQ2JJMk5yRVoxYldybWlkRlRuZ2NNVFAzWlUzQ1JrSGIvRnh3b3g3MDNscWZLeEF3PT0K",
-   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-linux-x86_64.AppImage"
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS1BuYTlJVnkrMDdLUCtZd3pSODM3b0txMXpqUTZrQTU4Q0dmcTJSeTlUL1RjRW4yaFlNckpBMlNmdDN1cmRyQVhBWG5jZE9pTlFYZHAxZC9PQ0dyZkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk3ODc1CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjIuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMi4wCjlhZ1E5QkxoNFY1UzZiMHhST0IrWmtxUkdDRmQ1eTU3UEtJV0E4Z3RsZWRjYVlLbGhFQlRWMWtxTjZPTmc4ZmF1Uytmd25lWEdwM2pxeGZvQ1hydUJnPT0K",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-linux-x86_64.AppImage"
   },
   "windows-x86_64": {
-   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0J5VFQwSmV6ZHlrcGo4T1RDRm5Ea0Q2T3EyaWlLVFM2YnJKYmpMOHBRdFpzY3RDNHRxQlBhdHd5YWpnR0k2WU9BMTdJTzUvUG5jdDJlVllMOEFpa3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NzU1CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xLjAKcUFOUGkyY3FSUnhSUHp5YVBuQ2VHdlBsb01VWjFFYTJGblpOTlpmVWIxZlBHaENGdTFkOE5oTEs0VHRKMmhnRE4xOGZZWFc4amxTWTBUdTRjd2FkRFE9PQo=",
-   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64-setup.exe"
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0ZxeWZldDRVWTJ2dTdVckN1TlpaZnNZVy9NUHFyU0t3S1RWVUo1dmJ3TFg0RzJJNHk4Rkx6V3BFMVFBMDQzMzc5YUY2ZThZdXM3VTRlRnV5UmljOXdBPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk2ODU3CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjIuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4yLjAKZnRyRFFBNUhWcUswODNLa0hEcmlwOWpKM29MSnpVb1ZVNENhNy9jc1hTL0VOc3QyNUo0VWhiQjVXa1piN2VTRzNKVzFnUW1ocStKS1BRbEk2aG5vQUE9PQo=",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-windows-x64-setup.exe"
   },
   "linux-x86_64": {
-   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0l4Z3VNRDh4SHVqdi84U3YzS0RhblFSZFdUd3VrZ2Z5ckNjSFpqV25ScC9TSEtjTWQxTjJpRTc2ejVFVUU5NHVrUm1FUzlGNkhYN3BSeFBwanhWMEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NTA3CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMS4wCkx5UHd6ajJoSzhPM083OGg1akFqRmZISzRNUkNUalNnaDBSc25BQ2JJMk5yRVoxYldybWlkRlRuZ2NNVFAzWlUzQ1JrSGIvRnh3b3g3MDNscWZLeEF3PT0K",
-   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-linux-x86_64.AppImage"
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS1BuYTlJVnkrMDdLUCtZd3pSODM3b0txMXpqUTZrQTU4Q0dmcTJSeTlUL1RjRW4yaFlNckpBMlNmdDN1cmRyQVhBWG5jZE9pTlFYZHAxZC9PQ0dyZkFJPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjk3ODc1CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjIuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMi4wCjlhZ1E5QkxoNFY1UzZiMHhST0IrWmtxUkdDRmQ1eTU3UEtJV0E4Z3RsZWRjYVlLbGhFQlRWMWtxTjZPTmc4ZmF1Uytmd25lWEdwM2pxeGZvQ1hydUJnPT0K",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.2.0/BetterFinder-0.2.0-linux-x86_64.AppImage"
   }
  }
 }
