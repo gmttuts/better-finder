@@ -15,6 +15,16 @@ window.SITE = {
     requires: { en: "macOS 13 Ventura or later · Apple silicon & Intel", vi: "macOS 13 Ventura trở lên · chip Apple & Intel" },
   },
 
+  // --- Windows / Linux (the Tauri app in mediaindex/desktop). Empty version = not released yet: nothing shows.
+  // scripts/publish-desktop.sh fills these in when it publishes a release (tag desktop-v<version>).
+  desktop: {
+    version: "0.1.0",
+    windows: { exe: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64-setup.exe", msi: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64.msi", size: "94.5 MB" },
+    linux: { appimage: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-linux-x86_64.AppImage", deb: "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-linux-amd64.deb", size: "88.6 MB" },
+    requires: { en: "Windows 10 or 11 (64-bit) · Linux x86-64 (Ubuntu 22.04 or later, Fedora…) · beta",
+                vi: "Windows 10 hoặc 11 (64-bit) · Linux x86-64 (Ubuntu 22.04 trở lên, Fedora…) · bản beta" },
+  },
+
   // --- Support the author (the app is free). Put the QR images in assets/support/. -----------
   // Leave a url empty ("") to show only the QR code.
   support: {
@@ -311,6 +321,18 @@ window.SITE = {
     "faq.3.a":        { en: "When the update channel is on (Settings ▸ Updates says so), the app tells you about a new version at most once a day; click Download… Then open the new .dmg and drag the app into Applications (choose Replace). Your settings are kept. macOS may block the new version once, like the first install.", vi: "Khi kênh cập nhật đã bật (Settings ▸ Updates sẽ ghi rõ), app tự báo có bản mới, tối đa 1 lần/ngày; bấm Download… Mở file .dmg mới, kéo app vào Applications (chọn Replace). Thiết lập được giữ nguyên. Bản mới có thể bị macOS chặn lần đầu như lúc cài." },
     "faq.4.q":        { en: "How do I remove it?", vi: "Gỡ app thế nào?" },
     "faq.4.a":        { en: "Delete the app from Applications, then the folder ~/.mediaindex (index and thumbnail cache).", vi: "Xoá app trong Applications, rồi xoá thư mục ~/.mediaindex (chỉ mục và cache thumbnail)." },
+    "desk.title":     { en: "for Windows & Linux", vi: "cho Windows & Linux" },
+    "desk.win":       { en: "Download for Windows", vi: "Tải cho Windows" },
+    "desk.linux":     { en: "Download for Linux", vi: "Tải cho Linux" },
+    "desk.other":     { en: "Other packages:", vi: "Gói khác:" },
+    "desk.help":      { en: "Windows: if SmartScreen says “Windows protected your PC”, click More info ▸ Run anyway (the app isn't signed with a paid certificate). Linux: make the AppImage executable (Properties ▸ Allow executing, or chmod +x) and open it; the .deb installs ffmpeg with it. The Windows app and the AppImage update themselves; with the .deb, download the new package.",
+                        vi: "Windows: nếu SmartScreen báo “Windows protected your PC”, bấm More info ▸ Run anyway (app chưa ký bằng chứng chỉ trả phí). Linux: cho AppImage quyền chạy (Properties ▸ Allow executing, hoặc chmod +x) rồi mở; gói .deb tự cài kèm ffmpeg. Bản Windows và AppImage tự cập nhật; với gói .deb, tải gói mới về cài." },
+    // Used instead of the texts of the same name once the Windows / Linux app is released (desktop.version set).
+    "hero.sub.out":   { en: "A free Finder replacement for video, motion and 3D files. On Mac, Windows and Linux.",
+                        vi: "Trình thay Finder miễn phí cho file video, motion và 3D. Có trên Mac, Windows và Linux." },
+    "footer.made.out": { en: "A free file browser for media. Mac, Windows and Linux.", vi: "Trình duyệt file miễn phí cho dân media. Mac, Windows và Linux." },
+    "faq.6.a.out":    { en: "Yes: Better Finder for Windows 10 / 11 and Linux is out as a beta, with the same look choices (Windows 11, macOS, Linux). Download it from Install below. A few Mac features (Quick Actions, Finder tags) aren't there yet.",
+                        vi: "Có: Better Finder cho Windows 10 / 11 và Linux đã có bản beta, cùng các kiểu giao diện (Windows 11, macOS, Linux). Tải ở mục Cài đặt bên dưới. Vài tính năng của bản Mac (Quick Actions, tag Finder) chưa có." },
     "faq.6.q":        { en: "Is there a Windows or Linux version?", vi: "Có bản cho Windows hay Linux không?" },
     "faq.6.a":        { en: "They're on the way: Better Finder for Windows 11 and Linux is being built now. The Mac version comes first; the downloads will appear on this page when they're ready.",
                         vi: "Đang làm: Better Finder cho Windows 11 và Linux đang được phát triển. Bản Mac ra trước; khi bản mới sẵn sàng, link tải sẽ có ngay trên trang này." },

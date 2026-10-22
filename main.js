@@ -29,6 +29,7 @@
     each("[data-i18n]", (el) => { el.innerHTML = t(el.dataset.i18n); });
     each("[data-lang]", (b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
     each("[data-requires]", (el) => { el.textContent = `${tv(S.download.requires)} · ${S.download.size}`; });
+    each("[data-desk-requires]", (el) => { el.textContent = tv((S.desktop || {}).requires); });
     each(".shot-missing span", (el) => { el.textContent = t("shot.missing"); });
     renderFeatures();
     renderViewDesc();
@@ -48,6 +49,42 @@
   each("[data-download]", (a) => { a.href = S.download.file; a.setAttribute("download", ""); });
   each("[data-version]", (el) => { el.textContent = "v" + S.download.version; });
   each("[data-year]", (el) => { el.textContent = new Date().getFullYear(); });
+
+  // ---------- Windows / Linux (shown once a version is released: content.js desktop.version) ----------
+  const D = S.desktop || {};
+  const os = (() => {
+    const p = ((navigator.userAgentData && navigator.userAgentData.platform) || navigator.platform || navigator.userAgent || "").toLowerCase();
+    return p.includes("win") ? "windows" : p.includes("linux") && !p.includes("android") ? "linux" : "mac";
+  })();
+  if (D.version) {
+    const card = document.querySelector("#install .download-card");
+    if (card) {
+      const c = document.createElement("div");
+      c.className = "download-card";
+      c.id = "download";
+      const btn = (href, key, soft) => `<a class="btn${soft ? " btn-soft" : ""}" href="${href}" download><span data-i18n="${key}"></span></a>`;
+      c.innerHTML = `<img src="assets/icon.png" alt="" width="56" height="56">
+        <div><strong>Better Finder <span data-i18n="desk.title"></span> v${D.version}</strong>
+        <span class="fine" data-desk-requires></span>
+        <span class="fine"><span data-i18n="desk.other"></span> <a href="${D.windows.msi}">Windows .msi</a> · <a href="${D.linux.deb}">Ubuntu / Debian .deb</a></span>
+        <span class="fine" data-i18n="desk.help"></span></div>
+        <span class="desk-buttons" style="display:flex;gap:8px;flex-wrap:wrap;margin-left:auto">
+          ${btn(D.windows.exe, "desk.win", os === "linux")}${btn(D.linux.appimage, "desk.linux", os !== "linux")}</span>`;
+      card.after(c);
+      if (os !== "mac") card.before(c);       // this visitor's system first
+    }
+    // The download buttons at the top fetch this visitor's version (the Mac card keeps its DMG).
+    if (os !== "mac") each("[data-download]", (a) => {
+      if (a.closest("#install .download-card")) return;
+      a.href = os === "windows" ? D.windows.exe : D.linux.appimage;
+      const label = a.querySelector("[data-i18n]");
+      if (label) label.dataset.i18n = os === "windows" ? "desk.win" : "desk.linux";
+      a.querySelector("svg.apple")?.remove();
+    });
+    each(".soon", (el) => { el.hidden = true; });
+    // Texts that said "Windows and Linux soon" say they're here.
+    for (const k of ["hero.sub", "footer.made", "faq.6.a"]) if (S.text[k + ".out"]) S.text[k] = S.text[k + ".out"];
+  }
 
   // ---------- Screenshots / screen recordings (placeholder when the file isn't there yet) ----------
   function placeholder(name) {

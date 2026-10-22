@@ -1,0 +1,27 @@
+{
+ "version": "0.1.0",
+ "notes": "First beta for Windows and Linux\n- Browse folders like Explorer or Files: tabs, sidebar, address bar, Details, Large icons, Columns, Gallery and Globe views.\n- Three looks on every system: Windows 11, macOS and Linux (GNOME), each light, dark or Midnight.\n- A media player in the window: plays MP4, MOV, ProRes, MKV and more (a playback copy when needed), frame steps, trim, queue.\n- Hover a video in Large icons or Gallery to scrub through it.\n- Search: this folder, subfolders or the whole PC, Advanced Search, duplicates, Smart Folders, tags and playlists.\n- Transcripts on this PC (whisper.cpp comes with the app) or with OpenAI / Groq, AI Review, subtitles in and out, search by spoken words.\n- Folder backgrounds: colours, gradients, pictures, GIF, video, Lottie and Rive, in layers.\n- The Windows app and the Linux AppImage update themselves.",
+ "pub_date": "2026-10-22T11:15:41.627Z",
+ "platforms": {
+  "windows-x86_64-nsis": {
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0J5VFQwSmV6ZHlrcGo4T1RDRm5Ea0Q2T3EyaWlLVFM2YnJKYmpMOHBRdFpzY3RDNHRxQlBhdHd5YWpnR0k2WU9BMTdJTzUvUG5jdDJlVllMOEFpa3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NzU1CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xLjAKcUFOUGkyY3FSUnhSUHp5YVBuQ2VHdlBsb01VWjFFYTJGblpOTlpmVWIxZlBHaENGdTFkOE5oTEs0VHRKMmhnRE4xOGZZWFc4amxTWTBUdTRjd2FkRFE9PQo=",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64-setup.exe"
+  },
+  "windows-x86_64-msi": {
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0hKTlJ4SWxIL2lyYzFKblhzZ1Q1dC9yOXRSU2dVM2EzL0RsNVYxRmZlNWN3SU1jMTBEQ0pwMjMvbEZ2OEVVKzJZN0VzbDNwMHZvUWpyMFMvOEJYS3c4PQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NzU1CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF94NjRfZW4tVVMubXNpCXZlcnNpb246MC4xLjAKWkNBUHdDS2UvV1N5QXN3M0pxNFhpVUNkS1ByYVRabjdBRUdkVktIQzBtR0xEY080NW1ITjNKVDBnMFN5cFVoQnhlbEJlUHJwUkpqRFIzbE92K2x2QlE9PQo=",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64.msi"
+  },
+  "linux-x86_64-appimage": {
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0l4Z3VNRDh4SHVqdi84U3YzS0RhblFSZFdUd3VrZ2Z5ckNjSFpqV25ScC9TSEtjTWQxTjJpRTc2ejVFVUU5NHVrUm1FUzlGNkhYN3BSeFBwanhWMEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NTA3CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMS4wCkx5UHd6ajJoSzhPM083OGg1akFqRmZISzRNUkNUalNnaDBSc25BQ2JJMk5yRVoxYldybWlkRlRuZ2NNVFAzWlUzQ1JrSGIvRnh3b3g3MDNscWZLeEF3PT0K",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-linux-x86_64.AppImage"
+  },
+  "windows-x86_64": {
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0J5VFQwSmV6ZHlrcGo4T1RDRm5Ea0Q2T3EyaWlLVFM2YnJKYmpMOHBRdFpzY3RDNHRxQlBhdHd5YWpnR0k2WU9BMTdJTzUvUG5jdDJlVllMOEFpa3dvPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NzU1CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF94NjQtc2V0dXAuZXhlCXZlcnNpb246MC4xLjAKcUFOUGkyY3FSUnhSUHp5YVBuQ2VHdlBsb01VWjFFYTJGblpOTlpmVWIxZlBHaENGdTFkOE5oTEs0VHRKMmhnRE4xOGZZWFc4amxTWTBUdTRjd2FkRFE9PQo=",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-windows-x64-setup.exe"
+  },
+  "linux-x86_64": {
+   "signature": "dW50cnVzdGVkIGNvbW1lbnQ6IHNpZ25hdHVyZSBmcm9tIHRhdXJpIHNlY3JldCBrZXkKUlVUK2t6Mmt0NDkrS0l4Z3VNRDh4SHVqdi84U3YzS0RhblFSZFdUd3VrZ2Z5ckNjSFpqV25ScC9TSEtjTWQxTjJpRTc2ejVFVUU5NHVrUm1FUzlGNkhYN3BSeFBwanhWMEEwPQp0cnVzdGVkIGNvbW1lbnQ6IHRpbWVzdGFtcDoxNzkyNjU5NTA3CWZpbGU6QmV0dGVyIEZpbmRlcl8wLjEuMF9hbWQ2NC5BcHBJbWFnZQl2ZXJzaW9uOjAuMS4wCkx5UHd6ajJoSzhPM083OGg1akFqRmZISzRNUkNUalNnaDBSc25BQ2JJMk5yRVoxYldybWlkRlRuZ2NNVFAzWlUzQ1JrSGIvRnh3b3g3MDNscWZLeEF3PT0K",
+   "url": "https://github.com/gmttuts/better-finder/releases/download/desktop-v0.1.0/BetterFinder-0.1.0-linux-x86_64.AppImage"
+  }
+ }
+}
