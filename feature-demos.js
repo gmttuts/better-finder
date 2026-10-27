@@ -397,48 +397,95 @@
     }, () => { v.pause(); stopTour(); });
   }
 
-  // ======================= Sort by media columns (FPS, resolution, codec…) =======================
+  // ======================= Sort by media columns (FPS, resolution, codec, ratio…) + Group By =======================
+  // Nearest common aspect ratio for a "W×H" size (within 1.5 %), else W:H as a decimal.
+  const RATIOS = [[1, "1:1"], [16 / 9, "16:9"], [9 / 16, "9:16"], [4 / 5, "4:5"], [5 / 4, "5:4"], [4 / 3, "4:3"], [3 / 4, "3:4"],
+    [3 / 2, "3:2"], [2 / 3, "2:3"], [16 / 10, "16:10"], [1.85, "1.85:1"], [2.39, "2.39:1"], [21 / 9, "21:9"], [2, "2:1"]];
+  const ratioOf = (res) => {
+    const [w, h] = res.split("×").map(Number), r = w / h;
+    const best = RATIOS.reduce((a, b) => (Math.abs(b[0] - r) < Math.abs(a[0] - r) ? b : a));
+    return { r, label: Math.abs(best[0] - r) / r < 0.015 ? best[1] : r.toFixed(2) + ":1" };
+  };
   function sortDemo(box) {
-    const files = S.sortDemo;
+    const files = S.sortDemo.map((f) => ({ ...f, ar: ratioOf(f.res) }));
+    const still = (f) => !f.fps;
+    const arIcon = (f) => { const k = 14 / Math.max(f.ar.r, 1 / f.ar.r); return `<span class="sd2-ar"><i style="width:${(k * Math.max(f.ar.r, 1)).toFixed(1)}px;height:${(k * Math.max(1 / f.ar.r, 1)).toFixed(1)}px"></i></span>`; };
     const COLS = [
       { k: "name", label: "Name", get: (f) => f.name.toLowerCase(), show: (f) => f.name },
-      { k: "dur", label: "Duration", get: (f) => f.dur, show: (f) => `${Math.floor(f.dur / 60)}:${String(f.dur % 60).padStart(2, "0")}`, num: true },
-      { k: "fps", label: "FPS", get: (f) => f.fps, show: (f) => f.fps, num: true },
+      { k: "dur", label: "Duration", get: (f) => f.dur, show: (f) => (still(f) ? "–" : `${Math.floor(f.dur / 60)}:${String(f.dur % 60).padStart(2, "0")}`), num: true },
+      { k: "fps", label: "FPS", get: (f) => f.fps, show: (f) => (still(f) ? "–" : f.fps), num: true },
       { k: "res", label: "Resolution", get: (f) => f.res.split("×").reduce((a, b) => a * b, 1), show: (f) => f.res, num: true },
+      { k: "ratio", label: "Ratio", get: (f) => f.ar.r, show: (f) => `${arIcon(f)}${f.ar.label}` },
       { k: "codec", label: "Codec", get: (f) => f.codec, show: (f) => f.codec },
       { k: "size", label: "Size", get: (f) => f.size, show: (f) => (f.size >= 1000 ? (f.size / 1000).toFixed(1) + " GB" : f.size + " MB"), num: true },
     ];
-    const RH = 30;
+    // Group By: groups in a fixed order (ratio: tallest first, so the 9:16 / 4:5 / 1:1 social cuts lead; codec: A to Z).
+    const GROUPS = [
+      { k: "none" },
+      { k: "ratio", label: "Ratio", of: (f) => f.ar.label, order: (f) => f.ar.r, isNew: true },
+      { k: "codec", label: "Codec", of: (f) => f.codec, order: (f) => f.codec },
+    ];
+    const RH = 30, GH = 26;
     box.innerHTML = `${chrome("Footage")}
       <div class="sd2-body">
+        <div class="sd2-tools"><span data-k="srt.group"></span>${GROUPS.map((g) => `<button data-group="${g.k}">${g.label ? g.label : `<span data-k="srt.none"></span>`}${g.isNew ? `<em data-k="${BF.ratioOut ? "srt.new" : "srt.soon"}"></em>` : ""}</button>`).join("")}</div>
         <div class="sd2-head">${COLS.map((col) => `<button data-col="${col.k}" class="c-${col.k}${col.num ? " num" : ""}">${col.label}<i></i></button>`).join("")}</div>
-        <div class="sd2-rows" style="height:${files.length * RH}px">${files.map((f, i) => `
-          <div class="sd2-row" data-i="${i}">${COLS.map((col) => `<span class="c-${col.k}${col.num ? " num" : ""}">${col.k === "name" ? `<span class="vd-th" style="background-image:url('${f.thumb}')"></span>` : ""}${col.show(f)}</span>`).join("")}</div>`).join("")}</div>
+        <div class="sd2-scroll" style="height:${files.length * RH + 8}px"><div class="sd2-rows">${files.map((f, i) => `
+          <div class="sd2-row" data-i="${i}">${COLS.map((col) => `<span class="c-${col.k}${col.num ? " num" : ""}">${col.k === "name" ? `<span class="vd-th" style="background-image:url('${f.thumb}')"></span>` : ""}${col.show(f)}</span>`).join("")}</div>`).join("")}</div></div>
         <div class="sd2-status"></div>
       </div>`;
-    const rows = $$(".sd2-row", box);
-    let key = "name", dir = 1, tour = null, step = 0;
+    const rowsBox = $(".sd2-rows", box), rows = $$(".sd2-row", box);
+    let key = "name", dir = 1, group = "none", tour = null, step = 0;
     function sort(k, d) {
       key = k; dir = d;
-      const col = COLS.find((x) => x.k === k);
-      const order = files.map((f, i) => i).sort((a, b) => {
+      const col = COLS.find((x) => x.k === k), g = GROUPS.find((x) => x.k === group);
+      const byCol = (a, b) => {
         const x = col.get(files[a]), y = col.get(files[b]);
         return (x < y ? -1 : x > y ? 1 : files[a].name < files[b].name ? -1 : 1) * d;
+      };
+      const order = files.map((f, i) => i).sort((a, b) => {
+        if (g.of) { const x = g.order(files[a]), y = g.order(files[b]); if (x !== y) return x < y ? -1 : 1; }
+        return byCol(a, b);
       });
-      order.forEach((i, pos) => { rows[i].style.transform = `translateY(${pos * RH}px)`; rows[i].classList.toggle("odd", pos % 2 === 1); });
+      // Rows move to their new place; with Group By on, a header line opens above each group.
+      $$(".sd2-ghead", rowsBox).forEach((el) => el.remove());
+      let y = 0, last = null, groups = 0;
+      order.forEach((i, pos) => {
+        if (g.of && g.of(files[i]) !== last) {
+          last = g.of(files[i]); groups++;
+          const n = files.filter((f) => g.of(f) === last).length;
+          rowsBox.insertAdjacentHTML("beforeend", `<div class="sd2-ghead" style="transform:translateY(${y}px)">${g.k === "ratio" ? arIcon(files[i]) : ""}<b>${last}</b><span>${n}</span></div>`);
+          y += GH;
+        }
+        rows[i].style.transform = `translateY(${y}px)`;
+        rows[i].classList.toggle("odd", pos % 2 === 1);
+        y += RH;
+      });
+      rowsBox.style.height = y + "px";
       $$("[data-col]", box).forEach((b) => { b.classList.toggle("on", b.dataset.col === k); b.querySelector("i").textContent = b.dataset.col === k ? (d > 0 ? "▲" : "▼") : ""; });
+      $$("[data-group]", box).forEach((b) => b.classList.toggle("on", b.dataset.group === group));
       box.dataset.sorted = k;
-      $(".sd2-status", box).textContent = BF.t("srt.items").replace("{n}", files.length).replace("{col}", col.label);
+      box.dataset.grouped = group;
+      $(".sd2-status", box).textContent = (g.of ? BF.t("srt.grouped").replace("{g}", groups).replace("{by}", g.label) : BF.t("srt.items"))
+        .replace("{n}", files.length).replace("{col}", col.label);
     }
+    const stopTour = (e) => { if (e.isTrusted) { clearInterval(tour); tour = null; box.dataset.touched = "1"; } };
     $$("[data-col]", box).forEach((b) => b.addEventListener("click", (e) => {
-      if (e.isTrusted) { clearInterval(tour); tour = null; box.dataset.touched = "1"; }
+      stopTour(e);
       const k = b.dataset.col;
       sort(k, k === key ? -dir : COLS.find((x) => x.k === k).num ? -1 : 1);
     }));
-    const TOUR = [["fps", -1], ["res", -1], ["codec", 1], ["dur", -1], ["name", 1]];
-    document.addEventListener("langchange", () => sort(key, dir));
+    $$("[data-group]", box).forEach((b) => b.addEventListener("click", (e) => { stopTour(e); setGroup(b.dataset.group); sort(key, dir); }));
+    // The list keeps the window's height (no page jump); groups that don't fit scroll inside it, like in the app.
+    const setGroup = (g) => { if (g !== group) $(".sd2-scroll", box).scrollTop = 0; group = g; };
+    const TOUR = [["fps", -1], ["res", -1], ["ratio", -1], ["name", 1, "ratio"], ["size", -1, "ratio"], ["codec", 1], ["dur", -1], ["name", 1]];
+    document.addEventListener("langchange", () => {
+      $$("[data-k]", box).forEach((el) => (el.textContent = BF.t(el.dataset.k)));
+      sort(key, dir);
+    });
+    $$("[data-k]", box).forEach((el) => (el.textContent = BF.t(el.dataset.k)));
     sort("name", 1);
-    whenVisible(box, () => { if (!tour && box.dataset.touched !== "1") tour = setInterval(() => { const [k, d] = TOUR[step++ % TOUR.length]; sort(k, d); }, 2200); },
+    whenVisible(box, () => { if (!tour && box.dataset.touched !== "1") tour = setInterval(() => { const [k, d, g] = TOUR[step++ % TOUR.length]; setGroup(g || "none"); sort(k, d); }, 2200); },
       () => { clearInterval(tour); tour = null; });
   }
 
@@ -510,7 +557,133 @@
     box.addEventListener("pointerdown", () => { box.dataset.touched = "1"; stop(); box.classList.remove("multi"); });
   }
 
+  // ======================= Made with AI?: the AI column, its hover reasons, Get Info and Check on SynthID =======================
+  // Works like the Mac app (AIOrigin.swift): the cell shows the tool when known, else Yes / Partly / Maybe / No; the colour
+  // tells how sure. A SynthID answer is kept with the file, but its "Not Found" never hides AI found another way.
+  function aiDemo(box) {
+    const files = S.aiDemo.map((f) => ({ ...f, m: null }));
+    const word = (v) => ({ yes: "Yes", partly: "Partly", maybe: "Maybe", site: "Maybe", no: "No" })[v] || "";
+    // What is shown: the user's SynthID answer, unless it's "Not Found" and something was detected.
+    const shown = (f) => (f.m && !(f.m === "no" && f.v && f.v !== "no") ? { v: f.m, manual: true } : { v: f.v, manual: false });
+    const cell = (f) => {
+      const s = shown(f);
+      if (s.manual) return s.v === "no" ? "No ✓" : (f.tool && f.v !== "no" ? f.tool : s.v === "yes" ? "SynthID" : word(s.v)) + " ✓";
+      return f.tool && f.v !== "no" ? f.tool : word(f.v);
+    };
+    const tone = (f) => {
+      const s = shown(f);
+      if ((s.manual && s.v === "no" && !f.v) || (!s.manual && s.v === "site")) return "grey";
+      return s.v;
+    };
+    const headline = (f) => {
+      const s = shown(f), who = f.tool ? `: ${f.tool}` : "";
+      if (s.manual) return BF.t(`ai.s.${s.v}`);
+      if (f.v === "no") return BF.t("ai.h.no") + (f.tool ? ` (${f.tool})` : "");
+      if (!f.v) return BF.t("ai.h.none");
+      return BF.t(`ai.h.${f.v === "site" ? "maybe" : f.v}`) + who;
+    };
+    const details = (f) => {
+      const s = shown(f), out = f.v && f.why ? [...(f.why[BF.lang] || f.why.en)] : [];
+      if (f.m === "no") out.push(BF.t("ai.s.checked"), BF.t("ai.s.only"));
+      else if (f.m) out.push(BF.t("ai.s.ans").replace("{a}", word(f.m)));
+      if (s.manual && f.v && f.v !== f.m) out.push(BF.t("ai.s.detected").replace("{a}", word(f.v)));
+      if (!s.v || (s.manual && s.v === "no" && !f.v)) out.push(BF.t("ai.none.why"));
+      return out;
+    };
+    const pill = (f) => (cell(f) ? `<em class="ai-pill t-${tone(f)}">${cell(f)}</em>` : "");
+
+    box.innerHTML = `${chrome("Downloads")}
+      <div class="ai-body">
+        <div class="ai-list">
+          <div class="ai-head"><span class="c-name" data-k="ai.name"></span><span class="c-kind" data-k="ai.kind"></span><span class="c-size" data-k="ai.size"></span><span class="c-ai" data-k="ai.col"></span></div>
+          <div class="ai-rows">${files.map((f, i) => `
+            <div class="ai-row" data-i="${i}"><span class="c-name"><span class="vd-th" style="background-image:url('${f.thumb}')"></span><b>${f.name}</b></span><span class="c-kind">${f.kind}</span><span class="c-size">${f.size}</span><span class="c-ai"></span></div>`).join("")}</div>
+          <div class="ai-tip" role="tooltip"></div>
+          <div class="ai-status"></div>
+        </div>
+        <aside class="ai-info"></aside>
+      </div>`;
+    const rows = $$(".ai-row", box), tip = $(".ai-tip", box), info = $(".ai-info", box), list = $(".ai-list", box);
+    let sel = 0, tipAt = -1, hideT = null, synthOpen = false, tour = null, step = 0;
+
+    function paintRow(i) { $(".c-ai", rows[i]).innerHTML = pill(files[i]); }
+    function status() {
+      const k = files.filter((f) => ["yes", "partly", "maybe", "site"].includes(shown(f).v)).length;
+      $(".ai-status", box).textContent = BF.t("ai.items").replace("{n}", files.length).replace("{k}", k);
+    }
+    // The reasons open beside the column and follow the pointer from row to row (like the app's AIHoverTip).
+    function showTip(i) {
+      clearTimeout(hideT);
+      if (!cell(files[i])) return hideTip();
+      tipAt = i;
+      tip.innerHTML = `<b>${headline(files[i])}</b>${details(files[i]).join(" · ")}`;
+      const r = rows[i].getBoundingClientRect(), l = list.getBoundingClientRect(), c = $(".c-ai", rows[i]).getBoundingClientRect();
+      // Narrow window: no room beside the column, so the reasons open under the row.
+      const below = l.width < 520;
+      tip.classList.toggle("below", below);
+      tip.style.right = below ? "8px" : l.right - c.left + 6 + "px";
+      tip.style.top = Math.max(0, Math.min(below ? r.bottom - l.top + 4 : r.top - l.top, list.clientHeight - tip.offsetHeight - 4)) + "px";
+      tip.classList.add("on");
+    }
+    function hideTip() { tipAt = -1; tip.classList.remove("on"); }
+    function renderInfo() {
+      const f = files[sel], canCheck = f.synth !== false && /\.(png|jpe?g|webp|heic|mp4|mov|webm)$/i.test(f.name);
+      info.innerHTML = `<div class="vd-th ai-ith" style="background-image:url('${f.thumb}')"></div>
+        <b class="ai-iname">${f.name}</b><small>${f.kind} · ${f.size}</small>
+        <div class="ai-group"><h4>▾ ${BF.t("ai.info")}</h4>
+          <p class="ai-ihead">${pill(f)}<span>${headline(f)}</span></p>
+          <ul>${details(f).map((d) => `<li>${d}</li>`).join("")}</ul>
+          ${canCheck ? `<button class="ai-check">${BF.t("ai.check")}</button>
+          <div class="ai-synth"${synthOpen ? "" : " hidden"}><p>${BF.t("ai.check.how")}</p>
+            <div><button data-a="yes">${BF.t("ai.found")}</button><button data-a="partly">${BF.t("ai.part")}</button><button data-a="no">${BF.t("ai.notfound")}</button></div>
+            ${f.m ? `<button class="ai-clear" data-a="clear">${BF.t("ai.clear")}</button>` : ""}</div>` : ""}
+        </div>`;
+    }
+    function select(i, withTip) {
+      if (i !== sel) synthOpen = false;
+      sel = i;
+      rows.forEach((r, k) => r.classList.toggle("sel", k === i));
+      renderInfo();
+      if (withTip) showTip(i); else hideTip();
+    }
+    function render() {
+      $$("[data-k]", box).forEach((el) => (el.textContent = BF.t(el.dataset.k)));
+      files.forEach((f, i) => paintRow(i));
+      status();
+      renderInfo();
+      if (tipAt >= 0) showTip(tipAt);
+    }
+    const stopTour = () => { clearInterval(tour); tour = null; box.dataset.touched = "1"; };
+
+    rows.forEach((r, i) => {
+      $(".c-ai", r).addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") { stopTour(); showTip(i); } });
+      r.addEventListener("click", () => { stopTour(); select(i, true); });
+    });
+    $(".ai-rows", box).addEventListener("pointerleave", () => { hideT = setTimeout(hideTip, 150); });
+    $(".ai-rows", box).addEventListener("scroll", hideTip);
+    info.addEventListener("click", (e) => {
+      const b = e.target.closest("button");
+      if (!b) return;
+      stopTour();
+      if (b.classList.contains("ai-check")) { synthOpen = !synthOpen; return renderInfo(); }
+      const f = files[sel];
+      f.m = b.dataset.a === "clear" ? null : b.dataset.a;
+      synthOpen = false;
+      paintRow(sel); status(); renderInfo(); showTip(sel);
+      rows[sel].classList.remove("flash"); void rows[sel].offsetWidth; rows[sel].classList.add("flash");
+    });
+
+    document.addEventListener("langchange", render);
+    render();
+    select(0, false);
+    // A short tour through the kinds of answers, until the visitor touches the demo.
+    const TOUR = [0, 3, 6, 8, 2, 12, 10, 13];
+    whenVisible(box, () => { if (!tour && box.dataset.touched !== "1") tour = setInterval(() => select(TOUR[step++ % TOUR.length], true), 2600); },
+      () => { clearInterval(tour); tour = null; });
+  }
+
   document.querySelectorAll("[data-player-demo]").forEach(playerDemo);
+  document.querySelectorAll("[data-ai-demo]").forEach(aiDemo);
   document.querySelectorAll("[data-filter-demo]").forEach(filterDemo);
   document.querySelectorAll("[data-sort-demo]").forEach(sortDemo);
   document.querySelectorAll("[data-media-demo]").forEach(mediaDemo);

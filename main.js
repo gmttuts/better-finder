@@ -32,6 +32,8 @@
     each("[data-desk-requires]", (el) => { el.textContent = tv((S.desktop || {}).requires); });
     each(".shot-missing span", (el) => { el.textContent = t("shot.missing"); });
     renderFeatures();
+    renderDesktopNext();
+    renderAI();
     renderViewDesc();
     renderReleases();
     renderCompare();
@@ -81,7 +83,12 @@
       if (label) label.dataset.i18n = os === "windows" ? "desk.win" : "desk.linux";
       a.querySelector("svg.apple")?.remove();
     });
-    each(".soon", (el) => { el.hidden = true; });
+    // Under the Mac download buttons: say Windows and Linux are here too (the #install card has its own Windows / Linux card).
+    each(".soon", (el) => {
+      if (el.closest("#install")) { el.hidden = true; return; }
+      const label = el.querySelector("[data-i18n]");
+      if (label) label.dataset.i18n = "req.out";
+    });
     // Texts that said "Windows and Linux soon" say they're here.
     for (const k of ["hero.sub", "footer.made", "faq.6.a"]) if (S.text[k + ".out"]) S.text[k] = S.text[k + ".out"];
   }
@@ -119,6 +126,30 @@
   document.addEventListener("viewchange", (e) => { view = e.detail; renderViewDesc(); });
 
   // ---------- Features ----------
+  // ---------- Windows / Linux: what the next desktop version brings ----------
+  function renderDesktopNext() {
+    const N = S.desktopNext, box = $("[data-win-groups]");
+    if (!N || !box) return;
+    const out = (S.desktop || {}).version && cmp(S.desktop.version, N.version) >= 0;   // already released?
+    const fill = (k) => t(k).replace("{next}", N.version);
+    each("[data-win-sub]", (el) => { el.textContent = fill(out ? "win.sub.out" : "win.sub"); });
+    box.innerHTML = N.groups.map((g) => {
+      const [title, body] = g[lang] || g.en;
+      return `<article class="win-card"><span class="ficon">${g.icon}</span><span class="win-badge${out ? " new" : ""}">${fill(out ? "win.new" : "win.coming")}</span><h3>${title}</h3><p>${body}</p></article>`;
+    }).join("");
+    each("[data-win-get]", (a) => { a.hidden = !(S.desktop || {}).version; });
+  }
+
+  // ---------- Made with AI?: "Coming in the next Mac version" until download.version reaches aiDetect.mac ----------
+  function renderAI() {
+    const A = window.BF.ai || {};
+    each("[data-ai-badge]", (el) => { el.textContent = t(A.mac ? "ai.new" : "ai.soon"); el.classList.toggle("new", !!A.mac); });
+    each("[data-ai-avail]", (el) => { el.textContent = t(A.desktop ? "ai.desk.out" : "ai.desk.soon"); });
+    each("[data-ai-how]", (ol) => {
+      ol.innerHTML = [1, 2, 3, 4, 5, 6].map((i) => `<li><b>${t(`ai.how.${i}.t`)}</b><span>${t(`ai.how.${i}.d`)}</span></li>`).join("");
+    });
+  }
+
   function renderFeatures() {
     each("[data-features]", (box) => {
       box.innerHTML = S.features.map((f) => {
@@ -314,6 +345,18 @@
       <a href="a.html${location.search}" ${here === "A" ? 'aria-current="page"' : ""}>A · Dark</a>
       <a href="index.html${location.search}" ${here === "B" ? 'aria-current="page"' : ""}>B · Light</a></div>`);
   }
+
+  // ---------- Aspect ratio (sort demo): "Coming soon" until both the Mac and Windows / Linux builds have it ----------
+  const AR = S.aspectRatio || {};
+  window.BF.ratioOut = !!(AR.mac && AR.desktop && cmp(S.download.version, AR.mac) >= 0 && D.version && cmp(D.version, AR.desktop) >= 0);
+  if (window.BF.ratioOut && S.text["spot.sort.d.out"]) S.text["spot.sort.d"] = S.text["spot.sort.d.out"];
+
+  // ---------- Made with AI? (section + demo): released on Mac / on Windows and Linux? ----------
+  const AI = S.aiDetect || {};
+  window.BF.ai = {
+    mac: !!(AI.mac && cmp(S.download.version, AI.mac) >= 0),
+    desktop: !!(AI.desktop && D.version && cmp(D.version, AI.desktop) >= 0),
+  };
 
   applyLang();
 })();
