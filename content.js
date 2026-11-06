@@ -53,7 +53,7 @@ window.SITE = {
     ],
   },
 
-  // --- Support the author (the app is free). Put the QR images in assets/support/. -----------
+  // --- Support the author (there is a free version). Put the QR images in assets/support/. -----------
   // Leave a url empty ("") to show only the QR code.
   support: {
     bmc:  { qr: "assets/support/bmc-qr.png",  url: "https://buymeacoffee.com/gmttuts" },
@@ -334,7 +334,7 @@ window.SITE = {
     { row: "cmp.dupes",   bf: true, finder: false },
     { row: "cmp.bg",      bf: { en: "Video, Lottie, Rive, layers", vi: "Video, Lottie, Rive, nhiều lớp" }, finder: { en: "Colour or picture, Icon view", vi: "Màu hoặc ảnh, chỉ Icon view" } },
     { row: "cmp.tags",    bf: { en: "Synced with Finder", vi: "Đồng bộ với Finder" }, finder: true },
-    { row: "cmp.price",   bf: { en: "Free", vi: "Miễn phí" }, finder: { en: "Built in", vi: "Có sẵn" } },
+    { row: "cmp.price",   bf: { en: "Free version + Pro", vi: "Bản miễn phí + Pro" }, finder: { en: "Built in", vi: "Có sẵn" } },
   ],
 
   // --- Screenshots (optional now: every section is drawn in code). Kept for later use. ---
@@ -389,8 +389,8 @@ window.SITE = {
 
     "hero.badge":     { en: "Public beta", vi: "Bản beta" },
     "hero.title":     { en: "Your media deserves a <span class=\"accent\">better Finder.</span>", vi: "File media của bạn xứng đáng có một <span class=\"accent\">Finder tốt hơn.</span>" },
-    "hero.sub":       { en: "A free Finder replacement for everyone who works with media. Press Space on any file to see it: video, RAW photos, PSD, Lottie, 3D, After Effects and Premiere projects. On Mac today, Windows 11 and Linux soon.",
-                        vi: "Trình thay Finder miễn phí cho người làm media. Bấm Space trên file nào cũng xem được: video, ảnh RAW, PSD, Lottie, 3D, project After Effects và Premiere. Có trên Mac, sắp có cho Windows 11 và Linux." },
+    "hero.sub":       { en: "A Finder replacement for everyone who works with media. Press Space on any file to see it: video, RAW photos, PSD, Lottie, 3D, After Effects and Premiere projects. Free to start, Pro adds more. On Mac today, Windows 11 and Linux soon.",
+                        vi: "Trình thay Finder cho người làm media. Bấm Space trên file nào cũng xem được: video, ảnh RAW, PSD, Lottie, 3D, project After Effects và Premiere. Có bản miễn phí, Pro mở thêm tính năng. Có trên Mac, sắp có cho Windows 11 và Linux." },
     "hero.new":       { en: "New", vi: "Mới" },
     "hero.pill":      { en: "What's new in", vi: "Có gì mới ở" },
     "req.out":        { en: "Also for Windows 10 / 11 and Linux (beta) · <a href=\"#download\">Download</a>", vi: "Có cả bản cho Windows 10 / 11 và Linux (beta) · <a href=\"#download\">Tải về</a>" },
@@ -563,9 +563,9 @@ window.SITE = {
     "desk.help":      { en: "Windows: if SmartScreen says “Windows protected your PC”, click More info ▸ Run anyway (the app isn't signed with a paid certificate). Linux: make the AppImage executable (Properties ▸ Allow executing, or chmod +x) and open it; the .deb installs ffmpeg with it. The Windows app and the AppImage update themselves; with the .deb, download the new package.",
                         vi: "Windows: nếu SmartScreen báo “Windows protected your PC”, bấm More info ▸ Run anyway (app chưa ký bằng chứng chỉ trả phí). Linux: cho AppImage quyền chạy (Properties ▸ Allow executing, hoặc chmod +x) rồi mở; gói .deb tự cài kèm ffmpeg. Bản Windows và AppImage tự cập nhật; với gói .deb, tải gói mới về cài." },
     // Used instead of the texts of the same name once the Windows / Linux app is released (desktop.version set).
-    "hero.sub.out":   { en: "A free Finder replacement for everyone who works with media. Press Space on any file to see it: video, RAW photos, PSD, Lottie, 3D, After Effects and Premiere projects. On Mac, Windows and Linux.",
-                        vi: "Trình thay Finder miễn phí cho người làm media. Bấm Space trên file nào cũng xem được: video, ảnh RAW, PSD, Lottie, 3D, project After Effects và Premiere. Có trên Mac, Windows và Linux." },
-    "footer.made.out": { en: "A free file browser for media. Mac, Windows and Linux.", vi: "Trình duyệt file miễn phí cho dân media. Mac, Windows và Linux." },
+    "hero.sub.out":   { en: "A Finder replacement for everyone who works with media. Press Space on any file to see it: video, RAW photos, PSD, Lottie, 3D, After Effects and Premiere projects. Free to start, Pro adds more. On Mac, Windows and Linux.",
+                        vi: "Trình thay Finder cho người làm media. Bấm Space trên file nào cũng xem được: video, ảnh RAW, PSD, Lottie, 3D, project After Effects và Premiere. Có bản miễn phí, Pro mở thêm tính năng. Có trên Mac, Windows và Linux." },
+    "footer.made.out": { en: "A file browser for media, with a free version and Pro. Mac, Windows and Linux.", vi: "Trình duyệt file cho dân media, có bản miễn phí và bản Pro. Mac, Windows và Linux." },
     "faq.6.a.out":    { en: "Yes: Better Finder for Windows 10 / 11 and Linux is out as a beta, with the same look choices (Windows 11, macOS, Linux). Download it from Install below. Version 0.3.0 brings most of what's still missing (see Windows & Linux above).",
                         vi: "Có: Better Finder cho Windows 10 / 11 và Linux đã có bản beta, cùng các kiểu giao diện (Windows 11, macOS, Linux). Tải ở mục Cài đặt bên dưới. Bản 0.3.0 bổ sung phần lớn những gì còn thiếu (xem mục Windows & Linux phía trên)." },
     "win.kicker":     { en: "Windows & Linux", vi: "Windows & Linux" },
@@ -648,8 +648,8 @@ window.SITE = {
     "stats.code":     { en: "code languages shown with syntax colours on a card", vi: "ngôn ngữ code hiện kèm màu cú pháp trên một tấm thẻ" },
     "stats.3d":       { en: "3D formats with thumbnails: glTF, OBJ, FBX, USD, Blender, Cinema 4D and more", vi: "định dạng 3D có thumbnail: glTF, OBJ, FBX, USD, Blender, Cinema 4D và nữa" },
     "stats.releases": { en: "versions built and tested so far, each with its own release notes", vi: "phiên bản đã làm và thử đến nay, bản nào cũng có ghi chú riêng" },
-    "stats.free":     { en: "Free, no account, no ads.", vi: "Miễn phí, không cần tài khoản, không quảng cáo." },
-    "stats.freeN":    { en: "$0", vi: "0đ" },
+    "stats.free":     { en: "A free version with no account and no ads. Pro unlocks Visual Search and more.", vi: "Bản miễn phí, không cần tài khoản, không quảng cáo. Pro mở thêm Visual Search và nhiều tính năng khác." },
+    "stats.freeN":    { en: "Free + Pro", vi: "Free + Pro" },
 
     "demo.kicker":    { en: "Try it here", vi: "Thử ngay đây" },
     "demo.title":     { en: "Hover to scrub. Video, Lottie, Rive.", vi: "Rê chuột để tua. Video, Lottie, Rive." },
@@ -678,10 +678,10 @@ window.SITE = {
     "cmp.tags":       { en: "Colour tags", vi: "Tag màu" },
     "cmp.price":      { en: "Price", vi: "Giá" },
 
-    "support.kicker": { en: "Free, forever", vi: "Miễn phí, mãi mãi" },
-    "support.title":  { en: "Made by one person.<br>Free for everyone.", vi: "Một người làm.<br>Miễn phí cho mọi người." },
-    "support.sub":    { en: "Better Finder has no price tag, ads or account. If it saves you time, you can buy the author a coffee. It keeps the updates coming.",
-                        vi: "Better Finder không thu phí, không quảng cáo, không cần tài khoản. Nếu app giúp bạn tiết kiệm thời gian, mời tác giả một ly cà phê để các bản cập nhật tiếp tục ra đều." },
+    "support.kicker": { en: "Free to start", vi: "Có bản miễn phí" },
+    "support.title":  { en: "Made by one person.<br>A free version for everyone.", vi: "Một người làm.<br>Ai cũng dùng được bản miễn phí." },
+    "support.sub":    { en: "The free version of Better Finder has no ads and needs no account. If it saves you time, you can buy the author a coffee. It keeps the updates coming.",
+                        vi: "Bản miễn phí của Better Finder không quảng cáo, không cần tài khoản. Nếu app giúp bạn tiết kiệm thời gian, mời tác giả một ly cà phê để các bản cập nhật tiếp tục ra đều." },
     "support.bmc":    { en: "Buy Me a Coffee", vi: "Buy Me a Coffee" },
     "support.momo":   { en: "MoMo", vi: "MoMo" },
     "support.title.both": { en: "Buy the author a coffee", vi: "Mời tác giả ly cà phê" },
@@ -709,7 +709,7 @@ window.SITE = {
     "sr.ai":          { en: "Search with AI", vi: "Tìm bằng AI" },
 
     "cta.title":      { en: "Give your files a better home.", vi: "Cho file của bạn một ngôi nhà tốt hơn." },
-    "footer.made":    { en: "A free file browser for media. Mac today, Windows 11 and Linux soon.", vi: "Trình duyệt file miễn phí cho dân media. Có trên Mac, sắp có Windows 11 và Linux." },
+    "footer.made":    { en: "A file browser for media, with a free version and Pro. Mac today, Windows 11 and Linux soon.", vi: "Trình duyệt file cho dân media, có bản miễn phí và bản Pro. Có trên Mac, sắp có Windows 11 và Linux." },
     "shot.missing":   { en: "Screenshot", vi: "Ảnh chụp màn hình" },
   },
 };

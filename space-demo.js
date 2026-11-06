@@ -345,20 +345,21 @@ if __name__ == "__main__":
     <div class="vd sv${dark ? " vd-dark" : ""}" id="sp-win" role="tabpanel" tabindex="0" aria-describedby="sp-how">
       <div class="vd-chrome"><i></i><i></i><i></i><span class="vd-title sv-name"></span><span class="sv-kind"></span></div>
       <div class="sv-view"></div>
-      <div class="sv-run"><button class="sv-prev" data-k-label="space.prev">‹</button><span class="sv-count" aria-live="off"></span><button class="sv-next" data-k-label="space.next">›</button>
+      <div class="sv-run"><button class="sv-key" type="button"><kbd aria-hidden="true">Space</kbd><span data-k="space.key"></span></button>
+        <span class="sv-nav"><button class="sv-prev" data-k-label="space.prev">‹</button><span class="sv-count" aria-live="off"></span><button class="sv-next" data-k-label="space.next">›</button></span>
         <span class="sv-dots" aria-hidden="true">${files.map((f, i) => `<i data-i="${i}" title="${f.name}"></i>`).join("")}</span><span class="sv-hint" data-k="space.try"></span></div>
     </div>
     <div class="sp-cap"><p class="sp-desc"></p><p class="sp-fmt"></p><p class="sp-where" data-k="space.where"></p></div>`;
 
   const win = $("#sp-win"), view = $(".sv-view"), count = $(".sv-count");
-  const key = document.querySelector("[data-space-key]");
+  // the Space key in the window's bottom bar: it goes down each time the window moves to the next file
+  const key = $(".sv-key");
   let at = 0, stop = null, auto = null, user = false, onScreen = false;
 
   function texts() {
     $$("[data-k]").forEach((el) => (el.textContent = BF.t(el.dataset.k)));
     $$("[data-k-label]").forEach((el) => el.setAttribute("aria-label", BF.t(el.dataset.kLabel)));
     $(".sp-tabs").setAttribute("aria-label", BF.t("space.kinds"));
-    if (key) key.setAttribute("aria-label", `Space: ${BF.t("space.key")}`);
     const g = files[at].g;
     $(".sp-desc").textContent = BF.t(`space.${g}.d`);
     $(".sp-fmt").textContent = BF.t(`space.${g}.f`);
@@ -403,7 +404,7 @@ if __name__ == "__main__":
     count.setAttribute("aria-live", "polite");
   }
   function press() {
-    if (!key || reduce) return;
+    if (reduce) return;
     key.classList.remove("down");
     void key.offsetWidth;
     key.classList.add("down");
@@ -413,11 +414,10 @@ if __name__ == "__main__":
   root.addEventListener("pointerdown", took);
   root.addEventListener("keydown", took);
   root.addEventListener("focusin", took);
-  key?.addEventListener("focus", took);
   $(".sv-prev").onclick = () => step(-1);
   $(".sv-next").onclick = () => step(1);
   $$(".sv-dots i").forEach((d) => (d.onclick = () => go(+d.dataset.i)));
-  key?.addEventListener("click", () => { took(); step(1); win.focus({ preventScroll: true }); });
+  key.onclick = () => step(1);
 
   // Tabs: click, or arrows / Home / End when a tab has focus (it opens that kind's first file).
   const tabs = $$("[role=tab]");

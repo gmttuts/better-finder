@@ -802,8 +802,22 @@ h2 .pro-badge, .kicker .pro-badge, .pro-kicker .pro-badge { height: 22px; paddin
 .sv-kind { margin-left: auto; color: color-mix(in srgb, var(--w-muted) 55%, var(--w-text)); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 48%; }
 .sv-view { position: relative; display: grid; height: clamp(320px, 50vw, 560px); overflow: hidden; background: var(--w-bg); }
 .sv-view > * { min-width: 0; min-height: 0; }
-.sv-run { display: flex; align-items: center; gap: 6px; padding: 7px 12px; background: var(--w-bar); border-top: 1px solid var(--w-line); }
-.sv-run button { width: 30px; height: 26px; border: 0; border-radius: 7px; background: color-mix(in srgb, var(--w-text) 8%, transparent); color: var(--w-text); font-size: 18px; line-height: 1; cursor: pointer; }
+.sv-run { display: flex; align-items: center; gap: 6px; padding: 8px 12px 10px; background: var(--w-bar); border-top: 1px solid var(--w-line); }
+.sv-nav { display: flex; align-items: center; gap: 6px; }
+/* the Space key in the window's bottom bar, a key cap that goes down when the window moves to the next file */
+.sv-run .sv-key { --key-a: #ffffff; --key-b: #f1f0ec; --key-side: #cfccc4; --key-line: rgba(0,0,0,.1);
+  display: flex; align-items: center; gap: 10px; width: auto; height: auto; margin-right: 10px; padding: 0 6px 0 0; border-radius: 9px;
+  border: 0; background: none; color: var(--w-text); font: 13px var(--font); cursor: pointer; }
+.sv-key kbd { display: grid; place-items: center; width: 116px; height: 32px; border-radius: 8px; font: 600 13px var(--font); letter-spacing: .04em; color: var(--w-text);
+  background: linear-gradient(var(--key-a), var(--key-b)); box-shadow: 0 0 0 1px var(--key-line), 0 4px 0 var(--key-side), 0 6px 12px rgba(0,0,0,.12);
+  transform: translateY(-2px); transition: transform .08s, box-shadow .08s; }
+.sv-key:hover kbd { filter: brightness(1.03); }
+.sv-key:active kbd, .sv-key.down kbd { transform: translateY(2px); box-shadow: 0 0 0 1px var(--key-line), 0 0 0 var(--key-side), 0 1px 3px rgba(0,0,0,.12); }
+.sv-key.down kbd { animation: sv-key-up .24s .12s both; }
+@keyframes sv-key-up { to { transform: translateY(-2px); box-shadow: 0 0 0 1px var(--key-line), 0 4px 0 var(--key-side), 0 6px 12px rgba(0,0,0,.12); } }
+.vd-dark .sv-key { --key-a: #3a3a40; --key-b: #2c2c31; --key-side: #0d0d10; --key-line: rgba(255,255,255,.12); }
+.sv-key span { color: color-mix(in srgb, var(--w-muted) 55%, var(--w-text)); white-space: nowrap; }
+.sv-nav button { width: 30px; height: 26px; border: 0; border-radius: 7px; background: color-mix(in srgb, var(--w-text) 8%, transparent); color: var(--w-text); font-size: 18px; line-height: 1; cursor: pointer; }
 .sv-count { min-width: 52px; text-align: center; font: 600 12px var(--mono); }
 .sv-dots { display: flex; gap: 4px; margin-left: 8px; }
 .sv-dots i { width: 6px; height: 6px; border-radius: 3px; background: color-mix(in srgb, var(--w-text) 20%, transparent); cursor: pointer; transition: width .2s, background .2s; }
@@ -1029,6 +1043,11 @@ h2 .pro-badge, .kicker .pro-badge, .pro-kicker .pro-badge { height: 22px; paddin
 }
 @media (max-width: 600px) {
   .space-panel.stage-panel { padding: 12px; }
+  .sv-run { flex-wrap: wrap; row-gap: 8px; }
+  .sv-run .sv-key { margin-right: auto; }
+  .sv-key kbd { width: 96px; }
+  .sv-key span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
+  .sv-dots { flex-basis: 100%; justify-content: center; margin-left: 0; }
   .space-key { width: 100%; height: 58px; }
   .sp-tabs button { padding: 9px 8px; gap: 6px; font-size: 13px; }
   .sp-tabs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
@@ -1036,7 +1055,7 @@ h2 .pro-badge, .kicker .pro-badge, .pro-kicker .pro-badge { height: 22px; paddin
   .sv-kind { display: none; }
   .sv-view { height: 400px; }
   .sv-view.sv-video { height: 300px; }
-  .sv-dots { gap: 3px; margin-left: 4px; }
+  .sv-dots { gap: 3px; }
   .sv-dots i { width: 5px; height: 5px; }
   .sv-dots i.on { width: 12px; }
   /* side panels move under the picture, or give way */
@@ -1058,7 +1077,8 @@ h2 .pro-badge, .kicker .pro-badge, .pro-kicker .pro-badge { height: 22px; paddin
 }
 @media (prefers-reduced-motion: reduce) {
   .space-key, .sv-dots i, .sv-poster > div { transition: none; }
-  .space-key.down, .sv-lt.go > * { animation: none; }
+  .space-key.down, .sv-key.down kbd, .sv-lt.go > * { animation: none; }
+  .sv-key kbd { transition: none; }
 }
 
 /* six numbers in the stats strip: three a row, two on tablets and phones */

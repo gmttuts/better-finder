@@ -1,6 +1,6 @@
 # Better Finder
 
-A free Finder replacement for macOS (Windows 11 and Linux versions on the way), made for people who work with media — video, motion design, After Effects.
+A Finder replacement for macOS (Windows 11 and Linux versions on the way), made for people who work with media: video, motion design, After Effects. There is a free version; Pro adds more, such as Visual Search.
 Thumbnails and hover-scrubbing for video, Lottie / Rive / 3D previews, tabs and split panes, trim and compress,
 automatic transcripts, a media player with a queue, and more.
 

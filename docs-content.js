@@ -507,7 +507,7 @@
       // ------------------------------------------------------------------ Free vs Pro
       { id: "free-pro", icon: "⭐️", t: { en: "Free and Pro", vi: "Free và Pro" },
         en: `
-<p>Better Finder is free to use for as long as you like. Better Finder Pro unlocks the features marked ${PRO} on this site and in the app. One list decides this for Mac, Windows and Linux alike.</p>
+<p>Better Finder has a free version you can use for as long as you like: a real Finder replacement. Better Finder Pro unlocks the features marked ${PRO} on this site and in the app. One list decides this for Mac, Windows and Linux alike.</p>
 ${note("Pro is not on sale yet: in the current versions every feature works for everyone.")}
 <table class="doc-table"><thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead><tbody>
 <tr><th>Browsing</th><td>All views, tabs, panes, sidebar groups and the Drop Zone, tags, ratings and labels, filter chips, search everywhere (names, spoken words, tags, colour), Advanced Search, external drives, Smart Folders, Get Info, Quick Look and the viewers, archives, Undo</td><td>Version stacks</td></tr>
@@ -520,7 +520,7 @@ ${note("Pro is not on sale yet: in the current versions every feature works for 
 <tr><th>Looks</th><td>Light, Dark, Midnight, three styles, still folder backgrounds</td><td>Animated backgrounds, glass windows, custom sounds</td></tr>
 </tbody></table>`,
         vi: `
-<p>Better Finder dùng miễn phí bao lâu cũng được. Better Finder Pro mở khoá các tính năng có nhãn ${PRO} trên trang này và trong app. Một danh sách duy nhất quyết định điều này cho cả Mac, Windows và Linux.</p>
+<p>Better Finder có bản miễn phí, dùng bao lâu cũng được, thay được Finder thật sự. Better Finder Pro mở khoá các tính năng có nhãn ${PRO} trên trang này và trong app. Một danh sách duy nhất quyết định điều này cho cả Mac, Windows và Linux.</p>
 ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính năng đều dùng được cho tất cả mọi người.")}
 <table class="doc-table"><thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead><tbody>
 <tr><th>Duyệt file</th><td>Mọi chế độ xem, tab, khung, nhóm trên thanh bên và Drop Zone, tag, sao và nhãn màu, chip lọc, tìm khắp máy (tên, lời nói, tag, màu), Advanced Search, ổ ngoài, Smart Folder, Get Info, Quick Look và các trình xem, file nén, hoàn tác</td><td>Gộp phiên bản</td></tr>
