@@ -55,6 +55,9 @@ kbd { font: 11px var(--mono); color: var(--muted); }
 .links { display: flex; gap: 22px; margin-left: auto; font-size: 14px; }
 .links a { text-decoration: none; color: var(--text); opacity: .8; }
 .links a:hover { opacity: 1; }
+.links a { white-space: nowrap; }
+/* Suggest a feature leaves the header first when it gets tight (the footer and Docs keep it). */
+@media (max-width: 1180px) { .links a[href="feedback.html"] { display: none; } }
 .lang { display: flex; background: var(--panel); border-radius: 9px; padding: 2px; }
 .lang button { background: none; border: 0; color: var(--muted); font: 600 12px var(--font); padding: 5px 9px; border-radius: 7px; cursor: pointer; }
 .lang button[aria-pressed="true"] { background: #fff; color: var(--text); box-shadow: 0 1px 2px rgba(0,0,0,.12); }
@@ -78,19 +81,11 @@ kbd { font: 11px var(--mono); color: var(--muted); }
 /* ---------- Demo ---------- */
 .block .demo-grid { margin-top: 44px; }
 .stage { box-shadow: 0 0 0 1px var(--line), 0 10px 24px rgba(0,0,0,.08); }
-.formats { margin: 44px 0 0; max-width: 860px; }
+.formats { margin: 44px 0 0; max-width: 1120px; }
 
-/* ---------- Views strip (Eagle style) ---------- */
-#views.stage-panel { margin-top: 40px; }
-.views-head { padding-top: clamp(64px, 8vw, 110px); }
-.view-strip { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-top: 14px; }
-.view-strip button { display: flex; justify-content: space-between; align-items: center; padding: 14px 16px; border-radius: 14px; border: 0; cursor: pointer;
-  background: var(--panel); color: var(--muted); font: 15px var(--font); text-align: left; transition: background .15s, color .15s; }
-.view-strip button b { font-weight: 600; }
-.hero-panel .view-strip button { background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,.06); }
-.view-strip button[aria-selected="true"] { background: #111; color: #fff; }
-.view-strip button[aria-selected="true"] kbd { color: #aaa; }
-.view-desc { color: var(--muted); margin: 16px 0 0; min-height: 1.5em; }
+/* ---------- Press Space (layout in base.css) ---------- */
+.space-sec { padding-top: clamp(64px, 8vw, 110px); }
+.space-panel { margin-top: 36px; }
 
 /* ---------- Spotlights ---------- */
 .spots { display: grid; gap: clamp(60px, 8vw, 110px); }
@@ -172,11 +167,9 @@ kbd { font: 11px var(--mono); color: var(--muted); }
   .features { grid-template-columns: 1fr 1fr; }
   .spot-pair, .support-card { grid-template-columns: 1fr; }
   .support-card .cta-row { justify-content: flex-start; }
-  .view-strip { grid-template-columns: repeat(3, 1fr); }
 }
 @media (max-width: 600px) {
   .features { grid-template-columns: 1fr; gap: 30px; }
-  .view-strip { display: none; } /* the window's own view buttons are enough on a phone */
   .stats div:nth-child(3) { border-left: 0; padding-left: 0; }
   .download-card { flex-wrap: wrap; }
   .download-card .btn { margin-left: 0; width: 100%; justify-content: center; }

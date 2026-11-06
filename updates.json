@@ -1,6 +1,2398 @@
 {
  "versions": [
   {
+   "version": "0.351",
+   "build": 351,
+   "date": "6 Nov 2026",
+   "title": "Page sizes in one place",
+   "notes": [
+    "The page's size is set from one button on the left of the bar, and the button says the size in use: Responsive · 742, 1200 × 900, Tablet 768 or Page Size.",
+    "It opens a panel with the ready-made sizes, a Custom width × height (Return or Use applies it, Up and Down change it by 1, with Shift by 10, and a button swaps width and height), and the custom sizes you used lately.",
+    "The separate width field at the right of the bar is gone. The zoom percentage stays next to the zoom buttons."
+   ],
+   "url": "https://github.com/gmttuts/better-finder/releases/download/v0.351/BetterFinder-0.351.dmg",
+   "beta": false
+  },
+  {
+   "version": "0.350",
+   "build": 350,
+   "date": "6 Nov 2026",
+   "title": "More looks for the code card, and typed page widths",
+   "notes": [
+    "The code card has many more backgrounds: gradients, soft mesh gradients, solid colours, a picture of your own, transparent and none. Pick them from the swatch button next to the theme menu.",
+    "The window button sets the card's style: macOS, Windows, a plain title bar or none, with the title, the language badge, the shadow, the corner radius and the padding around it.",
+    "New themes: Dracula, One Dark, Monokai, Nord and Solarized Light.",
+    "Copy Image and Save PNG use the same background and window style. Your choices are kept.",
+    "In Split, type the page's width in the bar (or width × height) and press Return. A width bigger than its side is scaled to fit. Up and Down change it by 1, with Shift by 10, and Esc goes back to Fit Pane."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.349",
+   "build": 349,
+   "date": "6 Nov 2026",
+   "title": "Responsive web pages in Split, and Swap Sides",
+   "notes": [
+    "In Split, a web page now lays out at the width of its side of the window, like a browser window: readable at 100%, scrolling down inside its side, with no strips around it. Drag the divider and the layout follows, media queries included.",
+    "The size menu offers Fit Pane (responsive), the default in Split, Page Size (the page's own size, as before), and Desktop 1440, Laptop 1280, Tablet 768 and Mobile 390, scaled down to fit when wider than their side. The bar shows the width in use, for example Responsive · 742 px.",
+    "Swap Sides puts the page on the left and the code on the right, and back (the button next to Page | Split | Code, View > Swap Code and Page, or Option-Command-X). When the two are stacked, it puts the code on top. Your choice is kept with the divider position.",
+    "Page mode keeps its own size choice, Page Size by default."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.348",
+   "build": 348,
+   "date": "6 Nov 2026",
+   "title": "Edit web pages and SVGs beside their preview",
+   "notes": [
+    "Space on a web page or SVG now opens Split: the code on the left, the page or picture on the right. Page, Split and Code at the top switch between them, and your choice is kept. Drag the line between them to share the window differently.",
+    "The code can be edited. The page follows your changes a moment after you stop typing, keeping its zoom and scroll.",
+    "Nothing is saved until you press Command-S or Save. The title says Edited while there are changes, Command-Z and Shift-Command-Z undo and redo, and closing asks whether to save.",
+    "Saving keeps the file's permissions, tags and line ends, and asks first if another app changed the file meanwhile. Read-only, locked and cloud-only files open read only, with the reason at the bottom.",
+    "Option-click something in the page to select its code.",
+    "Grid thumbnails show the saved version."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.347",
+   "build": 347,
+   "date": "6 Nov 2026",
+   "title": "SVG pictures that fit, zoom and play",
+   "notes": [
+    "Space on an SVG shows the whole picture, centred and sharp, with no scroll bars or white strips. Image and Code at the top switch to its source.",
+    "Zoom in and out, Fit and 100% in the bar, or Command-plus, Command-minus and Command-0, a pinch, or Option-scroll. When it is bigger than the window, drag or scroll to move around.",
+    "A checkerboard button shows the transparent parts.",
+    "Animated SVGs (SMIL, CSS or JavaScript) keep playing, with pause, play and restart. The Gallery and Get Info play them too, and grid thumbnails are drawn at full sharpness.",
+    "Web pages get the same zoom controls.",
+    "SVGs run like web pages: on their own, reading only files in their folder, offline unless you allow it."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.346",
+   "build": 346,
+   "date": "6 Nov 2026",
+   "title": "Switching between 1, 2, 3 and 4 panes is quicker",
+   "notes": [
+    "The Panes buttons in the status bar switch about three times faster, and stay fast however often you click them.",
+    "Panes you close with them come back as they were (same folder, view and scroll) when you add panes again within 30 seconds, instead of being built and listed again.",
+    "The panes you keep no longer leave the window and come back on every switch, so nothing flickers or reloads in them."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.345",
+   "build": 345,
+   "date": "6 Nov 2026",
+   "title": "Sidebar groups open and close smoothly",
+   "notes": [
+    "Clicking a sidebar group's name quickly, over and over, now opens or closes it every time. Before, quick clicks counted as double clicks and were skipped, so the group seemed to stick.",
+    "Groups slide open and shut instead of jumping, and opening a long group (like Favorites) does less work."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.344",
+   "build": 344,
+   "date": "6 Nov 2026",
+   "title": "Checkboxes in every Settings page",
+   "notes": [
+    "Settings ▸ Search, Updates, Transcribe and Visual Search use checkboxes for their on / off settings, like every other Settings page.",
+    "Click a setting's name or description to tick or untick its checkbox.",
+    "Settings ▸ Search: the drives you can index line up with the other checkboxes."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.343",
+   "build": 343,
+   "date": "6 Nov 2026",
+   "title": "A new Advanced tab in the search palette",
+   "notes": [
+    "The Advanced tab now looks like Search and Visual: its conditions sit in groups you can fold (File, Frame, Media, Project, Also), each with a one-line summary of what is set.",
+    "Every condition is a soft chip with a menu: Look in, Name, Kind, Size, Date, Ratio, Orientation, Frame size, Rating, Tags, Made with AI, Project uses, Missing media, Folders, Hidden files and Only duplicates. Groups with something set open by themselves, and folded groups stay folded.",
+    "The results appear live under the groups, as rows like Search's, with size and day. Command-Return shows them in the window, Command-S saves a Smart Folder, and Delete in the empty field takes away the last condition you set.",
+    "Ask AI sits at the top: type what you want and press Return to turn it into conditions (Pro, as before).",
+    "Fixed: the name index could drop most of its names when macOS had not yet given Better Finder access to a folder (after an update), and then show a small count as up to date. Folders it can't read now keep their names. If Settings > Search shows a very small count, press Rebuild once.",
+    "Settings > Search: the Advanced row now describes the palette's Advanced tab."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.342",
+   "build": 342,
+   "date": "6 Nov 2026",
+   "title": "Small things lined up",
+   "notes": [
+    "Sheets share one title size, and Rename N Items keeps its buttons at the bottom of the sheet.",
+    "Get Info: the Open and Change All… buttons fit their text, and the Made with AI note uses the full width.",
+    "Settings ▸ Search no longer shows an empty strip when no drive is known. In Settings ▸ Windows & Sidebar, Return no longer runs Sync Now.",
+    "Toolbar and other tooltips start with the button's name and its keys, like the rest of the app.",
+    "Spelling is the same everywhere: color, gray, license."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.341",
+   "build": 341,
+   "date": "6 Nov 2026",
+   "title": "A smaller, better aligned search palette",
+   "notes": [
+    "The search palette's text is smaller: the search field, the tabs, the results and their folders, the headings and the colour swatches. Rows are a little shorter, so more results fit.",
+    "The words in the search field, its placeholder, the chips such as color: or in:, and the count on the right now line up with the icon on the left, in every tab and every look."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.340",
+   "build": 340,
+   "date": "6 Nov 2026",
+   "title": "Web pages play",
+   "notes": [
+    "Space on an .html page shows the page itself, playing: CSS animations, keyframes, JavaScript, canvas and SVG animation. Page and Code at the top switch to its source.",
+    "Pause, play and restart the page, and choose the size it lays out at (its own size, 1920 × 1080, 1440 × 900, a phone…). It is scaled to fit the window.",
+    "The Gallery and Get Info play the page too, and grid thumbnails show the page about a second after it starts, once its entrance animations have played.",
+    "Pages run on their own: they read only files in their own folder and stay offline. When a page wanted fonts or scripts from the web, a bar offers Load Online Content for that page. Settings ▸ File Types ▸ Web Pages can allow the internet for every page you show.",
+    "A page that stops responding is stopped."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.339",
+   "build": 339,
+   "date": "6 Nov 2026",
+   "title": "Search by colour",
+   "notes": [
+    "The Visual tab of the search palette now finds pictures and clips by colour. Click one of 12 named colours (Red to White), or Custom… to pick any colour. The results show how much of each picture is that colour, with a strip of its main colours under it.",
+    "Click two colours to find pictures that have both. The eyedropper button (Command-E) takes a colour from anywhere on screen, such as a frame in After Effects or a web page.",
+    "In the Search tab, type color:pink or color:#D9607E to keep only the files that are mostly that colour, like kind: or tag:.",
+    "Free and on this Mac: no AI model or Pro needed. Colours are read in the background when a folder opens, and once for files already in your library. Cloud-only files are never downloaded for it."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.338",
+   "build": 338,
+   "date": "5 Nov 2026",
+   "title": "A lighter tab row in the search palette",
+   "notes": [
+    "The line under the chosen tab (Search, Visual, Advanced) is thinner and quieter.",
+    "While a search is still looking, its progress now fills that same line from the left instead of a second line drawn over it.",
+    "The Visual tab's eye icon keeps its natural shape, and the icons of the other tabs are the same soft grey as their names in every look."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.337",
+   "build": 337,
+   "date": "5 Nov 2026",
+   "title": "One search palette with three tabs: Search, Visual, Advanced",
+   "notes": [
+    "Command-F and the toolbar's Search button now open the search palette, looking in the folder you are in (Delete takes the folder away to search everywhere). Command-K opens it everywhere, Option-Command-F on its Advanced tab.",
+    "Three tabs under the search field: Search (names, transcripts, tags), Visual (pictures and clips by what they show) and Advanced (size, date, frame, rating and more). Switch with Command-1, Command-2 and Command-3; what you typed comes along.",
+    "Type a description such as \"drone shot over the beach last week 4k\" and Search offers to look for it in Visual. Words like \"last week\" or \"4K\" are read as conditions: Visual turns them into chips, Advanced fills its fields with them.",
+    "Visual shows the best matches as pictures with how well they match and where in the clip. Paste a picture (Command-V) or drop one on the palette to find ones like it.",
+    "Advanced counts the matches as you change a condition. Show them in the window, save them as a Smart Folder, or ask the AI in plain words.",
+    "Type transcript: to search only what is said in your clips. The smaller source buttons (All, Names, Transcripts, Tags, Documents) now switch with Tab."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.336",
+   "build": 336,
+   "date": "5 Nov 2026",
+   "title": "Command-K finds files on external drives",
+   "notes": [
+    "Plug in a drive and Command-K offers to index it: one click (or Return) and its files show up as you type, from now on each time it connects. Until then, Spotlight's results on the drive are shown under its name.",
+    "Ejecting a drive takes its files out of the results at once. Connecting it again reads it again, so changes made on another computer are found.",
+    "Settings > Search > Index drives when they connect adds every drive as it is plugged in. Each drive has its own Index tick, so you can leave some out. Network shares and disk images are only indexed when you tick them.",
+    "Adding or removing a drive never reads your Home folder again."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.335",
+   "build": 335,
+   "date": "5 Nov 2026",
+   "title": "Command-K: spoken words, conditions as chips, and Go to Folder",
+   "notes": [
+    "Type said: in the Command-K palette to search only what is said in your clips: every sentence is listed under its clip with its time. Return plays the clip from that sentence, the Right arrow jumps to the next one, Command-Return opens the clip.",
+    "Narrow a search with conditions: kind:video, ext:mov,mp4, tag:Red or in:Animation followed by a space become chips before your words. Delete removes the last chip, the x removes any.",
+    "Tabs under the search field show what each source found (All, Names, Spoken, Tags, Documents). Tab or Command-1 to Command-5 switches between them.",
+    "Command-S saves the search as a Smart Folder in the sidebar.",
+    "Type a path such as ~/Doc/kh to jump to a folder: each part is matched on its own (Documents / Khach hang). Tab completes the path, Return opens it, Command-Return opens it in a new tab.",
+    "Go to Folder (Shift-Command-G) now opens the palette with ~/ already typed."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.334",
+   "build": 334,
+   "date": "5 Nov 2026",
+   "title": "Search Everywhere: the Command-K palette",
+   "notes": [
+    "Press Command-K (Edit > Search Everywhere...) and type: files and folders from your whole Home folder show up as you type, even with letters missing (\"invq4\" finds invoice_Q4_final.pdf) and without accents (\"khach hang\" finds Khách hàng).",
+    "Names come from a small index of every file name in your Home folder (and the cloud folders in it), kept on this Mac and updated as files change. It reads only names: cloud-only files are listed without being downloaded.",
+    "Below the names, Finder tags, spoken words in your clips and text inside documents (Spotlight) appear as they are found.",
+    "Return opens, Command-Return shows every match in the window, Command-R reveals the file, Space after the arrow keys opens Quick Look, Up in the empty field brings back your last search, Esc closes.",
+    "Command-K on a result lists what you can do with it: Open With, Reveal, Copy Path, Add to Drop Zone, Import to Premiere Pro, Transcribe, Compress, Move to Trash.",
+    "A typo? The palette suggests the right spelling (Tab takes it) and offers to search inside documents, spoken words or Advanced Search instead.",
+    "Settings > Search: turn the index off, add external drives, or rebuild it. Connect to Server moved to Option-Command-K.",
+    "The search in the window's toolbar answers faster too: no more waiting after the last key, and results from This Mac appear while Spotlight is still looking."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.333",
+   "build": 333,
+   "date": "5 Nov 2026",
+   "title": "Collapsible sidebar groups and a Drop Zone",
+   "notes": [
+    "Every sidebar group (Favorites, Locations, Tags, Playlists, Smart Folders) opens and closes with the arrow before its name. Each window remembers which groups are closed, and new windows open the same way.",
+    "Make your own groups: right-click a group's name > New Group..., then drag folders onto it. Rename, hide or delete a group from the same menu, and drag a group's name to move it up or down. Your folders are never moved.",
+    "The Drop Zone at the bottom of the sidebar collects files from anywhere (the file list, Finder, other apps). Nothing is moved when you drop them; it only keeps a reference.",
+    "Drag the stack out to a folder in the sidebar, a pane, Finder, Premiere or After Effects to copy or move the files, as the Copy | Move switch under it says. Hold Option to do the other one. Moves and copies can be undone, and moved files leave the Drop Zone.",
+    "Show List shows each held file (Space for Quick Look, x to let go of one). Right-click the stack for Copy to, Move to, Reveal Originals and Clear; the bolt button offers Compress, Transcribe, To JPG, Remove Background, Zip, AirDrop and Email.",
+    "Held files are kept when you quit. A file renamed or moved by another app is found again; one that was deleted is let go with a short note.",
+    "Hide the Drop Zone with View > Hide Drop Zone (Control-Command-B) or in Settings > Windows & Sidebar."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.332",
+   "build": 332,
+   "date": "5 Nov 2026",
+   "title": "Cavalry scenes get a real picture with your own Web Player",
+   "notes": [
+    "Cavalry scenes (.cv) can show a real frame as their thumbnail and in their Space card. Better Finder may not include Scene Group's Cavalry Web Player, so download it yourself (free, from Scene Group), unzip it and choose its folder in Settings > File Types > Cavalry. Without it, Cavalry scenes keep their icon.",
+    "The player runs on its own, hidden, with no internet access: it can read only its own files, the scene it draws and the pictures and fonts beside that scene. A scene that takes too long is skipped after 15 seconds.",
+    "Some Cavalry features aren't in the Web Player yet (JavaScript layers, some filters), so a few pictures can differ from Cavalry. Pictures used by a scene are found when they sit beside the .cv file or in its assets folder."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.331",
+   "build": 331,
+   "date": "5 Nov 2026",
+   "title": "Caddis projects get a real picture",
+   "notes": [
+    "Caddis projects (.caddis) show a real frame as their thumbnail, in Gallery and in Get Info, drawn by the Caddis app installed on your Mac (in the background, no window; a fraction of a second per file, then kept). Without Caddis, or before you sign in to it, they keep the Caddis icon.",
+    "Space on a Cavalry, Caddis, Autograph or Plate project opens its card instead of a blank Quick Look icon: the picture it has (Autograph's viewer, Plate's first frame, the Caddis frame) above the composition, size, frame rate, length, footage (missing ones in red), fonts, author and licence. Space or Esc closes it. A project with a preview video still plays it in Quick Look.",
+    "Cavalry projects have no picture yet: Cavalry keeps none in the file, and its web player may not be shipped with other apps."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.330",
+   "build": 330,
+   "date": "5 Nov 2026",
+   "title": "Autograph and Cavalry files are back in the Motion filter",
+   "notes": [
+    "Autograph (.agp, .agt), Cavalry (.cv) and Plate files show up in the Motion filter again when you changed the Motion group in Settings > File Types with an older version. File types that Better Finder adds to a group later now join your edited group too; the ones you removed stay out."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.329",
+   "build": 329,
+   "date": "5 Nov 2026",
+   "title": "Viewers can no longer run code from a file",
+   "notes": [
+    "A crafted Lottie, 3D, Figma, Photoshop, project or template file can no longer run its own script in the viewer: every viewer page now carries a content security policy (no eval, no scripts or connections outside the app), and Lottie animations play with lottie-web's light build, which has no expressions. Animations, thumbnails and folder backgrounds look the same.",
+    "A viewer page can read only the file it shows (and its folder) while it shows it: not the files of folders previewed earlier in the session, not through a symlink or \"..\".",
+    "A project page (After Effects, Premiere Pro, Motion, Final Cut, Filmora, VEGAS, Resolve) can ask for pictures and sound only of the footage its project names or files beside the project, and only into its own preview folder.",
+    "Previewing a very large 3D model (hundreds of MB) no longer freezes the app while the file is read."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.328",
+   "build": 328,
+   "date": "5 Nov 2026",
+   "title": "Video thumbnails and scrub strips use the Mac's media engine",
+   "notes": [
+    "Hover-scrub strips are made by reading the clip once instead of grabbing 48 frames one by one: the quick strip of a 2-minute 1080p clip takes 0.2 s instead of 0.9 s and a twentieth of the processor time; the exact strip of a 4K HEVC clip 5 s instead of 11 s.",
+    "Video thumbnails and scrub strips of HEVC (H.265) clips are decoded on the Mac's media engine (VideoToolbox): a 4K HEVC thumbnail costs 0.2 s of processor time instead of 4.3 s, so the fans stay quiet. H.264 clips keep the processor's decoder, which is quicker for them.",
+    "Reading a folder of new clips uses half the cores, so the thumbnails and the rest of the app keep theirs.",
+    "The library's database keeps more of itself in memory and finds rows to transcribe, stale rows and kinds through indexes: a 20,000-item folder lists in 127 ms instead of 167 ms.",
+    "A leaner folder listing for the apps (29% fewer bytes), ready for the Mac and Windows / Linux apps to switch to in a coming version."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.327",
+   "build": 327,
+   "date": "5 Nov 2026",
+   "title": "Faster, cooler, lighter on the battery",
+   "notes": [
+    "Big folders open sooner: the rows show first, then the Finder tags come in; Date Added and Date Created are read only when a column, sort or group shows them.",
+    "A file changed by another app refreshes the list a little later and in one go; a Finder tag set in Finder refreshes just that row. The app's own rating sidecars no longer make the folder list again.",
+    "Hover previews are prepared for the 8 clips nearest the middle of the window (was 30), never in Low Power Mode or when the Mac is hot, and the ones for clips you scrolled past are dropped. Hovering a clip never waits behind them.",
+    "The previews kept in memory are limited by their size (256 MB, more on Macs with lots of memory), not just by their number.",
+    "Visual Search reads a folder in the background only when the Mac isn't in Low Power Mode or hot, in smaller parts on battery.",
+    "Fewer timers run for nothing: the Welcome and Visual Search pages ask about downloads only while one is going on, a hidden Smart Folder tab stops checking, columns listen to their own scrolling only.",
+    "The app starts with fewer database connections and reads its licence state from the last run first."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.326",
+   "build": 326,
+   "date": "5 Nov 2026",
+   "title": "Your files and notes are safer",
+   "notes": [
+    "Transcripts, tags and other notes are no longer removed when a folder can't be read for a moment (a disk or network share that dropped out, a folder without permission). Only files that are really gone leave the library.",
+    "Trim, Export and Remove Audio never replace the original clip, not even when the new name differs only in capitals (CLIP.MP4 for clip.mp4) or in accents.",
+    "Copying a folder into itself or into one of its own folders is refused, like in Finder (it filled the disk with copies of copies before).",
+    "Clicking a tag with a name of your own in the sidebar no longer quits the app.",
+    "Extract Here keeps everything that came out whole when one entry of a ZIP is damaged, and says which entries it couldn't extract. Old ZIPs with accented names are read too.",
+    "Dragging files onto the Trash in the sidebar (or into the open Trash) is a real Move to Trash: Put Back knows where they came from. Pasting into the Trash is refused, like in Finder.",
+    "Rename N Items: names no longer keep a space typed before or after the text."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.325",
+   "build": 325,
+   "date": "4 Nov 2026",
+   "title": "Settings: Updates opens at once",
+   "notes": [
+    "Settings ▸ Updates no longer keeps the app busy for a long time. What's New shows the 10 newest versions; Show Older Versions adds 20 more each time.",
+    "A version's notes are made only when you open it, so the page stays quick however many versions there are."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.324",
+   "build": 324,
+   "date": "4 Nov 2026",
+   "title": "Settings: one Views page",
+   "notes": [
+    "Settings has a new Views group with one page for all four views, in Finder's order: Grid, List, Columns, Gallery. Each part has its on / off switch, its size and its own options.",
+    "The Columns options (column width, the connector line's shape, colour, glow and dots) are now the Columns part of that page.",
+    "Browsing keeps File Types and Search. Workspaces moved under Windows & Sidebar, and Transcribe is last in Quick Actions.",
+    "Searching Settings for Grid, List, Columns or Gallery opens the Views page at that part. Your settings stay as they were."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.323",
+   "build": 323,
+   "date": "4 Nov 2026",
+   "title": "Path bar folders match the style",
+   "notes": [
+    "In the Windows 11 and Linux styles the address bar shows the style's folders (yellow, blue) like the files and the sidebar, not macOS's blue folders. They change with Settings ▸ Appearance ▸ Style.",
+    "Folders in the path bar keep their tag colour and Customize Folder symbol, the same as in the files. Disks and apps keep their own icon.",
+    "Get Info and Advanced Search results show folders the same way.",
+    "Folders inside an archive opened with Browse Archive use the style's folder too."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.322",
+   "build": 322,
+   "date": "4 Nov 2026",
+   "title": "Moving backgrounds use less memory",
+   "notes": [
+    "Moving folder backgrounds free their memory when you switch tabs.",
+    "A moving background that stays paused for 10 seconds (window covered or hidden, or more than 3 moving at once) lets its memory go too and keeps a still of its frame. It starts again from that point when it can move.",
+    "Folders with a GIF or video background open without a pause: the file is read in the background."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.321",
+   "build": 321,
+   "date": "4 Nov 2026",
+   "title": "Views in Finder's order",
+   "notes": [
+    "Views are in Finder's order: Icon, List, Columns, Gallery (⌘1–4). Here Icon is called Grid: ⌘1 Grid, ⌘2 List, ⌘3 Columns, ⌘4 Gallery, in the toolbar, the View menu, the right-click menu and Settings.",
+    "The Globe view is gone. Folders, tabs and workspaces that were in Globe open in Grid.",
+    "Your folders, tabs and workspaces keep the view you chose. Keys you changed yourself in Settings ▸ Shortcuts stay on the same view."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.320",
+   "build": 320,
+   "date": "4 Nov 2026",
+   "title": "A Lottie player with controls",
+   "notes": [
+    "Space on a Lottie animation (.json or .lottie) opens a player: play and pause (button or Return), a scrubber with the frame and time, step a frame with ← and → (Shift for 10), Home and End, speed from 0.25× to 4×, and loop on or off.",
+    "See the animation's size, frame rate, frames, length and Lottie version. Its markers are buttons that jump to their frame.",
+    "Show it on a checkerboard, dark or light background. A .lottie with several animations lets you pick one.",
+    "View JSON shows the animation's data on the code card, and Play Animation goes back.",
+    "Plain .json files show as code. Only real Lottie animations open in the player.",
+    "Several selected files: ⌘← and ⌘→ move from a Lottie to the next file (← and → step frames there). Your speed, loop and background are kept."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.319",
+   "build": 319,
+   "date": "4 Nov 2026",
+   "title": "Code files on a card",
+   "notes": [
+    "Space on a code file shows it on a card with window dots, its name and language, line numbers and syntax colours, on a soft background. JavaScript, TypeScript, Python, Java, C#, C, C++, SQL, HTML, CSS, Shell, PHP, Go, Rust, Kotlin, Swift, JSON, YAML, XML, Markdown, TOML, Lua, Ruby and After Effects scripts (.jsx).",
+    "Pick a theme (Auto follows light or dark mode), a background, the text size, line numbers and wrapping. Your choices are kept.",
+    "Copy copies the code. Copy Image and Save PNG make a picture of the card, ready to share.",
+    "Big files open at once and get their colours as you look. Minified files wrap by themselves.",
+    "JSON: minified JSON is shown formatted, and objects and arrays fold with the arrow next to the line number (Option-click folds every block at that level). Lottie animations saved as .json still open as animations.",
+    "A .jsxbin (compiled ExtendScript) says why there is no code to show. Files in UTF-16 or Latin-1 read right, and a binary file named like code says so.",
+    "Several selected code files: the arrow keys move from one to the next.",
+    "More code types count in the Code & Scripts filter: .mjs, .cjs, .tsx, .java, .cs, .c, .h, .cpp, .sql, .php, .go, .kt, .toml, .lua, .rb and others."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.318",
+   "build": 318,
+   "date": "4 Nov 2026",
+   "title": "Bigger template previews",
+   "notes": [
+    "Motion Graphics Templates and DaVinci Resolve templates: the preview now fills the window, centred, at the movie's or picture's own shape. A template's preview movie is often wide even when the template is tall, so it used to look tiny and pushed to one side.",
+    "Zoom the preview: pinch, ⌘ scroll, + and -, 0 to fit, 1 for actual size, or the buttons on it. Drag to move around when zoomed in.",
+    "F or a double-click shows the preview alone in the whole window. Press F again to bring back the card and controls.",
+    "If the After Effects viewer runs out of memory while playing a big template, it opens the project again with a note instead of going blank.",
+    "The card and its buttons are centred under the preview."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.317",
+   "build": 317,
+   "date": "4 Nov 2026",
+   "title": "Project viewers in Storage",
+   "notes": [
+    "Settings ▸ Storage has a new Project viewers row: the working files of the After Effects, Premiere, Photoshop, PowerPoint, Figma, template and editing-app viewers, with their size and a Clear button.",
+    "Clearing thumbnails no longer removes these files, and template projects no longer hide under Other.",
+    "The cache size limit now trims old project viewer files too, least recently used first. Projects used in a viewer in the last 3 hours are kept."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.316",
+   "build": 316,
+   "date": "4 Nov 2026",
+   "title": "Pick media in project viewers",
+   "notes": [
+    "In the project viewers (Resolve, Filmora, Final Cut, VEGAS, Premiere), picking a clip in the media panel now shows that clip: its picture, its sound when played, and its name in the header, instead of leaving the last timeline on screen.",
+    "↑ and ↓ in the media panel step through its clips and timelines."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.315",
+   "build": 315,
+   "date": "4 Nov 2026",
+   "title": "Affinity viewer, livelier templates, smoother projects",
+   "notes": [
+    "Space on any Affinity document (.af, .afdesign, .afphoto, .afpub, older ones too) opens its own viewer: the picture big, plus its app and version, author, colour profile, fonts, layers, linked files (found or missing), data merge fields, styles and text.",
+    "Apple Motion effects (.moef) now move on the sample card: their Ramp and Overshoot behaviours play, with the choices of their rig.",
+    "VEGAS Pro projects are drawn much closer to their render: each event's pan / crop with its keyframes, fades in and out, and titles in their font, size, colour and place.",
+    "Filmora projects open at once: media in the bundle is unpacked only when first shown, and playing a long movie decodes it in runs, so it plays smoothly.",
+    "Bigger, easier play controls in the project viewers.",
+    "Space on several files includes Affinity documents."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.314",
+   "build": 314,
+   "date": "4 Nov 2026",
+   "title": "Space on many files, template Play",
+   "notes": [
+    "Select several files and press Space: each one opens in its own viewer (templates, After Effects and Premiere projects, Figma, Photoshop, PDF, archives…), the others in Quick Look, one after another.",
+    "A bar under the viewer shows where you are (3 / 20) with Previous, Next and a list of all the files. ← → or Page Up / Page Down move through them (⌘← ⌘→ in the After Effects and Premiere timelines and in PDFs, whose arrows step frames and pages).",
+    "Motion Graphics Templates: Play and Open in After Effects Viewer now sit right under the picture.",
+    "Play plays the template's preview movie, or, when it has none, opens it in the After Effects viewer and plays it there.",
+    "The After Effects viewer now opens a template at its own composition. Before, it could open a small precomp that looked empty, so some templates seemed not to work.",
+    "DaVinci Resolve packs (.drfx): bigger rows with a picture of each title, a clear selection, and ↑ ↓ Home End to move through them."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.313",
+   "build": 313,
+   "date": "4 Nov 2026",
+   "title": "VEGAS Pro projects",
+   "notes": [
+    "Press Space on a VEGAS Pro project (.veg): its timeline opens in the project viewer, with each track, event, media file and title text, no VEGAS needed.",
+    "The frame at the playhead is sketched from the media found beside the project; Play plays its sound.",
+    "A render saved beside the project with its name (Intro.veg and Intro.mp4) plays with Play Render, and Choose Preview File offers it first.",
+    "VEGAS projects get a card with their version, media (found or missing), generators and title texts, and show up in Used in Projects.",
+    "The viewer says what it doesn't draw: pan / crop, track motion, effects, fades and transitions."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.312",
+   "build": 312,
+   "date": "4 Nov 2026",
+   "title": "Affinity documents",
+   "notes": [
+    "Affinity 3 documents (.af) show their own thumbnail, and older .afdesign, .afphoto and .afpub files use the picture they keep first.",
+    "Press Space on an Affinity document: its picture, titled with the document's name, even without Affinity installed.",
+    "The card lists the app, version, author, pages, artboards and whether the document uses files outside it (Affinity 3); older documents show their picture and file details."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.311",
+   "build": 311,
+   "date": "4 Nov 2026",
+   "title": "DaVinci Resolve projects",
+   "notes": [
+    "Press Space on a DaVinci Resolve project (.drp) or archive (.dra): its timelines and compound clips, the Media Pool folders and the timeline open in the project viewer.",
+    "The frame at the playhead is sketched from the media, found in the archive's MediaFiles folder; Play plays the sound.",
+    "Effect names on each clip are listed in its tooltip; titles and Fusion clips show as labelled boxes.",
+    "Resolve projects show their own thumbnail and a card with their timelines and media.",
+    "The viewer says what it doesn't draw: Inspector values, effects, Fusion, colour and transitions."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.310",
+   "build": 310,
+   "date": "4 Nov 2026",
+   "title": "Final Cut Pro projects",
+   "notes": [
+    "Press Space on a Final Cut Pro XML (.fcpxml or .fcpxmld): its projects and compound clips open in the project viewer, with the primary storyline and connected clips as tracks.",
+    "The frame at the playhead is sketched from the media with each clip's position, scale, rotation and opacity; titles show their text; Play plays the sound.",
+    "Media that moved with the XML, in the Final Cut Original Media folder beside it, is found.",
+    "Press Space on a Final Cut Pro library (.fcpbundle): its events, projects and original media are listed. Export a project as XML to see its timeline.",
+    "The viewer says what it doesn't draw: effects, title looks, colour, transitions and speed ramps."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.309",
+   "build": 309,
+   "date": "4 Nov 2026",
+   "title": "Apple Motion projects and Final Cut Pro templates",
+   "notes": [
+    "Press Space on a Motion project (.motn) or a Final Cut Pro title (.moti), transition (.motr) or effect (.moef): it opens in the project viewer, no Motion needed.",
+    "Groups show as a tree, the timeline lists each layer with its keyframes and behaviors, and the frame at the playhead is sketched: pictures and drop zones, text with its font, colour solids, rectangles, image masks.",
+    "Transitions show Transition A and Transition B as coloured cards, effects show their source clip as a card, titles play over grey.",
+    "The parameters a template publishes to Final Cut Pro's Inspector are listed beside the tree, with their values and colours.",
+    "Templates show their own large.png thumbnail, a card with size, frame rate, fonts and media, and appear in Used in Projects and Advanced Search's Templates field.",
+    "The viewer says what it doesn't draw: behaviors, filters, particles, replicators, 3D and text animation."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.308",
+   "build": 308,
+   "date": "4 Nov 2026",
+   "title": "DaVinci Resolve templates",
+   "notes": [
+    "Press Space on a DaVinci Resolve / Fusion template (.setting or .drfx): its published controls appear as in Fusion's Inspector, with each text's default words and font, colours, sizes, positions, sliders, checkboxes and menus (read only).",
+    "A still of the title is drawn from its Text+ layers: the words, font, colour, outline and place, at the moment most of them are on screen.",
+    "A .drfx pack lists its templates by Titles, Effects, Generators and Transitions, with their icons. Click one to see it.",
+    "Templates without a picture of their own get that drawn still as their thumbnail.",
+    "Advanced Search ▸ Templates finds Resolve templates by their text, control names or fonts too.",
+    "Other apps' files named .setting still open in Quick Look."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.307",
+   "build": 307,
+   "date": "4 Nov 2026",
+   "title": "Filmora projects",
+   "notes": [
+    "Press Space on a Filmora project (.wfpbundle or .wfp): its timelines, the media panel and a Premiere-like timeline open in the project viewer, no Filmora needed.",
+    "Compound clips open as their own timeline (double-click). Effect clips, muted and hidden tracks, speed and reversed clips are shown.",
+    "The frame at the playhead is sketched from the project's own media, with position, scale, rotation and opacity. Play plays its music and sound.",
+    "Media packed inside a .wfpbundle is copied out once for the viewer, never changed. Filmora's stock media, which the project doesn't carry, shows as a labelled box.",
+    "Filmora projects show their own thumbnail, a card with their timelines and Used Media, and appear in Used in Projects and Advanced Search's Templates field.",
+    "The viewer says what it doesn't draw: effects, masks, transitions, titles and keyframes."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.306",
+   "build": 306,
+   "date": "4 Nov 2026",
+   "title": "Motion Graphics Templates",
+   "notes": [
+    "Motion Graphics Templates (.mogrt) show their own thumbnail in every view.",
+    "Press Space on a .mogrt: its picture and preview movie, whether it was made in After Effects or Premiere Pro, size, frame rate, duration, fonts and the Premiere version it needs.",
+    "Its editable controls appear as in Premiere's Essential Graphics panel: text with its default words and font, colours, sliders with their range, checkboxes, angles, positions, groups and media holders (read only).",
+    "Open in After Effects Viewer opens the template's own project with its footage. It is copied out once, and only the last few are kept.",
+    "Templates made in Premiere Pro open their sequence in the Premiere Pro viewer.",
+    "Advanced Search has a new Templates field: find templates by their default text, control names or fonts."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.305",
+   "build": 305,
+   "date": "4 Nov 2026",
+   "title": "Sound in After Effects and Premiere projects",
+   "notes": [
+    "Press Space on an After Effects or Premiere Pro project and Play: you now hear its music, voice and sound effects in time with the picture.",
+    "After Effects: audio layers and footage with sound, inside precomps too, with the Audio switch, Solo, Audio Levels, layer stretch and Time Remap.",
+    "Premiere Pro: every audio track with its clips, speed, track Mute and Solo, and the clip and track Volume with its keyframes.",
+    "Dragging the playhead plays short snippets, as in After Effects and Premiere.",
+    "A speaker button and volume slider next to Play. Your choice is remembered.",
+    "Missing media stays silent. The sound stops when you close the viewer, pick another comp or sequence, or move to another file."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.304",
+   "build": 304,
+   "date": "4 Nov 2026",
+   "title": "Faces, grain and clipped layers in After Effects projects",
+   "notes": [
+    "After Effects viewer: characters keep their eyes and mouths. Common rig expressions are now worked out, such as a slider choosing a drawing with framesToTime, effect sliders and checkboxes, and simple maths.",
+    "Grain and texture layers clipped to the shape under them (a Photoshop clipping mask, Preserve Underlying Transparency in After Effects) no longer cover the frame as rectangles.",
+    "Track mattes and masks deep inside nested comps are now applied.",
+    "The first look at a project whose footage comes from big Photoshop files is several times quicker."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.303",
+   "build": 303,
+   "date": "3 Nov 2026",
+   "title": "Looping comps stay on screen",
+   "notes": [
+    "After Effects viewer: a precomp looped with Time Remap and loopOut() (or loopIn()) now keeps playing past its end instead of disappearing while you drag the playhead.",
+    "Time Remap is now followed for every precomp and footage layer, and loopOut / loopIn (cycle, pingpong, offset, continue) work on any property.",
+    "Dragging the playhead over comps made of big Photoshop layers is smoother.",
+    "Photoshop viewer: moving around and zooming with layers switched on or off is about three times smoother."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.302",
+   "build": 302,
+   "date": "3 Nov 2026",
+   "title": "Show and hide Photoshop layers",
+   "notes": [
+    "In the Photoshop viewer, click the eye next to a layer or group to hide or show it. The picture is then drawn layer by layer, with blend modes, opacity, clipping masks and layer masks. Show as Saved goes back to the picture saved in the file.",
+    "Layer effects (drop shadow, stroke...) and adjustment layers aren't drawn when layers are shown one by one.",
+    "After Effects projects that use a Photoshop file's layers (a PSD imported as a composition) now show each layer's own picture instead of grey boxes, and open much faster."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.301",
+   "build": 301,
+   "date": "3 Nov 2026",
+   "title": "Sync spinner for Dropbox and iCloud",
+   "notes": [
+    "Files that Dropbox, iCloud Drive or another cloud app is uploading or downloading show a turning ring with an arrow (up or down), like Finder: in the Sync column of List, after the name in Grid, on the thumbnail in Gallery, and now in Columns too.",
+    "It follows along by itself: the ring appears when the upload starts and gives way to nothing (synced) or the cloud when it ends.",
+    "Download Now turns the ring at once. A file the cloud app says it is downloading turns for up to 3 minutes, then shows the cloud again until it really arrives (some downloads wait in a queue for hours).",
+    "Columns also show the other sync states: in the cloud only, waiting, conflict, not synced."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.300",
+   "build": 300,
+   "date": "3 Nov 2026",
+   "title": "Photoshop files on a canvas",
+   "notes": [
+    "Space on a Photoshop file (.psd or .psb) opens it on a canvas like Figma: every artboard side by side, drag to move around, scroll or pinch to zoom, double-click or 0 to see it all.",
+    "Artboard names sit above each artboard: click one to zoom to it. The Layers list (L) shows groups, artboards and layers; click a layer to outline it, and copy the words of a text layer with Copy Text or Command C.",
+    "The file's own small preview shows at once while the full picture is prepared (about a second for a 200 MB file); opening it again is instant.",
+    "What you see is the picture Photoshop saved with the file: hiding a layer or its effects can't be shown. A file saved without Maximize Compatibility shows its small preview and says so."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.299",
+   "build": 299,
+   "date": "3 Nov 2026",
+   "title": "Sturdier scanning",
+   "notes": [
+    "A file that makes reading its details hang (damaged, or on a network drive that stopped answering) no longer holds up scanning: it is skipped after a minute and tried again next time.",
+    "A big animated GIF on a slow drive is no longer saved as a still picture when counting its frames takes too long.",
+    "An After Effects comp in a Premiere Pro project whose .aep has become online only in Dropbox or iCloud shows as In the cloud only instead of being downloaded."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.298",
+   "build": 298,
+   "date": "3 Nov 2026",
+   "title": "Snappier browsing, less memory",
+   "notes": [
+    "Moving through a big folder with the arrow keys is quicker in every view (about 3x in List and Columns, 2x in Gallery, 1.6x in Grid).",
+    "Closed tabs now give their memory back: a long session with many tabs no longer keeps growing.",
+    "The free space in the status bar is read in the background, so the window no longer pauses every few seconds while you move through files.",
+    "Group By Size puts apps in their real size group (they all went to \"Under 100 KB\").",
+    "Columns: the total size of a selection now counts the apps in it."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.297",
+   "build": 297,
+   "date": "3 Nov 2026",
+   "title": "Faster Advanced Search, fewer hangs",
+   "notes": [
+    "Advanced Search walks folders faster (about 40% quicker on a big local folder, and far fewer requests on a network share).",
+    "Find Duplicates lists the same sets in the same order every time, the biggest files first.",
+    "A folder holding a special file named like media (a named pipe such as \"x.mov\") no longer makes browsing or indexing hang.",
+    "Extracting a large .gz file no longer loads it all into memory, and a damaged one leaves no half-written file behind.",
+    "Windows and Linux: Extract Here keeps accented file names (ZIP on Windows, 7z on Linux), and Linux says which package to install when the archive tool is missing."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.296",
+   "build": 296,
+   "date": "3 Nov 2026",
+   "title": "Smoother Premiere Pro viewer",
+   "notes": [
+    "Dragging the playhead (or holding an arrow key) in the Premiere Pro viewer no longer lags behind the mouse: the frame is drawn once per screen refresh with the latest time, lighter while you drag, then sharp again when you let go.",
+    "Play keeps the sequence's own pace instead of slowing down and skipping, and movie clips keep updating while it plays.",
+    "After Effects comps in a Premiere project are read ahead, so they don't pop in while you scrub or play."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.295",
+   "build": 295,
+   "date": "3 Nov 2026",
+   "title": "After Effects comps inside Premiere projects",
+   "notes": [
+    "In the Premiere Pro viewer (Space on a .prproj), a clip that is an After Effects comp placed by Dynamic Link now shows the comp itself, drawn like the After Effects viewer draws it, with the clip's position, scale and opacity. The .aep file must be on this Mac.",
+    "The clip's tooltip names the comp."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.294",
+   "build": 294,
+   "date": "2 Nov 2026",
+   "title": "Smoother scrubbing in the After Effects viewer",
+   "notes": [
+    "Dragging the playhead (or holding an arrow key) in the After Effects viewer no longer lags behind the mouse: the frame is drawn once per screen refresh with the latest time, and lighter while you drag, then sharp again when you let go."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.293",
+   "build": 293,
+   "date": "2 Nov 2026",
+   "title": "Effects and Master Properties in the After Effects viewer",
+   "notes": [
+    "The After Effects viewer's frame now draws three common effects: Gaussian Blur (soft backgrounds look soft, not as hard shapes), Fill and Drop Shadow.",
+    "Master Properties (Essential Graphics) are followed: each copy of a precomp shows its own text, pictures and values, as in After Effects, instead of all showing the same.",
+    "Colours driven by a simple expression that reads an expression control (thisComp.layer(\"Controls\").effect(\"Color 1\")(\"Color\")) are drawn with that colour. Other expressions are still not run.",
+    "A track matte with no matte layer chosen (After Effects 2023 and later) no longer hides the layer.",
+    "A layer style with its own blending mode is left out (listed with Outlines) rather than drawn in the wrong colour."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.292",
+   "build": 292,
+   "date": "2 Nov 2026",
+   "title": "Premiere Pro projects on Space",
+   "notes": [
+    "Press Space on a Premiere Pro project (.prproj) to look inside it without Premiere: its sequences (with nesting) or its bins as in the Project panel, with a filter, and the selected sequence's settings: frame size, frame rate, pixel aspect, audio rate and duration.",
+    "The timeline shows video tracks above audio tracks like Premiere: clips placed by their in and out times with their names and label colours, speed changes, effects (fx), transitions, sequence and clip markers, muted and locked tracks. Point at a clip for its details: source file, in point, speed, Motion, effects.",
+    "Drag in the time ruler or the tracks to scrub; the frame above shows the picture at the playhead, made from each clip's own file with its Motion values (position, scale, rotation, anchor, crop) and opacity. The playhead starts where Premiere left it. Arrow keys step a frame, Up and Down jump to the previous or next edit, L plays, K stops.",
+    "Double-click a nested sequence to open it; the path at the top takes you back. Missing media is marked Offline in red; files that are only in the cloud are never downloaded.",
+    "It is a sketch read from the project file: effects, transitions, titles and graphics, After Effects comps by Dynamic Link and blend modes are not drawn (titles and comps show as labelled boxes)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.291",
+   "build": 291,
+   "date": "2 Nov 2026",
+   "title": "Layer styles in the After Effects viewer",
+   "notes": [
+    "The After Effects project viewer draws layer styles: Stroke (outside, inside or centre), Drop Shadow, Outer Glow and Color Overlay, so outlined titles look as they do in After Effects. Other styles (Bevel, Inner Glow, Gradient Overlay…) are listed on the layer's outline as not drawn.",
+    "A soloed sound layer no longer hides the pictures: like After Effects, Solo leaves out only the other layers of the same kind.",
+    "Projects you opened before are read again once, to pick up the styles."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.290",
+   "build": 290,
+   "date": "2 Nov 2026",
+   "title": "After Effects frames without After Effects",
+   "notes": [
+    "The After Effects project viewer now draws the composition at the time you scrub to: solids, footage (pictures, image sequences and the right frame of movies), precomps, shape layers, text, masks, alpha track mattes and blending modes, with keyframes eased like After Effects and parenting.",
+    "Drag to pan, scroll with Command or Control to zoom, double-click or Fit to fit. Click in the frame to select a layer in the timeline. Play runs the sketch through the work area.",
+    "Outlines shows every layer's box and name; layers with effects, expressions, 3D or other things the sketch can't show get a dashed outline that says so.",
+    "It is a sketch read from the project file: effects, expressions, 3D cameras and lights, luma mattes (drawn as alpha), shape operators such as Repeater and Trim Paths, and text animators are not drawn. Render Preview shows the real frame."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.289",
+   "build": 289,
+   "date": "2 Nov 2026",
+   "title": "After Effects projects on Space",
+   "notes": [
+    "Press Space on an After Effects project (.aep or .aet) to look inside it without After Effects: every composition in a tree (by nesting or by folders, with a filter), and the selected one's timeline like AE's: layer bars in their label colours, switches, blending modes, track mattes, parents, effects, markers, keyframes and expressions.",
+    "Drag in the time ruler to scrub. Arrow keys step a frame (Shift: 10), J and K jump to the previous or next keyframe, Home and End go to the start and end, Command or Control with the scroll wheel zooms the time.",
+    "Double-click a precomp layer to open it; the path at the top takes you back. Expand a layer to see its animated properties, expressions and effects.",
+    "Missing footage is marked in red. A project with a rendered preview has a Play Preview button.",
+    "Everything is read from the project file: the frame area shows the composition's size and background only, and label colours are After Effects' defaults."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.288",
+   "build": 288,
+   "date": "2 Nov 2026",
+   "title": "App sizes in Recents",
+   "notes": [
+    "Apps in Recents and in search results show their size again instead of staying at Calculating.",
+    "Opening Recents or a search stops the folder sizes still being added up for the folder you left, so the list's own sizes come sooner.",
+    "A folder size stopped by another pane or tab is worked out again instead of waiting until you scroll."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.287",
+   "build": 287,
+   "date": "2 Nov 2026",
+   "title": "Number keys switch tabs",
+   "notes": [
+    "Click a tab bar, then press 1 to 9 for the 1st to 9th tab of that pane and 0 for the 10th, counted from the left. Works when the pane has two tabs or more.",
+    "A click anywhere else, any other key, or leaving the window ends it, so typing in the file list works as before.",
+    "Turn it off in Settings ▸ Windows & Tabs ▸ Number keys."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.286",
+   "build": 286,
+   "date": "2 Nov 2026",
+   "title": "PowerPoint slides one at a time",
+   "notes": [
+    "Space on a PowerPoint file (.pptx, .ppsx, .potx) opens its slides in the same viewer as PDFs: one slide at a time, ← and → to go through them, type a slide number, zoom, and Full Screen (F) to present. No PowerPoint or Keynote needed.",
+    "The first slide shows at once and the others follow in a few seconds. The next time the file opens at once.",
+    "Pictures, text, shapes, backgrounds and tables are drawn; charts and SmartArt show as a labelled box. Fonts the file names but this Mac lacks are replaced by similar ones.",
+    "The bar's Open button opens the file in its own app (Keynote or PowerPoint) to edit or play it. Double-click still opens it there too."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.285",
+   "build": 285,
+   "date": "2 Nov 2026",
+   "title": "PDF viewer: go to a page, zoom buttons, full screen",
+   "notes": [
+    "Type a page number: click \"3 / 22\" in the PDF viewer (or press ⌘L), type 15 and press Return. Esc leaves the field without closing the viewer.",
+    "Zoom buttons in the bar: − and +, and the zoom in % between them: click it to switch between fitted to the window and actual size (100%).",
+    "Full screen for presenting: the Full Screen button, F or ⌃⌘F. The page fills the screen on black, the bar and the pointer hide after 2 seconds and come back when you move the mouse. A click, Space, → or ↓ go to the next page, ← or ↑ back. Esc leaves full screen; a second Esc closes the viewer. Your other displays stay as they are."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.284",
+   "build": 284,
+   "date": "1 Nov 2026",
+   "title": "PDFs one page at a time",
+   "notes": [
+    "Space on a PDF opens it in Better Finder's own viewer: one page at a time, fitted to the window on a dark background, instead of one long scroll of every page.",
+    "← and → (or Page Up, Page Down, Home, End) turn the pages; ↑ and ↓ still go to the file before or after. Space or Esc closes. Pinch, ⌘+ and ⌘- zoom; a double-click fits the page again.",
+    "The bar below shows the page number (3 / 22), previous and next buttons, page thumbnails to jump to a page, and Open in Preview. The page you were on is kept until you quit.",
+    "Double-click on a PDF opens it here too. Settings ▸ File Types ▸ PDF: untick it to open PDFs in Preview again. Open With ▸ Preview still works.",
+    "Illustrator files saved with PDF content open in the same viewer on Space, a PDF inside a browsed archive too. A PDF with a password asks for it."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.283",
+   "build": 283,
+   "date": "1 Nov 2026",
+   "title": "Look inside archives",
+   "notes": [
+    "Space on a .zip, .rar, .7z, .tar.gz (and other archives) lists what's inside without extracting it: folders open and close, with sizes, dates, the number of files and the unpacked size. Filter by name at the top.",
+    "Right-click an archive ▸ Browse Archive (⌥⌘↓), or Browse in its Space list, opens it like a folder in List, Grid or Columns. It is read-only: nothing inside can be renamed, moved or deleted. ⌘↑ or the path bar takes you back.",
+    "Inside an archive, Space shows a file (picture, video, PDF, text, Figma, Lottie…) by reading out just that file. Right-click ▸ Extract to Archive's Folder copies the chosen files next to the archive.",
+    "Double-click still extracts the archive, as before."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.282",
+   "build": 282,
+   "date": "1 Nov 2026",
+   "title": "Look inside Figma files",
+   "notes": [
+    "Space on a Figma file (.fig) shows its pages without Figma: drag to move around, scroll or pinch to zoom, double-click to fit, click a frame to zoom to it. Pick a page at the top left.",
+    "Text, pictures, components, gradients, shadows and blurs are drawn as in Figma. Big files open in a few seconds and stay smooth; the file's own thumbnail shows while it loads.",
+    "Older Figma files (saved before 2023) now get thumbnails in Grid, Gallery, Get Info and the Preview column."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.281",
+   "build": 281,
+   "date": "1 Nov 2026",
+   "title": "New Folder with Selection on top",
+   "notes": [
+    "Right-click files: New Folder with Selection is now the first item, like Finder, and shows how many items it will move. It works for a single item too.",
+    "It is no longer inside Organize ▸. Settings ▸ Right-Click Menus can hide it. ⌃⌘N still works."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.280",
+   "build": 280,
+   "date": "31 Oct 2026",
+   "title": "A cleaner welcome",
+   "notes": [
+    "The welcome for new installs (Help ▸ Welcome to Better Finder…) has a new look: one question per page with a big picture, dots for the steps and Skip setup at the bottom left.",
+    "Pick a Workspace from five tiles (Standard, Editor, Motion, Designer, Developer). Folders, the optional downloads and Free and Pro are grouped on clear cards."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.279",
+   "build": 279,
+   "date": "31 Oct 2026",
+   "title": "Search in Settings",
+   "notes": [
+    "Settings has a search field at the top of its sidebar. It finds options inside every page, not only page names: type \"loop\", \"cache\" or \"hotkey\", then click a result to jump to that option. ⌘F goes to the field, ↑↓ pick a result, Return opens it, Esc clears.",
+    "The Settings sidebar is shorter and grouped as General, Browsing, Player, Quick Actions, AI and System. Sounds is now part of Appearance, Sidebar is part of Windows & Sidebar, and Control Bar, Subtitles and Transcript are together in Player Look."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.278",
+   "build": 278,
+   "date": "31 Oct 2026",
+   "title": "Tooltips everywhere",
+   "notes": [
+    "Every icon and slider now says what it does when you point at it: the Compare position slider, the size sliders in Settings ▸ List, Grid & Gallery and Globe, the column line sliders, and the pane buttons in Settings ▸ Workspaces."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.277",
+   "build": 277,
+   "date": "31 Oct 2026",
+   "title": "A welcome for new installs",
+   "notes": [
+    "The first time Better Finder opens on a Mac, a short welcome helps you set it up: pick a Workspace and a style, bring Finder's sidebar over, choose whether “Show in Finder” and folders open here, download the Visual Search and Whisper models if you want them, and see what Free and Pro include.",
+    "Skip closes it at any step, and everything in it is also in Settings. If you already used Better Finder, you won't see it: Help ▸ Welcome to Better Finder… opens it any time."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.276",
+   "build": 276,
+   "date": "31 Oct 2026",
+   "title": "Crash reports",
+   "notes": [
+    "If Better Finder quits unexpectedly, it asks at the next start whether to send a report. Send Report opens an email you can read first: the app and macOS version and where the app stopped (your home folder shown as ~), not your files. Show Report shows the file in Finder.",
+    "Help ▸ Report a Problem… opens an email with the app and macOS version filled in.",
+    "Settings ▸ Updates ▸ Offer to send crash reports turns the question off (or tick Don't ask again)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.275",
+   "build": 275,
+   "date": "31 Oct 2026",
+   "title": "Right-click the filter bar",
+   "notes": [
+    "Right-click the filter bar (its empty space, or All Types, AI and Tidy Up) for File Types Settings…, Chip Style, Layout (one line or more lines), Chip Order… and Show Hidden Chips. A type chip keeps its own menu (Rename, Color, Hide)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.274",
+   "build": 274,
+   "date": "31 Oct 2026",
+   "title": "Finder's columns, a calmer sidebar, chip style controls",
+   "notes": [
+    "New List columns from Finder: Date Last Opened, Version and Comments (right-click a column title to show them). Sort By has Date Last Opened too. They start hidden.",
+    "Fixed: after 0.273 the view buttons in the toolbar didn't follow ⌘1 to ⌘5 (the view changed, the toolbar stayed on List).",
+    "Standard now shows Finder's own columns: Name, Size, Kind, Tags and Date Added. Every built-in workspace opens one pane in List; set it up yourself and Save Changes if you like.",
+    "Fixed: switching to a built-in workspace moved the Sync Status column to the far right, an empty column title in Dropbox and iCloud folders. It's back after Name.",
+    "The sidebar is a calm neutral grey that matches the files and tabs in Light and Dark, instead of taking the desktop picture's tint. Settings ▸ Sidebar ▸ Background brings the translucent one back.",
+    "Settings ▸ File Types ▸ Chip style ▸ Advanced: how grey the chips are, how strong and wide their edges are, and how much colour the icons have (down to plain grey). The preview follows as you move them; Reset puts them back."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.273",
+   "build": 273,
+   "date": "31 Oct 2026",
+   "title": "Workspaces, a calmer filter bar",
+   "notes": [
+    "Workspaces: the new Workspace button in the toolbar (left of the view buttons) switches the List columns, the view, the panes and the sidebar in one click. Standard is a plain Finder-like list; Editor, Motion, Designer and Developer show the columns for that work, with the AI column.",
+    "Change anything after switching and the button shows a dot: Save Changes to this Workspace keeps it, Reset to Saved Layout goes back, Save as New Workspace… makes your own. Window ▸ Workspace and ⌥⌘1 to ⌥⌘9 switch too.",
+    "Settings ▸ Workspaces: drag to reorder, double-click to rename, tick the columns each workspace shows, choose its panes, view and sidebar. Folders with their own View Options keep them.",
+    "The filter bar stays on one line: the types that don't fit go into More, the one you picked always shows. All Types, AI and Tidy Up sit quietly at the right end. Settings ▸ File Types ▸ Layout brings back every chip on more lines.",
+    "The chips are calmer: a light grey pill with the type's colour on its icon, the count in grey. A colour you give a chip now shows on its icon.",
+    "Settings ▸ File Types ▸ Chip Order: drag the types into the order you want on the filter bar.",
+    "The tab bar is lighter: a softer groove and a selected tab without an outline."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.272",
+   "build": 272,
+   "date": "31 Oct 2026",
+   "title": "Transcribe in the background",
+   "notes": [
+    "Settings ▸ Transcribe ▸ Transcribe clips in the background: the clips of each folder you open get a transcript by themselves, one at a time, so Transcript search finds what is said without transcribing by hand. Off until you switch it on.",
+    "It runs only on this Mac (never a paid cloud service), only while the Mac is plugged in, not in Low Power Mode and not hot, and never on network drives. Your own transcriptions always go first: one of yours stops the background clip at once.",
+    "A clip that already has a transcript is never transcribed again, so your own edits are kept. Clips without speech are remembered and not tried again until they change.",
+    "It uses an official Whisper model when one is downloaded (Large v3 Turbo 8-bit knows every language), otherwise macOS Speech. Settings shows what it's doing now."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.271",
+   "build": 271,
+   "date": "31 Oct 2026",
+   "title": "Switch off the searches you don't use",
+   "notes": [
+    "Settings ▸ Search: switch off Transcripts, Visual or Advanced… if you don't use them. They're greyed out in the search panel and the search bar, nothing is read for them in the background, and the page shows how much space their models take, with a link to delete them. Names (like Finder's own search) always stays on.",
+    "Settings ▸ Transcribe suggests the 8-bit Large v3 Turbo first: as accurate as the full Turbo at half the size (874 MB instead of 1.6 GB) and half the memory. The 5-bit one (574 MB) is there too.",
+    "When an official Whisper model newer than this version's list appears on Hugging Face, Settings ▸ Transcribe offers it to download (checked at most once a day).",
+    "Cloud transcription: OpenAI's new gpt-transcribe model can be picked. Like gpt-4o-transcribe it gives no timestamps; whisper-1 stays the recommended one."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.270",
+   "build": 270,
+   "date": "31 Oct 2026",
+   "title": "More of Finder: Delete Immediately, Rotate, Hide Sidebar",
+   "notes": [
+    "File ▸ Delete Immediately… (⌥⌘⌫) deletes the selection without the Trash, after asking. In the right-click menu, hold ⌥ and Move to Trash becomes Delete Immediately…. Locked items are asked about before anything is deleted.",
+    "Quick Actions ▸ Rotate Left and Rotate Right turn pictures in place (JPEG, HEIC, TIFF, PNG, BMP, GIF). JPEG, HEIC and TIFF are not compressed again: only their orientation changes. Edit ▸ Undo turns them back.",
+    "View ▸ Hide Sidebar / Show Sidebar (⌃⌘S). New windows open the same way.",
+    "Go menu: Recents (⇧⌘F), Computer (⇧⌘C, all your disks), AirDrop (⇧⌘R), iCloud Drive, Utilities (⇧⌘U) and Recent Folders.",
+    "Window menu: Zoom, Move Tab to New Window, Merge All Windows and Bring All to Front.",
+    "Right-click a folder of yours in the sidebar ▸ Rename. A folder in the sidebar now follows when you rename or move it.",
+    "Right-click empty space: Show View Options, and Gallery in View as."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.269",
+   "build": 269,
+   "date": "31 Oct 2026",
+   "title": "Visual Search download while the model updates",
+   "notes": [
+    "Settings ▸ Visual Search: while the new model is downloading by itself after an update, the pane shows its progress at once, and clicking Download no longer shows an \"already downloading\" error."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.268",
+   "build": 268,
+   "date": "31 Oct 2026",
+   "title": "Crash fixes",
+   "notes": [
+    "Fixed: Better Finder quit when you clicked the Search button in the toolbar or pressed ⌘F.",
+    "Fixed: Better Finder could quit when it was opened by opening a folder or file with it (Open With, a double-click, Show in Finder from another app). The folder now opens in a tab once the window is ready.",
+    "Fixed: a rare crash in Compare when the sound buttons had nothing selected.",
+    "Moving or pasting thousands of files into another folder no longer pauses the app for a moment."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.267",
+   "build": 267,
+   "date": "31 Oct 2026",
+   "title": "Visual Search gets a new model",
+   "notes": [
+    "Visual Search and Find Similar now use Google's SigLIP model (licence Apache 2.0, about 213 MB) instead of Apple's MobileCLIP, whose licence allows research use only. In our tests it finds the right picture first a little more often than before.",
+    "If Visual Search is on, the new model downloads by itself once, in the background, and the old one (about 210 MB) is deleted. Pictures and videos are then read again as their folders open, like the first time. Until a folder has been read again, a search there finds only what has been read so far.",
+    "Settings ▸ Visual Search shows the model's maker and licence."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.266",
+   "build": 266,
+   "date": "31 Oct 2026",
+   "title": "Acknowledgements, and Remove Background without BRIA",
+   "notes": [
+    "Better Finder ▸ About Better Finder has a new window with the version, the website and an Acknowledgements button. Help ▸ Acknowledgements opens the same list: the open-source software, data and AI models Better Finder uses, each with its licence (⌘F finds in it).",
+    "Remove Background no longer offers BRIA RMBG, because its licence allows only non-commercial use. If you had chosen it, BiRefNet General is used when you have it, otherwise Apple Vision. The BRIA model file (about 1 GB) goes to the Trash the next time Better Finder starts. Models you added yourself are not touched."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.265",
+   "build": 265,
+   "date": "31 Oct 2026",
+   "title": "Crop and Reframe: clearer shapes, Tab between the size boxes",
+   "notes": [
+    "The shapes in Crop and Reframe come in two groups: Free (and Original in Crop) on the left, then a gap, then the fixed shapes 1:1, 4:5, 9:16, 16:9 and 21:9. It is still one choice: picking a shape in one group clears the other.",
+    "In the size boxes, Tab applies what you typed and goes from width to height, Shift-Tab from height back to width. Tab in the height box goes back to the width box. Esc still cancels."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.264",
+   "build": 264,
+   "date": "31 Oct 2026",
+   "title": "Crop and Reframe: type the exact size, new 21:9",
+   "notes": [
+    "Crop and Reframe show the width and height of the result in two boxes under Shape. They follow the frame as you drag it, and clicking a shape shows at once what size it gives (1:1 on a 1920 × 1080 picture: 1080 × 1080).",
+    "Type a size and press Return (or Tab, or click elsewhere): the frame takes exactly that size, around its centre. With Free the other side stays as it is, so 1080 typed for the width of a 1920 × 1080 picture gives 1080 × 1080. With a shape the other side follows the shape.",
+    "A size that doesn't fit is changed to the largest (or smallest) one that does, and the box flashes red. Video sizes are even numbers. The Up and Down arrows change the size by 1 (2 for video), with Shift by 10.",
+    "What you see is what you get: Reframe now saves a smaller frame at its own size (a 720 × 1280 frame gives a 720 × 1280 video). It used to scale it up to the full height.",
+    "New shape 21:9 in Crop and Reframe, and 16:9 in Reframe (handy for vertical clips). Blurred Background works with them too; its size is shown but set by the shape."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.263",
+   "build": 263,
+   "date": "30 Oct 2026",
+   "title": "Smoother browsing in big folders",
+   "notes": [
+    "Moving the selection with the arrow keys or the mouse is up to twice as fast in List, Grid and Columns, and about a third faster in Gallery: the path bar no longer rebuilds the folders it already shows.",
+    "Group By Date Added, Date Modified or Date Created no longer slows big folders down: a folder of 20,000 files opens in about a second instead of three, and each selection change in Grid view is instant again instead of taking more than half a second.",
+    "Scrolling the list draws rows a little quicker, and opening a big folder in Columns view does less work.",
+    "While a clip plays, the player uses less of the computer.",
+    "Nothing else changes: the same files, groups, order and look as before."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.262",
+   "build": 262,
+   "date": "30 Oct 2026",
+   "title": "New files show up right away",
+   "notes": [
+    "A file you make in Better Finder (Crop, Convert Image, Reframe, Compress, Trim, Duplicate, paste, New Folder, Extract, Remove Background, Create PDF) is selected and scrolled into view at once, also in folders opened through a link such as ~/Dropbox. Before, with Date Added newest first it landed at the top, out of sight.",
+    "New Folder in a folder opened through a link starts with its name ready to type again.",
+    "Disks without Date Added (exFAT, FAT, network shares): a copy, a duplicate or a file moved in now counts as added when you put it there, so it sorts and groups as new (it used to keep its old date).",
+    "Windows and Linux: files that other apps add, remove or rename in the open folder show within a second, without clicking back into the window. Files made by Quick Actions are selected and scrolled into view."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.261",
+   "build": 261,
+   "date": "30 Oct 2026",
+   "title": "Faster folders on the Mac",
+   "notes": [
+    "Opening a big folder is about a third quicker: Better Finder reads the whole folder in one go instead of asking about each file, and no longer looks at each file twice for its rating.",
+    "Going back to a folder you have opened before is quicker too: the check for new or removed files no longer looks at every picture and document again.",
+    "Nothing else changes: the same files, sizes, dates, ratings and order as before."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.260",
+   "build": 260,
+   "date": "30 Oct 2026",
+   "title": "Faster big folders on Windows and Linux",
+   "notes": [
+    "Windows and Linux: in Columns, moving through a folder of thousands of files with the arrow keys is about ten times faster (each step no longer redraws the whole column).",
+    "Windows and Linux: scrolling Details and Large icons does less work per frame, and the player opens faster when the folder has thousands of clips.",
+    "Windows and Linux: Show in Explorer / Files no longer freezes the window while the file manager opens.",
+    "Nothing changes on the Mac."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.259",
+   "build": 259,
+   "date": "30 Oct 2026",
+   "title": "Crop for pictures",
+   "notes": [
+    "Right-click a picture ▸ Quick Actions ▸ Crop… to cut it to the part you want, with the same frame and 8 handles as Reframe. Shapes: Free, Original (the picture's own), 1:1, 4:5, 9:16 and 16:9. The last shape you used is remembered.",
+    "Drag the frame to move it and its handles to resize it. In Free, hold Shift to keep the frame's shape. Double-click resets the frame. The new size in pixels shows under the picture as you drag.",
+    "The cropped copy goes next to the original as photo_crop.jpg (then photo_crop 2.jpg), never over a file. It keeps the format (JPEG, PNG, HEIC, TIFF, GIF), the full quality of the pixels you keep, the colour profile and the photo's details. Phone photos are cropped the way they look, upright.",
+    "WebP and Photoshop files are saved as PNG (the window says so). A GIF keeps its first frame. Undo (⌘Z) takes the copy away again.",
+    "Crop is free."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.258",
+   "build": 258,
+   "date": "30 Oct 2026",
+   "title": "Reframe with a free crop and handles",
+   "notes": [
+    "Reframe has a fourth shape, Free: any width and height, saved at the size you crop (clip_free.mp4). Hold Shift while dragging a handle to keep the frame's shape.",
+    "The crop frame has 8 handles (corners and edges) to resize it. With 9:16, 4:5 or 1:1 the frame keeps its shape, and a smaller frame zooms in: the new file keeps the size of the full frame for that shape (9:16 from a 1920 × 1080 clip is always 606 × 1080, however far you zoom in).",
+    "The size of the new file shows under the preview while you drag. Double-click the picture to reset the frame.",
+    "Blurred Background is greyed out with Free (it needs a shape) and comes back when you pick 9:16, 4:5 or 1:1.",
+    "The Export button in the Reframe window no longer touches the window's right edge."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.257",
+   "build": 257,
+   "date": "30 Oct 2026",
+   "title": "Play as Queue keeps Compare's order",
+   "notes": [
+    "Play as Queue from Compare always plays the clips in Compare's order (A, B, C), also when Shuffle was on: Shuffle turns off for that Queue and you can turn it back on.",
+    "Undo after Play as Queue brings back the previous Queue together with its Shuffle setting."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.256",
+   "build": 256,
+   "date": "30 Oct 2026",
+   "title": "From Compare to the player and back",
+   "notes": [
+    "The Queue has a Compare button in its header, next to Sort, Repeat and Shuffle. It compares the whole Queue, or the clips selected in it.",
+    "Compare opened from the file list has a Play as Queue button at the left of its bottom bar. The videos you compare go to the player as its Queue, in Compare's order, starting on the one you hear (Sound off: the reference) at the same time, paused.",
+    "If that replaces a Queue, \"Queue replaced · Undo\" shows for a few seconds and Undo brings the old Queue back.",
+    "From that player, Compare Queue goes back to Compare and Back to Player returns, so you can switch both ways."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.255",
+   "build": 255,
+   "date": "30 Oct 2026",
+   "title": "Interactive Rive files respond again",
+   "notes": [
+    "Rive files whose buttons did nothing in the Gallery's big preview and the viewer now respond: pose pickers, story prompts, game start buttons. The file's own state machine now starts the way Rive's editor plays it.",
+    "A Rive file's sound plays only in the Gallery's big preview and the viewer (after a click inside). Tiles you pass over and folder backgrounds stay silent.",
+    "Windows and Linux: in Large Icons, a Rive file under the pointer follows the pointer's moves (eyes that look at it), as on the Mac. A click still selects the file."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.254",
+   "build": 254,
+   "date": "30 Oct 2026",
+   "title": "Back to Player from Compare",
+   "notes": [
+    "Compare opened from the player has a Back to Player button at the left of its bottom bar. Esc does the same (on an enlarged tile, Esc first goes back to the grid), and so does closing the Compare window: the player always stays open.",
+    "Back in the player you are on the clip that was playing when you opened Compare, at the same place, paused.",
+    "Esc on the Compare grid now also closes Compare when it was opened from the file list."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.253",
+   "build": 253,
+   "date": "30 Oct 2026",
+   "title": "Compare from the player",
+   "notes": [
+    "In the player, ⋯ ▸ Compare Queue (also in the Queue's ⋯ menu, ⌃⌘C) opens Compare with the Queue's videos and images, in the order of the list. Select two or more rows in the Queue first to compare just those (Compare Selected Clips).",
+    "Compare shows up to 9: with more in the Queue it takes the first 9 and says so. The player pauses while Compare is open and is just as you left it when you close Compare.",
+    "In Compare (Side by Side and the grid), click a tile to hear it. The Sound buttons follow, and Off still mutes. In Wipe, a click only moves the line: choose the sound with the buttons.",
+    "The Wipe line is now a blue line with dark edges and a bigger handle, easy to see on bright and dark pictures.",
+    "Windows / Linux: Ctrl+click or Shift+click rows in the Queue to pick several clips."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.252",
+   "build": 252,
+   "date": "30 Oct 2026",
+   "title": "Pane dividers in blue",
+   "notes": [
+    "A pane divider you point at or drag now lights up in blue (your Mac's accent colour) instead of orange, and so does the spot where a dragged tab will land."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.251",
+   "build": 251,
+   "date": "30 Oct 2026",
+   "title": "Camera RAW add-ons",
+   "notes": [
+    "New Settings ▸ Camera RAW: Blackmagic RAW, RED R3D and ARRIRAW decoding comes as optional add-ons you install from a file, so Better Finder itself stays small.",
+    "With the Blackmagic RAW add-on installed, .braw clips show their size, frame rate, length and a thumbnail, and play in the player from a playback copy (picture only for now).",
+    "The add-ons themselves are not out yet: the Blackmagic RAW one comes first, RED R3D and ARRIRAW later. Without one, RAW clips work exactly as before."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.250",
+   "build": 250,
+   "date": "30 Oct 2026",
+   "title": "Render Preview for Nuke and Fusion",
+   "notes": [
+    "Nuke scripts (.nk) and Fusion comps (.comp) get Render Preview, like After Effects, Blender and Cinema 4D: a short video (or a still frame) made in the background by Nuke, or by Fusion Render Node / Fusion Studio, when one is installed.",
+    "Choose which Write node (Nuke) or Saver (Fusion) to preview with Render Preview of Write Node… / Saver…. Your own Write nodes and Savers never write their files: the preview goes to Better Finder's preview folder only.",
+    "Nuke and Fusion files have a project card: Write nodes or Savers, size, frame rate, length and the version that saved them."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.249",
+   "build": 249,
+   "date": "30 Oct 2026",
+   "title": "Clearer pane dividers",
+   "notes": [
+    "The lines between panes (2, 3 or 4 panes) are easier to see, in every appearance and style.",
+    "Point at a divider and it lights up orange along its whole length; while you drag it, it gets thicker. Double-click still shares the space equally.",
+    "Dragging a tab to the side of a pane shows where it will land in the same orange."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.247",
+   "build": 247,
+   "date": "30 Oct 2026",
+   "title": "Small Pro fixes",
+   "notes": [
+    "In the player, the Reframe and Remove Video buttons (and Reframe in Trim and the More menu) show a small PRO badge when they need Pro, like the other Pro buttons.",
+    "A tab you left in Globe view comes back to Globe after reopening the app, even if Globe was unavailable for a while."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.246",
+   "build": 246,
+   "date": "30 Oct 2026",
+   "title": "Smoother drag to reorder in the Queue",
+   "notes": [
+    "Dragging clips in the Queue is easier: grab a row (by its ≡ handle or anywhere on it) and the other clips slide out of the way as you move, so it drops right where you see it. No more aiming at a thin line."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.245",
+   "build": 245,
+   "date": "29 Oct 2026",
+   "title": "Compare joins Better Finder Pro",
+   "notes": [
+    "Compare (two files or a grid of up to nine) is now part of Better Finder Pro. Nothing is locked yet: it works as before."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.244",
+   "build": 244,
+   "date": "29 Oct 2026",
+   "title": "Compare: hide the info on the tiles",
+   "notes": [
+    "Compare has an Info button (or press I) that hides the name and specs on every tile, so only the pictures are left to compare. Each tile keeps its letter, the reference keeps its blue outline, and pointing at a tile shows its info. Compare remembers your choice."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.243",
+   "build": 243,
+   "date": "29 Oct 2026",
+   "title": "Render Preview items side by side",
+   "notes": [
+    "In the right-click menu, Render Preview of Composition (Scene, Take) now sits right under Render Preview, before Render Still Frame."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.242",
+   "build": 242,
+   "date": "29 Oct 2026",
+   "title": "Better Finder Pro, prepared on the Mac",
+   "notes": [
+    "The Mac app is ready for Better Finder Pro: PRO labels, an upgrade sheet and a License page in Settings. Nothing changes yet: every feature stays unlocked."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.241",
+   "build": 241,
+   "date": "29 Oct 2026",
+   "title": "Better Finder Pro, prepared on Windows and Linux",
+   "notes": [
+    "The Windows and Linux app is ready for Better Finder Pro too. Nothing changes yet: every feature stays unlocked."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.240",
+   "build": 240,
+   "date": "29 Oct 2026",
+   "title": "Better Finder Pro: licence keys and trial (not switched on yet)",
+   "notes": [
+    "Better Finder Pro can now check licence keys and run a 14-day trial. It is not switched on yet: every feature stays unlocked."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.239",
+   "build": 239,
+   "date": "29 Oct 2026",
+   "title": "Groundwork for Better Finder Pro",
+   "notes": [
+    "Groundwork for Better Finder Pro. Nothing changes yet: every feature stays unlocked."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.238",
+   "build": 238,
+   "date": "29 Oct 2026",
+   "title": "Render Preview: Blender cameras and Cinema 4D takes",
+   "notes": [
+    "Blender: a scene with several cameras offers each one when you render a preview (the scene's active camera is chosen first). Remember for this project keeps it for next time.",
+    "The Blender card shows how many cameras a scene has and which one is active.",
+    "Cinema 4D: Render Preview of Take… lists the project's takes (Cinema 4D opens it in the background the first time) and renders the one you choose.",
+    "Cinema 4D: Python tags and generators in the project are switched off while the preview renders, and the status bar says so.",
+    "Nuke and Fusion projects still get their preview with Choose Preview File."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.237",
+   "build": 237,
+   "date": "29 Oct 2026",
+   "title": "Tidier Settings, and choose what the right-click menu shows",
+   "notes": [
+    "Settings is grouped more clearly: General, Views, Media Player, Quick Actions, AI and Maintenance.",
+    "Fewer pages: List, Grid and Gallery share one page, so do Playback and Queue, and Convert Image and Create PDF.",
+    "Show all filename extensions and Sidecar Files moved from Windows & Tabs to File Types.",
+    "Windows keyboard shortcuts is now only in Settings ▸ Shortcuts (it was also in Appearance).",
+    "New: Settings ▸ Right-Click Menus. Untick the items you never use, in the file menu, the Quick Actions submenu and the empty-space menu. Everything is shown until you change it; Show All brings them all back.",
+    "Hidden items keep their keyboard shortcuts and stay in the menu bar. The toolbar's Action (⋯) menu follows the same choices.",
+    "Your settings are kept as they were."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.236",
+   "build": 236,
+   "date": "29 Oct 2026",
+   "title": "Build fixes",
+   "notes": [
+    "The app's built-in engine is now built for macOS 13 throughout, the oldest macOS Better Finder supports. Nothing changes in use.",
+    "Only the Content Credentials reader is built for a smaller app; searching, scanning and browsing keep full speed."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.235",
+   "build": 235,
+   "date": "29 Oct 2026",
+   "title": "Use your own export as a project's preview",
+   "notes": [
+    "Choose Preview File… (right-click ▸ Quick Actions, or Choose File… on the project card) makes a video or picture you exported the preview of a project. You can also drop one onto the card.",
+    "It works for project, motion, 3D and design files that have no moving preview of their own: Premiere Pro, Apple Motion, DaVinci Resolve, Cavalry, Caddis, Autograph, Plate, Nuke, Fusion, Houdini, Maya, Photoshop, Figma and more, and After Effects, Blender and Cinema 4D too.",
+    "A video or picture named like the project, next to it or in a Render or Export folder, is offered first.",
+    "The file is copied, never moved or changed: a video becomes a small preview (its first 30 seconds), a picture a thumbnail. Grid hover-skim, Play Preview, Show Preview File, Delete Preview and Settings ▸ Storage work as for rendered previews, marked From file.",
+    "A chosen preview doesn't go out of date when the project is saved. Render Preview asks before replacing it, and choosing a file asks before replacing a rendered one.",
+    "Videos, GIFs, Lottie, Rive and 3D models keep previewing on their own as before; they don't get these options."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.234",
+   "build": 234,
+   "date": "29 Oct 2026",
+   "title": "Render Preview for Blender and Cinema 4D",
+   "notes": [
+    "Blender and Cinema 4D files get a project card: Blender's scenes with their frame range, frame rate, output size and render engine, and the Blender version that saved the file. Until a preview is rendered, they show the picture saved inside the file.",
+    "Render Preview now works for .blend files when Blender is installed, and for .c4d files when Cinema 4D is installed and signed in. You get a short video (up to 10 seconds, 720 px) to skim and play, or one still frame. It renders in the background, with progress and Stop.",
+    "A Blender file with several scenes asks which one to render (Render Preview of Scene…), and can remember it, like compositions in After Effects.",
+    "Safe by design: a .blend's own scripts never run, output nodes and caches are kept away from your folders, and the project file is never changed. A model with no camera gets a temporary one for the preview.",
+    "Show Preview File, Delete Preview, Play Preview and hover-skim work as they do for After Effects. Settings ▸ Storage ▸ Project previews lists every app's previews, grouped by app."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.233",
+   "build": 233,
+   "date": "29 Oct 2026",
+   "title": "Choose the composition to preview",
+   "notes": [
+    "Render Preview of an After Effects project with several compositions asks which one to render. Each shows its size, frame rate and length; the main one is chosen at first and marked Main.",
+    "Tick Remember for this project and the next renders, Render Again and renders of several projects use that composition without asking.",
+    "Right-click ▸ Quick Actions ▸ Render Preview of Composition… (and Composition… on the card) picks another one any time, or stops remembering it.",
+    "With several projects selected, each one renders its main composition, or the one remembered for it, without asking.",
+    "The card says which composition the preview is from. A preview of another composition replaces the old one, so each project keeps one preview.",
+    "Compositions with the same name are told apart, and names with unusual characters render too. The project itself is never changed."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.232",
+   "build": 232,
+   "date": "29 Oct 2026",
+   "title": "Find and manage After Effects previews",
+   "notes": [
+    "Show Preview File (right-click ▸ Quick Actions, or the folder button next to the preview's size in Get Info and Gallery) shows a project's rendered video and thumbnail in their folder.",
+    "Delete Preview removes only the selected project's preview (Delete 3 Previews for three). Other projects keep theirs.",
+    "Settings ▸ Storage ▸ After Effects previews ▸ Manage… lists every project with a preview, biggest first, with its size, Show and Delete, plus Show Previews Folder and Delete All.",
+    "Previews of projects that were moved, renamed or deleted are marked Not found and can be deleted together. Projects on a drive that isn't connected are kept.",
+    "After Effects previews now have their own line in Storage: Clear Thumbnails and the cache size limit no longer remove them."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.231",
+   "build": 231,
+   "date": "29 Oct 2026",
+   "title": "A shorter right-click menu",
+   "notes": [
+    "The right-click menu of files and folders is about a third shorter, in four groups: open and play, the file itself, rating and tags, then three submenus.",
+    "Open With ▸ now also has macOS Finder and Terminal (and Split Pane for a folder). Play Next, Add to Queue and Add to Playlist are in Queue ▸.",
+    "Compress ▸ makes a ZIP or another format. Organize ▸ has New Folder with Selection, Tidy Up by Type, Flatten and Make Alias.",
+    "Quick Actions ▸ also holds Render Preview, Check on SynthID and the transcript and thumbnail tools.",
+    "Hold Option to turn Copy into Copy Path, like Finder. Every menu bar command and shortcut is unchanged."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.230",
+   "build": 230,
+   "date": "29 Oct 2026",
+   "title": "Compare up to nine videos or images",
+   "notes": [
+    "Compare now takes 2 to 9 videos or images: select them and right-click ▸ Compare (near the top of the menu), Quick Actions ▸ Compare, File ▸ Compare or Control-Command-C. They show in a grid: two side by side, three or four in 2 × 2, up to 3 × 3.",
+    "Every tile plays on one timeline: Play, the slider, the frame buttons, Space, ← and → move them all. Shorter clips hold their last frame.",
+    "Click a tile to make it the reference: what differs from it (codec, size, frame rate, length, file size, bit rate) is in orange on the others. Double-click a tile (or press F) to see it alone, Esc goes back to the grid. 1 to 9 pick the reference from the keyboard.",
+    "Choose whose sound you hear (A, B, C… or off). With two, Wipe and Swap still work.",
+    "A selection with folders, audio or documents in it: only the videos and images are compared, and the window says how many were left out.",
+    "With five or more clips, the ones above 1080p play from a light 540p copy (made once, then kept), so nine 4K clips play smoothly."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.229",
+   "build": 229,
+   "date": "29 Oct 2026",
+   "title": "After Effects previews you can skim and play",
+   "notes": [
+    "Render Preview now makes a short video of an After Effects project's main comp (up to 30 seconds, 720 px) as well as its thumbnail. Hover over the project in Grid to skim it like a clip, Play Preview opens it in the player, and Quick Look plays it. You don't have to open After Effects.",
+    "Render Still Frame is still there when one picture is enough. It's much quicker.",
+    "Delete Preview removes what was rendered and the project shows its icon again. It's on the card, the right-click menu and the Gallery's Quick Actions, and works for many projects at once.",
+    "The card shows the preview's length, size and file size. When you save the project again, its preview stays but is marked out of date, with Render Again.",
+    "Rendering still runs in the background with progress and Stop, never changes the project, and works on a copy of it."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.228",
+   "build": 228,
+   "date": "28 Oct 2026",
+   "title": "Find pictures and videos by what they show",
+   "notes": [
+    "Search ▸ Visual: type what you're looking for, like “red car at night” or “drone shot of a beach”, and the pictures and videos in this folder and its subfolders that show it come first, with a Match %.",
+    "Right-click a picture or video ▸ Find Similar lists the ones that look most like it.",
+    "Turn it on in Settings ▸ Visual Search. Download gets the model once (about 210 MB). Delete removes it again.",
+    "Everything runs on this Mac: nothing is uploaded. Each folder's pictures and a few frames of each video are read once, in the background, when the folder opens. Cloud-only files are never read, and network drives are read lightly.",
+    "English words work best."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.227",
+   "build": 227,
+   "date": "28 Oct 2026",
+   "title": "Premiere Pro projects, used media and where a file is used",
+   "notes": [
+    "Premiere Pro projects (.prproj) get a card in Get Info, Gallery and Columns, and a tooltip: the sequences with their size, frame rate and length, the Premiere version that saved it, and the media it uses.",
+    "Used Media in After Effects and Premiere Pro cards: every file with its state (found, moved and found elsewhere, or missing in red). The arrow shows it in its folder.",
+    "Get Info of a media file has Used in Projects: the After Effects, Premiere Pro, Caddis, Cavalry and Plate projects in its folder tree that use it, with Show in Folder and Open. Projects in the cloud and not on this Mac are not read.",
+    "Advanced Search has a Projects row: Uses file (a file name or path) and Has missing media. Smart Folders keep them, and Ask AI understands \"projects with missing footage\"."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.226",
+   "build": 226,
+   "date": "28 Oct 2026",
+   "title": "Reframe a video as 9:16, 4:5 or 1:1",
+   "notes": [
+    "Right-click a video ▸ Reframe…, or in the player: Reframe… next to Trim (and in the ⋯ menu, or on the bar from Settings ▸ Control Bar).",
+    "Choose 9:16 (Reels, TikTok, Shorts), 4:5 (Instagram feed) or 1:1. Crop: drag the frame over the picture to choose what stays. It starts in the middle; double-click puts it back there, a click beside it brings it there.",
+    "Blurred Background: the whole picture stays, over a blurred, zoomed copy of itself (a 1920 × 1080 clip becomes 1080 × 1920).",
+    "In and Out set in the player are kept: only that part is exported.",
+    "The new file goes next to the original as clip_9x16.mp4 (clip_9x16 2.mp4 when that name is taken). Nothing is ever overwritten. ProRes stays ProRes, everything else becomes H.264.",
+    "Progress shows in the status bar and in the player, with Stop. Stopping leaves no half-made file."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.225",
+   "build": 225,
+   "date": "28 Oct 2026",
+   "title": "Versions of one file stack up",
+   "notes": [
+    "Files that are versions of the same thing, like logo_v1.ai, logo_v2.ai and logo_v03_final.ai, or Comp v4.aep and Comp v5 approved.aep, now show as one file: the newest, with \"3 versions\" next to its name.",
+    "Click the arrow before it in List view (or press →) to show the older versions right under it, ← folds them again. In Icons view, click the \"3 versions\" badge on the picture. Right-click ▸ Show All Versions does the same.",
+    "The version is the last v12, V3, ver 2, version 4 or rev3 in the name. Words like final, approved, wip or copy after it don't make a different file; other words do (shot_010_v012_comp and shot_010_v012_plate stay apart), and so does another extension.",
+    "Group By ▸ Versions puts every file's versions in a group of their own, single files last.",
+    "Turn stacking off in View ▸ Stack Versions. Columns view and grouped lists always show every version."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.224",
+   "build": 224,
+   "date": "28 Oct 2026",
+   "title": "Compare two videos or images",
+   "notes": [
+    "Select two videos or images and choose Compare (right-click, File ▸ Compare or Control-Command-C) to see them side by side, or one over the other with a line you drag across the picture (Wipe).",
+    "Both play on one timeline: Play, the slider and the frame buttons (or Space, ← and →, Shift for a second) move them together. The shorter clip holds its last frame.",
+    "Under each side: codec, size, frame rate, length, file size and bit rate. What differs between the two is in orange.",
+    "Formats macOS can't play (MKV, WebM…) get their playback copy as in the player. Choose whose sound you hear (A, B or off), swap the sides with X, W switches Side by Side and Wipe."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.223",
+   "build": 223,
+   "date": "28 Oct 2026",
+   "title": "Star ratings and colour labels that Adobe apps read",
+   "notes": [
+    "Rate files from 1 to 5 stars or Reject them, and give them a Red, Yellow, Green, Blue or Purple label. They are saved the way Bridge and Lightroom save them (XMP), so Adobe apps see them, and ratings set there show here.",
+    "JPEG and PNG keep them inside the file. Other files (video, audio, camera RAW, PSD…) get a small sidecar next to them with Adobe's name: A001.mov gets A001.xmp. Videos are never rewritten.",
+    "The Rating column: click a star to set it, click it again to clear it. The Label column is in the column menu. Stars and labels show in Icons and Gallery too.",
+    "Right-click ▸ Rating and Label, or the keys: Control-1 to Control-5 for stars, Control-0 for none, Control-Delete to Reject, Control-. and Control-, to raise or lower, Control-6 to Control-9 for Red, Yellow, Green, Blue. Change them in Settings ▸ Shortcuts.",
+    "With several files selected, one change rates them all, and one Undo puts every file back the way it was.",
+    "Sort By and Group By ▸ Rating or Label, the Rating chip (\"★★★ and up\", Rejected, Unrated, a label), and Rating and Label rows in Advanced Search, Smart Folders and Ask AI.",
+    "Get Info has a Rating row and says where the rating is kept.",
+    "Bridge names its labels Select, Second, Approved, Review and To Do: those are read as Red to Purple and kept as they are."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.222",
+   "build": 222,
+   "date": "28 Oct 2026",
+   "title": "Fast on network drives",
+   "notes": [
+    "Folders on a NAS or server (SMB, AFP, NFS) open several times faster: the folder is read in one go instead of asking the server about every file, and Finder tags, icons and dates no longer cost a trip to the server for each row.",
+    "Duration, frame rate and thumbnails are read for the files on screen, a few at a time, and more as you scroll. Sorting by Duration or another media column reads the whole folder, a screenful at a time. Leaving the folder stops it.",
+    "Made with AI? reads files there in large pieces (several times faster), hover previews use the quick keyframe strip, the Grid no longer prepares previews in advance there, and long audio files get no waveform there.",
+    "The status bar says Network drive. Folder sizes are still not added up on servers."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.221",
+   "build": 221,
+   "date": "28 Oct 2026",
+   "title": "Sidecar files go with their media",
+   "notes": [
+    "Moving, renaming, copying, duplicating or trashing a video, photo or sound file takes its sidecar files along, like Lightroom and Bridge: clip.srt / .vtt / .ass, clip.xmp and clip.mov.xmp, GoPro and DJI .LRV / .LRF / .THM, .sidecar, .cos, and Premiere proxies (Proxies/clip_Proxy.mov).",
+    "Renaming gives them the new name (clip.srt becomes shot.srt). A file already there is never replaced: that sidecar stays where it was, and the status line says so.",
+    "One Undo covers the file and its sidecars; the status line and the Undo menu say \"+2 sidecar files\". Put Back brings back the sidecars that went to the Trash with the file.",
+    "Dragging inside Better Finder carries the sidecars; dragging to or from another app carries only what you drag.",
+    "Settings ▸ Windows & Tabs ▸ Sidecar Files: turn it off, or change the extensions."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.220",
+   "build": 220,
+   "date": "28 Oct 2026",
+   "title": "Sort, group and filter by Made with AI?",
+   "notes": [
+    "Click the AI column, or Sort By ▸ Made with AI: Yes, Partly, Maybe, No, then files with no sign of AI.",
+    "Group By ▸ Made with AI in List, Icons, Columns and Gallery: Made with AI, Partly, Maybe, Not Made with AI, then No Sign of AI, Not Read Yet and Not Checked.",
+    "The AI chip after the file types shows only files made with AI, or only files not made with AI.",
+    "Sorting, grouping or filtering by AI reads the files not read yet in the background (up to 5,000 per folder, progress in the status bar). Files only in the cloud are never downloaded for this.",
+    "Advanced Search and Smart Folders have a Made with AI row (Yes, Partly, Maybe, No, no sign) and the AI tool's name (\"Kling\"). Ask AI fills them in too."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.219",
+   "build": 219,
+   "date": "28 Oct 2026",
+   "title": "Changing an extension asks first",
+   "notes": [
+    "Renaming a file to another extension asks first, like Finder: Keep .mov or Use .mp4 (also when adding or removing one). It asks in the list, the Rename sheet and Get Info; folders and Rename N Items… don't ask.",
+    "With Show all filename extensions off, the rename box shows the name without its hidden extension and keeps it.",
+    "After a rename, Get Info shows the new Kind, icon and details right away."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.218",
+   "build": 218,
+   "date": "27 Oct 2026",
+   "title": "Sharing & Permissions like Finder",
+   "notes": [
+    "Get Info shows permissions in a table like Finder. Click the lock to make changes.",
+    "+ adds people or groups from this Mac, − removes them. The ⋯ menu has Apply to enclosed items… (folders) and Revert changes.",
+    "The arrows of Get Info's groups no longer get a blue ring."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.217",
+   "build": 217,
+   "date": "27 Oct 2026",
+   "title": "Get Info in groups",
+   "notes": [
+    "Get Info is laid out like Finder: Tags, General, More Info, Made with AI, Name & Extension, Comments, Open with, Preview, Sharing & Permissions. Click a group's title to fold it; the app remembers which are folded.",
+    "Rename a file from Get Info (Name & Extension), with undo like any rename.",
+    "Where from lists the page first, then the file's address, like Finder. Images show whether they have an alpha channel."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.216",
+   "build": 216,
+   "date": "27 Oct 2026",
+   "title": "Get Info like Finder",
+   "notes": [
+    "Get Info shows Where from (the page a download came from), the size in bytes and on disk, and Last opened.",
+    "More info from macOS: camera and lens, exposure, color profile, pages, authors, sample rate, audio channels, bit rate, encoding software.",
+    "A preview of the file, the version of an app, and the original of an alias or link.",
+    "Stationery pad: tick it and Finder opens a copy of the file, like a template."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.215",
+   "build": 215,
+   "date": "27 Oct 2026",
+   "title": "Smaller download",
+   "notes": [
+    "The app is smaller: the part that checks Content Credentials is built for size. The download is about 1.4 MB smaller and the installed app about 4 MB smaller, with the same results and speed."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.214",
+   "build": 214,
+   "date": "27 Oct 2026",
+   "title": "3D models, Topaz and more AI sites",
+   "notes": [
+    "3D models (GLB, glTF, OBJ, FBX, USDZ) get the AI column too: models downloaded from Meshy, Tripo, Rodin (Hyper3D), 3D AI Studio, Hitem3D or World Labs show the site. These tools don't mark their files, so a model sent on to another Mac can't be recognised.",
+    "Videos enhanced with Topaz Video AI show it: upscaled or smoothed by AI, not generated.",
+    "Files made on Weave by Figma keep the model's own Content Credentials (for example GPT Image, verified). Weave, BFL (FLUX) and fal downloads are recognised too."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.213",
+   "build": 213,
+   "date": "27 Oct 2026",
+   "title": "Midjourney recognised",
+   "notes": [
+    "Midjourney pictures show as Midjourney in the AI column, from what Midjourney writes into its files (its job ID with the AI source type), so they are still recognised after being copied to another Mac.",
+    "A file that only says it was made by AI takes the tool's name from the site it was downloaded from. TopView downloads are recognised too."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.212",
+   "build": 212,
+   "date": "27 Oct 2026",
+   "title": "Higgsfield, OpenArt and where files came from",
+   "notes": [
+    "Pictures and videos made on Higgsfield are recognised (Soul, Grok, Nano Banana Pro and others show as Higgsfield). When Higgsfield ran another company's model, the AI column names it (gpt-image, Seedream, Ideogram) and the details say it was made on Higgsfield.",
+    "Files with no AI mark left in them are recognised by the site they were downloaded from, which macOS remembers: OpenArt, Higgsfield, Runway, Vidu, Hailuo, Kling, Midjourney, Sora, Luma, Pika, Ideogram, FLORA, TopView, Magnific and other AI sites. These show in grey: the weakest sign.",
+    "Details now say which site a file was downloaded from."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.211",
+   "build": 211,
+   "date": "27 Oct 2026",
+   "title": "Plate Thumbnails",
+   "notes": [
+    "Plate projects (.plate) now show their first frame as the thumbnail, in every view and in Get Info: Better Finder draws it from the scene the way Plate does, with shapes, colours, gradients, strokes and pictures.",
+    "Effects such as blur and glow, videos and JPEG pictures inside a project aren't drawn in the thumbnail."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.210",
+   "build": 210,
+   "date": "27 Oct 2026",
+   "title": "Check many files on SynthID",
+   "notes": [
+    "Select several pictures or videos, right-click and choose Check Files on SynthID…: the panel lists each file with its own Found, In Part and Not Found buttons, so you can drag them onto synthid.com one after another without reopening it.",
+    "Type or pick the AI tool in the panel (Google AI, OpenAI, Kling AI…) and the AI column shows it, for example Kling AI ✓. Without a name it shows SynthID ✓, or the tool the file itself names."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.209",
+   "build": 209,
+   "date": "27 Oct 2026",
+   "title": "Columns remembered, AI tools by name",
+   "notes": [
+    "List view remembers the order and widths of its columns: drag a column title or edge, and it stays that way after quitting, in every window and tab. Reset to Default Columns (right-click a column title) puts them back.",
+    "The AI column shows the tool by name when the file says which one made it (Kling AI, Hailuo, Seedance, Google AI, Adobe Firefly, ComfyUI…). The colour tells how sure: purple is a verified signature, orange is only written in the file. Yes, Partly and Maybe are for files that don't name the tool."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.208",
+   "build": 208,
+   "date": "27 Oct 2026",
+   "title": "Smooth AI column",
+   "notes": [
+    "Moving the pointer along the AI column is smooth now. The details open beside the column and change as you move from row to row, instead of macOS closing and reopening a tooltip under the pointer for every row.",
+    "Empty AI cells no longer show a tooltip."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.207",
+   "build": 207,
+   "date": "27 Oct 2026",
+   "title": "Autograph and Plate Projects",
+   "notes": [
+    "Autograph projects (.agp, .agt) show the picture Autograph saves inside them as their thumbnail, in every view.",
+    "Autograph keeps the rest of the project encrypted, so Get Info can't list its comps, layers or footage: open the project in Autograph to see them.",
+    "Plate projects (.plate) get an info card in Get Info, Gallery and Columns: composition, size, aspect ratio, frame rate, duration, layers, effects and the pictures they use (missing ones in red). Hover a file in Grid or List for a summary.",
+    "Both are in the Motion group, with their app's icon.",
+    "Gallery and Columns: the project card no longer leaves some values blank."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.206",
+   "build": 206,
+   "date": "27 Oct 2026",
+   "title": "More AI found, clearer reasons",
+   "notes": [
+    "Hailuo (MiniMax) videos and others with China's AI label are now read correctly and show the tool's name.",
+    "Pictures signed by Adobe before the current Content Credentials list (Photoshop and Firefly from 2024 and earlier) are verified again, so Generative Fill shows as Partly.",
+    "Maybe now says why: the signing certificate has expired (older Sora and FLUX files), the file is signed with a self-made certificate (Grok Imagine), or the signer isn't on the list.",
+    "WebM and MKV videos are checked too. Many are converted copies whose AI marks were removed: those stay empty."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.205",
+   "build": 205,
+   "date": "27 Oct 2026",
+   "title": "Kling, Seedance and China's AI labels",
+   "notes": [
+    "The AI column now recognises videos made with Kling AI: Kling hides a small mark inside the video itself, which Better Finder reads. They show as Maybe · Kling AI.",
+    "Seedance videos (Dreamina, BytePlus) show the model name, for example dreamina-seedance-2-0.",
+    "Files with the AI label that Chinese AI tools must add (Kling, Jimeng, Hailuo, Vidu, Tongyi and others) show as Maybe, with the tool's name when the label gives it.",
+    "Files checked by the previous version are checked again once, so videos found empty before can fill in."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.204",
+   "build": 204,
+   "date": "26 Oct 2026",
+   "title": "Made with AI?",
+   "notes": [
+    "A new AI column in List view says whether a picture, video or sound was made with AI: Yes, Partly, Maybe or No. Hover it to see why.",
+    "It reads what the file itself says, on this Mac: the signed Content Credentials that Gemini, ChatGPT, Adobe Firefly and others add (checked against the official C2PA list, so a fake signature doesn't count), and what ComfyUI, Stable Diffusion and similar tools write into their files. Maybe means the file says AI but it can't be proven.",
+    "An empty cell means nothing was found. That doesn't prove a person made it: AI tools that don't label their files can't be found this way.",
+    "Get Info shows the details: which tool made it, who signed it, and whether it has a SynthID watermark.",
+    "Right-click a file and choose Check on SynthID… to check it on Google's synthid.com: drag the file onto the page, then note what SynthID says. Your answer shows in the AI column with a check mark."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.203",
+   "build": 203,
+   "date": "26 Oct 2026",
+   "title": "No More Grey Window",
+   "notes": [
+    "A blank grey window no longer appears on the desktop, mostly when quitting Better Finder. It was the hidden window that draws Lottie, Rive and 3D thumbnails: macOS sometimes moved it into view."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.202",
+   "build": 202,
+   "date": "26 Oct 2026",
+   "title": "After Effects, Cavalry and Caddis projects",
+   "notes": [
+    "Get Info, the Gallery and the Columns preview now show what is inside an After Effects (.aep), Cavalry (.cv) or Caddis (.caddis) project: the main composition with its size, aspect ratio, frame rate and duration, the number of layers and compositions, the fonts, the app version that saved it and when.",
+    "The footage list marks missing files in red, so you see at a glance what needs relinking. Click the arrow next to a file that is there to show it in its folder.",
+    "Cavalry scenes also show their author and license.",
+    "Hold the pointer over a project in Grid or List to see the same facts in its tooltip.",
+    "Render Preview (After Effects installed): Better Finder asks After Effects for one frame from the middle of the main composition, in the background. It becomes the project's thumbnail in Grid, List and Gallery. Use the button in Get Info or the Gallery, or right-click several projects to render them one after another. Stop is in the card and in the status bar.",
+    "Nothing is rendered while you browse, only when you ask. The project itself is never changed: After Effects renders a temporary copy.",
+    "Projects without a preview show their app's icon, cleaner than before (Caddis files lost the white square around their icon)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.201",
+   "build": 201,
+   "date": "26 Oct 2026",
+   "title": "Saving shows its progress",
+   "notes": [
+    "Saving a trim in the player now shows its progress at the bottom of the video, like Compress does in the status bar: what is being saved, the percentage and a bar. You can keep watching meanwhile.",
+    "The Stop button on that panel stops the save. Nothing is written and the original stays as it is.",
+    "The same panel shows Compress, Remove Audio, Keep Audio Only and GIFs made from the player. A quick save (a copy without re-encoding) just says Saved, with no panel flashing by.",
+    "Going on to the next clip while a save runs: the panel stays and still tells you when it's saved.",
+    "If a save fails, a message says which file and why, instead of a short note that disappears.",
+    "Stop (in the player and in the status bar) now really stops a save or a compression. Before, it could carry on and save the file anyway."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.200",
+   "build": 200,
+   "date": "25 Oct 2026",
+   "title": "Opens on Recents",
+   "notes": [
+    "Better Finder now opens on Recents, like Finder: the files you used in the last 30 days, newest first, with Recents chosen in the sidebar. New windows (⌘N) open on Recents too.",
+    "It no longer reopens last time's windows and tabs by itself. To get them back each time, turn on Settings ▸ Windows & Tabs ▸ Reopen windows, panes and tabs from last time. If you had already picked a folder for New windows open, or turned that option on yourself, nothing changes for you.",
+    "To open a folder instead of Recents, pick it in Settings ▸ Windows & Tabs ▸ New windows open.",
+    "While Spotlight is still looking, Recents says Searching. If Spotlight is off or finds nothing, the window opens your Home folder instead of an empty list.",
+    "⌘T still opens a tab on the folder you are in (Recents when you are in Recents). Tabs showing Recents are named Recents and come back as Recents when the last session is reopened."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.199",
+   "build": 199,
+   "date": "25 Oct 2026",
+   "title": "Even glass",
+   "notes": [
+    "Liquid Glass and Clear Glass: the glass now runs up under the toolbar, so the bar with Back / Forward and the toolbar buttons looks like the files below it instead of more see-through.",
+    "The sidebar's colour also starts at the top of the window, so the sidebar column is even from top to bottom."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.198",
+   "build": 198,
+   "date": "25 Oct 2026",
+   "title": "Glass Settings",
+   "notes": [
+    "With Transparent window on, Settings is see-through too: the same glass and blur as the file browser, so you see the effect while you adjust it.",
+    "Settings keeps at least 60 % of its colour so its small text stays easy to read. The player still stays dark."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.197",
+   "build": 197,
+   "date": "25 Oct 2026",
+   "title": "See-through sidebar",
+   "notes": [
+    "Transparent window: Opacity (Sidebar) now really clears the sidebar. macOS drew a light sidebar of its own under it that no setting could thin out; it is set aside while the transparent window is on and comes back when you turn it off.",
+    "With Liquid Glass or Clear Glass the sidebar gets its own glass pane, like the files. Liquid Glass stays a little frosted by nature; Clear Glass and Frosted show the most of the desktop."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.196",
+   "build": 196,
+   "date": "25 Oct 2026",
+   "title": "Clearer glass",
+   "notes": [
+    "Transparent window: the sidebar now goes see-through too and follows Opacity (Sidebar). It turned solid before.",
+    "Liquid Glass and Clear Glass put your files on a real pane of macOS 26 glass, with rounded corners and its light at the edges.",
+    "The tabs, the address box, the column titles and the scroll bars follow Opacity (Content) instead of staying solid.",
+    "Double-click a slider's knob to put it back to its default (35 %, 50 %, 50 %)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.195",
+   "build": 195,
+   "date": "25 Oct 2026",
+   "title": "Transparent window",
+   "notes": [
+    "New in Settings ▸ Appearance: Transparent window. The file browser lets your desktop show through, blurred like glass (Liquid Glass or Clear Glass on macOS 26, or Frosted). Off until you turn it on.",
+    "Two Opacity sliders, one for the sidebar and one for the files, tabs and status bar, plus a Blur slider. Only the backgrounds go see-through: names, icons and thumbnails stay sharp.",
+    "Tint keeps a light (Light) or dark (Dark, Midnight) veil behind your files so names stay readable over a busy desktop.",
+    "Every view follows: List, Icons, Columns, Gallery and Globe, in the macOS, Windows 11 and Linux styles. Folder backgrounds fade with the Opacity, and the window still takes every click, even at 0 %.",
+    "The player, Settings and small windows (Get Info, Advanced Search) stay solid."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.194",
+   "build": 194,
+   "date": "25 Oct 2026",
+   "title": "Clearer ratio shapes",
+   "notes": [
+    "The shape before each aspect ratio is bigger and bolder, like on the website: in the List column, Group By titles, the Icons badge, Get Info, the Columns and Gallery info and Advanced Search. The numbers stay regular weight.",
+    "The Aspect Ratio column is now left-aligned: the shape, then the ratio right after it, and the shapes still line up down the column.",
+    "The 21:9 group is now called 2.39:1 (1:2.39 when tall), the name used for cinema scope. Same files as before: 2.35:1, 2.39:1 scope and ultrawide screens. Hover a ratio to see \"Scope, also called 21:9\". Smart Folders saved with 21:9 keep working.",
+    "Advanced Search: the shapes beside Landscape, Portrait and Square no longer turn white (almost invisible) after switching from Dark to Light while the window is open."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.193",
+   "build": 193,
+   "date": "25 Oct 2026",
+   "title": "Ratio shapes",
+   "notes": [
+    "A small frame in the file's shape now sits before every aspect ratio: wide for 16:9, tall for 9:16, square for 1:1, drawn to the file's real proportions.",
+    "You see it in the Aspect Ratio column, on the group titles of Group By ▸ Aspect Ratio (List, Icons, Columns and Gallery), on the ratio badge in Icons view, in Get Info and in the Columns and Gallery info.",
+    "Advanced Search: each ratio in the menu has its shape, and so do Landscape, Portrait and Square.",
+    "The shapes follow Light, Dark, Midnight, Increase contrast and the Windows 11 / Linux styles, and turn white on a selected row."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.192",
+   "build": 192,
+   "date": "25 Oct 2026",
+   "title": "Aspect Ratio",
+   "notes": [
+    "New Aspect Ratio column in List view (1:1, 16:9, 4:5, 9:16, 21:9…) for videos and still images. Click its title to sort from the tallest to the widest; right-click the column titles to hide it.",
+    "Group By ▸ Aspect Ratio in List, Icons, Columns and Gallery: one group per ratio, tallest first. Sort By ▸ Aspect Ratio too.",
+    "Close sizes count as the same ratio (1920 × 1088 and 1366 × 768 are 16:9), and 2.35:1 / 2.39:1 scope and ultrawide screens are one 21:9 group.",
+    "Advanced Search: pick one or more ratios and Landscape / Portrait / Square. Saved in Smart Folders, and Ask AI fills them in from your description (\"vertical videos\", \"square posts\").",
+    "Get Info, the Gallery and Columns info show the ratio, and still images now show their size (also in the Resolution column).",
+    "View Options (⌘J) in Icons view: Show aspect ratio puts a small \"16:9\" on each picture and video."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.191",
+   "build": 191,
+   "date": "24 Oct 2026",
+   "title": "Faster BiRefNet on Apple Silicon",
+   "notes": [
+    "Remove Background with BiRefNet General (and Portrait, HRSOD, DIS, Massive) is about 25 % faster on Apple silicon Macs with macOS 14 or later: a newer ONNX Runtime (1.31) uses the chip's matrix units. The cut-outs are the same.",
+    "Already installed? Settings ▸ Quick Actions ▸ Remove Background ▸ Update (about 37 MB). The older engine keeps working until then; if a picture is being processed, the new one is used from the next start.",
+    "Intel Macs and macOS 13 keep the current engine."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.190",
+   "build": 190,
+   "date": "24 Oct 2026",
+   "title": "Rename Box Follows Its Item",
+   "notes": [
+    "While you type a new name in List, Icons or Columns, the box stays on its item when the list changes: a new file sorted in above it, another sort order, folders opened or closed above it, or the window resized. What you typed and the selected part stay as they are.",
+    "If the item is deleted or renamed by another app while you type, the box closes and nothing is renamed."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.189",
+   "build": 189,
+   "date": "24 Oct 2026",
+   "title": "New Folder Rename Fix",
+   "notes": [
+    "After New Folder, the name box stays ready to type: in List and Columns it slipped under the folder's own row a moment later (when the folder list refreshed) and looked closed."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.188",
+   "build": 188,
+   "date": "24 Oct 2026",
+   "title": "Remove Background Without Python",
+   "notes": [
+    "Remove Background with BiRefNet and the other models now runs inside Better Finder. No Python, rembg or Terminal: Settings ▸ Quick Actions ▸ Remove Background ▸ Install downloads the engine (ONNX Runtime, about 26 MB) and the model, with a progress bar and Cancel.",
+    "Models you already downloaded for rembg are used as they are, and models you added keep working. The old rembg install is no longer needed: Settings offers to move it to the Trash.",
+    "Every model can be downloaded or moved to the Trash from the list in Settings. U²-Net and IS-Net run on the graphics chip on Apple silicon; BiRefNet runs on the processor, a few seconds per picture.",
+    "Add Model File… checks the model first and refuses files that aren't background-removal models. BiRefNet-style models can be added too.",
+    "Cut-outs keep the picture's exact colours at soft edges (no dark fringe), its colour profile and any transparency it already had. ⌘Z still removes them.",
+    "If a model is chosen but not installed yet, the menu says Remove Background (Apple Vision), so you know which one runs."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.187",
+   "build": 187,
+   "date": "23 Oct 2026",
+   "title": "Live Smart Folders, Drag to Reorder, Exact Trims",
+   "notes": [
+    "Smart Folders keep themselves up to date while you look at them: they search again every minute (every 5 minutes for the whole Mac or several drives), a few seconds after something changes in the folder, and when you come back to the window. The selection and the scroll stay where they were.",
+    "Right-click a Smart Folder ▸ Edit Search… opens its criteria in Advanced Search; Save Smart Folder keeps the changes in it.",
+    "Drag clips up and down in a playlist (List and Icons views, in the playlist's own order) to change their order. Clips dragged in from elsewhere are added where you drop them.",
+    "Drag tags in the sidebar to put them in the order you like. Better Finder keeps this order itself (Finder's own tag order isn't changed); Use Finder's Tags brings Finder's order back.",
+    "Trim ▸ Exact frames keeps exactly the frames you see between the handles, no frame more or less.",
+    "Exporting an HDR clip (iPhone HDR, HLG, PQ) at the original quality, or burning in subtitles with it, keeps it HDR: 10-bit with its colours, and the subtitles at normal white instead of glaring.",
+    "Advanced Search ▸ Drives… searches several drives in one go, so Only duplicates finds copies of a file on different drives.",
+    "Photoshop, Illustrator, InDesign, Affinity, Clip Studio, Sketch, XD, Figma, Krita, Procreate, CorelDRAW and Keynote / Pages / Numbers files get a thumbnail from the preview stored inside them when macOS has none (for example without the app installed)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.186",
+   "build": 186,
+   "date": "23 Oct 2026",
+   "title": "KTX2 Models, Rive Shapes, Stop Search",
+   "notes": [
+    "glTF and GLB models whose textures are compressed with KTX2 (Basis Universal) now get thumbnails and play when you rest the pointer on them, in the Gallery and in the viewer. Before, they showed no picture.",
+    "Rive thumbnails take the shape of the animation's artboard (wide, square, tall), like Lottie, instead of a 4:3 box with empty bands.",
+    "A Rive folder background now has the artboard's shape: Fit, Fill, Size and Position in View Options (⌘J) work on the animation itself, like a Lottie or a video, not on the whole pane.",
+    "Advanced Search shows how many items it has looked at while it runs, and a Stop button (or Esc) ends a long search and keeps what it found so far. A new search, or Ask AI, stops the one still running.",
+    "When Ask AI can't answer (no key, no internet), an AI Settings button opens Settings ▸ AI."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.185",
+   "build": 185,
+   "date": "23 Oct 2026",
+   "title": "Open With Like Finder",
+   "notes": [
+    "Right-click ▸ Open With lists the same apps as Finder, including the ones that open any file (TextEdit, Notes, Xcode, Archive Utility…). Before, a file of a type no app claims showed almost nothing.",
+    "Double-clicking a small file of an unknown type opens it in TextEdit, like Finder. Get Info ▸ Open with shows the same list."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.184",
+   "build": 184,
+   "date": "22 Oct 2026",
+   "title": "Linux Style",
+   "notes": [
+    "A third look in Settings ▸ Appearance ▸ Style: Linux (GNOME Files). Back and Forward in the toolbar with Search, the views and the menu; the folder's path as a rounded bar at the top of each pane; a flat grey sidebar; taller rows with a soft blue rounded selection; blue folders.",
+    "In the Linux style the item count floats in a small label at the bottom right of List and Grid, and the tab bar appears only with two tabs or more.",
+    "Light, Dark and Midnight work in every style. Keyboard shortcuts stay the Mac's."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.183",
+   "build": 183,
+   "date": "22 Oct 2026",
+   "title": "Rename in Place",
+   "notes": [
+    "Rename works like Finder in List, Grid and Columns: the name turns into a box right where it is, so the folders around it stay in view. Return keeps the new name, Esc puts the old one back.",
+    "Pasting a name that was copied with a line break (from Notes, Terminal, an editor) no longer leaves the box looking empty: the line break is dropped, like Finder. Names can no longer end up with a line break in them."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.182",
+   "build": 182,
+   "date": "22 Oct 2026",
+   "title": "Cloud Thumbnails & Add to Dock",
+   "notes": [
+    "Files that are only in Dropbox, Google Drive or iCloud show the thumbnail the cloud app keeps for them, without downloading them (like Finder).",
+    "Grid view shows the sync status after each name and Gallery shows it on the thumbnails, not only List view. A file that finishes downloading gets its full thumbnail.",
+    "Right-click a disk or a folder in the sidebar: Add to Dock (or Remove from Dock).",
+    "List view stalls less when many results arrive at once (e.g. 2,000 search results)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.181",
+   "build": 181,
+   "date": "21 Oct 2026",
+   "title": "Settings Sidebar",
+   "notes": [
+    "The Settings sidebar is a little wider, so \"Remove Background\" isn't cut off."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.180",
+   "build": 180,
+   "date": "21 Oct 2026",
+   "title": "Fresh Media Info",
+   "notes": [
+    "New clips in a folder opened in place in List view get their duration, frame rate and resolution right away (no need to go back and in again).",
+    "A clip that was still being written (a render or export landing) is read again once it's finished."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.179",
+   "build": 179,
+   "date": "21 Oct 2026",
+   "title": "Dropbox & iCloud Status",
+   "notes": [
+    "In Dropbox, iCloud Drive, Google Drive and OneDrive folders, List view shows each item's sync status like Finder: in the cloud only, downloading, uploading, waiting or a conflict.",
+    "Files that are only in the cloud are no longer downloaded just because you browse a folder or point at them: no thumbnails, scrubbing or media info are read from them until you open them or choose Download Now."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.178",
+   "build": 178,
+   "date": "21 Oct 2026",
+   "title": "Disks",
+   "notes": [
+    "Get Info on a disk shows its format, capacity, available space (with what macOS can free up) and used space, with a bar.",
+    "Right-clicking a disk in the sidebar: Open in New Tab, Eject, Erase Disk in Disk Utility, Get Info and Rename.",
+    "The status bar shows how much space is free on the disk you're in, like Finder."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
    "version": "0.177",
    "build": 177,
    "date": "21 Oct 2026",
@@ -9,7 +2401,7 @@
     "Settings has a Media Player group: Playback, Control Bar, Queue, Transcript and Subtitles, each on its own page.",
     "The player's ⋯ ▸ Customize Control Bar… opens the Control Bar page directly."
    ],
-   "url": "https://github.com/gmttuts/better-finder/releases/download/v0.177/BetterFinder-0.177.dmg",
+   "url": "https://gmttuts.github.io/better-finder/#install",
    "beta": false
   },
   {

@@ -410,8 +410,14 @@
     const files = S.sortDemo.map((f) => ({ ...f, ar: ratioOf(f.res) }));
     const still = (f) => !f.fps;
     const arIcon = (f) => { const k = 14 / Math.max(f.ar.r, 1 / f.ar.r); return `<span class="sd2-ar"><i style="width:${(k * Math.max(f.ar.r, 1)).toFixed(1)}px;height:${(k * Math.max(1 / f.ar.r, 1)).toFixed(1)}px"></i></span>`; };
+    // "Made with AI?" (Pro): the column sorts and groups by the answer (Yes, Partly, Maybe, then no sign), like the app.
+    const AIRANK = { yes: 0, partly: 1, maybe: 2, "": 3 };
+    const aiWord = { yes: "Yes", partly: "Partly", maybe: "Maybe" };
+    const aiPill = (f) => (f.ai ? `<em class="ai-pill t-${f.ai}" title="${(f.why[BF.lang] || f.why.en).replace(/"/g, "&quot;")}">${f.tool || aiWord[f.ai]}</em>` : "");
+    const pro = `<span class="pro-badge" title="${BF.t("pro.tip")}">PRO</span>`;
     const COLS = [
       { k: "name", label: "Name", get: (f) => f.name.toLowerCase(), show: (f) => f.name },
+      { k: "ai", label: "AI", pro: true, get: (f) => AIRANK[f.ai || ""] + (f.tool || "~").toLowerCase(), show: aiPill },
       { k: "dur", label: "Duration", get: (f) => f.dur, show: (f) => (still(f) ? "–" : `${Math.floor(f.dur / 60)}:${String(f.dur % 60).padStart(2, "0")}`), num: true },
       { k: "fps", label: "FPS", get: (f) => f.fps, show: (f) => (still(f) ? "–" : f.fps), num: true },
       { k: "res", label: "Resolution", get: (f) => f.res.split("×").reduce((a, b) => a * b, 1), show: (f) => f.res, num: true },
@@ -422,24 +428,29 @@
     // Group By: groups in a fixed order (ratio: tallest first, so the 9:16 / 4:5 / 1:1 social cuts lead; codec: A to Z).
     const GROUPS = [
       { k: "none" },
-      { k: "ratio", label: "Ratio", of: (f) => f.ar.label, order: (f) => f.ar.r, isNew: true },
+      { k: "ai", label: "AI", pro: true, of: (f) => BF.t(`srt.aig.${f.ai || "none"}`), order: (f) => AIRANK[f.ai || ""] },
+      { k: "ratio", label: "Ratio", of: (f) => f.ar.label, order: (f) => f.ar.r },
       { k: "codec", label: "Codec", of: (f) => f.codec, order: (f) => f.codec },
     ];
     const RH = 30, GH = 26;
     box.innerHTML = `${chrome("Footage")}
       <div class="sd2-body">
-        <div class="sd2-tools"><span data-k="srt.group"></span>${GROUPS.map((g) => `<button data-group="${g.k}">${g.label ? g.label : `<span data-k="srt.none"></span>`}${g.isNew ? `<em data-k="${BF.ratioOut ? "srt.new" : "srt.soon"}"></em>` : ""}</button>`).join("")}</div>
-        <div class="sd2-head">${COLS.map((col) => `<button data-col="${col.k}" class="c-${col.k}${col.num ? " num" : ""}">${col.label}<i></i></button>`).join("")}</div>
+        <div class="sd2-tools"><button class="sd2-aif" data-aif><span class="sd2-spark">✦</span>AI<span class="sd2-aif-l"></span>${pro}</button><span class="sd2-sep"></span><span data-k="srt.group"></span>${GROUPS.map((g) => `<button data-group="${g.k}">${g.label ? g.label : `<span data-k="srt.none"></span>`}${g.pro ? pro : ""}</button>`).join("")}</div>
+        <div class="sd2-head">${COLS.map((col) => `<button data-col="${col.k}" class="c-${col.k}${col.num ? " num" : ""}">${col.label}${col.pro ? pro : ""}<i></i></button>`).join("")}</div>
         <div class="sd2-scroll" style="height:${files.length * RH + 8}px"><div class="sd2-rows">${files.map((f, i) => `
           <div class="sd2-row" data-i="${i}">${COLS.map((col) => `<span class="c-${col.k}${col.num ? " num" : ""}">${col.k === "name" ? `<span class="vd-th" style="background-image:url('${f.thumb}')"></span>` : ""}${col.show(f)}</span>`).join("")}</div>`).join("")}</div></div>
         <div class="sd2-status"></div>
       </div>`;
     const rowsBox = $(".sd2-rows", box), rows = $$(".sd2-row", box);
-    let key = "name", dir = 1, group = "none", tour = null, step = 0;
+    let key = "name", dir = 1, group = "none", tour = null, step = 0, aiFilter = "all";
+    // The AI filter chip, like the app's: All Files, Made with AI (Yes, Partly or Maybe), Not Made with AI.
+    const AIF = ["all", "ai", "not"];
+    const passes = (f) => aiFilter === "all" || (aiFilter === "ai") === !!f.ai;
     function sort(k, d) {
       key = k; dir = d;
       const col = COLS.find((x) => x.k === k), g = GROUPS.find((x) => x.k === group);
       const byCol = (a, b) => {
+        if (k === "ai" && !files[a].ai !== !files[b].ai) return files[a].ai ? -1 : 1;   // no sign of AI stays last
         const x = col.get(files[a]), y = col.get(files[b]);
         return (x < y ? -1 : x > y ? 1 : files[a].name < files[b].name ? -1 : 1) * d;
       };
@@ -450,10 +461,12 @@
       // Rows move to their new place; with Group By on, a header line opens above each group.
       $$(".sd2-ghead", rowsBox).forEach((el) => el.remove());
       let y = 0, last = null, groups = 0;
-      order.forEach((i, pos) => {
+      const shown = order.filter((i) => passes(files[i]));
+      rows.forEach((r, i) => { r.classList.toggle("out", !passes(files[i])); $(".c-ai", r).innerHTML = aiPill(files[i]); });
+      shown.forEach((i, pos) => {
         if (g.of && g.of(files[i]) !== last) {
           last = g.of(files[i]); groups++;
-          const n = files.filter((f) => g.of(f) === last).length;
+          const n = files.filter((f) => passes(f) && g.of(f) === last).length;
           rowsBox.insertAdjacentHTML("beforeend", `<div class="sd2-ghead" style="transform:translateY(${y}px)">${g.k === "ratio" ? arIcon(files[i]) : ""}<b>${last}</b><span>${n}</span></div>`);
           y += GH;
         }
@@ -466,8 +479,12 @@
       $$("[data-group]", box).forEach((b) => b.classList.toggle("on", b.dataset.group === group));
       box.dataset.sorted = k;
       box.dataset.grouped = group;
-      $(".sd2-status", box).textContent = (g.of ? BF.t("srt.grouped").replace("{g}", groups).replace("{by}", g.label) : BF.t("srt.items"))
-        .replace("{n}", files.length).replace("{col}", col.label);
+      const aif = $("[data-aif]", box);
+      aif.classList.toggle("on", aiFilter !== "all");
+      $(".sd2-aif-l", box).textContent = aiFilter === "all" ? "" : ": " + BF.t(`srt.aif.${aiFilter}`);
+      $(".sd2-status", box).textContent = aiFilter !== "all"
+        ? BF.t("srt.shown").replace("{k}", shown.length).replace("{n}", files.length).replace("{f}", BF.t(`srt.aif.${aiFilter}`)).replace("{col}", col.label)
+        : (g.of ? BF.t("srt.grouped").replace("{g}", groups).replace("{by}", g.label) : BF.t("srt.items")).replace("{n}", files.length).replace("{col}", col.label);
     }
     const stopTour = (e) => { if (e.isTrusted) { clearInterval(tour); tour = null; box.dataset.touched = "1"; } };
     $$("[data-col]", box).forEach((b) => b.addEventListener("click", (e) => {
@@ -476,16 +493,17 @@
       sort(k, k === key ? -dir : COLS.find((x) => x.k === k).num ? -1 : 1);
     }));
     $$("[data-group]", box).forEach((b) => b.addEventListener("click", (e) => { stopTour(e); setGroup(b.dataset.group); sort(key, dir); }));
+    $("[data-aif]", box).addEventListener("click", (e) => { stopTour(e); aiFilter = AIF[(AIF.indexOf(aiFilter) + 1) % AIF.length]; $(".sd2-scroll", box).scrollTop = 0; sort(key, dir); });
     // The list keeps the window's height (no page jump); groups that don't fit scroll inside it, like in the app.
     const setGroup = (g) => { if (g !== group) $(".sd2-scroll", box).scrollTop = 0; group = g; };
-    const TOUR = [["fps", -1], ["res", -1], ["ratio", -1], ["name", 1, "ratio"], ["size", -1, "ratio"], ["codec", 1], ["dur", -1], ["name", 1]];
+    const TOUR = [["ai", 1], ["name", 1, "ai"], ["name", 1, "none", "ai"], ["fps", -1], ["res", -1], ["ratio", -1], ["name", 1, "ratio"], ["size", -1, "ratio"], ["codec", 1], ["dur", -1], ["name", 1]];
     document.addEventListener("langchange", () => {
       $$("[data-k]", box).forEach((el) => (el.textContent = BF.t(el.dataset.k)));
       sort(key, dir);
     });
     $$("[data-k]", box).forEach((el) => (el.textContent = BF.t(el.dataset.k)));
     sort("name", 1);
-    whenVisible(box, () => { if (!tour && box.dataset.touched !== "1") tour = setInterval(() => { const [k, d, g] = TOUR[step++ % TOUR.length]; setGroup(g || "none"); sort(k, d); }, 2200); },
+    whenVisible(box, () => { if (!tour && box.dataset.touched !== "1") tour = setInterval(() => { const [k, d, g, f] = TOUR[step++ % TOUR.length]; setGroup(g || "none"); aiFilter = f || "all"; sort(k, d); }, 2200); },
       () => { clearInterval(tour); tour = null; });
   }
 
@@ -557,133 +575,254 @@
     box.addEventListener("pointerdown", () => { box.dataset.touched = "1"; stop(); box.classList.remove("multi"); });
   }
 
-  // ======================= Made with AI?: the AI column, its hover reasons, Get Info and Check on SynthID =======================
-  // Works like the Mac app (AIOrigin.swift): the cell shows the tool when known, else Yes / Partly / Maybe / No; the colour
-  // tells how sure. A SynthID answer is kept with the file, but its "Not Found" never hides AI found another way.
-  function aiDemo(box) {
-    const files = S.aiDemo.map((f) => ({ ...f, m: null }));
-    const word = (v) => ({ yes: "Yes", partly: "Partly", maybe: "Maybe", site: "Maybe", no: "No" })[v] || "";
-    // What is shown: the user's SynthID answer, unless it's "Not Found" and something was detected.
-    const shown = (f) => (f.m && !(f.m === "no" && f.v && f.v !== "no") ? { v: f.m, manual: true } : { v: f.v, manual: false });
-    const cell = (f) => {
-      const s = shown(f);
-      if (s.manual) return s.v === "no" ? "No ✓" : (f.tool && f.v !== "no" ? f.tool : s.v === "yes" ? "SynthID" : word(s.v)) + " ✓";
-      return f.tool && f.v !== "no" ? f.tool : word(f.v);
-    };
-    const tone = (f) => {
-      const s = shown(f);
-      if ((s.manual && s.v === "no" && !f.v) || (!s.manual && s.v === "site")) return "grey";
-      return s.v;
-    };
-    const headline = (f) => {
-      const s = shown(f), who = f.tool ? `: ${f.tool}` : "";
-      if (s.manual) return BF.t(`ai.s.${s.v}`);
-      if (f.v === "no") return BF.t("ai.h.no") + (f.tool ? ` (${f.tool})` : "");
-      if (!f.v) return BF.t("ai.h.none");
-      return BF.t(`ai.h.${f.v === "site" ? "maybe" : f.v}`) + who;
-    };
-    const details = (f) => {
-      const s = shown(f), out = f.v && f.why ? [...(f.why[BF.lang] || f.why.en)] : [];
-      if (f.m === "no") out.push(BF.t("ai.s.checked"), BF.t("ai.s.only"));
-      else if (f.m) out.push(BF.t("ai.s.ans").replace("{a}", word(f.m)));
-      if (s.manual && f.v && f.v !== f.m) out.push(BF.t("ai.s.detected").replace("{a}", word(f.v)));
-      if (!s.v || (s.manual && s.v === "no" && !f.v)) out.push(BF.t("ai.none.why"));
-      return out;
-    };
-    const pill = (f) => (cell(f) ? `<em class="ai-pill t-${tone(f)}">${cell(f)}</em>` : "");
+  // ======================= Compare (Pro): 2 to 9 versions in a grid on one timeline =======================
+  // Like the app's Compare window: click a tile = reference (specs that differ turn orange; on the reference itself, specs
+  // that differ from any shown tile), double-click = one tile big, sound per tile, Wipe only with 2 files.
+  // Every tile draws the same scene at the same moment (one clock), so the tiles really play together.
+  const DUR = 12;   // seconds in one loop of the "clip"
+  const SCENES = {
+    day:    { sky: ["#2f7fd8", "#a8d8ff"], body: "sun",  by: 0.2,  bc: "#fff4c2", glow: "rgba(255,236,170,.55)", cloud: "rgba(255,255,255,.92)", hills: ["#8cc276", "#5a9c52", "#336f3a"], road: "#59606a", stars: 0, lights: 0 },
+    night:  { sky: ["#040817", "#1a2a58"], body: "moon", by: 0.2,  bc: "#eef2ff", glow: "rgba(190,210,255,.28)", cloud: "rgba(120,140,200,.22)", hills: ["#1e2c50", "#15203d", "#0b1327"], road: "#141924", stars: 1, lights: 1 },
+    dusk:   { sky: ["#2a2b62", "#f28a5b"], body: "sun",  by: 0.62, bc: "#ffd27a", glow: "rgba(255,140,80,.55)",  cloud: "rgba(255,180,150,.55)", hills: ["#5e4569", "#40304f", "#261c33"], road: "#2c2533", stars: 0.35, lights: 1 },
+    dawn:   { sky: ["#6f9fd6", "#ffd4ae"], body: "sun",  by: 0.56, bc: "#fff0cf", glow: "rgba(255,210,170,.6)",  cloud: "rgba(255,236,226,.8)",  hills: ["#a3b98f", "#77966d", "#4d6e4c"], road: "#6a6a72", stars: 0, lights: 0 },
+    golden: { sky: ["#f2a65a", "#ffe3a1"], body: "sun",  by: 0.45, bc: "#fff1c4", glow: "rgba(255,200,110,.6)",  cloud: "rgba(255,240,215,.8)",  hills: ["#c3a05c", "#97793d", "#5f4b26"], road: "#6e5d47", stars: 0, lights: 0 },
+    fog:    { sky: ["#9fb3c4", "#dfe6ec"], body: "sun",  by: 0.24, bc: "#ffffff", glow: "rgba(255,255,255,.4)",  cloud: "rgba(255,255,255,.7)",  hills: ["#a9b9a8", "#8ea38f", "#6f8a73"], road: "#7d848c", stars: 0, lights: 0, fog: 0.5 },
+  };
+  const STARS = Array.from({ length: 60 }, (_, i) => [((i * 97) % 100) / 100, ((i * 53) % 47) / 100, (i * 1.7) % 6.28]);
+  function drawScene(g, w, h, t, s) {
+    const p = t / DUR, sky = g.createLinearGradient(0, 0, 0, h * 0.75);
+    sky.addColorStop(0, s.sky[0]); sky.addColorStop(1, s.sky[1]);
+    g.fillStyle = sky; g.fillRect(0, 0, w, h);
+    if (s.stars) STARS.forEach(([x, y, ph]) => {
+      g.globalAlpha = s.stars * (0.35 + 0.65 * Math.abs(Math.sin(t * 1.6 + ph)));
+      g.fillStyle = "#fff"; g.fillRect(x * w, y * h, Math.max(1, w / 420), Math.max(1, w / 420));
+    });
+    g.globalAlpha = 1;
+    // Sun or moon: drifts slowly across the sky over the loop.
+    const bx = w * (0.2 + 0.6 * p), by = h * (s.by + 0.04 * Math.sin(p * Math.PI)), r = h * 0.075;
+    const glow = g.createRadialGradient(bx, by, r * 0.6, bx, by, r * 3.2);
+    glow.addColorStop(0, s.glow); glow.addColorStop(1, "rgba(0,0,0,0)");
+    g.fillStyle = glow; g.fillRect(bx - r * 3.2, by - r * 3.2, r * 6.4, r * 6.4);
+    g.fillStyle = s.bc; g.beginPath(); g.arc(bx, by, r, 0, 7); g.fill();
+    if (s.body === "moon") {   // a few soft craters
+      g.fillStyle = "rgba(160,170,200,.35)";
+      [[-0.3, -0.2, 0.22], [0.25, 0.1, 0.16], [-0.05, 0.4, 0.12]].forEach(([dx, dy, k]) => { g.beginPath(); g.arc(bx + dx * r, by + dy * r, k * r, 0, 7); g.fill(); });
+    }
+    // Clouds drift right.
+    g.fillStyle = s.cloud;
+    [[0.1, 0.16, 1], [0.55, 0.1, 0.8], [0.85, 0.28, 0.6]].forEach(([x0, y, k], i) => {
+      const x = (((x0 + p * (0.5 + i * 0.25)) % 1.3) - 0.15) * w, cy = y * h, cr = h * 0.05 * k;
+      g.beginPath(); g.arc(x, cy, cr, 0, 7); g.arc(x + cr * 1.1, cy - cr * 0.4, cr * 1.2, 0, 7); g.arc(x + cr * 2.3, cy, cr * 0.9, 0, 7); g.fill();
+    });
+    // Hills, back to front.
+    s.hills.forEach((col, i) => {
+      const base = h * (0.55 + i * 0.1), amp = h * (0.06 - i * 0.012);
+      g.fillStyle = col; g.beginPath(); g.moveTo(0, h);
+      for (let k = 0; k <= 40; k++) { const x = (k / 40) * w; g.lineTo(x, base - amp * Math.sin((k / 40) * (3 + i) + i * 1.3)); }
+      g.lineTo(w, h); g.fill();
+    });
+    // A house on the middle hill, windows lit at night.
+    const hx = w * 0.68, hy = h * 0.66, hw = w * 0.05;
+    g.fillStyle = s.lights ? "#0d1426" : "#f3efe6"; g.fillRect(hx, hy, hw, hw * 0.7);
+    g.fillStyle = s.lights ? "#1a2238" : "#b5533c"; g.beginPath(); g.moveTo(hx - hw * 0.1, hy); g.lineTo(hx + hw / 2, hy - hw * 0.45); g.lineTo(hx + hw * 1.1, hy); g.fill();
+    g.fillStyle = s.lights ? `rgba(255,${200 + 20 * Math.sin(t * 3)},120,.95)` : "#6b8fb0";
+    g.fillRect(hx + hw * 0.15, hy + hw * 0.18, hw * 0.25, hw * 0.22); g.fillRect(hx + hw * 0.6, hy + hw * 0.18, hw * 0.25, hw * 0.22);
+    // Road with cars passing.
+    const ry = h * 0.86;
+    g.fillStyle = s.road; g.fillRect(0, ry, w, h * 0.06);
+    [[0, 1], [0.45, -1], [0.75, 1]].forEach(([o, dir], i) => {
+      let x = (o + p * (1.6 + i * 0.4)) % 1.2 - 0.1; if (dir < 0) x = 1 - x;
+      const cx = x * w, cw = w * 0.05, cy = ry + h * (dir > 0 ? 0.008 : 0.03);
+      g.fillStyle = ["#e94f37", "#f6f7f8", "#2f6fdb"][i]; g.fillRect(cx, cy, cw, h * 0.022);
+      if (s.lights) {
+        const fx = dir > 0 ? cx + cw : cx, beam = g.createRadialGradient(fx, cy + h * 0.01, 0, fx, cy + h * 0.01, w * 0.06);
+        beam.addColorStop(0, "rgba(255,240,180,.85)"); beam.addColorStop(1, "rgba(255,240,180,0)");
+        g.fillStyle = beam; g.fillRect(fx - w * 0.06, cy - w * 0.06, w * 0.12, w * 0.12);
+        g.fillStyle = "#ff3b30"; g.fillRect(dir > 0 ? cx : cx + cw - 3, cy + 2, 3, 3);
+      }
+    });
+    if (s.fog) { const f = g.createLinearGradient(0, h * 0.35, 0, h); f.addColorStop(0, "rgba(235,240,245,0)"); f.addColorStop(1, `rgba(235,240,245,${s.fog})`); g.fillStyle = f; g.fillRect(0, 0, w, h); }
+  }
 
-    box.innerHTML = `${chrome("Downloads")}
-      <div class="ai-body">
-        <div class="ai-list">
-          <div class="ai-head"><span class="c-name" data-k="ai.name"></span><span class="c-kind" data-k="ai.kind"></span><span class="c-size" data-k="ai.size"></span><span class="c-ai" data-k="ai.col"></span></div>
-          <div class="ai-rows">${files.map((f, i) => `
-            <div class="ai-row" data-i="${i}"><span class="c-name"><span class="vd-th" style="background-image:url('${f.thumb}')"></span><b>${f.name}</b></span><span class="c-kind">${f.kind}</span><span class="c-size">${f.size}</span><span class="c-ai"></span></div>`).join("")}</div>
-          <div class="ai-tip" role="tooltip"></div>
-          <div class="ai-status"></div>
-        </div>
-        <aside class="ai-info"></aside>
-      </div>`;
-    const rows = $$(".ai-row", box), tip = $(".ai-tip", box), info = $(".ai-info", box), list = $(".ai-list", box);
-    let sel = 0, tipAt = -1, hideT = null, synthOpen = false, tour = null, step = 0;
+  function compareDemo(box) {
+    const T = S.compareDemo, COUNTS = [2, 4, 6, 9], KEYS = ["codec", "res", "fps", "size"];
+    const COLS = { 2: 2, 4: 2, 6: 3, 9: 3 };
+    const still = window.matchMedia && matchMedia("(prefers-reduced-motion: reduce)").matches;
+    let n = 2, ref = 0, big = -1, mode = "grid", sound = 0, wipe = 0.5, playing = !still, t = 4, last = 0, raf = 0, dirty = true;
+    let story = null, storyDone = false, timers = [];
+    box.classList.add("cw");
+    box.innerHTML = `${chrome("", `<div class="cw-tools"><span data-k="cmpf.files"></span>
+        <div class="cw-seg" data-counts>${COUNTS.map((k) => `<button data-n="${k}">${k}</button>`).join("")}</div>
+        <div class="cw-seg" data-modes><button data-mode="grid" data-k="cmpf.grid"></button><button data-mode="wipe" data-k="cmpf.wipe"></button></div></div>`)}
+      <div class="cw-stage">${T.map((f, i) => `
+        <div class="cw-tile" data-i="${i}"><canvas style="filter:${f.look}"></canvas>
+          <div class="cw-cap top"><b>${f.name}</b><i data-k="cmpf.ref"></i><u><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M2 6h3l4-3v10l-4-3H2z"/><path d="M11 5.5a3.5 3.5 0 0 1 0 5M12.8 3.5a6 6 0 0 1 0 9" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/></svg></u></div><span class="cw-key">${i + 1}</span><div class="cw-cap bot"></div></div>`).join("")}
+        <span class="cw-wline"><b class="cw-knob"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M6 4L2 8l4 4M10 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-k="cmpf.knob"></span></b></span></div>
+      <div class="cw-bar">
+        <button class="cw-play" aria-label="Play / pause"><svg viewBox="0 0 24 24"><path class="i-pause" d="M7 5h3v14H7zM14 5h3v14h-3z"/><path class="i-play" d="M8 5l11 7-11 7z"/></svg></button>
+        <span class="cw-tc">00:00:00:00</span><div class="cw-scrub"><i></i></div>
+        <div class="cw-sound"><span data-k="cmpf.sound"></span>${T.map((f, i) => `<button data-s="${i}">${String.fromCharCode(65 + i)}</button>`).join("")}<button data-s="-1" data-k="cmpf.off"></button></div>
+        <button class="cw-replay" data-replay aria-label="Replay">↻</button>
+      </div>
+      <div class="cw-hint"></div>
+      <svg class="cw-cursor" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 8-6 1.6L10 19z" fill="#fff" stroke="#111" stroke-width="1.4" stroke-linejoin="round"/></svg>`;
+    const stage = $(".cw-stage", box), tiles = $$(".cw-tile", box), cans = tiles.map((tl) => $("canvas", tl)), cursor = $(".cw-cursor", box);
+    const spec = (f, k) => (k === "fps" ? `${f.fps} fps` : f[k]);
 
-    function paintRow(i) { $(".c-ai", rows[i]).innerHTML = pill(files[i]); }
-    function status() {
-      const k = files.filter((f) => ["yes", "partly", "maybe", "site"].includes(shown(f).v)).length;
-      $(".ai-status", box).textContent = BF.t("ai.items").replace("{n}", files.length).replace("{k}", k);
+    function layout() {
+      if (n !== 2) mode = "grid";
+      if (big >= n) big = -1;
+      if (ref >= n) ref = 0;
+      if (sound >= n) sound = 0;
+      box.dataset.n = n;
+      box.dataset.mode = mode;
+      $(".vd-title", box).textContent = BF.t("cmpf.win").replace("{n}", n);
+      stage.style.gridTemplateColumns = `repeat(${COLS[n]}, minmax(0, 1fr))`;
+      stage.style.gridTemplateRows = `repeat(${Math.ceil(n / COLS[n])}, minmax(0, 1fr))`;
+      stage.classList.toggle("wipe", mode === "wipe");
+      stage.classList.toggle("focus", big >= 0 && mode === "grid");
+      stage.style.setProperty("--wx", wipe * 100 + "%");
+      stage.style.setProperty("--wf", wipe);
+      tiles.forEach((tl, i) => {
+        const f = T[i];
+        tl.hidden = i >= n;
+        tl.classList.toggle("ref", n > 2 && i === ref && mode === "grid");
+        tl.classList.toggle("big", i === big);
+        $(".cw-cap.top i", tl).hidden = !(n > 2 && i === ref);
+        $(".cw-cap.top u", tl).hidden = i !== sound;
+        // Orange: differs from the reference; on the reference, differs from any shown tile.
+        $(".cw-cap.bot", tl).innerHTML = KEYS.map((k) => {
+          const d = i === ref ? T.slice(0, n).some((o) => o[k] !== f[k]) : f[k] !== T[ref][k];
+          return `<span class="${d ? "d" : "s"}">${spec(f, k)}</span>`;
+        }).join("");
+      });
+      $$("[data-n]", box).forEach((b) => b.setAttribute("aria-pressed", +b.dataset.n === n));
+      $$("[data-mode]", box).forEach((b) => b.setAttribute("aria-pressed", b.dataset.mode === mode));
+      $("[data-modes]", box).hidden = n !== 2;
+      $$("[data-s]", box).forEach((b) => { const s = +b.dataset.s; b.hidden = s >= n; b.setAttribute("aria-pressed", s === sound); });
+      box.classList.toggle("paused", !playing);
+      $(".cw-hint", box).textContent = BF.t(mode === "wipe" ? "cmpf.drag" : "cmpf.hint");
+      sizeCanvases();
+      dirty = true;
     }
-    // The reasons open beside the column and follow the pointer from row to row (like the app's AIHoverTip).
-    function showTip(i) {
-      clearTimeout(hideT);
-      if (!cell(files[i])) return hideTip();
-      tipAt = i;
-      tip.innerHTML = `<b>${headline(files[i])}</b>${details(files[i]).join(" · ")}`;
-      const r = rows[i].getBoundingClientRect(), l = list.getBoundingClientRect(), c = $(".c-ai", rows[i]).getBoundingClientRect();
-      // Narrow window: no room beside the column, so the reasons open under the row.
-      const below = l.width < 520;
-      tip.classList.toggle("below", below);
-      tip.style.right = below ? "8px" : l.right - c.left + 6 + "px";
-      tip.style.top = Math.max(0, Math.min(below ? r.bottom - l.top + 4 : r.top - l.top, list.clientHeight - tip.offsetHeight - 4)) + "px";
-      tip.classList.add("on");
+    function sizeCanvases() {
+      const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      cans.forEach((cv, i) => {
+        if (i >= n) return;
+        const w = Math.round(cv.clientWidth * dpr), h = Math.round(cv.clientHeight * dpr);
+        if (w && (cv.width !== w || cv.height !== h)) { cv.width = w; cv.height = h; dirty = true; }
+      });
     }
-    function hideTip() { tipAt = -1; tip.classList.remove("on"); }
-    function renderInfo() {
-      const f = files[sel], canCheck = f.synth !== false && /\.(png|jpe?g|webp|heic|mp4|mov|webm)$/i.test(f.name);
-      info.innerHTML = `<div class="vd-th ai-ith" style="background-image:url('${f.thumb}')"></div>
-        <b class="ai-iname">${f.name}</b><small>${f.kind} · ${f.size}</small>
-        <div class="ai-group"><h4>▾ ${BF.t("ai.info")}</h4>
-          <p class="ai-ihead">${pill(f)}<span>${headline(f)}</span></p>
-          <ul>${details(f).map((d) => `<li>${d}</li>`).join("")}</ul>
-          ${canCheck ? `<button class="ai-check">${BF.t("ai.check")}</button>
-          <div class="ai-synth"${synthOpen ? "" : " hidden"}><p>${BF.t("ai.check.how")}</p>
-            <div><button data-a="yes">${BF.t("ai.found")}</button><button data-a="partly">${BF.t("ai.part")}</button><button data-a="no">${BF.t("ai.notfound")}</button></div>
-            ${f.m ? `<button class="ai-clear" data-a="clear">${BF.t("ai.clear")}</button>` : ""}</div>` : ""}
-        </div>`;
+    // One clock for every tile: the scene at time t, drawn into each shown tile.
+    function draw() {
+      cans.forEach((cv, i) => {
+        if (i >= n || !cv.width || (mode === "grid" && big >= 0 && i !== big)) return;
+        drawScene(cv.getContext("2d"), cv.width, cv.height, t, SCENES[T[i].scene]);
+      });
     }
-    function select(i, withTip) {
-      if (i !== sel) synthOpen = false;
-      sel = i;
-      rows.forEach((r, k) => r.classList.toggle("sel", k === i));
-      renderInfo();
-      if (withTip) showTip(i); else hideTip();
+    function paintClock() {
+      $(".cw-tc", box).textContent = tc(t);
+      $(".cw-scrub i", box).style.width = (t / DUR) * 100 + "%";
     }
+    function tick(now) {
+      raf = requestAnimationFrame(tick);
+      if (playing) { t = (t + Math.min(0.1, (now - (last || now)) / 1000)) % DUR; dirty = true; }
+      last = now;
+      if (dirty) { draw(); paintClock(); dirty = false; }
+    }
+    const setPlaying = (p) => { playing = p; last = 0; layout(); };
+    const seek = (frac) => { t = Math.min(DUR - 0.01, Math.max(0, frac * DUR)); dirty = true; };
+
+    // ---- The short story when the section first shows: side by side, playing; a pointer clicks Wipe; it drags the line.
+    const at = (ms, fn) => timers.push(setTimeout(fn, ms));
+    const pointTo = (el, dx = 0.5, dy = 0.5) => {
+      const b = box.getBoundingClientRect(), r = el.getBoundingClientRect();
+      cursor.style.transform = `translate(${r.left - b.left + r.width * dx - 4}px, ${r.top - b.top + r.height * dy - 3}px)`;
+    };
+    const lineEl = () => $(".cw-wline", box);
+    function animateWipe(stops, ms, done) {
+      cursor.classList.add("drag");
+      const t0 = performance.now(), ease = (x) => (x < 0.5 ? 2 * x * x : 1 - (-2 * x + 2) ** 2 / 2);
+      const step = (now) => {
+        if (!story) return;
+        const k = Math.min(1, (now - t0) / ms), seg = Math.min(stops.length - 2, Math.floor(k * (stops.length - 1)));
+        const local = ease(k * (stops.length - 1) - seg);
+        wipe = stops[seg] + (stops[seg + 1] - stops[seg]) * local;
+        stage.style.setProperty("--wx", wipe * 100 + "%"); stage.style.setProperty("--wf", wipe);
+        pointTo(lineEl(), 0.5, 0.5);
+        if (k < 1) requestAnimationFrame(step); else done();
+      };
+      requestAnimationFrame(step);
+    }
+    function endStory(handOver) {
+      timers.forEach(clearTimeout); timers = [];
+      story = null; storyDone = true;
+      cursor.classList.remove("on", "press", "drag");
+      $$(".press", box).forEach((b) => b.classList.remove("press"));
+      if (handOver) box.dataset.touched = "1";
+    }
+    function playStory() {
+      endStory(false);
+      storyDone = false;
+      n = 2; mode = "grid"; big = -1; ref = 0; wipe = 0.5; t = 0; playing = true; last = 0;
+      layout();
+      if (still) { mode = "wipe"; playing = false; t = 4; layout(); storyDone = true; return; }
+      story = {};
+      const btn = $('[data-mode="wipe"]', box);
+      cursor.classList.add("on");
+      pointTo(stage, 0.5, 0.75);
+      at(2000, () => pointTo(btn));
+      at(2900, () => { cursor.classList.add("press"); btn.classList.add("press"); });
+      at(3150, () => {
+        cursor.classList.remove("press"); btn.classList.remove("press");
+        mode = "wipe"; layout();
+        stage.animate([{ opacity: 0.55 }, { opacity: 1 }], { duration: 350, easing: "ease-out" });
+      });
+      at(3700, () => pointTo(lineEl()));
+      at(4400, () => { cursor.classList.add("press");
+        animateWipe([0.5, 0.25, 0.75, 0.5], 3000, () => at(250, () => { cursor.classList.remove("press", "drag", "on"); at(400, () => endStory(false)); }));
+      });
+    }
+    // Any real interaction takes over from the story.
+    box.addEventListener("pointerdown", (e) => { if (e.isTrusted && story && !e.target.closest("[data-replay]")) endStory(true); }, true);
+
+    $$("[data-n]", box).forEach((b) => b.addEventListener("click", () => { n = +b.dataset.n; big = -1; mode = n === 2 ? "wipe" : "grid"; layout(); }));
+    $$("[data-mode]", box).forEach((b) => b.addEventListener("click", () => { mode = b.dataset.mode; big = -1; layout(); }));
+    $$("[data-s]", box).forEach((b) => b.addEventListener("click", () => { sound = +b.dataset.s; layout(); }));
+    $(".cw-play", box).addEventListener("click", () => setPlaying(!playing));
+    $("[data-replay]", box).addEventListener("click", () => playStory());
+    $(".cw-scrub", box).addEventListener("pointerdown", (e) => { const r = e.currentTarget.getBoundingClientRect(); seek((e.clientX - r.left) / r.width); });
+    tiles.forEach((tl, i) => {
+      tl.addEventListener("click", () => { if (mode === "wipe") return; ref = i; layout(); });
+      tl.addEventListener("dblclick", () => { if (mode === "wipe") return; big = big === i ? -1 : i; layout(); });
+    });
+    // Wipe: click or drag anywhere to move the line (mouse and touch).
+    const wipeAt = (e) => { const r = stage.getBoundingClientRect(); wipe = Math.min(0.98, Math.max(0.02, (e.clientX - r.left - 6) / (r.width - 12))); layout(); };
+    stage.addEventListener("pointerdown", (e) => {
+      if (mode !== "wipe") return;
+      wipeAt(e);
+      const move = (ev) => wipeAt(ev), up = () => { removeEventListener("pointermove", move); removeEventListener("pointerup", up); removeEventListener("pointercancel", up); };
+      addEventListener("pointermove", move); addEventListener("pointerup", up); addEventListener("pointercancel", up);
+    });
+    new ResizeObserver(() => sizeCanvases()).observe(stage);
+
     function render() {
       $$("[data-k]", box).forEach((el) => (el.textContent = BF.t(el.dataset.k)));
-      files.forEach((f, i) => paintRow(i));
-      status();
-      renderInfo();
-      if (tipAt >= 0) showTip(tipAt);
+      layout();
     }
-    const stopTour = () => { clearInterval(tour); tour = null; box.dataset.touched = "1"; };
-
-    rows.forEach((r, i) => {
-      $(".c-ai", r).addEventListener("pointerenter", (e) => { if (e.pointerType === "mouse") { stopTour(); showTip(i); } });
-      r.addEventListener("click", () => { stopTour(); select(i, true); });
-    });
-    $(".ai-rows", box).addEventListener("pointerleave", () => { hideT = setTimeout(hideTip, 150); });
-    $(".ai-rows", box).addEventListener("scroll", hideTip);
-    info.addEventListener("click", (e) => {
-      const b = e.target.closest("button");
-      if (!b) return;
-      stopTour();
-      if (b.classList.contains("ai-check")) { synthOpen = !synthOpen; return renderInfo(); }
-      const f = files[sel];
-      f.m = b.dataset.a === "clear" ? null : b.dataset.a;
-      synthOpen = false;
-      paintRow(sel); status(); renderInfo(); showTip(sel);
-      rows[sel].classList.remove("flash"); void rows[sel].offsetWidth; rows[sel].classList.add("flash");
-    });
-
     document.addEventListener("langchange", render);
     render();
-    select(0, false);
-    // A short tour through the kinds of answers, until the visitor touches the demo.
-    const TOUR = [0, 3, 6, 8, 2, 12, 10, 13];
-    whenVisible(box, () => { if (!tour && box.dataset.touched !== "1") tour = setInterval(() => select(TOUR[step++ % TOUR.length], true), 2600); },
-      () => { clearInterval(tour); tour = null; });
+    if (still) { mode = "wipe"; playing = false; layout(); }
+    // Runs only while the section is on screen; the story plays once per page view.
+    whenVisible(box, () => {
+      last = 0;
+      if (!raf) raf = requestAnimationFrame(tick);
+      if (!storyDone && !story && box.dataset.touched !== "1") playStory();
+    }, () => { cancelAnimationFrame(raf); raf = 0; });
   }
 
   document.querySelectorAll("[data-player-demo]").forEach(playerDemo);
-  document.querySelectorAll("[data-ai-demo]").forEach(aiDemo);
+  document.querySelectorAll("[data-compare-demo]").forEach(compareDemo);
   document.querySelectorAll("[data-filter-demo]").forEach(filterDemo);
   document.querySelectorAll("[data-sort-demo]").forEach(sortDemo);
   document.querySelectorAll("[data-media-demo]").forEach(mediaDemo);

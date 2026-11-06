@@ -47,6 +47,9 @@ kbd { font: 12px var(--mono); color: var(--muted); }
 .links { display: flex; gap: 22px; margin-left: auto; font-size: 14px; }
 .links a { text-decoration: none; color: var(--muted); }
 .links a:hover { color: var(--text); }
+.links a { white-space: nowrap; }
+/* Suggest a feature leaves the header first when it gets tight (the footer and Docs keep it). */
+@media (max-width: 1180px) { .links a[href="feedback.html"] { display: none; } }
 .lang { display: flex; border: 1px solid var(--line); border-radius: 999px; overflow: hidden; }
 .lang button { background: none; border: 0; color: var(--muted); font: 600 12px var(--font); padding: 6px 10px; cursor: pointer; }
 .lang button[aria-pressed="true"] { background: rgba(255,255,255,.12); color: var(--text); }
@@ -64,9 +67,6 @@ kbd { font: 12px var(--mono); color: var(--muted); }
 .badge { display: inline-block; padding: 6px 14px; margin-bottom: 22px; border-radius: 999px; font-size: 13px; color: var(--cream); background: rgba(255,170,60,.12); border: 1px solid rgba(255,170,60,.3); }
 .cta-row { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-top: 34px; }
 .hero .fine { margin-top: 14px; }
-.views-head { margin-top: clamp(80px, 10vw, 120px); }
-.hero-shot { margin-top: 8px; }
-.hero-shot .view-tabs { margin-top: 28px; }
 
 .support .cta-row { margin-top: 30px; }
 
@@ -76,11 +76,6 @@ kbd { font: 12px var(--mono); color: var(--muted); }
 .chrome { display: flex; gap: 8px; padding: 12px 14px; background: #1c1c20; border-bottom: 1px solid var(--line); }
 .chrome i { width: 12px; height: 12px; border-radius: 50%; background: #ff5f57; }
 .chrome i:nth-child(2) { background: #febc2e; } .chrome i:nth-child(3) { background: #28c840; }
-/* ---------- Views ---------- */
-.view-tabs { display: inline-flex; flex-wrap: wrap; justify-content: center; gap: 6px; margin-top: 40px; padding: 6px; border-radius: 999px; background: var(--card); border: 1px solid var(--line); }
-.view-tabs button { display: flex; gap: 8px; align-items: center; background: none; border: 0; color: var(--muted); font: 500 15px var(--font); padding: 9px 18px; border-radius: 999px; cursor: pointer; }
-.view-tabs button[aria-selected="true"] { background: rgba(255,255,255,.1); color: var(--text); }
-.view-desc { color: var(--muted); min-height: 1.6em; margin: 22px auto 0; }
 
 /* ---------- Features ---------- */
 .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 56px; text-align: left; }
@@ -160,10 +155,25 @@ kbd { font: 12px var(--mono); color: var(--muted); }
   .download-card { flex-wrap: wrap; }
   .download-card .btn { margin-left: 0; width: 100%; justify-content: center; }
   .nav .btn-small { display: none; }
-  .view-tabs kbd { display: none; }
 }
 
 /* media player section */
 .mp-win { margin-top: 44px; }
 h2.wide { max-width: 24ch; }
 #player .mp-points { max-width: 1080px; margin-left: auto; margin-right: auto; }
+
+/* "Press Space" section, centred under the hero (layout in base.css) */
+.space-sec { margin-top: clamp(80px, 10vw, 120px); }
+.space-head { flex-direction: column; align-items: center; text-align: center; }
+.space-sub { margin-left: auto; margin-right: auto; }
+.space-key { --key-a: #2b2b31; --key-b: #1f1f24; --key-side: #050506; --key-line: rgba(255,255,255,.12); }
+.sp-tabs { --tab-bg: var(--card); --tab-on-bg: #f5f3ef; --tab-on-fg: #111; }
+.space-panel { margin-top: 36px; }
+.space-panel .sv.vd-dark { margin-top: 0; }
+.sp-cap { text-align: center; }
+.sp-cap p { margin-left: auto; margin-right: auto; }
+/* Search section on the dark page: centred like Press Space */
+.find-sec .space-head { flex-direction: column; align-items: center; text-align: center; }
+.find-soon { justify-content: center; }
+.find-panel { margin-top: 36px; }
+.fd-tries button { background: var(--card); }

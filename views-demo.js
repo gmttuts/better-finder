@@ -1,6 +1,6 @@
-// The "five views" section: a mock Better Finder window drawn in HTML. The same file tiles fly between
-// List, Grid, Columns, Gallery and Globe. Buttons with data-view (anywhere on the page) switch it.
-// It cycles by itself until the visitor clicks a view; on Globe, drag to spin.
+// A mock Better Finder window drawn in HTML. The same file tiles fly between Grid, List, Columns and Gallery
+// (Finder's order, ⌘1 to ⌘4). Buttons with data-view (anywhere on the page) switch it.
+// It cycles by itself until the visitor clicks a view.
 // Several windows can exist: data-views-still="grid" makes a quiet one (the MacBook in the hero) that starts in
 // that view, never cycles and only answers its own buttons. Buttons outside any window drive the main one.
 (() => {
@@ -195,20 +195,19 @@ function setup(box) {
   const tagsOf = (i) => (F.files.find((x) => x.i === i) || { tags: [] }).tags;
   const tagColor = (id) => F.tags.find((t) => t.id === id).color;
   let filterType = "all";
-  const VIEWS = ["list", "grid", "columns", "gallery", "globe"];
+  const VIEWS = ["grid", "list", "columns", "gallery"];
   const ICONS = {
     list: '<path d="M4 6h16M4 12h16M4 18h16"/>',
     grid: '<rect x="4" y="4" width="7" height="7" rx="1"/><rect x="13" y="4" width="7" height="7" rx="1"/><rect x="4" y="13" width="7" height="7" rx="1"/><rect x="13" y="13" width="7" height="7" rx="1"/>',
     columns: '<rect x="3.5" y="5" width="17" height="14" rx="1.5"/><path d="M9.5 5v14M15 5v14"/>',
     gallery: '<rect x="3.5" y="4" width="17" height="11" rx="1.5"/><path d="M4 19h3M9 19h3M14 19h3"/>',
-    globe: '<circle cx="12" cy="12" r="8"/><path d="M4 12h16M12 4c2.5 2.5 2.5 13.5 0 16M12 4c-2.5 2.5-2.5 13.5 0 16"/>',
   };
   const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   box.innerHTML = `
     <div class="vd-chrome"><i></i><i></i><i></i>
       <span class="vd-title">Motion Library</span>
-      <div class="vd-seg">${VIEWS.map((v) => `<button data-view="${v}" title="${v}"><svg viewBox="0 0 24 24">${ICONS[v]}</svg></button>`).join("")}</div>
+      <div class="vd-seg">${VIEWS.map((v) => `<button data-view="${v}" title="${v[0].toUpperCase() + v.slice(1)} (⌘${VIEWS.indexOf(v) + 1})" aria-label="${v[0].toUpperCase() + v.slice(1)} (⌘${VIEWS.indexOf(v) + 1})"><svg viewBox="0 0 24 24">${ICONS[v]}</svg></button>`).join("")}</div>
     </div>
     ${withFilters ? `<div class="vd-filter"><button data-f="all">All<em>${files.length}</em></button>${F.chips.map((ch) => `<button data-f="${ch.id}" style="--c:${ch.color}">${ch.en}<em>${files.filter((f) => typeOf(f) === ch.id).length}</em></button>`).join("")}<span class="vd-fnote">⌘-click to pick several</span></div>` : ""}
     <div class="vd-body">
@@ -220,6 +219,7 @@ function setup(box) {
         <div class="vd-head"><span>Name</span><span class="vd-meta"><span>Kind</span><span>Duration</span><span>Size</span></span></div>
         <div class="vd-col1"><span>📁 2026 Brand</span><span class="on">📁 Motion Library</span><span>📁 Footage</span><span>📁 Renders</span><span>📁 Sound</span></div>
         <div class="vd-preview"><div class="vd-pth"></div><b></b><small></small></div>
+        <div class="vd-gsel"><div class="vd-th"></div></div>
         ${files.map((f, i) => `
           <div class="vd-item" data-i="${i}">
             <div class="vd-th" style="${f.thumb ? `background-image:url('${f.thumb}')` : `--h:${f.hue}`}">${f.badge ? `<em>${f.badge}</em>` : ""}${f.dur ? `<u>${f.dur}</u>` : ""}</div>
@@ -234,8 +234,12 @@ function setup(box) {
   const stage = box.querySelector(".vd-stage");
   const items = [...box.querySelectorAll(".vd-item")];
   const preview = box.querySelector(".vd-preview");
+  const gsel = box.querySelector(".vd-gsel");   // Gallery: the selected file's place in the filmstrip, highlighted
+  let selSlot = null;
+  // The large preview uses the sharp still when there is one; the small thumb shows while it loads.
+  const bigBg = (f) => (f.big ? `background-image:url('${f.big}'),url('${f.thumb}')` : f.thumb ? `background-image:url('${f.thumb}')` : `--h:${f.hue}`);
   const last = [];
-  let view = "list", selected = 0, raf = 0, angle = 0, tilt = -0.28, drag = null, spinV = 0.004;
+  let view = "list", selected = 0;
 
   // ---------- Layouts: each returns {x, y, w, h, s, o, z} per item ----------
   function layout() {
@@ -268,30 +272,16 @@ function setup(box) {
       const bigH = H - pad * 2 - film - 30, bigW = Math.min(W - pad * 2, bigH * 16 / 9);
       const first = Math.max(0, Math.min(selected - Math.floor(k / 2), n - k));
       const start = pad - first * (fw + gap);
+      selSlot = { x: start + selected * (fw + gap), y: H - pad - film, w: fw, h: film };
       items.forEach((_, i) => out.push(i === selected
         ? { x: (W - bigW) / 2, y: pad, w: bigW, h: bigH + 24, big: true }
         : { x: start + i * (fw + gap), y: H - pad - film, w: fw, h: film }));
-    } else {
-      out.push(...globe(W, H));
     }
     return out;
   }
 
-  function globe(W, H) {
-    const n = items.length, R = Math.min(W, H) * 0.36, P = R * 3.2;
-    const w = Math.max(70, Math.min(W, H) * 0.2), h = w * 9 / 16;
-    const ca = Math.cos(angle), sa = Math.sin(angle), ct = Math.cos(tilt), st = Math.sin(tilt);
-    return items.map((_, i) => {
-      const y0 = 1 - (2 * (i + 0.5)) / n, r = Math.sqrt(1 - y0 * y0), th = i * Math.PI * (3 - Math.sqrt(5));
-      let x = Math.cos(th) * r, y = y0, z = Math.sin(th) * r;
-      [x, z] = [x * ca + z * sa, -x * sa + z * ca];
-      [y, z] = [y * ct - z * st, y * st + z * ct];
-      const s = P / (P - z * R);
-      return { x: W / 2 + x * R * s - w / 2, y: H / 2 + y * R * s - h / 2, w, h, s: s * (0.75 + 0.25 * z), o: 0.35 + 0.65 * (z + 1) / 2, z: Math.round((z + 1) * 100) };
-    });
-  }
-
   function apply(animate) {
+    selSlot = null;
     const L = layout();
     items.forEach((el, i) => {
       const p = L[i];
@@ -313,30 +303,34 @@ function setup(box) {
       box.querySelector(".vd-count").textContent = `${n} of ${files.length} items`;
     }
     const f = files[selected];
-    preview.querySelector(".vd-pth").style.cssText = f.thumb ? `background-image:url('${f.thumb}')` : `--h:${f.hue}`;
+    items.forEach((el, i) => {
+      const th = el.querySelector(".vd-th"), want = i === selected && view === "gallery" ? bigBg(files[i]) : el.dataset.bg;
+      if (!el.dataset.bg) el.dataset.bg = th.getAttribute("style");
+      if (th.getAttribute("style") !== want) th.setAttribute("style", want || el.dataset.bg);
+    });
+    gsel.classList.toggle("on", !!selSlot);
+    if (selSlot) {
+      gsel.style.transition = animate ? "" : "none";
+      Object.assign(gsel.style, { width: selSlot.w + "px", height: selSlot.h + "px", transform: `translate(${selSlot.x}px, ${selSlot.y}px)` });
+      const th = gsel.querySelector(".vd-th");
+      th.setAttribute("style", items[selected].dataset.bg);
+      th.innerHTML = f.badge ? `<em>${f.badge}</em>` : "";
+    }
+    preview.querySelector(".vd-pth").style.cssText = bigBg(f);
     preview.querySelector("b").textContent = f.name;
     preview.querySelector("small").textContent = [f.kind, f.dur, f.size].filter(Boolean).join(" · ");
   }
 
-  function spin() {
-    if (!drag) angle += spinV;
-    apply(false);
-    raf = requestAnimationFrame(spin);
-  }
-
   function set(v) {
     if (!VIEWS.includes(v)) return;
-    cancelAnimationFrame(raf);
     view = v;
     box.dataset.mode = v;
     stage.className = "vd-stage mode-" + v;
     box.querySelectorAll("[data-view]").forEach((b) => b.setAttribute("aria-selected", b.dataset.view === v));
     if (!still) {
       document.querySelectorAll("[data-view]").forEach((b) => { if (!b.closest("[data-views-demo]")) b.setAttribute("aria-selected", b.dataset.view === v); });
-      document.dispatchEvent(new CustomEvent("viewchange", { detail: v }));
     }
     apply(true);
-    if (v === "globe" && !reduce) setTimeout(() => { if (view === "globe") { items.forEach((el) => (el.style.transition = "none")); spin(); } }, 480);
   }
 
   // ---------- Interaction ----------
@@ -346,27 +340,10 @@ function setup(box) {
   if (!still && !main) main = instances.get(box);
   items.forEach((el, i) => el.addEventListener("click", () => {
     stopAuto();
-    if (view === "globe") return;
     selected = i;
     apply(true);
   }));
-  stage.addEventListener("pointerdown", (e) => {
-    if (view !== "globe") return;
-    stopAuto();
-    drag = { x: e.clientX, y: e.clientY, a: angle, t: tilt };
-    stage.setPointerCapture(e.pointerId);
-  });
-  stage.addEventListener("pointermove", (e) => {
-    if (!drag) return;
-    const nx = drag.a + (e.clientX - drag.x) * 0.01;
-    spinV = (nx - angle) * 0.5 || spinV;
-    angle = nx;
-    tilt = Math.max(-1.2, Math.min(1.2, drag.t + (e.clientY - drag.y) * 0.008));
-  });
-  const endDrag = () => { if (drag) { drag = null; spinV = Math.max(-0.03, Math.min(0.03, spinV)); setTimeout(() => (spinV = Math.sign(spinV || 1) * 0.004), 1200); } };
-  stage.addEventListener("pointerup", endDrag);
-  stage.addEventListener("pointercancel", endDrag);
-  new ResizeObserver(() => { if (view !== "globe" || !raf) apply(false); }).observe(stage);
+  new ResizeObserver(() => apply(false)).observe(stage);
 
   // Cycle through the views while the section is on screen, until the visitor takes over.
   const startAuto = () => {

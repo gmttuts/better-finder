@@ -33,8 +33,7 @@
     each(".shot-missing span", (el) => { el.textContent = t("shot.missing"); });
     renderFeatures();
     renderDesktopNext();
-    renderAI();
-    renderViewDesc();
+    renderSoon();
     renderReleases();
     renderCompare();
     renderDemoHints();
@@ -44,7 +43,7 @@
   each("[data-lang]", (b) => b.addEventListener("click", () => {
     lang = b.dataset.lang; store.set("bf.lang", lang); applyLang();
   }));
-  // For views-demo.js / feature-demos.js (loaded after this file).
+  // For views-demo.js / feature-demos.js / space-demo.js (loaded after this file).
   window.BF = { t, lang };
 
   // ---------- Download + version + stats ----------
@@ -68,7 +67,7 @@
       c.innerHTML = `<img src="assets/icon.png" alt="" width="56" height="56">
         <div><strong>Better Finder <span data-i18n="desk.title"></span> v${D.version}</strong>
         <span class="fine" data-desk-requires></span>
-        <span class="fine"><span data-i18n="desk.other"></span> <a href="${D.windows.msi}">Windows .msi</a> · <a href="${D.linux.deb}">Ubuntu / Debian .deb</a></span>
+        <span class="fine"><span data-i18n="desk.other"></span> <a href="${D.linux.deb}">Ubuntu / Debian .deb</a></span>
         <span class="fine" data-i18n="desk.help"></span></div>
         <span class="desk-buttons" style="display:flex;gap:8px;flex-wrap:wrap;margin-left:auto">
           ${btn(D.windows.exe, "desk.win", os === "linux")}${btn(D.linux.appimage, "desk.linux", os !== "linux")}</span>`;
@@ -85,7 +84,11 @@
     });
     // Under the Mac download buttons: say Windows and Linux are here too (the #install card has its own Windows / Linux card).
     each(".soon", (el) => {
-      if (el.closest("#install")) { el.hidden = true; return; }
+      if (el.closest("#install") || !S.windowsSection) {
+        el.hidden = true;
+        if (el.parentElement.children.length === 1) el.parentElement.hidden = true;   // no empty line left behind
+        return;
+      }
       const label = el.querySelector("[data-i18n]");
       if (label) label.dataset.i18n = "req.out";
     });
@@ -120,14 +123,10 @@
   }
   each("[data-shot]", (fig) => setShot(fig, fig.dataset.shot));
 
-  // ---------- Views: the animated window lives in views-demo.js; this keeps the description in sync ----------
-  let view = "list";
-  function renderViewDesc() { const el = $("[data-view-desc]"); if (el) el.textContent = t(`views.${view}.d`); }
-  document.addEventListener("viewchange", (e) => { view = e.detail; renderViewDesc(); });
-
   // ---------- Features ----------
   // ---------- Windows / Linux: what the next desktop version brings ----------
   function renderDesktopNext() {
+    each("#windows", (el) => { el.hidden = !S.windowsSection; });   // content.js windowsSection switches it on again
     const N = S.desktopNext, box = $("[data-win-groups]");
     if (!N || !box) return;
     const out = (S.desktop || {}).version && cmp(S.desktop.version, N.version) >= 0;   // already released?
@@ -140,21 +139,21 @@
     each("[data-win-get]", (a) => { a.hidden = !(S.desktop || {}).version; });
   }
 
-  // ---------- Made with AI?: "Coming in the next Mac version" until download.version reaches aiDetect.mac ----------
-  function renderAI() {
-    const A = window.BF.ai || {};
-    each("[data-ai-badge]", (el) => { el.textContent = t(A.mac ? "ai.new" : "ai.soon"); el.classList.toggle("new", !!A.mac); });
-    each("[data-ai-avail]", (el) => { el.textContent = t(A.desktop ? "ai.desk.out" : "ai.desk.soon"); });
-    each("[data-ai-how]", (ol) => {
-      ol.innerHTML = [1, 2, 3, 4, 5, 6].map((i) => `<li><b>${t(`ai.how.${i}.t`)}</b><span>${t(`ai.how.${i}.d`)}</span></li>`).join("");
-    });
+  // ---------- Pro features not released yet (content.js aiDetect, compare): "Coming in the next Mac version" / "New on Mac" ----------
+  function renderSoon() {
+    const O = window.BF.out || {};
+    each("[data-soon]", (el) => { const o = O[el.dataset.soon] || {}; el.textContent = t(o.mac ? "soon.new" : "soon.mac"); el.classList.toggle("new", !!o.mac); });
+    each("[data-soon-desk]", (el) => { el.textContent = t((O[el.dataset.soonDesk] || {}).desktop ? "soon.desk.out" : "soon.desk"); });
+    each(".pro-badge", (el) => { el.title = t("pro.tip"); });
   }
 
   function renderFeatures() {
     each("[data-features]", (box) => {
       box.innerHTML = S.features.map((f) => {
         const [title, body] = f[lang] || f.en;
-        return `<article class="feature"><span class="ficon">${f.icon}</span><h3>${title}</h3><p>${body}</p></article>`;
+        // mac = the Mac version that brought it: "Coming in the next Mac version" until download.version reaches it
+        const soon = f.mac ? `<span class="soon-badge feat-soon${cmp(S.download.version, f.mac) >= 0 ? " new" : ""}">${t(cmp(S.download.version, f.mac) >= 0 ? "soon.new" : "soon.mac")}</span>` : "";
+        return `<article class="feature"><span class="ficon">${f.icon}</span>${soon}<h3>${title}</h3><p>${body}</p></article>`;
       }).join("");
     });
   }
@@ -177,12 +176,18 @@
   const releases = (window.CHANGELOG || []).filter((r) => cmp(r.version, S.download.version) <= 0);
   // App notes may use long dashes; the site avoids them.
   const tidy = (s) => s.replace(/\s+—\s+/g, "; ").replace(/—/g, ", ");
+  // Versions made since the download, kept apart and folded: "In the next Mac version" until download.version reaches them.
+  const upcoming = (window.CHANGELOG || []).filter((r) => cmp(r.version, S.download.version) > 0);
+  const relItem = (r) => `
+      <li><div class="rel-head"><span class="rel-v">${r.version}</span><h3>${tidy(r.title)}</h3><time>${r.date}</time></div>
+      <ul>${r.notes.map((n) => `<li>${tidy(n)}</li>`).join("")}</ul></li>`;
   function renderReleases() {
     const box = $("[data-releases]");
     if (!box) return;
-    box.innerHTML = releases.map((r) => `
-      <li><div class="rel-head"><span class="rel-v">${r.version}</span><h3>${tidy(r.title)}</h3><time>${r.date}</time></div>
-      <ul>${r.notes.map((n) => `<li>${tidy(n)}</li>`).join("")}</ul></li>`).join("");
+    const next = upcoming.length ? `<li class="rel-next"><details><summary><span class="soon-badge">${t("soon.mac")}</span>
+      <span>${t("new.next").replace("{n}", upcoming.length).replace("{v}", S.download.version)}</span></summary>
+      <ol class="releases">${upcoming.map(relItem).join("")}</ol></details></li>` : "";
+    box.innerHTML = next + releases.map(relItem).join("");
   }
   // The release notes open in a pop-up from the footer (and the nav link).
   const relModal = $("[data-releases-modal]");
@@ -228,12 +233,15 @@
   modal?.addEventListener("click", (e) => { if (e.target === modal || e.target.closest("[data-close]")) modal.close(); });
 
   // ---------- Hover demo with real files ----------
-  const loadScript = (src) => new Promise((ok, fail) => {
-    const s = Object.assign(document.createElement("script"), { src, onload: ok, onerror: fail });
+  // Each library loads once, however many demos ask for it (space-demo.js uses these too).
+  const scripts = {};
+  const loadScript = (src) => (scripts[src] ||= new Promise((ok, fail) => {
+    const s = Object.assign(document.createElement("script"), { src, onload: ok, onerror: () => { delete scripts[src]; fail(); } });
     document.head.appendChild(s);
-  });
+  }));
   const LOTTIE = "https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie_light.min.js";
   const RIVE = "https://cdn.jsdelivr.net/npm/@rive-app/canvas@2.40.0/rive.js";
+  Object.assign(window.BF, { loadScript, LOTTIE, RIVE });
   const fmt = (s) => `${String(Math.floor(s / 60)).padStart(2, "0")}:${String(Math.floor(s % 60)).padStart(2, "0")}:${String(Math.floor((s % 1) * 24)).padStart(2, "0")}`;
 
   function renderDemoHints() {
@@ -339,7 +347,7 @@
   each(".reveal", (el) => (io ? io.observe(el) : el.classList.add("in")));
 
   // ---------- Design switcher (only when previewing on this Mac) ----------
-  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname)) {
+  if (/^(localhost|127\.0\.0\.1)$/.test(location.hostname) && !document.body.hasAttribute("data-no-switch")) {
     const here = location.pathname.endsWith("a.html") ? "A" : "B";
     document.body.insertAdjacentHTML("beforeend", `<div class="dev-switch">Preview:
       <a href="a.html${location.search}" ${here === "A" ? 'aria-current="page"' : ""}>A · Dark</a>
@@ -347,16 +355,10 @@
   }
 
   // ---------- Aspect ratio (sort demo): "Coming soon" until both the Mac and Windows / Linux builds have it ----------
-  const AR = S.aspectRatio || {};
-  window.BF.ratioOut = !!(AR.mac && AR.desktop && cmp(S.download.version, AR.mac) >= 0 && D.version && cmp(D.version, AR.desktop) >= 0);
-  if (window.BF.ratioOut && S.text["spot.sort.d.out"]) S.text["spot.sort.d"] = S.text["spot.sort.d.out"];
 
-  // ---------- Made with AI? (section + demo): released on Mac / on Windows and Linux? ----------
-  const AI = S.aiDetect || {};
-  window.BF.ai = {
-    mac: !!(AI.mac && cmp(S.download.version, AI.mac) >= 0),
-    desktop: !!(AI.desktop && D.version && cmp(D.version, AI.desktop) >= 0),
-  };
+  // ---------- Pro features: released on Mac / on Windows and Linux? ----------
+  const released = (v) => ({ mac: !!(v && v.mac && cmp(S.download.version, v.mac) >= 0), desktop: !!(v && v.desktop && D.version && cmp(D.version, v.desktop) >= 0) });
+  window.BF.out = { ai: released(S.aiDetect), compare: released(S.compareFiles), ratio: released(S.aspectRatio), space: released(S.spaceSection), search: released(S.searchPalette) };
 
   applyLang();
 })();
