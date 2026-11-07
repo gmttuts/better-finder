@@ -110,21 +110,21 @@
 <ul>
 <li>Hover over a video, GIF, Lottie or Rive file in Grid to scrub through it without opening it.</li>
 <li>View Options (${k("⌘J")} / ${k("Ctrl+J")}) keep a view, sort, icon size, columns and background for one folder.</li>
-<li>Right-click a List column header to show or hide columns; drag to reorder and resize. Group By and Sort By work in every view.</li>
+<li>Right-click a List column header to show or hide columns; drag to reorder and resize. The AI, FPS and Aspect Ratio columns are ${PRO}. Group By and Sort By work in every view.</li>
 </ul>
 <h3 id="tabs-panes">Tabs and panes</h3>
 <ul>
 <li>New tab ${k("⌘T")} / ${k("Ctrl+T")}, close ${k("⌘W")} / ${k("Ctrl+W")}.</li>
 <li>Split the window into panes: ${k("⌘\\")} split right, ${k("⌥⌘\\")} split down ${mac}; ${k("Ctrl+\\")} ${win}. Drag a tab to the edge of a pane to split there, onto another pane to move it, or out of the window to open a new window.</li>
 <li>Click a tab bar, then press ${k("1")} to ${k("9")} (and ${k("0")}) for that pane's 1st to 10th tab (Settings ▸ Windows &amp; Sidebar on Mac, Windows, Tabs &amp; Sidebar on Windows, Tabs &amp; Sidebar on Linux).</li>
-<li>Workspaces save the List columns, view, number of panes and sidebar: Window ▸ Workspace or ${k("⌥⌘1")}…${k("⌥⌘9")} ${mac}, ${k("Alt+1")}…${k("Alt+9")} ${win}.</li>
+<li>Workspaces save the List columns, view, number of panes and sidebar: Window ▸ Workspace or ${k("⌥⌘1")}…${k("⌥⌘9")} ${mac}, ${k("Alt+1")}…${k("Alt+9")} ${win}. Standard is free; the other Workspaces and saving new ones are ${PRO}.</li>
 </ul>
 <h3 id="sidebar">Sidebar</h3>
-<p>Favorites, drives, tags, playlists ${PRO} and Smart Folders. On Mac it can follow Finder's own Favorites and tags (Settings ▸ Windows &amp; Sidebar). Drag a folder in to add it; drop files on a tag to tag them. Hide it with ${k("⌃⌘S")} / ${k("Ctrl+Shift+S")}.</p>
+<p>Favorites, drives, tags, playlists (one free, more with ${PRO}) and Smart Folders. On Mac it can follow Finder's own Favorites and tags (Settings ▸ Windows &amp; Sidebar). Drag a folder in to add it; drop files on a tag to tag them. Hide it with ${k("⌃⌘S")} / ${k("Ctrl+Shift+S")}.</p>
 <ul>
 <li>Groups fold: click a group's name (Favorites, Locations, Tags, Playlists, Smart Folders) to open or close it. The Mac remembers this for each window, Windows and Linux for each pane.</li>
 <li>Make your own groups: right-click a group's name ▸ New Group…, then drag folders onto it. Rename, hide or delete a group from the same menu, and drag a group's name to move it. Your folders are never moved.</li>
-<li>The Drop Zone at the bottom of the sidebar collects files from anywhere (the file list, Finder or Explorer, other apps) without moving them: it only keeps a note of where they are, also after you quit. Drag the stack out to a folder, a pane or another app to copy or move the files, as the Copy | Move switch under it says. On Mac hold ${k("⌥")} for the other one; on Windows and Linux ${k("Ctrl")} copies and ${k("Shift")} moves. Show List shows each file (Space for Quick Look); right-click the stack for Copy to, Move to, Reveal Originals and Clear; the bolt button offers Compress, Transcribe, To JPG, Remove Background, Zip and Email (and AirDrop on Mac). Hide it with View ▸ Hide Drop Zone (${k("⌃⌘B")} / ${k("Ctrl+Shift+B")}).</li>
+<li>The Drop Zone at the bottom of the sidebar collects files from anywhere (the file list, Finder or Explorer, other apps) without moving them: it only keeps a note of where they are, also after you quit. Drag the stack out to a folder, a pane or another app to copy or move the files, as the Copy | Move switch under it says. On Mac hold ${k("⌥")} for the other one; on Windows and Linux ${k("Ctrl")} copies and ${k("Shift")} moves. Show List shows each file (Space for Quick Look); right-click the stack for Copy to, Move to, Reveal Originals and Clear; the bolt button ${PRO} offers Compress, Transcribe, To JPG, Remove Background, Zip and Email (and AirDrop on Mac). Hide it with View ▸ Hide Drop Zone (${k("⌃⌘B")} / ${k("Ctrl+Shift+B")}).</li>
 </ul>
 <h3 id="chips">Filter chips</h3>
 <p>The chip bar above the files filters by type: Video, Images, Audio, Motion, 3D, Projects &amp; Design, Archives and more. Click a chip to filter; ${k("⌘")}-click (Mac) or ${k("Ctrl")}-click (Windows / Linux) to pick several. Right-click a chip to rename it, change its colour or hide it; right-click the bar for chip style, layout and order. Settings ▸ File Types decides which extensions go in each chip.</p>
@@ -132,12 +132,12 @@
 <p>One search palette finds files everywhere. ${k("⌘K")} / ${k("Ctrl+K")} searches everywhere; ${k("⌘F")} / ${k("Ctrl+F")} or the toolbar's Search opens it on the folder you are in (Delete takes the folder away); ${k("⌥⌘F")} / ${k("Ctrl+Shift+F")} opens its Advanced tab. Three tabs sit under the search field: Search, Visual and Advanced (${k("⌘1")} ${k("⌘2")} ${k("⌘3")} / ${k("Ctrl+1")} ${k("Ctrl+2")} ${k("Ctrl+3")}); what you typed comes along.</p>
 <ul>
 <li><b>Search</b>: names show as you type, from a name index of your Home folder kept on your computer and updated as files change. Typos and missing accents still match (“invq4” finds invoice_Q4_final.pdf, “khach hang” finds “Khách hàng”). Below the names come tags, spoken words in your clips and, on Mac, text inside documents (Spotlight).</li>
-<li>Chips narrow a search: <code>kind:video</code>, <code>ext:mov,mp4</code>, <code>tag:Red</code>, <code>in:Animation</code>, <code>color:pink</code>. Type <code>said:</code> (or <code>transcript:</code>) to search only what is said in your clips: every sentence is listed under its clip with its time, and Return plays the clip from there.</li>
+<li>Chips narrow a search: <code>kind:video</code>, <code>ext:mov,mp4</code>, <code>tag:Red</code>, <code>in:Animation</code>, <code>color:pink</code> ${PRO}. Type <code>said:</code> (or <code>transcript:</code>) to search only what is said in your clips: every sentence is listed under its clip with its time, and Return plays the clip from there.</li>
 <li>${k("⌘S")} / ${k("Ctrl+S")} saves the search as a Smart Folder, ${k("⌘↩")} / ${k("Ctrl+Enter")} shows every match in the window, and ${k("⌘K")} / ${k("Ctrl+K")} on a result lists what you can do with it (Open With, Reveal, Copy Path, Add to Drop Zone, Transcribe, Compress and more).</li>
 <li>Type a path such as <code>~/Doc/kh</code> to go to a folder: each part is matched on its own. Tab completes it, Return opens it. Go to Folder (${k("⇧⌘G")} / ${k("Ctrl+Shift+G")}) opens the palette with <code>~/</code> typed.</li>
 <li>External drives: plug one in and the palette offers to index it; one click and its files show up as you type, each time it connects. Settings ▸ Search ▸ Index drives when they connect does this for every drive, and each drive has its own tick so you can leave some out.</li>
 <li><b>Visual</b> ${PRO}: type what a picture shows (“drone shot over the beach”) to find pictures and clips by what they show, with where in the clip. Paste or drop a picture to find ones like it; right-click a file ▸ Find Similar ${PRO} does the same. Runs on your computer after a one-time model download (Settings ▸ Visual Search). English words work best.</li>
-<li>Colour, free: in the Visual tab, click one of 12 named colours or Custom… to find pictures and clips by colour, with how much of each one is that colour. Click two colours to find both. The eyedropper (${k("⌘E")} on Mac) takes a colour from anywhere on screen. No AI model needed: colours are read in the background as folders open.</li>
+<li>Colour ${PRO}: in the Visual tab, click one of 12 named colours or Custom… to find pictures and clips by colour, with how much of each one is that colour. Click two colours to find both. The eyedropper (${k("⌘E")} on Mac) takes a colour from anywhere on screen. No AI model needed: colours are read in the background as folders open.</li>
 <li><b>Advanced</b>: conditions in groups that fold (File, Frame, Media, Project, Also), such as name, kind, size, date, ratio, frame size, rating, tags, project uses and missing media ${PRO}, and only duplicates. Results show live under the groups. Ask AI ${PRO} turns a sentence into conditions, typed or spoken with 🎙 (needs your own AI key in Settings ▸ AI Services).</li>
 </ul>
 <h3 id="recents">Recents</h3>
@@ -159,21 +159,21 @@
 <ul>
 <li>Rê chuột trên video, GIF, Lottie hay Rive trong Grid để xem lướt mà không cần mở.</li>
 <li>View Options (${k("⌘J")} / ${k("Ctrl+J")}) giữ chế độ xem, cách sắp xếp, cỡ icon, cột và nền cho riêng một thư mục.</li>
-<li>Chuột phải vào tiêu đề cột của List để bật / tắt cột; kéo để đổi thứ tự và độ rộng. Group By và Sort By có ở mọi chế độ.</li>
+<li>Chuột phải vào tiêu đề cột của List để bật / tắt cột; kéo để đổi thứ tự và độ rộng. Các cột AI, FPS và Aspect Ratio là ${PRO}. Group By và Sort By có ở mọi chế độ.</li>
 </ul>
 <h3 id="tabs-panes">Tab và khung (pane)</h3>
 <ul>
 <li>Tab mới ${k("⌘T")} / ${k("Ctrl+T")}, đóng tab ${k("⌘W")} / ${k("Ctrl+W")}.</li>
 <li>Chia cửa sổ thành nhiều khung: ${k("⌘\\")} chia sang phải, ${k("⌥⌘\\")} chia xuống dưới ${mac}; ${k("Ctrl+\\")} ${win}. Kéo tab vào mép một khung để chia ở đó, thả lên khung khác để chuyển sang, hoặc kéo ra ngoài để mở cửa sổ mới.</li>
 <li>Bấm vào hàng tab rồi nhấn ${k("1")} đến ${k("9")} (và ${k("0")}) để sang tab thứ 1 đến 10 của khung đó (Settings ▸ Windows &amp; Sidebar trên Mac, Windows, Tabs &amp; Sidebar trên Windows, Tabs &amp; Sidebar trên Linux).</li>
-<li>Workspace lưu cột của List, chế độ xem, số khung và thanh bên: Window ▸ Workspace hoặc ${k("⌥⌘1")}…${k("⌥⌘9")} ${mac}, ${k("Alt+1")}…${k("Alt+9")} ${win}.</li>
+<li>Workspace lưu cột của List, chế độ xem, số khung và thanh bên: Window ▸ Workspace hoặc ${k("⌥⌘1")}…${k("⌥⌘9")} ${mac}, ${k("Alt+1")}…${k("Alt+9")} ${win}. Standard là miễn phí; các workspace khác và lưu workspace mới là ${PRO}.</li>
 </ul>
 <h3 id="sidebar">Thanh bên</h3>
-<p>Mục yêu thích, ổ đĩa, tag, playlist ${PRO} và Smart Folder. Trên Mac, thanh bên có thể theo Favorites và tag của Finder (Settings ▸ Windows &amp; Sidebar). Kéo thư mục vào để thêm; thả file lên tag để gắn tag. Ẩn bằng ${k("⌃⌘S")} / ${k("Ctrl+Shift+S")}.</p>
+<p>Mục yêu thích, ổ đĩa, tag, playlist (một playlist miễn phí, nhiều hơn cần ${PRO}) và Smart Folder. Trên Mac, thanh bên có thể theo Favorites và tag của Finder (Settings ▸ Windows &amp; Sidebar). Kéo thư mục vào để thêm; thả file lên tag để gắn tag. Ẩn bằng ${k("⌃⌘S")} / ${k("Ctrl+Shift+S")}.</p>
 <ul>
 <li>Các nhóm thu gọn được: bấm vào tên nhóm (Favorites, Locations, Tags, Playlists, Smart Folders) để mở hoặc đóng. Mac nhớ việc này cho từng cửa sổ, Windows và Linux cho từng khung.</li>
 <li>Tự tạo nhóm: chuột phải vào tên một nhóm ▸ New Group…, rồi kéo thư mục vào. Đổi tên, ẩn hoặc xoá nhóm trong cùng menu đó, và kéo tên nhóm để đổi chỗ. Thư mục của bạn không bao giờ bị di chuyển.</li>
-<li>Drop Zone ở cuối thanh bên gom file từ mọi nơi (danh sách file, Finder hay Explorer, app khác) mà không di chuyển chúng: app chỉ ghi nhớ file nằm ở đâu, kể cả sau khi thoát app. Kéo cả chồng ra một thư mục, một khung hoặc app khác để chép hoặc chuyển file, theo công tắc Copy | Move bên dưới. Trên Mac giữ ${k("⌥")} để làm việc còn lại; trên Windows và Linux ${k("Ctrl")} là chép, ${k("Shift")} là chuyển. Show List hiện từng file (Space để Quick Look); chuột phải vào chồng file để có Copy to, Move to, Reveal Originals và Clear; nút tia sét có Compress, Transcribe, To JPG, Remove Background, Zip và Email (và AirDrop trên Mac). Ẩn bằng View ▸ Hide Drop Zone (${k("⌃⌘B")} / ${k("Ctrl+Shift+B")}).</li>
+<li>Drop Zone ở cuối thanh bên gom file từ mọi nơi (danh sách file, Finder hay Explorer, app khác) mà không di chuyển chúng: app chỉ ghi nhớ file nằm ở đâu, kể cả sau khi thoát app. Kéo cả chồng ra một thư mục, một khung hoặc app khác để chép hoặc chuyển file, theo công tắc Copy | Move bên dưới. Trên Mac giữ ${k("⌥")} để làm việc còn lại; trên Windows và Linux ${k("Ctrl")} là chép, ${k("Shift")} là chuyển. Show List hiện từng file (Space để Quick Look); chuột phải vào chồng file để có Copy to, Move to, Reveal Originals và Clear; nút tia sét ${PRO} có Compress, Transcribe, To JPG, Remove Background, Zip và Email (và AirDrop trên Mac). Ẩn bằng View ▸ Hide Drop Zone (${k("⌃⌘B")} / ${k("Ctrl+Shift+B")}).</li>
 </ul>
 <h3 id="chips">Chip lọc</h3>
 <p>Thanh chip phía trên danh sách lọc theo loại file: Video, Images, Audio, Motion, 3D, Projects &amp; Design, Archives và các loại khác. Bấm chip để lọc; ${k("⌘")}-bấm (Mac) hoặc ${k("Ctrl")}-bấm (Windows / Linux) để chọn nhiều. Chuột phải vào chip để đổi tên, đổi màu hoặc ẩn; chuột phải vào thanh chip để chỉnh kiểu, bố cục và thứ tự. Settings ▸ File Types quyết định đuôi file nào thuộc chip nào.</p>
@@ -181,12 +181,12 @@
 <p>Một bảng tìm kiếm (search palette) tìm file ở mọi nơi. ${k("⌘K")} / ${k("Ctrl+K")} tìm khắp máy; ${k("⌘F")} / ${k("Ctrl+F")} hoặc nút Search trên thanh công cụ mở bảng này cho thư mục đang xem (Delete để bỏ thư mục, tìm khắp máy); ${k("⌥⌘F")} / ${k("Ctrl+Shift+F")} mở thẳng tab Advanced. Dưới ô tìm có ba tab: Search, Visual và Advanced (${k("⌘1")} ${k("⌘2")} ${k("⌘3")} / ${k("Ctrl+1")} ${k("Ctrl+2")} ${k("Ctrl+3")}); chữ đã gõ được giữ khi đổi tab.</p>
 <ul>
 <li><b>Search</b>: tên file hiện ngay khi gõ, lấy từ chỉ mục tên của thư mục Home, lưu trên máy và tự cập nhật khi file thay đổi. Gõ sai hay thiếu dấu vẫn ra (“invq4” ra invoice_Q4_final.pdf, “khach hang” ra “Khách hàng”). Bên dưới tên là tag, lời nói trong clip và, trên Mac, chữ bên trong tài liệu (Spotlight).</li>
-<li>Chip thu hẹp kết quả: <code>kind:video</code>, <code>ext:mov,mp4</code>, <code>tag:Red</code>, <code>in:Animation</code>, <code>color:pink</code>. Gõ <code>said:</code> (hoặc <code>transcript:</code>) để chỉ tìm trong lời nói của clip: từng câu hiện dưới clip của nó kèm thời điểm, Return phát clip từ câu đó.</li>
+<li>Chip thu hẹp kết quả: <code>kind:video</code>, <code>ext:mov,mp4</code>, <code>tag:Red</code>, <code>in:Animation</code>, <code>color:pink</code> ${PRO}. Gõ <code>said:</code> (hoặc <code>transcript:</code>) để chỉ tìm trong lời nói của clip: từng câu hiện dưới clip của nó kèm thời điểm, Return phát clip từ câu đó.</li>
 <li>${k("⌘S")} / ${k("Ctrl+S")} lưu lần tìm thành Smart Folder, ${k("⌘↩")} / ${k("Ctrl+Enter")} hiện mọi kết quả trong cửa sổ, và ${k("⌘K")} / ${k("Ctrl+K")} trên một kết quả liệt kê các việc làm được với nó (Open With, Reveal, Copy Path, Add to Drop Zone, Transcribe, Compress và các việc khác).</li>
 <li>Gõ một đường dẫn như <code>~/Doc/kh</code> để tới thư mục: mỗi phần được so khớp riêng. Tab để điền nốt, Return để mở. Go to Folder (${k("⇧⌘G")} / ${k("Ctrl+Shift+G")}) mở bảng tìm với sẵn <code>~/</code>.</li>
 <li>Ổ ngoài: cắm ổ vào là bảng tìm đề nghị lập chỉ mục cho nó; bấm một lần là file trong ổ hiện ra khi gõ, mỗi lần ổ được cắm. Settings ▸ Search ▸ Index drives when they connect làm việc này cho mọi ổ, và mỗi ổ có ô tick riêng để bỏ bớt.</li>
 <li><b>Visual</b> ${PRO}: gõ thứ có trong hình (“drone shot over the beach”) để tìm ảnh và clip theo nội dung hình, kèm vị trí trong clip. Dán hoặc thả một ảnh vào để tìm ảnh giống nó; chuột phải vào file ▸ Find Similar ${PRO} cũng vậy. Chạy ngay trên máy sau khi tải model một lần (Settings ▸ Visual Search). Gõ tiếng Anh cho kết quả tốt nhất.</li>
-<li>Màu sắc, miễn phí: trong tab Visual, bấm một trong 12 màu có tên hoặc Custom… để tìm ảnh và clip theo màu, kèm tỉ lệ màu đó trong mỗi hình. Bấm hai màu để tìm hình có cả hai. Ống hút màu (${k("⌘E")} trên Mac) lấy màu từ bất kỳ đâu trên màn hình. Không cần model AI: màu được đọc ở chế độ nền khi bạn mở thư mục.</li>
+<li>Màu sắc ${PRO}: trong tab Visual, bấm một trong 12 màu có tên hoặc Custom… để tìm ảnh và clip theo màu, kèm tỉ lệ màu đó trong mỗi hình. Bấm hai màu để tìm hình có cả hai. Ống hút màu (${k("⌘E")} trên Mac) lấy màu từ bất kỳ đâu trên màn hình. Không cần model AI: màu được đọc ở chế độ nền khi bạn mở thư mục.</li>
 <li><b>Advanced</b>: điều kiện xếp trong các nhóm thu gọn được (File, Frame, Media, Project, Also), như tên, loại, dung lượng, ngày, tỉ lệ khung, kích thước khung hình, sao, tag, project dùng file nào và media thiếu ${PRO}, và chỉ file trùng. Kết quả hiện ngay bên dưới. Ask AI ${PRO} biến một câu thành điều kiện, gõ hoặc nói bằng 🎙 (cần API key của bạn trong Settings ▸ AI Services).</li>
 </ul>
 <h3 id="recents">Recents</h3>
@@ -222,14 +222,18 @@
 <h3 id="ql-pptx">PowerPoint</h3>
 <p>Space on a .pptx, .ppsx or .potx shows its slides in the same viewer as PDFs (arrows, slide number, zoom, Full Screen with ${k("F")}). No PowerPoint or Keynote needed. The first slide shows at once and the rest follow in a few seconds. Open sends the file to PowerPoint or Keynote to edit or play it. See <a href="#lim-pptx">what isn't drawn</a>.</p>
 <h3 id="ql-figma">Figma (.fig)</h3>
+<p>Free shows the picture saved in the file and its info card. The page and frame viewer is ${PRO}.</p>
 <p>Space on a .fig file shows its pages without Figma: drag to move, scroll or pinch to zoom, double-click to fit, click a frame to zoom to it, pick a page at the top left. See <a href="#lim-figma">what isn't drawn</a>.</p>
 <h3 id="ql-aep">After Effects (.aep, .aet)</h3>
+<p>Free shows the project's info card and the picture saved in it. The comp and timeline viewer below is ${PRO}.</p>
 <p>Space on a project shows every composition in a tree (by nesting or by folders) and the selected one's timeline like After Effects: layers, switches, blending modes, track mattes, parents, effects, markers, keyframes and expressions. Drag in the ruler to scrub, ${k("←")} ${k("→")} step a frame (${k("Shift")}: 10), ${k("J")} and ${k("K")} jump between keyframes, double-click a precomp to open it. Missing footage is in red.</p>
 <p>Above the timeline, a sketch of the frame at the playhead: solids, footage (pictures, image sequences, the right frame of movies), precomps, shape layers, text, masks, alpha mattes, blending modes, some layer styles (Stroke, Drop Shadow, Outer Glow, Color Overlay), Master Properties and three effects (Gaussian Blur, Fill, Drop Shadow). Drag to pan, scroll with ${k("⌘")} / ${k("Ctrl")} to zoom, double-click or Fit to fit, click in the frame to pick a layer. Play runs the sketch through the work area; Outlines shows each layer's box and marks what can't be drawn. It is drawn from the file, without After Effects: see <a href="#lim-aep">limitations</a>. On Mac it opens in its own window, on Windows and Linux inside Quick Look.</p>
 <p>Play also plays the project's sound in time with the picture: audio layers and footage with sound, inside precomps too, with Solo, Audio Levels and Time Remap. Dragging the playhead plays short snippets. The speaker button and volume slider sit next to Play. Missing media stays silent.</p>
 <h3 id="ql-prproj">Premiere Pro (.prproj)</h3>
+<p>Free shows the project's info card. The sequence and timeline viewer is ${PRO}.</p>
 <p>Space on a Premiere Pro project shows its sequences (with nesting) or its bins, with a filter, and the selected sequence's settings. The timeline is laid out like Premiere: video tracks above audio, clips with their names and label colours, speed changes, transitions, markers, muted and locked tracks. Drag in the ruler or the tracks to scrub: the frame above is a sketch made from each clip's own file with its Motion (position, scale, rotation, anchor, crop) and opacity. After Effects comps placed by Dynamic Link are drawn like the After Effects viewer draws them when the .aep is on this computer. Double-click a nested sequence to open it. Missing media is marked Offline in red, and files that are only in the cloud are never downloaded. Play plays every audio track with its speed, Mute, Solo and Volume keyframes. See <a href="#lim-prproj">limitations</a>.</p>
 <h3 id="ql-psd">Photoshop (.psd, .psb)</h3>
+<p>Free shows the flat picture. Layers and artboards are ${PRO}.</p>
 <p>Space on a Photoshop file opens it on a canvas like Figma: every artboard side by side, drag to move, scroll or pinch to zoom, double-click or ${k("0")} to see it all, click an artboard's name to zoom to it. ${k("L")} shows the Layers list: click a layer to outline it, copy a text layer's words with Copy Text or ${k("⌘C")}, and click the eye to hide or show a layer or group (Show as Saved goes back to the saved picture). See <a href="#lim-psd">limitations</a>. On Mac it opens in its own window, on Windows and Linux inside Quick Look (there ${k("Shift")} with the arrows pans, and the plain arrows go to the next file).</p>
 <h3 id="ql-templates">Motion Graphics and Resolve templates</h3>
 <ul>
@@ -240,6 +244,7 @@
 <li>Advanced Search ▸ Templates finds templates by their text, control names or fonts.</li>
 </ul>
 <h3 id="ql-editing">Resolve, Final Cut, Filmora, VEGAS and Motion projects</h3>
+<p>Free shows each project's info card and the picture saved in it. The project viewer is ${PRO}.</p>
 <p>Space on one of these opens it in the project viewer, without the app: its timelines and compound clips, a media panel, tracks and clips, and a sketch of the frame at the playhead made from the media found beside the project. Play plays the sound. Pick a clip in the media panel to see it on its own; ${k("↑")} ${k("↓")} step through the panel. Each viewer says what it doesn't draw (see <a href="#lim-projects">limitations</a>).</p>
 <ul>
 <li>DaVinci Resolve (.drp, and .dra archives with their MediaFiles folder): timelines, compound clips and Media Pool folders; effect names in each clip's tooltip.</li>
@@ -253,18 +258,18 @@
 <h3 id="ql-archives">Archives</h3>
 <p>Space on a .zip, .rar, .7z or .tar.gz lists what's inside without extracting it. More in <a href="#archives">Archives</a>.</p>
 <h3 id="ql-3d">3D, Lottie and Rive</h3>
-<p>Thumbnails for 3D models (OBJ, STL, FBX, glTF / GLB, USD and the pictures saved inside .blend, .c4d and others), Lottie (.json, .lottie) and Rive (.riv). They play when the pointer rests on them; Space opens a viewer you can interact with (Rive state machines respond to the mouse).</p>
+<p>Thumbnails for 3D models (OBJ, STL, FBX, glTF / GLB, USD and the pictures saved inside .blend, .c4d and others), Lottie (.json, .lottie) and Rive (.riv). They play when the pointer rests on them. 3D models also get an info card. In Space, turning a 3D model is ${PRO} and Rive is ${PRO} (its state machines respond to the mouse). Lottie is free.</p>
 <p>Space on a Lottie animation opens a player: play and pause (the button or Return), a scrubber with the frame and time, ${k("←")} ${k("→")} step a frame (${k("Shift")}: 10), Home and End, speed from 0.25× to 4×, and loop. It shows the size, frame rate, frames, length and Lottie version; markers are buttons that jump to their frame. Pick a checkerboard, dark or light background, and one animation of a .lottie that has several. View JSON shows its data on the code card. Plain .json files that aren't animations show as code.</p>
 <h3 id="ql-web">Web pages and SVG</h3>
 <ul>
 <li>Space on an .html page shows the page playing: CSS animations, JavaScript, canvas and SVG animation, with pause, play and restart. The Gallery and Get Info play it too, and grid thumbnails show the page about a second in.</li>
-<li>Page, Split and Code at the top switch views; Split shows the code beside the page. Edit the code and the page follows a moment after you stop typing. Nothing is saved until ${k("⌘S")} / ${k("Ctrl+S")}; closing with changes asks first. ${k("⌥")}-click / ${k("Alt")}-click something in the page to select its code. Swap Sides (${k("⌥⌘X")} / ${k("Ctrl+Alt+X")}) puts the page on the left.</li>
-<li>Page size: one button on the left of the bar says the size in use and offers Fit Pane (responsive, the default in Split), Page Size (the page's own), Desktop 1440, Laptop 1280, Tablet 768, Mobile 390, a custom width × height and the sizes you used lately. Wider sizes are scaled down to fit.</li>
+<li>Page, Split and Code at the top switch views; Split shows the code beside the page. Editing and saving the code is ${PRO}. Edit the code and the page follows a moment after you stop typing. Nothing is saved until ${k("⌘S")} / ${k("Ctrl+S")}; closing with changes asks first. ${k("⌥")}-click / ${k("Alt")}-click something in the page to select its code. Swap Sides (${k("⌥⌘X")} / ${k("Ctrl+Alt+X")}) puts the page on the left.</li>
+<li>Page size: one button on the left of the bar says the size in use and offers Fit Pane (responsive, the default in Split), Page Size (the page's own), Desktop 1440, Laptop 1280, Tablet 768, Mobile 390, a custom width × height ${PRO} and the sizes you used lately. Wider sizes are scaled down to fit.</li>
 <li>SVG pictures open the same way, fitted and sharp: zoom with Fit and 100% in the bar, ${k("⌘")} / ${k("Ctrl")} with ${k("+")}, ${k("-")} or ${k("0")}, a pinch, or ${k("⌥")} / ${k("Alt")} with scroll; drag to move around. A checkerboard button shows transparent parts, and animated SVGs play with pause and restart.</li>
 <li>Pages and SVGs run on their own: offline, reading only files in their own folder. A page that wants fonts or scripts from the web shows Load Online Content for that page; Settings ▸ File Types ▸ Web Pages can allow the internet for every page. A page that stops responding is stopped.</li>
 </ul>
 <h3 id="ql-code">Code</h3>
-<p>Space on a code file shows it on a card with its name, language, line numbers and syntax colours: JavaScript, TypeScript, Python, Java, C#, C, C++, SQL, HTML, CSS, Shell, PHP, Go, Rust, Kotlin, Swift, JSON, YAML, XML, Markdown, TOML, Lua, Ruby and After Effects scripts (.jsx). Pick a theme (Auto, Dracula, One Dark, Monokai, Nord, Solarized Light and others), a background (gradients, mesh, solid colours, a picture of your own, transparent or none), a window style (macOS, Windows, plain or none), text size, line numbers and wrapping. Copy copies the code; Copy Image and Save PNG make a picture of the card. JSON is shown formatted, with blocks that fold. Your choices are kept.</p>
+<p>Space on a code file shows it on a card with its name, language, line numbers and syntax colours: JavaScript, TypeScript, Python, Java, C#, C, C++, SQL, HTML, CSS, Shell, PHP, Go, Rust, Kotlin, Swift, JSON, YAML, XML, Markdown, TOML, Lua, Ruby and After Effects scripts (.jsx). Pick a theme (Auto, Dracula, One Dark, Monokai, Nord, Solarized Light and others), a background (gradients, mesh, solid colours, a picture of your own, transparent or none), a window style (macOS, Windows, plain or none), text size, line numbers and wrapping. Copy copies the code; Copy Image and Save PNG ${PRO} make a picture of the card. JSON is shown formatted, with blocks that fold. Your choices are kept.</p>
 <h3 id="ql-other">Text and other files</h3>
 <p>On Mac, other files use macOS Quick Look. On Windows and Linux, Better Finder's Quick Look shows text files, fonts and pictures itself.</p>`,
         vi: `
@@ -284,14 +289,18 @@
 <h3 id="ql-pptx">PowerPoint</h3>
 <p>Space trên file .pptx, .ppsx hoặc .potx hiện từng slide trong cùng trình xem PDF (mũi tên, số slide, zoom, toàn màn hình bằng ${k("F")}). Không cần PowerPoint hay Keynote. Slide đầu hiện ngay, các slide còn lại có sau vài giây. Nút Open mở file bằng PowerPoint hoặc Keynote để sửa hay trình chiếu. Xem <a href="#lim-pptx">những gì chưa vẽ được</a>.</p>
 <h3 id="ql-figma">Figma (.fig)</h3>
+<p>Bản miễn phí hiện ảnh lưu sẵn trong file và thẻ thông tin. Trình xem từng trang, từng frame là ${PRO}.</p>
 <p>Space trên file .fig hiện các trang mà không cần Figma: kéo để di chuyển, cuộn hoặc chụm để zoom, double-click để vừa khung, bấm vào một frame để zoom tới, chọn trang ở góc trên bên trái. Xem <a href="#lim-figma">những gì chưa vẽ được</a>.</p>
 <h3 id="ql-aep">After Effects (.aep, .aet)</h3>
+<p>Bản miễn phí hiện thẻ thông tin của project và ảnh lưu sẵn trong file. Trình xem comp và timeline dưới đây là ${PRO}.</p>
 <p>Space trên project hiện mọi composition dạng cây (theo lồng nhau hoặc theo thư mục) và timeline của comp đang chọn giống After Effects: layer, switch, blending mode, track matte, parent, effect, marker, keyframe và expression. Kéo trên thước thời gian để tua, ${k("←")} ${k("→")} bước một khung (${k("Shift")}: 10 khung), ${k("J")} và ${k("K")} nhảy giữa các keyframe, double-click vào precomp để mở. Footage thiếu hiện màu đỏ.</p>
 <p>Phía trên timeline là bản phác khung hình tại vị trí playhead: solid, footage (ảnh, chuỗi ảnh, đúng khung hình của video), precomp, shape layer, chữ, mask, alpha matte, blending mode, một số layer style (Stroke, Drop Shadow, Outer Glow, Color Overlay), Master Properties và ba effect (Gaussian Blur, Fill, Drop Shadow). Kéo để di chuyển, cuộn kèm ${k("⌘")} / ${k("Ctrl")} để zoom, double-click hoặc Fit để vừa khung, bấm vào khung hình để chọn layer. Play chạy bản phác trong vùng work area; Outlines hiện khung của từng layer và đánh dấu phần không vẽ được. Hình được vẽ từ file, không cần After Effects: xem <a href="#lim-aep">giới hạn</a>. Trên Mac trình xem mở trong cửa sổ riêng, trên Windows và Linux nằm trong Quick Look.</p>
 <p>Play phát cả âm thanh của project khớp với hình: audio layer và footage có tiếng, kể cả trong precomp, theo Solo, Audio Levels và Time Remap. Kéo playhead sẽ phát từng đoạn ngắn. Nút loa và thanh âm lượng nằm cạnh Play. Media thiếu thì im lặng.</p>
 <h3 id="ql-prproj">Premiere Pro (.prproj)</h3>
+<p>Bản miễn phí hiện thẻ thông tin của project. Trình xem sequence và timeline là ${PRO}.</p>
 <p>Space trên project Premiere Pro hiện các sequence (kể cả lồng nhau) hoặc các bin, có ô lọc, và thông số của sequence đang chọn. Timeline bố trí giống Premiere: track video trên track audio, clip có tên và màu nhãn, thay đổi tốc độ, transition, marker, track bị tắt tiếng hoặc khoá. Kéo trên thước hoặc trên track để tua: khung hình phía trên là bản phác làm từ chính file của từng clip, theo Motion (vị trí, scale, xoay, anchor, crop) và opacity. Comp After Effects đặt bằng Dynamic Link được vẽ giống trình xem After Effects, nếu file .aep có trên máy. Double-click vào sequence lồng để mở. Media thiếu ghi Offline màu đỏ, và file chỉ có trên cloud không bao giờ bị tải về. Play phát mọi track audio theo tốc độ, Mute, Solo và keyframe Volume. Xem <a href="#lim-prproj">giới hạn</a>.</p>
 <h3 id="ql-psd">Photoshop (.psd, .psb)</h3>
+<p>Bản miễn phí hiện ảnh phẳng. Từng layer và artboard là ${PRO}.</p>
 <p>Space trên file Photoshop mở nó trên canvas giống Figma: mọi artboard đặt cạnh nhau, kéo để di chuyển, cuộn hoặc chụm để zoom, double-click hoặc ${k("0")} để xem toàn bộ, bấm vào tên artboard để zoom tới. ${k("L")} mở danh sách Layers: bấm vào layer để viền nó, chép chữ của text layer bằng Copy Text hoặc ${k("⌘C")}, và bấm con mắt để ẩn / hiện layer hoặc group (Show as Saved quay về hình đã lưu). Xem <a href="#lim-psd">giới hạn</a>. Trên Mac trình xem mở trong cửa sổ riêng, trên Windows và Linux nằm trong Quick Look (ở đó ${k("Shift")} kèm mũi tên để di chuyển hình, mũi tên không kèm phím sang file kế tiếp).</p>
 <h3 id="ql-templates">Template Motion Graphics và Resolve</h3>
 <ul>
@@ -302,6 +311,7 @@
 <li>Advanced Search ▸ Templates tìm template theo chữ, tên control hoặc font.</li>
 </ul>
 <h3 id="ql-editing">Project Resolve, Final Cut, Filmora, VEGAS và Motion</h3>
+<p>Bản miễn phí hiện thẻ thông tin và ảnh lưu sẵn của từng project. Trình xem project là ${PRO}.</p>
 <p>Space trên các file này mở chúng trong trình xem project, không cần app: timeline và compound clip, bảng media, track và clip, và bản phác khung hình tại playhead làm từ media tìm thấy cạnh project. Play phát âm thanh. Chọn một clip trong bảng media để xem riêng nó; ${k("↑")} ${k("↓")} để đi qua từng mục. Mỗi trình xem đều ghi rõ phần nào chưa vẽ (xem <a href="#lim-projects">giới hạn</a>).</p>
 <ul>
 <li>DaVinci Resolve (.drp, và file lưu trữ .dra cùng thư mục MediaFiles): timeline, compound clip và thư mục Media Pool; tên effect của mỗi clip nằm trong tooltip.</li>
@@ -315,18 +325,18 @@
 <h3 id="ql-archives">File nén</h3>
 <p>Space trên file .zip, .rar, .7z hoặc .tar.gz liệt kê nội dung bên trong mà không giải nén. Xem thêm ở <a href="#archives">File nén</a>.</p>
 <h3 id="ql-3d">3D, Lottie và Rive</h3>
-<p>Thumbnail cho model 3D (OBJ, STL, FBX, glTF / GLB, USD và ảnh lưu sẵn trong .blend, .c4d và các loại khác), Lottie (.json, .lottie) và Rive (.riv). Chúng chạy khi bạn để chuột lên; Space mở cửa sổ xem tương tác được (state machine của Rive phản hồi theo chuột).</p>
+<p>Thumbnail cho model 3D (OBJ, STL, FBX, glTF / GLB, USD và ảnh lưu sẵn trong .blend, .c4d và các loại khác), Lottie (.json, .lottie) và Rive (.riv). Chúng chạy khi bạn để chuột lên. Model 3D còn có thẻ thông tin. Trong Space, xoay model 3D là ${PRO} và Rive là ${PRO} (state machine của nó phản hồi theo chuột). Lottie miễn phí.</p>
 <p>Space trên animation Lottie mở một player: phát và dừng (nút hoặc Return), thanh tua có số khung và thời gian, ${k("←")} ${k("→")} bước một khung (${k("Shift")}: 10), Home và End, tốc độ từ 0.25× tới 4×, và lặp. Player hiện kích thước, fps, số khung, thời lượng và phiên bản Lottie; marker là các nút nhảy tới khung của nó. Chọn nền ô cờ, tối hoặc sáng, và chọn một animation trong file .lottie có nhiều animation. View JSON hiện dữ liệu trên thẻ code. File .json thường (không phải animation) hiện dạng code.</p>
 <h3 id="ql-web">Trang web và SVG</h3>
 <ul>
 <li>Space trên trang .html hiện chính trang đó đang chạy: CSS animation, JavaScript, canvas và SVG animation, có dừng, phát và chạy lại. Gallery và Get Info cũng chạy trang, và thumbnail trong Grid là hình trang sau khoảng một giây.</li>
-<li>Page, Split và Code ở trên cùng để đổi cách xem; Split hiện code cạnh trang. Sửa code là trang chạy theo ngay khi bạn ngừng gõ. Chưa lưu gì cho tới khi nhấn ${k("⌘S")} / ${k("Ctrl+S")}; đóng khi còn thay đổi thì app hỏi trước. ${k("⌥")}-bấm / ${k("Alt")}-bấm vào một thứ trong trang để chọn code của nó. Swap Sides (${k("⌥⌘X")} / ${k("Ctrl+Alt+X")}) đưa trang sang bên trái.</li>
-<li>Cỡ trang: một nút ở bên trái thanh công cụ ghi cỡ đang dùng và có Fit Pane (responsive, mặc định trong Split), Page Size (cỡ riêng của trang), Desktop 1440, Laptop 1280, Tablet 768, Mobile 390, cỡ tự nhập rộng × cao và các cỡ dùng gần đây. Cỡ rộng hơn khung được thu nhỏ cho vừa.</li>
+<li>Page, Split và Code ở trên cùng để đổi cách xem; Split hiện code cạnh trang. Sửa và lưu code là ${PRO}. Sửa code là trang chạy theo ngay khi bạn ngừng gõ. Chưa lưu gì cho tới khi nhấn ${k("⌘S")} / ${k("Ctrl+S")}; đóng khi còn thay đổi thì app hỏi trước. ${k("⌥")}-bấm / ${k("Alt")}-bấm vào một thứ trong trang để chọn code của nó. Swap Sides (${k("⌥⌘X")} / ${k("Ctrl+Alt+X")}) đưa trang sang bên trái.</li>
+<li>Cỡ trang: một nút ở bên trái thanh công cụ ghi cỡ đang dùng và có Fit Pane (responsive, mặc định trong Split), Page Size (cỡ riêng của trang), Desktop 1440, Laptop 1280, Tablet 768, Mobile 390, cỡ tự nhập rộng × cao ${PRO} và các cỡ dùng gần đây. Cỡ rộng hơn khung được thu nhỏ cho vừa.</li>
 <li>Ảnh SVG mở cùng cách đó, vừa khung và sắc nét: zoom bằng Fit và 100% trên thanh, ${k("⌘")} / ${k("Ctrl")} kèm ${k("+")}, ${k("-")} hoặc ${k("0")}, chụm hai ngón, hoặc cuộn kèm ${k("⌥")} / ${k("Alt")}; kéo để di chuyển. Nút ô cờ cho thấy phần trong suốt, và SVG động chạy được, có dừng và chạy lại.</li>
 <li>Trang web và SVG chạy riêng: không có mạng, chỉ đọc file trong thư mục của chính nó. Trang cần font hay script trên mạng sẽ hiện Load Online Content cho riêng trang đó; Settings ▸ File Types ▸ Web Pages có thể cho mọi trang dùng mạng. Trang bị treo sẽ bị dừng.</li>
 </ul>
 <h3 id="ql-code">Code</h3>
-<p>Space trên file code hiện nó trên một thẻ có tên, ngôn ngữ, số dòng và tô màu cú pháp: JavaScript, TypeScript, Python, Java, C#, C, C++, SQL, HTML, CSS, Shell, PHP, Go, Rust, Kotlin, Swift, JSON, YAML, XML, Markdown, TOML, Lua, Ruby và script After Effects (.jsx). Chọn theme (Auto, Dracula, One Dark, Monokai, Nord, Solarized Light và các theme khác), nền (gradient, mesh, màu trơn, ảnh của bạn, trong suốt hoặc không nền), kiểu cửa sổ (macOS, Windows, đơn giản hoặc không có), cỡ chữ, số dòng và xuống dòng. Copy chép code; Copy Image và Save PNG tạo ảnh của thẻ. JSON được định dạng sẵn, các khối thu gọn được. Lựa chọn của bạn được giữ.</p>
+<p>Space trên file code hiện nó trên một thẻ có tên, ngôn ngữ, số dòng và tô màu cú pháp: JavaScript, TypeScript, Python, Java, C#, C, C++, SQL, HTML, CSS, Shell, PHP, Go, Rust, Kotlin, Swift, JSON, YAML, XML, Markdown, TOML, Lua, Ruby và script After Effects (.jsx). Chọn theme (Auto, Dracula, One Dark, Monokai, Nord, Solarized Light và các theme khác), nền (gradient, mesh, màu trơn, ảnh của bạn, trong suốt hoặc không nền), kiểu cửa sổ (macOS, Windows, đơn giản hoặc không có), cỡ chữ, số dòng và xuống dòng. Copy chép code; Copy Image và Save PNG ${PRO} tạo ảnh của thẻ. JSON được định dạng sẵn, các khối thu gọn được. Lựa chọn của bạn được giữ.</p>
 <h3 id="ql-other">File chữ và file khác</h3>
 <p>Trên Mac, các file khác dùng Quick Look của macOS. Trên Windows và Linux, Quick Look của Better Finder tự hiện file chữ, font và ảnh.</p>` },
 
@@ -339,19 +349,19 @@
 <li>Mac keys: ${k("Space")} play / pause, ${k("J")} ${k("L")} 15 seconds back / forward, ${k("←")} ${k("→")} 5 seconds, ${k(",")} ${k(".")} one frame, ${k("[")} ${k("]")} speed, ${k("F")} full screen, ${k("Q")} queue, ${k("C")} transcript, ${k("S")} subtitles, ${k("E")} export the frame, ${k("Esc")} close. The full list is in <a href="#shortcuts">Keyboard shortcuts</a>.</li>
 <li>Mini player that stays on top of other apps: ${k("⌥⌘P")} ${mac}, ${k("P")} ${win}.</li>
 <li>Trim like QuickTime: ${k("⇧T")} trim mode, ${k("I")} and ${k("O")} set In and Out, ${k("⌘S")} saves that part as a new file ${mac}. On Windows and Linux: right-click a clip ▸ Quick Actions ▸ Trim…. The original is never changed.</li>
-<li>Trim a GIF by frames ${PRO}: on Mac in the player's trim mode; on Windows and Linux with Quick Actions ▸ Trim… on a GIF. Keep the GIF's own frames, or save the exact frames as an MP4. On Windows and Linux the result is saved next to the GIF as <code>name_f12-48.gif</code> (first and last frame kept).</li>
-<li>Arrange the control bar in Settings ▸ Player Look (Mac) or Media Player (Windows / Linux) ${PRO}.</li>
+<li>Trim a GIF by frames: on Mac in the player's trim mode; on Windows and Linux with Quick Actions ▸ Trim… on a GIF. Keep the GIF's own frames, or save the exact frames as an MP4. On Windows and Linux the result is saved next to the GIF as <code>name_f12-48.gif</code> (first and last frame kept).</li>
+<li>Arrange the control bar in Settings ▸ Player Look (Mac) or Media Player (Windows / Linux).</li>
 </ul>
-<h3 id="transcripts">Transcripts ${PRO}</h3>
+<h3 id="transcripts">Transcripts</h3>
 <ul>
-<li>Right-click a clip ▸ Transcribe… (${k("⌥⌘T")} on Mac). Engines: Whisper on your computer (download a model in Settings ▸ Transcribe, Large v3 Turbo 8-bit is suggested; on Mac also install whisper-cpp), macOS Speech on macOS 26 or later (nothing to install), or a cloud service with your own key (OpenAI, Groq or another).</li>
-<li>Edit lines, translate, burn the subtitles into a new video (the look is in Settings ▸ Player Look on Mac, Media Player on Windows / Linux). Anyone can read a transcript that already exists.</li>
+<li>Right-click a clip ▸ Transcribe… (${k("⌥⌘T")} on Mac). Transcribe 3 clips a month for free; more with ${PRO}. Engines: Whisper on your computer (download a model in Settings ▸ Transcribe, Large v3 Turbo 8-bit is suggested; on Mac also install whisper-cpp), macOS Speech on macOS 26 or later (nothing to install), or a cloud service with your own key (OpenAI, Groq or another).</li>
+<li>Read, edit and export a transcript as .srt for free. You can translate the lines too. Burning the subtitles into a new video is ${PRO} (the look is in Settings ▸ Player Look on Mac, Media Player on Windows / Linux).</li>
 <li>Settings ▸ Transcribe ▸ In the Background: clips of the folders you open get a transcript on their own, on this computer only (never sent to the cloud), and not while it runs on battery. Off until you switch it on. On Windows and Linux it uses a Whisper model, and network drives are skipped.</li>
 </ul>
-<h3 id="ai">AI ${PRO}</h3>
+<h3 id="ai">AI</h3>
 <ul>
-<li>AI Review checks a transcript and suggests fixes beside the video; a Glossary keeps names spelled right. It uses the text model and the API key you set in Settings ▸ AI Services, which says exactly what is sent.</li>
-<li>Made with AI?: a column that says Yes, Partly, Maybe or No from Content Credentials and the marks AI tools leave in files, read on your computer. An empty answer doesn't prove a person made the file.</li>
+<li>AI Review ${PRO} checks a transcript and suggests fixes beside the video; a Glossary keeps names spelled right. It uses the text model and the API key you set in Settings ▸ AI Services, which says exactly what is sent.</li>
+<li>Made with AI? ${PRO}: a column that says Yes, Partly, Maybe or No from Content Credentials and the marks AI tools leave in files, read on your computer. An empty answer doesn't prove a person made the file.</li>
 <li>Visual Search, Find Similar and Remove Background run on your computer: nothing is uploaded.</li>
 </ul>
 <h3 id="compare">Compare ${PRO}</h3>
@@ -363,19 +373,19 @@
 <li>Phím trên Mac: ${k("Space")} phát / dừng, ${k("J")} ${k("L")} lùi / tới 15 giây, ${k("←")} ${k("→")} 5 giây, ${k(",")} ${k(".")} một khung hình, ${k("[")} ${k("]")} tốc độ, ${k("F")} toàn màn hình, ${k("Q")} hàng chờ, ${k("C")} transcript, ${k("S")} phụ đề, ${k("E")} xuất khung hình, ${k("Esc")} đóng. Danh sách đầy đủ ở <a href="#shortcuts">Phím tắt</a>.</li>
 <li>Player nhỏ nổi trên mọi app: ${k("⌥⌘P")} ${mac}, ${k("P")} ${win}.</li>
 <li>Cắt kiểu QuickTime: ${k("⇧T")} bật chế độ trim, ${k("I")} và ${k("O")} đặt điểm vào / ra, ${k("⌘S")} lưu đoạn đó thành file mới ${mac}. Trên Windows và Linux: chuột phải vào clip ▸ Quick Actions ▸ Trim…. File gốc không bao giờ bị sửa.</li>
-<li>Cắt GIF theo khung ${PRO}: trên Mac dùng chế độ trim của player; trên Windows và Linux dùng Quick Actions ▸ Trim… trên file GIF. Giữ nguyên các khung của GIF, hoặc lưu đúng các khung đó thành MP4. Trên Windows và Linux kết quả lưu cạnh file GIF với tên <code>name_f12-48.gif</code> (khung đầu và khung cuối được giữ).</li>
-<li>Sắp xếp thanh điều khiển trong Settings ▸ Player Look (Mac) hoặc Media Player (Windows / Linux) ${PRO}.</li>
+<li>Cắt GIF theo khung: trên Mac dùng chế độ trim của player; trên Windows và Linux dùng Quick Actions ▸ Trim… trên file GIF. Giữ nguyên các khung của GIF, hoặc lưu đúng các khung đó thành MP4. Trên Windows và Linux kết quả lưu cạnh file GIF với tên <code>name_f12-48.gif</code> (khung đầu và khung cuối được giữ).</li>
+<li>Sắp xếp thanh điều khiển trong Settings ▸ Player Look (Mac) hoặc Media Player (Windows / Linux).</li>
 </ul>
-<h3 id="transcripts">Transcript ${PRO}</h3>
+<h3 id="transcripts">Transcript</h3>
 <ul>
-<li>Chuột phải vào clip ▸ Transcribe… (${k("⌥⌘T")} trên Mac). Engine: Whisper chạy trên máy (tải model trong Settings ▸ Transcribe, gợi ý Large v3 Turbo 8-bit; trên Mac cần cài thêm whisper-cpp), macOS Speech trên macOS 26 trở lên (không cần cài gì), hoặc dịch vụ cloud với API key của bạn (OpenAI, Groq hoặc dịch vụ khác).</li>
-<li>Sửa từng dòng, dịch, đốt phụ đề vào video mới (kiểu chữ chỉnh trong Settings ▸ Player Look trên Mac, Media Player trên Windows / Linux). Ai cũng đọc được transcript đã có sẵn.</li>
+<li>Chuột phải vào clip ▸ Transcribe… (${k("⌥⌘T")} trên Mac). Mỗi tháng tạo transcript miễn phí cho 3 clip; nhiều hơn cần ${PRO}. Engine: Whisper chạy trên máy (tải model trong Settings ▸ Transcribe, gợi ý Large v3 Turbo 8-bit; trên Mac cần cài thêm whisper-cpp), macOS Speech trên macOS 26 trở lên (không cần cài gì), hoặc dịch vụ cloud với API key của bạn (OpenAI, Groq hoặc dịch vụ khác).</li>
+<li>Xem, sửa và xuất transcript ra .srt là miễn phí. Bạn cũng dịch được từng dòng. Đốt phụ đề vào video mới là ${PRO} (kiểu chữ chỉnh trong Settings ▸ Player Look trên Mac, Media Player trên Windows / Linux).</li>
 <li>Settings ▸ Transcribe ▸ In the Background: clip trong các thư mục bạn mở tự có transcript, chỉ chạy trên máy này (không gửi lên cloud), và không chạy khi máy đang dùng pin. Mặc định tắt. Trên Windows và Linux dùng model Whisper, và bỏ qua ổ mạng.</li>
 </ul>
-<h3 id="ai">AI ${PRO}</h3>
+<h3 id="ai">AI</h3>
 <ul>
-<li>AI Review đọc transcript và gợi ý sửa ngay cạnh video; Glossary giữ tên riêng viết đúng. Tính năng này dùng text model và API key bạn đặt trong Settings ▸ AI Services; trang đó ghi rõ dữ liệu nào được gửi đi.</li>
-<li>Made with AI?: cột cho biết Yes, Partly, Maybe hoặc No dựa trên Content Credentials và dấu vết công cụ AI để lại trong file, đọc ngay trên máy. Ô trống không chứng minh file do người làm.</li>
+<li>AI Review ${PRO} đọc transcript và gợi ý sửa ngay cạnh video; Glossary giữ tên riêng viết đúng. Tính năng này dùng text model và API key bạn đặt trong Settings ▸ AI Services; trang đó ghi rõ dữ liệu nào được gửi đi.</li>
+<li>Made with AI? ${PRO}: cột cho biết Yes, Partly, Maybe hoặc No dựa trên Content Credentials và dấu vết công cụ AI để lại trong file, đọc ngay trên máy. Ô trống không chứng minh file do người làm.</li>
 <li>Visual Search, Find Similar và Remove Background chạy trên máy bạn: không tải gì lên.</li>
 </ul>
 <h3 id="compare">So sánh (Compare) ${PRO}</h3>
@@ -384,27 +394,27 @@
       // ------------------------------------------------------------------ Quick Actions
       { id: "quick-actions", icon: "⚡️", t: { en: "Quick Actions", vi: "Quick Actions" },
         en: `
-<p>Right-click a file ▸ Quick Actions. New files go next to the original under a new name; nothing is overwritten, and Undo takes a new file away again.</p>
+<p>Right-click a file ▸ Quick Actions. New files go next to the original under a new name; nothing is overwritten, and Undo takes a new file away again. Up to 3 files at once is free; more at once is ${PRO}.</p>
 <ul>
-<li><b>Trim and Compress</b>: trim one clip and Remove Audio are free; Compress with your own size, as a GIF or keeping HDR ${PRO}; Remove Video ${PRO}.</li>
-<li><b>Reframe</b> ${PRO}: turn a video into 9:16, 4:5, 1:1, 16:9, 21:9 or a free shape. Drag the crop frame, or put the whole picture over a blurred copy of itself. Saved as clip_9x16.mp4 next to the clip.</li>
+<li><b>Trim and Compress</b>: Trim, Remove Audio and Compress with its presets are free. Compress with your own settings, as a GIF or keeping HDR is ${PRO}; Remove Video ${PRO}.</li>
+<li><b>Reframe</b>: turn a video into 9:16 or 4:5 for free, or 1:1, 16:9, 21:9 or a free shape with ${PRO}. Drag the crop frame, or put the whole picture over a blurred copy of itself. Saved as clip_9x16.mp4 next to the clip.</li>
 <li><b>Crop</b>: crop a picture to Free, Original, 1:1, 4:5, 9:16, 16:9 or 21:9. Saved as photo_crop.jpg in the same format.</li>
 <li><b>Convert Image</b> and <b>Create PDF</b> from pictures.</li>
 <li><b>Rotate Left / Right</b>: JPEG and TIFF without compressing again, PNG and BMP too; HEIC and still GIF on Mac only.</li>
-<li><b>Remove Background</b> ${PRO}: runs on your computer. Install it in Settings ▸ Remove Background on Mac, Settings ▸ Quick Actions on Windows / Linux (BiRefNet, IS-Net, U²-Net or your own .onnx model; on Mac also Apple Vision).</li>
-<li><b>Transcribe</b>, <b>Render Preview</b> and <b>Check on SynthID</b> ${PRO} are here too.</li>
+<li><b>Remove Background</b>: runs on your computer. One picture at a time with the small built-in model is free; many at once and the high-quality models are ${PRO}. Install it in Settings ▸ Remove Background on Mac, Settings ▸ Quick Actions on Windows / Linux (BiRefNet, IS-Net, U²-Net or your own .onnx model; on Mac also Apple Vision).</li>
+<li><b>Transcribe</b> (3 clips a month free), <b>Render Preview</b> ${PRO} and <b>Check on SynthID</b> ${PRO} are here too.</li>
 </ul>
 <p>Compress, Reframe and Save Trim show their progress with Stop. Stopping leaves no half-made file.</p>`,
         vi: `
-<p>Chuột phải vào file ▸ Quick Actions. File mới nằm cạnh file gốc với tên mới; không ghi đè file nào, và Undo xoá file mới đó đi.</p>
+<p>Chuột phải vào file ▸ Quick Actions. File mới nằm cạnh file gốc với tên mới; không ghi đè file nào, và Undo xoá file mới đó đi. Mỗi lần tối đa 3 file là miễn phí; nhiều hơn cần ${PRO}.</p>
 <ul>
-<li><b>Trim và Compress</b>: cắt một clip và Remove Audio là miễn phí; Compress theo cỡ tự chọn, ra GIF hoặc giữ HDR ${PRO}; Remove Video ${PRO}.</li>
-<li><b>Reframe</b> ${PRO}: đổi video sang 9:16, 4:5, 1:1, 16:9, 21:9 hoặc khung tự do. Kéo khung cắt, hoặc đặt cả hình lên một bản sao làm mờ của chính nó. Lưu thành clip_9x16.mp4 cạnh clip.</li>
+<li><b>Trim và Compress</b>: Trim, Remove Audio và Compress theo preset có sẵn là miễn phí. Compress tuỳ chỉnh, ra GIF hoặc giữ HDR là ${PRO}; Remove Video ${PRO}.</li>
+<li><b>Reframe</b>: đổi video sang 9:16 hoặc 4:5 miễn phí, hoặc 1:1, 16:9, 21:9 hay khung tự do với ${PRO}. Kéo khung cắt, hoặc đặt cả hình lên một bản sao làm mờ của chính nó. Lưu thành clip_9x16.mp4 cạnh clip.</li>
 <li><b>Crop</b>: cắt ảnh theo Free, Original, 1:1, 4:5, 9:16, 16:9 hoặc 21:9. Lưu thành photo_crop.jpg, cùng định dạng.</li>
 <li><b>Convert Image</b> và <b>Create PDF</b> từ ảnh.</li>
 <li><b>Rotate Left / Right</b>: JPEG và TIFF không nén lại, cả PNG và BMP; HEIC và GIF tĩnh chỉ trên Mac.</li>
-<li><b>Remove Background</b> ${PRO}: chạy ngay trên máy. Cài trong Settings ▸ Remove Background trên Mac, Settings ▸ Quick Actions trên Windows / Linux (BiRefNet, IS-Net, U²-Net hoặc model .onnx của bạn; trên Mac có thêm Apple Vision).</li>
-<li><b>Transcribe</b>, <b>Render Preview</b> và <b>Check on SynthID</b> ${PRO} cũng nằm ở đây.</li>
+<li><b>Remove Background</b>: chạy ngay trên máy. Từng ảnh với model nhỏ có sẵn là miễn phí; xử lý hàng loạt và model chất lượng cao là ${PRO}. Cài trong Settings ▸ Remove Background trên Mac, Settings ▸ Quick Actions trên Windows / Linux (BiRefNet, IS-Net, U²-Net hoặc model .onnx của bạn; trên Mac có thêm Apple Vision).</li>
+<li><b>Transcribe</b> (miễn phí 3 clip mỗi tháng), <b>Render Preview</b> ${PRO} và <b>Check on SynthID</b> ${PRO} cũng nằm ở đây.</li>
 </ul>
 <p>Compress, Reframe và Save Trim hiện tiến trình kèm nút Stop. Bấm Stop thì không để lại file làm dở.</p>` },
 
@@ -417,6 +427,7 @@
 <li>Space on a Cavalry, Caddis, Autograph or Plate project opens its card: the picture it has (Autograph's viewer, Plate's first frame, the Caddis or Cavalry frame) above the composition, size, frame rate, length, footage (missing ones in red), fonts, author and licence. On Windows and Linux, Quick Look shows the picture with the main facts under it; the full card is in Get Info. A project with a preview video plays it instead.</li>
 <li>Caddis (.caddis): a real frame as the thumbnail, drawn in the background by the Caddis app installed on your computer (once you are signed in to it). Without Caddis they keep the Caddis icon.</li>
 <li>Cavalry (.cv): a real frame as the thumbnail and in Space, drawn by your own copy of Scene Group's Cavalry Web Player. Better Finder doesn't include it: download it (free, from Scene Group), unzip it and choose its folder in Settings ▸ File Types ▸ Cavalry. Without it, Cavalry scenes keep their icon. See <a href="#lim-cavalry">limitations</a>.</li>
+<li>Cavalry, Caddis and Autograph: the thumbnail and card are free; the full viewer is ${PRO}.</li>
 <li>Used Media ${PRO}: the footage a project uses, missing files in red, with Show in Folder.</li>
 <li>Used in Projects ${PRO} (Get Info): which projects use this file.</li>
 <li>Advanced Search's Project group ${PRO} finds projects that use a file or miss media.</li>
@@ -437,6 +448,7 @@
 <li>Space trên project Cavalry, Caddis, Autograph hoặc Plate mở thẻ thông tin của nó: hình có sẵn (khung xem của Autograph, khung đầu của Plate, khung hình Caddis hoặc Cavalry) phía trên composition, kích thước, fps, thời lượng, footage (file thiếu tô đỏ), font, tác giả và giấy phép. Trên Windows và Linux, Quick Look hiện hình kèm các thông tin chính bên dưới; thẻ đầy đủ nằm trong Get Info. Project có video xem trước thì phát video đó.</li>
 <li>Caddis (.caddis): thumbnail là khung hình thật, do app Caddis cài trên máy vẽ ở chế độ nền (khi bạn đã đăng nhập Caddis). Không có Caddis thì giữ icon Caddis.</li>
 <li>Cavalry (.cv): thumbnail và hình trong Space là khung hình thật, vẽ bằng bản Cavalry Web Player của Scene Group mà bạn tự tải. Better Finder không kèm nó: tải về (miễn phí, từ Scene Group), giải nén rồi chọn thư mục của nó trong Settings ▸ File Types ▸ Cavalry. Không có player thì scene Cavalry giữ icon. Xem <a href="#lim-cavalry">giới hạn</a>.</li>
+<li>Cavalry, Caddis và Autograph: thumbnail và thẻ thông tin miễn phí; trình xem đầy đủ là ${PRO}.</li>
 <li>Used Media ${PRO}: footage project dùng, file thiếu tô đỏ, có nút Show in Folder.</li>
 <li>Used in Projects ${PRO} (Get Info): project nào dùng file này.</li>
 <li>Nhóm Project của Advanced Search ${PRO} tìm project dùng một file hoặc thiếu media.</li>
@@ -456,16 +468,16 @@
         en: `
 <ul>
 <li>Space on a .zip, .rar, .7z, .tar.gz and other archives lists what's inside: folders open and close, with sizes, dates, the number of files and the unpacked size. Filter by name at the top.</li>
-<li>Right-click ▸ Browse Archive (${k("⌥⌘↓")} on Mac) opens it like a folder in List, Grid or Columns. It is read-only. ${k("⌘↑")} (Mac), ${k("Alt+↑")} (Windows / Linux) or the path bar takes you back.</li>
-<li>Inside, Space shows one file (picture, video, PDF, text, Figma, Lottie…) by reading out just that file.</li>
+<li>Right-click ▸ Browse Archive ${PRO} (${k("⌥⌘↓")} on Mac) opens it like a folder in List, Grid or Columns. It is read-only. ${k("⌘↑")} (Mac), ${k("Alt+↑")} (Windows / Linux) or the path bar takes you back.</li>
+<li>Inside, Space ${PRO} shows one file (picture, video, PDF, text, Figma, Lottie…) by reading out just that file.</li>
 <li>Right-click ▸ Extract to Archive's Folder (Extract on Windows / Linux) copies the chosen files next to the archive. A double-click still extracts the whole archive.</li>
 <li>To make an archive: right-click ▸ Compress.</li>
 </ul>`,
         vi: `
 <ul>
 <li>Space trên file .zip, .rar, .7z, .tar.gz và các loại nén khác liệt kê nội dung bên trong: thư mục mở / đóng được, có dung lượng, ngày, số file và dung lượng khi giải nén. Lọc theo tên ở phía trên.</li>
-<li>Chuột phải ▸ Browse Archive (${k("⌥⌘↓")} trên Mac) mở file nén như một thư mục ở List, Grid hoặc Columns. Chỉ xem, không sửa được. ${k("⌘↑")} (Mac), ${k("Alt+↑")} (Windows / Linux) hoặc thanh đường dẫn để quay lại.</li>
-<li>Ở bên trong, Space hiện một file (ảnh, video, PDF, chữ, Figma, Lottie…) bằng cách chỉ đọc riêng file đó ra.</li>
+<li>Chuột phải ▸ Browse Archive ${PRO} (${k("⌥⌘↓")} trên Mac) mở file nén như một thư mục ở List, Grid hoặc Columns. Chỉ xem, không sửa được. ${k("⌘↑")} (Mac), ${k("Alt+↑")} (Windows / Linux) hoặc thanh đường dẫn để quay lại.</li>
+<li>Ở bên trong, Space ${PRO} hiện một file (ảnh, video, PDF, chữ, Figma, Lottie…) bằng cách chỉ đọc riêng file đó ra.</li>
 <li>Chuột phải ▸ Extract to Archive's Folder (Extract trên Windows / Linux) chép các file đã chọn ra cạnh file nén. Double-click vẫn giải nén cả file như trước.</li>
 <li>Muốn nén: chuột phải ▸ Compress.</li>
 </ul>` },
@@ -509,29 +521,93 @@
         en: `
 <p>Better Finder has a free version you can use for as long as you like: a real Finder replacement. Better Finder Pro unlocks the features marked ${PRO} on this site and in the app. One list decides this for Mac, Windows and Linux alike.</p>
 ${note("Pro is not on sale yet: in the current versions every feature works for everyone.")}
+<h3 id="free-list">Free</h3>
+<ul>
+<li>Browsing: List, Grid, Columns and Gallery, tabs, Path Bar, Recents, hover to scrub, 1 to 6 panes, sidebar groups.</li>
+<li>Tags, ratings and XMP labels. Group By, sorting, filter chips, Tidy Up, Flatten. The basic info columns. Smart Folders.</li>
+<li>Space on video, pictures, RAW, audio, PDF, text and code. HTML and SVG in Page and Split. Lottie (.json, .lottie).</li>
+<li>Search names everywhere (${k("⌘K")} / ${k("⌘F")}) and on external drives. Advanced Search. Search what is said in your clips.</li>
+<li>Transcripts: read, edit and export .srt.</li>
+<li>Player: Mini player, Cast, Play Queue, Trim, Remove Audio. Image sequences. GIF trim by frame.</li>
+<li>Convert Image, Create PDF, Crop.</li>
+<li>Themes and styles, still and animated backgrounds, glass windows, sounds, the control bar.</li>
+<li>Keeping your files safe is always free: Undo, sidecar files, cloud files never downloaded on their own, fast network drives.</li>
+</ul>
+<h3 id="split-list">Free has the basics, Pro the depth</h3>
 <table class="doc-table"><thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead><tbody>
-<tr><th>Browsing</th><td>All views, tabs, panes, sidebar groups and the Drop Zone, tags, ratings and labels, filter chips, search everywhere (names, spoken words, tags, colour), Advanced Search, external drives, Smart Folders, Get Info, Quick Look and the viewers, archives, Undo</td><td>Version stacks</td></tr>
-<tr><th>Player</th><td>Playback, Queue, Mini player, trim one file, Remove Audio</td><td>Custom control bar, playlists, image sequences, GIF trim by frame</td></tr>
-<tr><th>Transcripts</th><td>Read existing transcripts, search what is said in them</td><td>Transcribe, editing, AI Review, Glossary, burned-in subtitles</td></tr>
-<tr><th>AI</th><td></td><td>Visual Search, Find Similar, Ask AI, Remove Background, Made with AI? column, Check on SynthID</td></tr>
-<tr><th>Export</th><td>Trim, Remove Audio, Crop, Convert Image, Create PDF</td><td>Compress (own size, GIF, keep HDR), Reframe, Remove Video, many files at once</td></tr>
-<tr><th>Compare</th><td></td><td>2 to 9 files, Grid and Wipe</td></tr>
-<tr><th>Projects</th><td>Project cards, pictures saved in the file</td><td>Render Preview, Choose Preview File, Used Media, Used in Projects</td></tr>
-<tr><th>Looks</th><td>Light, Dark, Midnight, three styles, still folder backgrounds</td><td>Animated backgrounds, glass windows, custom sounds</td></tr>
-</tbody></table>`,
+<tr><th>Drop Zone</th><td>Collect files, drag to copy or move, Copy to, Move to</td><td>The bolt button (Compress, To JPG, Remove Background, Zip…)</td></tr>
+<tr><th>Workspaces</th><td>Standard only</td><td>The other Workspaces, saving new ones</td></tr>
+<tr><th>Photoshop / Illustrator</th><td>Flat picture</td><td>Each layer, artboards</td></tr>
+<tr><th>3D</th><td>Thumbnail and info card</td><td>Turn the model in Space</td></tr>
+<tr><th>Figma, Sketch, Affinity</th><td>Picture saved in the file and info card</td><td>Page and frame viewer</td></tr>
+<tr><th>After Effects, Premiere, Resolve, Final Cut, Filmora projects</th><td>Info card and picture saved in the file</td><td>Comp and timeline view, used and missing footage</td></tr>
+<tr><th>Cavalry, Caddis, Autograph</th><td>Thumbnail and info card</td><td>Full viewer</td></tr>
+<tr><th>Archives</th><td>List of the files inside</td><td>Browse inside, preview the files inside</td></tr>
+<tr><th>Transcribe</th><td>3 clips a month</td><td>Unlimited</td></tr>
+<tr><th>Compress</th><td>Presets</td><td>Your own settings, GIF, keep HDR</td></tr>
+<tr><th>Playlists</th><td>1 playlist</td><td>Unlimited</td></tr>
+<tr><th>Many files at once</th><td>Up to 3 files</td><td>Unlimited</td></tr>
+<tr><th>Reframe</th><td>9:16, 4:5</td><td>1:1, 4:3, 16:9, your own</td></tr>
+<tr><th>Remove Background</th><td>One picture at a time, small built-in model</td><td>Many at once, high-quality models</td></tr>
+</tbody></table>
+<h3 id="pro-list">Pro</h3>
+<ul>
+<li>AI, FPS and Aspect Ratio columns in List.</li>
+<li>Version stacks.</li>
+<li>HTML and SVG: edit the code and save, your own page sizes, export the code as a picture.</li>
+<li>Rive (.riv) in Space. Its thumbnail in the grid stays free.</li>
+<li>Render Preview for After Effects, Blender and Cinema 4D.</li>
+<li>The Visual tab: Visual Search and search by colour. Find Similar. Ask AI.</li>
+<li>AI Review and Glossary. Burning subtitles into a video.</li>
+<li>Used Media, missing footage, Used in Projects.</li>
+<li>Compare 2 to 9 files.</li>
+<li>Made with AI? (the AI column, SynthID).</li>
+</ul>`,
         vi: `
 <p>Better Finder có bản miễn phí, dùng bao lâu cũng được, thay được Finder thật sự. Better Finder Pro mở khoá các tính năng có nhãn ${PRO} trên trang này và trong app. Một danh sách duy nhất quyết định điều này cho cả Mac, Windows và Linux.</p>
 ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính năng đều dùng được cho tất cả mọi người.")}
+<h3 id="free-list">Free</h3>
+<ul>
+<li>Duyệt file: List, Grid, Columns và Gallery, tab, Path Bar, Recents, rê chuột xem lướt, chia 1 đến 6 khung, nhóm trên thanh bên.</li>
+<li>Tag, sao và nhãn XMP. Group By, sắp xếp, chip lọc, Tidy Up, Flatten. Các cột thông tin cơ bản. Smart Folder.</li>
+<li>Space trên video, ảnh, RAW, âm thanh, PDF, chữ và code. HTML và SVG ở chế độ Page và Split. Lottie (.json, .lottie).</li>
+<li>Tìm tên khắp máy (${k("⌘K")} / ${k("⌘F")}) và trên ổ ngoài. Advanced Search. Tìm trong lời nói của clip.</li>
+<li>Transcript: xem, sửa và xuất .srt.</li>
+<li>Player: player nhỏ, Cast, Play Queue, Trim, Remove Audio. Chuỗi ảnh. Cắt GIF theo khung.</li>
+<li>Convert Image, Create PDF, Crop.</li>
+<li>Theme và kiểu giao diện, nền tĩnh và nền động, cửa sổ kính, âm thanh, thanh điều khiển.</li>
+<li>An toàn dữ liệu luôn miễn phí: hoàn tác, file đi kèm, không tự tải file cloud, ổ mạng nhanh.</li>
+</ul>
+<h3 id="split-list">Free có phần cơ bản, Pro có phần sâu</h3>
 <table class="doc-table"><thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead><tbody>
-<tr><th>Duyệt file</th><td>Mọi chế độ xem, tab, khung, nhóm trên thanh bên và Drop Zone, tag, sao và nhãn màu, chip lọc, tìm khắp máy (tên, lời nói, tag, màu), Advanced Search, ổ ngoài, Smart Folder, Get Info, Quick Look và các trình xem, file nén, hoàn tác</td><td>Gộp phiên bản</td></tr>
-<tr><th>Player</th><td>Phát, hàng chờ, player nhỏ, cắt một file, Remove Audio</td><td>Thanh điều khiển tuỳ chỉnh, playlist, chuỗi ảnh, cắt GIF theo khung</td></tr>
-<tr><th>Transcript</th><td>Đọc transcript đã có, tìm theo lời nói trong đó</td><td>Tạo transcript, sửa, AI Review, Glossary, đốt phụ đề</td></tr>
-<tr><th>AI</th><td></td><td>Visual Search, Find Similar, Ask AI, Remove Background, cột Made with AI?, Check on SynthID</td></tr>
-<tr><th>Xuất file</th><td>Trim, Remove Audio, Crop, Convert Image, Create PDF</td><td>Compress (cỡ tự chọn, GIF, giữ HDR), Reframe, Remove Video, xử lý nhiều file một lúc</td></tr>
-<tr><th>So sánh</th><td></td><td>2 đến 9 file, dạng lưới và Wipe</td></tr>
-<tr><th>Project</th><td>Thẻ thông tin project, ảnh lưu sẵn trong file</td><td>Render Preview, Choose Preview File, Used Media, Used in Projects</td></tr>
-<tr><th>Giao diện</th><td>Light, Dark, Midnight, ba kiểu giao diện, nền thư mục tĩnh</td><td>Nền động, cửa sổ kính, âm thanh tuỳ chỉnh</td></tr>
-</tbody></table>` },
+<tr><th>Drop Zone</th><td>Gom file, kéo để chép hoặc chuyển, Copy to, Move to</td><td>Nút tia sét (Compress, To JPG, Remove Background, Zip…)</td></tr>
+<tr><th>Workspace</th><td>Chỉ Standard</td><td>Các workspace khác, lưu workspace mới</td></tr>
+<tr><th>Photoshop / Illustrator</th><td>Ảnh phẳng</td><td>Từng layer, artboard</td></tr>
+<tr><th>3D</th><td>Thumbnail và thẻ thông tin</td><td>Xoay mô hình trong Space</td></tr>
+<tr><th>Figma, Sketch, Affinity</th><td>Ảnh lưu sẵn trong file và thẻ thông tin</td><td>Trình xem từng trang, từng frame</td></tr>
+<tr><th>Project After Effects, Premiere, Resolve, Final Cut, Filmora</th><td>Thẻ thông tin và ảnh lưu sẵn trong file</td><td>Sơ đồ comp và timeline, footage dùng và thiếu</td></tr>
+<tr><th>Cavalry, Caddis, Autograph</th><td>Thumbnail và thẻ thông tin</td><td>Trình xem đầy đủ</td></tr>
+<tr><th>File nén</th><td>Danh sách file bên trong</td><td>Duyệt sâu, xem trước file bên trong</td></tr>
+<tr><th>Tạo transcript</th><td>3 clip mỗi tháng</td><td>Không giới hạn</td></tr>
+<tr><th>Compress</th><td>Preset có sẵn</td><td>Tuỳ chỉnh, GIF, giữ HDR</td></tr>
+<tr><th>Playlist</th><td>1 playlist</td><td>Không giới hạn</td></tr>
+<tr><th>Xử lý nhiều file một lúc</th><td>Tối đa 3 file</td><td>Không giới hạn</td></tr>
+<tr><th>Reframe</th><td>9:16, 4:5</td><td>1:1, 4:3, 16:9, tuỳ chỉnh</td></tr>
+<tr><th>Remove Background</th><td>Từng ảnh, model nhỏ có sẵn</td><td>Hàng loạt, model chất lượng cao</td></tr>
+</tbody></table>
+<h3 id="pro-list">Pro</h3>
+<ul>
+<li>Cột AI, FPS và Aspect Ratio trong List.</li>
+<li>Gộp phiên bản (version stack).</li>
+<li>HTML và SVG: sửa code và lưu, cỡ trang tự chọn, xuất code thành ảnh.</li>
+<li>Rive (.riv) trong Space. Thumbnail trong lưới vẫn miễn phí.</li>
+<li>Render Preview cho After Effects, Blender và Cinema 4D.</li>
+<li>Tab Visual: Visual Search và tìm theo màu. Find Similar. Ask AI.</li>
+<li>AI Review và Glossary. Đốt phụ đề vào video.</li>
+<li>Used Media, footage thiếu, Used in Projects.</li>
+<li>Compare 2 đến 9 file.</li>
+<li>Made with AI? (cột AI, SynthID).</li>
+</ul>` },
 
       // ------------------------------------------------------------------ Platforms
       { id: "platforms", icon: "💻", t: { en: "Mac, Windows and Linux", vi: "Mac, Windows và Linux" },

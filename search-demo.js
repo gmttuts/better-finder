@@ -1,7 +1,7 @@
 // The Search section: the app's ⌘K palette with its three tabs (Search, Visual, Advanced), drawn in HTML / CSS and searching a
 // small index of demo files (content.js searchDemo) the way the app searches its name index: as you type, letters may be
 // missing ("invq4"), accents don't matter ("khach hang"), "kind:video " and the like turn into chips, "said: " searches what is
-// said in clips. Visual finds pictures by colour (free) or by what they show (Pro); Advanced has its conditions in groups that
+// said in clips. Visual (Pro) finds pictures by colour or by what they show; Advanced has its conditions in groups that
 // fold. While nobody touches it, it types a few searches by itself (none with reduced motion). The palette speaks English,
 // like the app; the texts around it come from content.js (find.*).
 (() => {
@@ -157,7 +157,8 @@
   }
   const empty = (a, b = "", tag = "li") => `<${tag} class="fd-empty" role="option" aria-disabled="true"><b>${a}</b>${b ? `<span>${b}</span>` : ""}</${tag}>`;
 
-  // ---------------------------------------------------------------- Visual tab
+  // ---------------------------------------------------------------- Visual tab (all of it is Pro: colour, Visual Search, Find Similar)
+  const PRO_NOTE = `<p class="fd-pro"><span class="pro-badge">PRO</span>The Visual tab is part of Better Finder Pro: colours, what pictures and clips show, and pictures like yours.</p>`;
   function visualTab(q) {
     const sw = `<div class="fd-sw" role="group" aria-label="Colours">${COLORS.map(([c, hex]) =>
       `<button type="button" data-color="${c}" aria-pressed="${st.colors.includes(c)}"><i style="--c:${hex}"></i>${cap(c)}</button>`).join("")}
@@ -170,7 +171,7 @@
         return { f, share };
       }).filter((h) => h.share >= 12 && words.every((w) => fold(h.f.n).includes(w))).sort((a, b) => b.share - a.share);
       const title = "Mostly " + st.colors.map(cap).join(" and ");
-      return { n: hits.length, html: sw + `${hdr(title, hits.length, st.colors.length > 1 ? "has both colours" : "share of the picture · click two colours for both")}
+      return { n: hits.length, html: sw + PRO_NOTE + `${hdr(title, hits.length, st.colors.length > 1 ? "has both colours" : "share of the picture · click two colours for both")}
         <div class="fd-grid" role="listbox" id="fd-list" aria-labelledby="fd-gh">${hits.slice(0, 8).map(({ f, share }) => `<figure class="fd-tile" role="option" aria-selected="false">
           <span class="fd-pic"><img src="${f.th}" alt="" loading="lazy" decoding="async"><b><i style="--c:${HEX[st.colors[0]]}"></i>${share}%</b></span>
           <span class="fd-strip">${f.c.map(([c, p]) => `<i style="--c:${HEX[c]};flex:${p}"></i>`).join("")}</span>
@@ -180,13 +181,13 @@
       // what the picture shows: Visual Search, part of Better Finder Pro
       const hits = FILES.filter((f) => f.sees).map((f) => ({ f, s: words.filter((w) => f.sees.includes(w)).length / words.length }))
         .filter((h) => h.s > 0).sort((a, b) => b.s - a.s);
-      return { n: hits.length, html: sw + `<p class="fd-pro"><span class="pro-badge">PRO</span>Visual Search looks at what the pictures and clips show, on your Mac. Colours stay free.</p>
+      return { n: hits.length, html: sw + PRO_NOTE + `
         ${hdr("Best matches", hits.length, "how well it matches · where in the clip")}
         <div class="fd-grid" role="listbox" id="fd-list" aria-labelledby="fd-gh">${hits.slice(0, 8).map(({ f, s }, i) => `<figure class="fd-tile" role="option" aria-selected="false">
           <span class="fd-pic"><img src="${f.th}" alt="" loading="lazy" decoding="async"><b>${Math.round(28 + s * 10 - i)}%</b>${f.k === "video" ? `<em>at 0:${String(4 + i * 3).padStart(2, "0")}</em>` : ""}</span>
           <figcaption>${esc(f.n)}</figcaption></figure>`).join("") || empty("Nothing looks like that here.", "", "div")}</div>` };
     }
-    return { n: null, html: sw + `<p class="fd-hint">Pick a colour (free), or type what the picture shows <span class="pro-badge">PRO</span></p>` };
+    return { n: null, html: sw + PRO_NOTE + `<p class="fd-hint">Pick a colour, or type what the picture shows.</p>` };
   }
 
   // ---------------------------------------------------------------- Advanced tab

@@ -343,13 +343,13 @@ if __name__ == "__main__":
     <div class="sp-tabs" role="tablist">${D.groups.map((g) => `<button role="tab" id="sp-tab-${g.id}" data-g="${g.id}" aria-controls="sp-win"><span aria-hidden="true">${g.icon}</span><b data-k="space.${g.id}"></b></button>`).join("")}</div>
     <p class="sp-sr" id="sp-how" data-k="space.window"></p>
     <div class="vd sv${dark ? " vd-dark" : ""}" id="sp-win" role="tabpanel" tabindex="0" aria-describedby="sp-how">
-      <div class="vd-chrome"><i></i><i></i><i></i><span class="vd-title sv-name"></span><span class="sv-kind"></span></div>
+      <div class="vd-chrome"><i></i><i></i><i></i><span class="vd-title sv-name"></span><span class="pro-badge sv-pro" hidden>PRO</span><span class="sv-kind"></span></div>
       <div class="sv-view"></div>
       <div class="sv-run"><button class="sv-key" type="button"><kbd aria-hidden="true">Space</kbd><span data-k="space.key"></span></button>
         <span class="sv-nav"><button class="sv-prev" data-k-label="space.prev">‹</button><span class="sv-count" aria-live="off"></span><button class="sv-next" data-k-label="space.next">›</button></span>
         <span class="sv-dots" aria-hidden="true">${files.map((f, i) => `<i data-i="${i}" title="${f.name}"></i>`).join("")}</span><span class="sv-hint" data-k="space.try"></span></div>
     </div>
-    <div class="sp-cap"><p class="sp-desc"></p><p class="sp-fmt"></p><p class="sp-where" data-k="space.where"></p></div>`;
+    <div class="sp-cap"><p class="sp-desc"></p><p class="sd2-ainote sp-pro" hidden><span class="pro-badge">PRO</span><span></span></p><p class="sp-fmt"></p><p class="sp-where" data-k="space.where"></p></div>`;
 
   const win = $("#sp-win"), view = $(".sv-view"), count = $(".sv-count");
   // the Space key in the window's bottom bar: it goes down each time the window moves to the next file
@@ -363,6 +363,10 @@ if __name__ == "__main__":
     const g = files[at].g;
     $(".sp-desc").textContent = BF.t(`space.${g}.d`);
     $(".sp-fmt").textContent = BF.t(`space.${g}.f`);
+    // files whose viewer has a Pro part say what is Pro and what the free version shows
+    const pro = files[at].pro;
+    $(".sv-pro").hidden = $(".sp-pro").hidden = !pro;
+    if (pro) $(".sp-pro span:last-child").textContent = BF.t(`space.pro.${pro}`);
   }
 
   // Draw the current file's viewer afresh (started only while on screen).

@@ -795,6 +795,9 @@ h2 .pro-badge, .kicker .pro-badge, .pro-kicker .pro-badge { height: 22px; paddin
 .sp-desc { margin: 0; max-width: 46em; font-size: 16px; }
 .sp-fmt, .sp-where { margin: 8px 0 0; max-width: 60em; color: color-mix(in srgb, var(--muted) 55%, var(--text)); font-size: 14px; }
 .sp-where { margin-top: 4px; font-weight: 600; }
+.sp-pro { margin: 10px 0 0; max-width: 60em; font-size: 14px; }
+.sp-pro[hidden], .sv-pro[hidden] { display: none; }
+.sv .vd-chrome .sv-pro { margin-left: 6px; }
 .sp-sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; margin: 0; }
 
 .sv { user-select: auto; -webkit-user-select: auto; }
