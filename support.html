@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Better Explora Support</title>
+  <meta name="description" content="Get help with Better Explora: the docs, troubleshooting, how to report a bug, and what a bug report contains.">
+  <meta property="og:title" content="Better Explora Support">
+  <meta property="og:image" content="assets/icon.png">
+  <link rel="icon" href="assets/favicon.png">
+  <link rel="stylesheet" href="base.css">
+  <link rel="stylesheet" href="styles-b.css">
+  <link rel="stylesheet" href="docs.css">
+  <style>
+    .support { max-width: 760px; margin: 0 auto; padding: 32px 16px 64px; }
+    .support h1 { margin-bottom: 4px; }
+    .support h2 { margin-top: 36px; }
+    .support .card { border: 1px solid rgba(127,127,127,.25); border-radius: 12px; padding: 16px 20px; margin: 16px 0; }
+    .support .vi { opacity: .8; font-size: .95em; }
+  </style>
+</head>
+<body class="docs-page" data-no-switch>
+  <header class="nav">
+    <a class="brand" href="index.html"><img src="assets/icon.png" alt="" width="26" height="26">Better Explora</a>
+    <nav class="links">
+      <a href="index.html#features" data-i18n="nav.features"></a>
+      <a href="docs.html" data-i18n="nav.docs"></a>
+      <a href="feedback.html" data-i18n="nav.feedback"></a>
+    </nav>
+    <a class="btn btn-small" href="index.html#install" data-i18n="nav.download"></a>
+  </header>
+
+  <main class="support">
+    <h1>Support</h1>
+    <p class="lead">Help for Better Explora on Mac, Windows and Linux.</p>
+    <p class="vi" lang="vi">Hỗ trợ cho Better Explora trên Mac, Windows và Linux. Bạn có thể viết bằng tiếng Việt.</p>
+
+    <div class="card">
+      <h2 style="margin-top:0">Start here</h2>
+      <ul>
+        <li><a href="docs.html">The docs</a>: how everything works.</li>
+        <li><a href="docs.html#troubleshooting">Troubleshooting</a>: “can't be opened”, permissions after the rename, a big cache, missing media info.</li>
+        <li><a href="docs.html#limitations">Limitations</a>: what the app can't do yet, and why.</li>
+      </ul>
+    </div>
+
+    <h2 id="report">Report a bug</h2>
+    <ol>
+      <li>In the app, choose <b>Help ▸ Report a Bug…</b>.</li>
+      <li>Say what happened and how to make it happen again.</li>
+      <li>Read the report below the form. It is everything that would be shared, nothing else.</li>
+      <li>Click <b>Copy and Open GitHub Issue</b> and paste the report into the new issue (see <a href="#contact">Contact</a>), or <b>Copy</b> / <b>Save as File…</b> to keep it.</li>
+    </ol>
+    <p>After a crash, the next launch offers the crash report: click <b>Report…</b> to add it to a bug report.</p>
+
+    <h2 id="contents">What a report contains</h2>
+    <ul>
+      <li>The app version, the system version and the computer model.</li>
+      <li>The style and theme you use (macOS, Windows 11 or Linux, light or dark).</li>
+      <li>If you leave it ticked: the last lines of the app's own log. If you add it: the crash report.</li>
+      <li>Your home folder is shown as <code>~</code>. File and folder names are replaced with [path] unless you tick <b>Include file and folder names</b>.</li>
+    </ul>
+    <p>Better Explora never uploads anything by itself. See <a href="docs.html#privacy">Privacy</a>.</p>
+
+    <!-- Support is GitHub Issues and Discord (owner, 14 Nov 2026). OWNER: put the Discord invite link in place of
+         DISCORD-INVITE below (and in the app: Support.discord in mac/.../Support.swift). -->
+    <h2 id="contact">Contact</h2>
+    <div class="card">
+      <h3 style="margin-top:0">GitHub Issues: bugs</h3>
+      <p><a href="https://github.com/gmttuts/better-finder/issues/new">Open a new issue</a> and paste the report from
+         <b>Help ▸ Report a Bug…</b> (its <b>Copy and Open GitHub Issue</b> button copies it and opens this page).
+         Issues are public: read the report first and remove anything you don't want to share. You need a free GitHub account.</p>
+      <p><a href="https://github.com/gmttuts/better-finder/issues">See the open issues</a>: your problem may already be known.</p>
+    </div>
+    <div class="card" id="discord">
+      <h3 style="margin-top:0">Discord: questions and help</h3>
+      <p>Ask how to do something, share tips and talk with other users. <span data-discord>The invite link is coming soon.</span></p>
+    </div>
+    <p>Ideas and feature requests also go to the <a href="feedback.html">feedback board</a>.</p>
+  </main>
+
+  <footer class="footer wrap">
+    <div class="foot-brand"><img src="assets/icon.png" alt="" width="40" height="40"><span data-i18n="footer.made"></span></div>
+    <nav>
+      <a href="index.html#install" data-i18n="nav.download"></a>
+      <a href="docs.html" data-i18n="nav.docs"></a>
+      <a href="feedback.html" data-i18n="nav.feedback"></a>
+      <a href="index.html#support" data-i18n="nav.support"></a>
+    </nav>
+    <span class="fine">© <span data-year></span> Better Explora (formerly Better Finder)</span>
+  </footer>
+
+  <script src="content.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

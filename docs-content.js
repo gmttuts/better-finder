@@ -13,10 +13,10 @@
     versions: { mac: "0.351", desktop: "0.3.0" },
     ui: {
       title: { en: "Docs", vi: "Tài liệu" },
-      lead: { en: "How to use Better Finder on Mac, Windows and Linux, and what it can't do.",
-              vi: "Cách dùng Better Finder trên Mac, Windows và Linux, và những gì app chưa làm được." },
-      follows: { en: "This guide follows Better Finder {mac} for Mac and {desktop} for Windows and Linux.",
-                 vi: "Tài liệu này theo Better Finder {mac} cho Mac và {desktop} cho Windows và Linux." },
+      lead: { en: "How to use Better Explora on Mac, Windows and Linux, and what it can't do.",
+              vi: "Cách dùng Better Explora trên Mac, Windows và Linux, và những gì app chưa làm được." },
+      follows: { en: "This guide follows Better Explora {mac} for Mac and {desktop} for Windows and Linux.",
+                 vi: "Tài liệu này theo Better Explora {mac} cho Mac và {desktop} cho Windows và Linux." },
       search: { en: "Search the docs", vi: "Tìm trong tài liệu" },
       contents: { en: "Contents", vi: "Mục lục" },
       noHits: { en: "Nothing found. Try another word.", vi: "Không tìm thấy. Thử từ khác." },
@@ -39,31 +39,31 @@
 <h3 id="install-mac">Install on Mac</h3>
 <p>macOS 13 Ventura or later, Apple silicon or Intel.</p>
 <ol>
-<li>Download the .dmg from the <a href="index.html#install">download section</a>, open it and drag Better Finder into Applications.</li>
+<li>Download the .dmg from the <a href="index.html#install">download section</a>, open it and drag Better Explora into Applications.</li>
 <li>The app isn't notarized by Apple, so macOS blocks the first launch. On macOS 15 or later: open the app once, then System Settings ▸ Privacy &amp; Security, scroll down and click <b>Open Anyway</b>. On macOS 13 and 14: Control-click the app ▸ Open.</li>
-<li>If macOS says the app is “damaged”, run this in Terminal and open it again: <code>xattr -dr com.apple.quarantine "/Applications/Better Finder.app"</code></li>
+<li>If macOS says the app is “damaged”, run this in Terminal and open it again: <code>xattr -dr com.apple.quarantine "/Applications/Better Explora.app"</code></li>
 </ol>
 <h3 id="install-windows">Install on Windows</h3>
 <p>Windows 10 or 11, 64-bit. Run the installer (.exe). If SmartScreen says “Windows protected your PC”, click <b>More info</b> ▸ <b>Run anyway</b>: the app isn't signed with a paid certificate. FFmpeg comes with the installer.</p>
 <h3 id="install-linux">Install on Linux</h3>
 <p>x86-64, Ubuntu 22.04 or later, Fedora and others. Use the AppImage (make it executable: Properties ▸ Allow executing, or <code>chmod +x</code>, then open it) or the .deb for Ubuntu and Debian, which installs FFmpeg with it. The AppImage uses your system's FFmpeg and bsdtar: install them first (for example <code>sudo apt install ffmpeg libarchive-tools</code>).</p>
 <h3 id="first-run">First run</h3>
-<p>A short welcome helps you set things up: pick a style (macOS, Windows 11 or Linux GNOME) and, on Mac, a Workspace, bring Finder's sidebar over (Mac), choose whether folders open in Better Finder (Mac and Windows), download the Visual Search and Whisper models if you want them, and see what Free and Pro include. Skip closes it at any step, and everything in it is also in Settings. Open it again with Help ▸ Welcome to Better Finder… ${mac} or right-click an empty spot ▸ Welcome to Better Finder… ${win}.</p>
-<p>Better Finder moves, renames and deletes real files, just like Finder or Explorer. Try it on a copy of a folder first.</p>
+<p>A short welcome helps you set things up: pick a style (macOS, Windows 11 or Linux GNOME) and, on Mac, a Workspace, bring Finder's sidebar over (Mac), choose whether folders open in Better Explora (Mac and Windows), download the Visual Search and Whisper models if you want them, and see what Free and Pro include. Skip closes it at any step, and everything in it is also in Settings. Open it again with Help ▸ Welcome to Better Explora… ${mac} or right-click an empty spot ▸ Welcome to Better Explora… ${win}.</p>
+<p>Better Explora moves, renames and deletes real files, just like Finder or Explorer. Try it on a copy of a folder first.</p>
 <h3 id="permissions">Permissions on Mac</h3>
 <ul>
 <li>When macOS asks for access to Desktop, Documents, Downloads or an external drive, click <b>Allow</b>.</li>
-<li>macOS never asks for <b>Full Disk Access</b> by itself. Better Finder needs it to show the Trash, read Finder's sidebar and open some protected folders: System Settings ▸ Privacy &amp; Security ▸ Full Disk Access ▸ <b>+</b> ▸ Better Finder, switch it on, then quit and reopen Better Finder.</li>
-<li>To make “Show in Finder” in other apps open Better Finder, use Settings ▸ Windows &amp; Sidebar. Right-click ▸ Open in macOS Finder still opens the real Finder.</li>
+<li>macOS never asks for <b>Full Disk Access</b> by itself. Better Explora needs it to show the Trash, read Finder's sidebar and open some protected folders: System Settings ▸ Privacy &amp; Security ▸ Full Disk Access ▸ <b>+</b> ▸ Better Explora, switch it on, then quit and reopen Better Explora.</li>
+<li>To make “Show in Finder” in other apps open Better Explora, use Settings ▸ Windows &amp; Sidebar. Right-click ▸ Open in macOS Finder still opens the real Finder.</li>
 </ul>
 <h3 id="extras">Optional extras on Mac</h3>
-<p>Better Finder plays most video without anything else. MKV, WebM, AVI and a few other jobs need FFmpeg; the app tells you when. Install it with <a href="https://brew.sh" rel="noopener">Homebrew</a>: <code>brew install ffmpeg</code>. For Whisper transcripts on Mac, install <code>brew install whisper-cpp</code> and download a model in Settings ▸ Transcribe (on macOS 26, macOS Speech works without either).</p>
+<p>Better Explora plays most video without anything else. MKV, WebM, AVI and a few other jobs need FFmpeg; the app tells you when. Install it with <a href="https://brew.sh" rel="noopener">Homebrew</a>: <code>brew install ffmpeg</code>. For Whisper transcripts on Mac, install <code>brew install whisper-cpp</code> and download a model in Settings ▸ Transcribe (on macOS 26, macOS Speech works without either).</p>
 <h3 id="updates">Updates</h3>
 <ul>
-<li>${mac} The app checks for a new version at most once a day (Settings ▸ Updates; Better Finder ▸ Check for Updates… checks now). Download the new .dmg and drag the app into Applications, choosing Replace. Your settings are kept. macOS may block the new version once, like the first install.</li>
+<li>${mac} The app checks for a new version at most once a day (Settings ▸ Updates; Better Explora ▸ Check for Updates… checks now). Download the new .dmg and drag the app into Applications, choosing Replace. Your settings are kept. macOS may block the new version once, like the first install.</li>
 <li>${win} The Windows app and the Linux AppImage update themselves. With the .deb, download the new package.</li>
 </ul>
-<h3 id="remove">Remove Better Finder</h3>
+<h3 id="remove">Remove Better Explora</h3>
 <p>${mac} Delete the app from Applications, then the folder <code>~/.mediaindex</code> (index, thumbnails, transcripts, models) and <code>~/Library/Preferences/local.mediafinder.app.plist</code> (settings).</p>
 <p>${win} Uninstall it like any other app (Windows: Settings ▸ Apps; Linux: delete the AppImage or remove the .deb package).</p>
 <h3 id="feedback">Suggest a feature or report a bug</h3>
@@ -72,31 +72,31 @@
 <h3 id="install-mac">Cài trên Mac</h3>
 <p>macOS 13 Ventura trở lên, chip Apple hoặc Intel.</p>
 <ol>
-<li>Tải file .dmg ở <a href="index.html#install">mục tải về</a>, mở ra và kéo Better Finder vào Applications.</li>
+<li>Tải file .dmg ở <a href="index.html#install">mục tải về</a>, mở ra và kéo Better Explora vào Applications.</li>
 <li>App chưa được Apple notarize nên macOS chặn lần mở đầu. macOS 15 trở lên: mở app một lần, rồi vào System Settings ▸ Privacy &amp; Security, cuộn xuống và bấm <b>Open Anyway</b>. macOS 13 và 14: Control-click vào app ▸ Open.</li>
-<li>Nếu macOS báo app “damaged”, chạy dòng này trong Terminal rồi mở lại: <code>xattr -dr com.apple.quarantine "/Applications/Better Finder.app"</code></li>
+<li>Nếu macOS báo app “damaged”, chạy dòng này trong Terminal rồi mở lại: <code>xattr -dr com.apple.quarantine "/Applications/Better Explora.app"</code></li>
 </ol>
 <h3 id="install-windows">Cài trên Windows</h3>
 <p>Windows 10 hoặc 11, 64-bit. Chạy bộ cài (.exe). Nếu SmartScreen báo “Windows protected your PC”, bấm <b>More info</b> ▸ <b>Run anyway</b>: app chưa ký bằng chứng chỉ trả phí. Bộ cài có sẵn FFmpeg.</p>
 <h3 id="install-linux">Cài trên Linux</h3>
 <p>x86-64, Ubuntu 22.04 trở lên, Fedora và các bản khác. Dùng AppImage (cho phép chạy: Properties ▸ Allow executing, hoặc <code>chmod +x</code>, rồi mở) hoặc gói .deb cho Ubuntu và Debian, gói này cài kèm FFmpeg. AppImage dùng FFmpeg và bsdtar của hệ thống: hãy cài trước (ví dụ <code>sudo apt install ffmpeg libarchive-tools</code>).</p>
 <h3 id="first-run">Lần mở đầu</h3>
-<p>Một màn chào ngắn giúp bạn thiết lập: chọn kiểu giao diện (macOS, Windows 11 hoặc Linux GNOME) và Workspace (Mac), lấy thanh bên của Finder (Mac), chọn có mở thư mục bằng Better Finder không (Mac và Windows), tải model Visual Search và Whisper nếu muốn, và xem bản Free và Pro có gì. Bấm Skip để đóng ở bất kỳ bước nào; mọi thứ trong đó đều có trong Settings. Mở lại bằng Help ▸ Welcome to Better Finder… ${mac} hoặc chuột phải chỗ trống ▸ Welcome to Better Finder… ${win}.</p>
-<p>Better Finder di chuyển, đổi tên và xoá file thật, giống Finder hay Explorer. Lần đầu nên thử trên một thư mục copy.</p>
+<p>Một màn chào ngắn giúp bạn thiết lập: chọn kiểu giao diện (macOS, Windows 11 hoặc Linux GNOME) và Workspace (Mac), lấy thanh bên của Finder (Mac), chọn có mở thư mục bằng Better Explora không (Mac và Windows), tải model Visual Search và Whisper nếu muốn, và xem bản Free và Pro có gì. Bấm Skip để đóng ở bất kỳ bước nào; mọi thứ trong đó đều có trong Settings. Mở lại bằng Help ▸ Welcome to Better Explora… ${mac} hoặc chuột phải chỗ trống ▸ Welcome to Better Explora… ${win}.</p>
+<p>Better Explora di chuyển, đổi tên và xoá file thật, giống Finder hay Explorer. Lần đầu nên thử trên một thư mục copy.</p>
 <h3 id="permissions">Quyền truy cập trên Mac</h3>
 <ul>
 <li>Khi macOS hỏi quyền vào Desktop, Documents, Downloads hay ổ ngoài, bấm <b>Allow</b>.</li>
-<li>macOS không tự hỏi quyền <b>Full Disk Access</b>. Better Finder cần quyền này để xem Thùng rác, đọc thanh bên của Finder và mở một số thư mục được bảo vệ: System Settings ▸ Privacy &amp; Security ▸ Full Disk Access ▸ <b>+</b> ▸ Better Finder, bật lên, rồi thoát và mở lại Better Finder.</li>
-<li>Muốn “Show in Finder” ở app khác mở Better Finder: Settings ▸ Windows &amp; Sidebar. Chuột phải ▸ Open in macOS Finder vẫn mở Finder thật.</li>
+<li>macOS không tự hỏi quyền <b>Full Disk Access</b>. Better Explora cần quyền này để xem Thùng rác, đọc thanh bên của Finder và mở một số thư mục được bảo vệ: System Settings ▸ Privacy &amp; Security ▸ Full Disk Access ▸ <b>+</b> ▸ Better Explora, bật lên, rồi thoát và mở lại Better Explora.</li>
+<li>Muốn “Show in Finder” ở app khác mở Better Explora: Settings ▸ Windows &amp; Sidebar. Chuột phải ▸ Open in macOS Finder vẫn mở Finder thật.</li>
 </ul>
 <h3 id="extras">Cài thêm (tuỳ chọn) trên Mac</h3>
-<p>Better Finder phát được phần lớn video mà không cần gì thêm. MKV, WebM, AVI và vài việc khác cần FFmpeg; app sẽ báo khi cần. Cài bằng <a href="https://brew.sh" rel="noopener">Homebrew</a>: <code>brew install ffmpeg</code>. Muốn tạo transcript bằng Whisper trên Mac, cài <code>brew install whisper-cpp</code> và tải model trong Settings ▸ Transcribe (trên macOS 26, macOS Speech chạy được mà không cần hai thứ này).</p>
+<p>Better Explora phát được phần lớn video mà không cần gì thêm. MKV, WebM, AVI và vài việc khác cần FFmpeg; app sẽ báo khi cần. Cài bằng <a href="https://brew.sh" rel="noopener">Homebrew</a>: <code>brew install ffmpeg</code>. Muốn tạo transcript bằng Whisper trên Mac, cài <code>brew install whisper-cpp</code> và tải model trong Settings ▸ Transcribe (trên macOS 26, macOS Speech chạy được mà không cần hai thứ này).</p>
 <h3 id="updates">Cập nhật</h3>
 <ul>
-<li>${mac} App kiểm bản mới tối đa mỗi ngày một lần (Settings ▸ Updates; Better Finder ▸ Check for Updates… để kiểm ngay). Tải file .dmg mới, kéo app vào Applications và chọn Replace. Thiết lập được giữ nguyên. macOS có thể chặn bản mới một lần, như lúc cài đầu.</li>
+<li>${mac} App kiểm bản mới tối đa mỗi ngày một lần (Settings ▸ Updates; Better Explora ▸ Check for Updates… để kiểm ngay). Tải file .dmg mới, kéo app vào Applications và chọn Replace. Thiết lập được giữ nguyên. macOS có thể chặn bản mới một lần, như lúc cài đầu.</li>
 <li>${win} App Windows và AppImage trên Linux tự cập nhật. Dùng gói .deb thì tải gói mới.</li>
 </ul>
-<h3 id="remove">Gỡ Better Finder</h3>
+<h3 id="remove">Gỡ Better Explora</h3>
 <p>${mac} Xoá app trong Applications, rồi xoá thư mục <code>~/.mediaindex</code> (chỉ mục, thumbnail, transcript, model) và file <code>~/Library/Preferences/local.mediafinder.app.plist</code> (thiết lập).</p>
 <p>${win} Gỡ như mọi app khác (Windows: Settings ▸ Apps; Linux: xoá file AppImage hoặc gỡ gói .deb).</p>
 <h3 id="feedback">Góp ý tính năng hoặc báo lỗi</h3>
@@ -210,7 +210,7 @@
 <h3 id="ql-many">Several files at once</h3>
 <p>Select several files and press ${k("Space")}: they open one after another, each in its own viewer. A bar under it shows where you are (3 / 20) with Previous, Next and a list of all the files. ${k("←")} ${k("→")} or Page Up / Page Down move through them; in project timelines and PDFs, whose arrows step frames and pages, use ${k("⌘←")} ${k("⌘→")} / ${k("Ctrl+←")} ${k("Ctrl+→")}.</p>
 <h3 id="ql-media">Video and pictures</h3>
-<p>Space shows a quick preview. A double-click on a video or sound opens Better Finder's own <a href="#player">player</a> (Settings can send them to their default app instead).</p>
+<p>Space shows a quick preview. A double-click on a video or sound opens Better Explora's own <a href="#player">player</a> (Settings can send them to their default app instead).</p>
 <h3 id="ql-pdf">PDF</h3>
 <ul>
 <li>One page at a time, fitted to the window. ${k("←")} ${k("→")} (or Page Up, Page Down, Home, End) turn pages.</li>
@@ -271,13 +271,13 @@
 <h3 id="ql-code">Code</h3>
 <p>Space on a code file shows it on a card with its name, language, line numbers and syntax colours: JavaScript, TypeScript, Python, Java, C#, C, C++, SQL, HTML, CSS, Shell, PHP, Go, Rust, Kotlin, Swift, JSON, YAML, XML, Markdown, TOML, Lua, Ruby and After Effects scripts (.jsx). Pick a theme (Auto, Dracula, One Dark, Monokai, Nord, Solarized Light and others), a background (gradients, mesh, solid colours, a picture of your own, transparent or none), a window style (macOS, Windows, plain or none), text size, line numbers and wrapping. Copy copies the code; Copy Image and Save PNG ${PRO} make a picture of the card. JSON is shown formatted, with blocks that fold. Your choices are kept.</p>
 <h3 id="ql-other">Text and other files</h3>
-<p>On Mac, other files use macOS Quick Look. On Windows and Linux, Better Finder's Quick Look shows text files, fonts and pictures itself.</p>`,
+<p>On Mac, other files use macOS Quick Look. On Windows and Linux, Better Explora's Quick Look shows text files, fonts and pictures itself.</p>`,
         vi: `
 <p>Chọn file rồi nhấn ${k("Space")}. ${k("↑")} và ${k("↓")} sang file trước hoặc sau; ${k("Space")} hoặc ${k("Esc")} để đóng.</p>
 <h3 id="ql-many">Xem nhiều file một lượt</h3>
 <p>Chọn nhiều file rồi nhấn ${k("Space")}: chúng mở lần lượt, mỗi file trong trình xem của nó. Thanh bên dưới cho biết bạn đang ở đâu (3 / 20), có Previous, Next và danh sách mọi file. ${k("←")} ${k("→")} hoặc Page Up / Page Down để chuyển file; trong timeline của project và trong PDF, nơi mũi tên dùng để bước khung hình và lật trang, dùng ${k("⌘←")} ${k("⌘→")} / ${k("Ctrl+←")} ${k("Ctrl+→")}.</p>
 <h3 id="ql-media">Video và ảnh</h3>
-<p>Space hiện bản xem nhanh. Double-click vào video hay file âm thanh sẽ mở <a href="#player">player</a> của Better Finder (Settings có thể chuyển sang mở bằng app mặc định).</p>
+<p>Space hiện bản xem nhanh. Double-click vào video hay file âm thanh sẽ mở <a href="#player">player</a> của Better Explora (Settings có thể chuyển sang mở bằng app mặc định).</p>
 <h3 id="ql-pdf">PDF</h3>
 <ul>
 <li>Mỗi lần một trang, vừa khung cửa sổ. ${k("←")} ${k("→")} (hoặc Page Up, Page Down, Home, End) để lật trang.</li>
@@ -338,7 +338,7 @@
 <h3 id="ql-code">Code</h3>
 <p>Space trên file code hiện nó trên một thẻ có tên, ngôn ngữ, số dòng và tô màu cú pháp: JavaScript, TypeScript, Python, Java, C#, C, C++, SQL, HTML, CSS, Shell, PHP, Go, Rust, Kotlin, Swift, JSON, YAML, XML, Markdown, TOML, Lua, Ruby và script After Effects (.jsx). Chọn theme (Auto, Dracula, One Dark, Monokai, Nord, Solarized Light và các theme khác), nền (gradient, mesh, màu trơn, ảnh của bạn, trong suốt hoặc không nền), kiểu cửa sổ (macOS, Windows, đơn giản hoặc không có), cỡ chữ, số dòng và xuống dòng. Copy chép code; Copy Image và Save PNG ${PRO} tạo ảnh của thẻ. JSON được định dạng sẵn, các khối thu gọn được. Lựa chọn của bạn được giữ.</p>
 <h3 id="ql-other">File chữ và file khác</h3>
-<p>Trên Mac, các file khác dùng Quick Look của macOS. Trên Windows và Linux, Quick Look của Better Finder tự hiện file chữ, font và ảnh.</p>` },
+<p>Trên Mac, các file khác dùng Quick Look của macOS. Trên Windows và Linux, Quick Look của Better Explora tự hiện file chữ, font và ảnh.</p>` },
 
       // ------------------------------------------------------------------ Player and transcripts
       { id: "player", icon: "▶︎", t: { en: "Player, transcripts and AI", vi: "Player, transcript và AI" },
@@ -426,7 +426,7 @@
 <ul>
 <li>Space on a Cavalry, Caddis, Autograph or Plate project opens its card: the picture it has (Autograph's viewer, Plate's first frame, the Caddis or Cavalry frame) above the composition, size, frame rate, length, footage (missing ones in red), fonts, author and licence. On Windows and Linux, Quick Look shows the picture with the main facts under it; the full card is in Get Info. A project with a preview video plays it instead.</li>
 <li>Caddis (.caddis): a real frame as the thumbnail, drawn in the background by the Caddis app installed on your computer (once you are signed in to it). Without Caddis they keep the Caddis icon.</li>
-<li>Cavalry (.cv): a real frame as the thumbnail and in Space, drawn by your own copy of Scene Group's Cavalry Web Player. Better Finder doesn't include it: download it (free, from Scene Group), unzip it and choose its folder in Settings ▸ File Types ▸ Cavalry. Without it, Cavalry scenes keep their icon. See <a href="#lim-cavalry">limitations</a>.</li>
+<li>Cavalry (.cv): a real frame as the thumbnail and in Space, drawn by your own copy of Scene Group's Cavalry Web Player. Better Explora doesn't include it: download it (free, from Scene Group), unzip it and choose its folder in Settings ▸ File Types ▸ Cavalry. Without it, Cavalry scenes keep their icon. See <a href="#lim-cavalry">limitations</a>.</li>
 <li>Cavalry, Caddis and Autograph: the thumbnail and card are free; the full viewer is ${PRO}.</li>
 <li>Used Media ${PRO}: the footage a project uses, missing files in red, with Show in Folder.</li>
 <li>Used in Projects ${PRO} (Get Info): which projects use this file.</li>
@@ -447,7 +447,7 @@
 <ul>
 <li>Space trên project Cavalry, Caddis, Autograph hoặc Plate mở thẻ thông tin của nó: hình có sẵn (khung xem của Autograph, khung đầu của Plate, khung hình Caddis hoặc Cavalry) phía trên composition, kích thước, fps, thời lượng, footage (file thiếu tô đỏ), font, tác giả và giấy phép. Trên Windows và Linux, Quick Look hiện hình kèm các thông tin chính bên dưới; thẻ đầy đủ nằm trong Get Info. Project có video xem trước thì phát video đó.</li>
 <li>Caddis (.caddis): thumbnail là khung hình thật, do app Caddis cài trên máy vẽ ở chế độ nền (khi bạn đã đăng nhập Caddis). Không có Caddis thì giữ icon Caddis.</li>
-<li>Cavalry (.cv): thumbnail và hình trong Space là khung hình thật, vẽ bằng bản Cavalry Web Player của Scene Group mà bạn tự tải. Better Finder không kèm nó: tải về (miễn phí, từ Scene Group), giải nén rồi chọn thư mục của nó trong Settings ▸ File Types ▸ Cavalry. Không có player thì scene Cavalry giữ icon. Xem <a href="#lim-cavalry">giới hạn</a>.</li>
+<li>Cavalry (.cv): thumbnail và hình trong Space là khung hình thật, vẽ bằng bản Cavalry Web Player của Scene Group mà bạn tự tải. Better Explora không kèm nó: tải về (miễn phí, từ Scene Group), giải nén rồi chọn thư mục của nó trong Settings ▸ File Types ▸ Cavalry. Không có player thì scene Cavalry giữ icon. Xem <a href="#lim-cavalry">giới hạn</a>.</li>
 <li>Cavalry, Caddis và Autograph: thumbnail và thẻ thông tin miễn phí; trình xem đầy đủ là ${PRO}.</li>
 <li>Used Media ${PRO}: footage project dùng, file thiếu tô đỏ, có nút Show in Folder.</li>
 <li>Used in Projects ${PRO} (Get Info): project nào dùng file này.</li>
@@ -492,9 +492,9 @@
 <li><b>Shortcuts</b>: give any command your own keys. On Mac you can switch to Windows-style keys here.</li>
 <li><b>Views</b>: one page for Grid, List, Columns and Gallery (Large icons, Details, Columns and Gallery on Windows / Linux), each with its on / off, size and own options, such as the Columns connector line.</li>
 <li><b>Search</b>: turn each kind of search on or off, see how many names the index holds (Rebuild, or turn it off), and pick the drives to index, with Index drives when they connect.</li>
-<li><b>File Types</b>: which extensions go in each filter chip, sidecar files, whether PDFs open in Better Finder, whether web pages may go online (Web Pages), and where your Cavalry Web Player is (Cavalry).</li>
+<li><b>File Types</b>: which extensions go in each filter chip, sidecar files, whether PDFs open in Better Explora, whether web pages may go online (Web Pages), and where your Cavalry Web Player is (Cavalry).</li>
 <li><b>Storage</b>: what the thumbnail and preview cache uses, with buttons to clear it.</li>
-<li><b>Camera RAW</b>: add-ons for Blackmagic RAW, RED R3D and ARRIRAW (see <a href="#lim-raw">limitations</a>).</li>
+<li><b>Camera RAW</b>: which Blackmagic RAW decoder is used, and the ARRIRAW add-on (see <a href="#lim-raw">limitations</a>).</li>
 </ul>
 <p>Hold the pointer over any button to see its name and keys.</p>`,
         vi: `
@@ -505,9 +505,9 @@
 <li><b>Shortcuts</b>: đặt phím riêng cho bất kỳ lệnh nào. Trên Mac có thể chuyển sang phím kiểu Windows ở đây.</li>
 <li><b>Views</b>: một trang cho Grid, List, Columns và Gallery (Large icons, Details, Columns và Gallery trên Windows / Linux), mỗi phần có công tắc bật / tắt, cỡ và tuỳ chọn riêng, như đường nối của Columns.</li>
 <li><b>Search</b>: bật / tắt từng kiểu tìm, xem chỉ mục đang giữ bao nhiêu tên (Rebuild, hoặc tắt đi), và chọn ổ cần lập chỉ mục, kèm Index drives when they connect.</li>
-<li><b>File Types</b>: đuôi file nào thuộc chip lọc nào, file đi kèm, có mở PDF trong Better Finder không, trang web có được dùng mạng không (Web Pages), và Cavalry Web Player của bạn nằm ở đâu (Cavalry).</li>
+<li><b>File Types</b>: đuôi file nào thuộc chip lọc nào, file đi kèm, có mở PDF trong Better Explora không, trang web có được dùng mạng không (Web Pages), và Cavalry Web Player của bạn nằm ở đâu (Cavalry).</li>
 <li><b>Storage</b>: dung lượng cache thumbnail và preview, có nút xoá.</li>
-<li><b>Camera RAW</b>: add-on cho Blackmagic RAW, RED R3D và ARRIRAW (xem <a href="#lim-raw">giới hạn</a>).</li>
+<li><b>Camera RAW</b>: bộ giải mã Blackmagic RAW đang dùng và add-on ARRIRAW (xem <a href="#lim-raw">giới hạn</a>).</li>
 </ul>
 <p>Để chuột lên bất kỳ nút nào để xem tên và phím tắt của nó.</p>` },
 
@@ -519,7 +519,7 @@
       // ------------------------------------------------------------------ Free vs Pro
       { id: "free-pro", icon: "⭐️", t: { en: "Free and Pro", vi: "Free và Pro" },
         en: `
-<p>Better Finder has a free version you can use for as long as you like: a real Finder replacement. Better Finder Pro unlocks the features marked ${PRO} on this site and in the app. One list decides this for Mac, Windows and Linux alike.</p>
+<p>Better Explora has a free version you can use for as long as you like: a real Finder replacement. Better Explora Pro unlocks the features marked ${PRO} on this site and in the app. One list decides this for Mac, Windows and Linux alike.</p>
 ${note("Pro is not on sale yet: in the current versions every feature works for everyone.")}
 <h3 id="free-list">Free</h3>
 <ul>
@@ -535,12 +535,12 @@ ${note("Pro is not on sale yet: in the current versions every feature works for 
 </ul>
 <h3 id="split-list">Free has the basics, Pro the depth</h3>
 <table class="doc-table"><thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead><tbody>
-<tr><th>Drop Zone</th><td>Collect files, drag to copy or move, Copy to, Move to</td><td>The bolt button (Compress, To JPG, Remove Background, Zip…)</td></tr>
+<tr><th>Drop Zone</th><td>Collect files, drag to copy or move, Copy to, Move to</td><td>The bolt button and its Quick Actions</td></tr>
 <tr><th>Workspaces</th><td>Standard only</td><td>The other Workspaces, saving new ones</td></tr>
 <tr><th>Photoshop / Illustrator</th><td>Flat picture</td><td>Each layer, artboards</td></tr>
 <tr><th>3D</th><td>Thumbnail and info card</td><td>Turn the model in Space</td></tr>
 <tr><th>Figma, Sketch, Affinity</th><td>Picture saved in the file and info card</td><td>Page and frame viewer</td></tr>
-<tr><th>After Effects, Premiere, Resolve, Final Cut, Filmora projects</th><td>Info card and picture saved in the file</td><td>Comp and timeline view, used and missing footage</td></tr>
+<tr><th>Editing projects (After Effects, Premiere, Resolve, Final Cut, Filmora)</th><td>Info card and picture saved in the file</td><td>Comps, timelines and footage lists</td></tr>
 <tr><th>Cavalry, Caddis, Autograph</th><td>Thumbnail and info card</td><td>Full viewer</td></tr>
 <tr><th>Archives</th><td>List of the files inside</td><td>Browse inside, preview the files inside</td></tr>
 <tr><th>Transcribe</th><td>3 clips a month</td><td>Unlimited</td></tr>
@@ -564,7 +564,7 @@ ${note("Pro is not on sale yet: in the current versions every feature works for 
 <li>Made with AI? (the AI column, SynthID).</li>
 </ul>`,
         vi: `
-<p>Better Finder có bản miễn phí, dùng bao lâu cũng được, thay được Finder thật sự. Better Finder Pro mở khoá các tính năng có nhãn ${PRO} trên trang này và trong app. Một danh sách duy nhất quyết định điều này cho cả Mac, Windows và Linux.</p>
+<p>Better Explora có bản miễn phí, dùng bao lâu cũng được, thay được Finder thật sự. Better Explora Pro mở khoá các tính năng có nhãn ${PRO} trên trang này và trong app. Một danh sách duy nhất quyết định điều này cho cả Mac, Windows và Linux.</p>
 ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính năng đều dùng được cho tất cả mọi người.")}
 <h3 id="free-list">Free</h3>
 <ul>
@@ -580,12 +580,12 @@ ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính n�
 </ul>
 <h3 id="split-list">Free có phần cơ bản, Pro có phần sâu</h3>
 <table class="doc-table"><thead><tr><th></th><th>Free</th><th>Pro</th></tr></thead><tbody>
-<tr><th>Drop Zone</th><td>Gom file, kéo để chép hoặc chuyển, Copy to, Move to</td><td>Nút tia sét (Compress, To JPG, Remove Background, Zip…)</td></tr>
-<tr><th>Workspace</th><td>Chỉ Standard</td><td>Các workspace khác, lưu workspace mới</td></tr>
+<tr><th>Drop Zone</th><td>Gom file, kéo để chép hoặc chuyển, Copy to, Move to</td><td>Nút tia sét và các Quick Action</td></tr>
+<tr><th>Workspace</th><td>Chỉ Standard</td><td>Các workspace khác, lưu workspace&nbsp;mới</td></tr>
 <tr><th>Photoshop / Illustrator</th><td>Ảnh phẳng</td><td>Từng layer, artboard</td></tr>
 <tr><th>3D</th><td>Thumbnail và thẻ thông tin</td><td>Xoay mô hình trong Space</td></tr>
 <tr><th>Figma, Sketch, Affinity</th><td>Ảnh lưu sẵn trong file và thẻ thông tin</td><td>Trình xem từng trang, từng frame</td></tr>
-<tr><th>Project After Effects, Premiere, Resolve, Final Cut, Filmora</th><td>Thẻ thông tin và ảnh lưu sẵn trong file</td><td>Sơ đồ comp và timeline, footage dùng và thiếu</td></tr>
+<tr><th>Project dựng phim (After Effects, Premiere, Resolve, Final Cut, Filmora)</th><td>Thẻ thông tin và ảnh lưu sẵn trong file</td><td>Sơ đồ comp và timeline, footage dùng và thiếu</td></tr>
 <tr><th>Cavalry, Caddis, Autograph</th><td>Thumbnail và thẻ thông tin</td><td>Trình xem đầy đủ</td></tr>
 <tr><th>File nén</th><td>Danh sách file bên trong</td><td>Duyệt sâu, xem trước file bên trong</td></tr>
 <tr><th>Tạo transcript</th><td>3 clip mỗi tháng</td><td>Không giới hạn</td></tr>
@@ -624,13 +624,13 @@ ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính n�
 </ul>
 <h3 id="desktop-only">Only on Windows and Linux</h3>
 <ul>
-<li>Windows: Cut, Copy and Paste with Explorer both ways, “Open with Better Finder” in Explorer, a Version column for .exe files and a Security tab in Get Info.</li>
-<li>Linux: Cut, Copy and Paste with Files (GNOME) and Dolphin, Open With Better Finder for folders.</li>
+<li>Windows: Cut, Copy and Paste with Explorer both ways, “Open with Better Explora” in Explorer, a Version column for .exe files and a Security tab in Get Info.</li>
+<li>Linux: Cut, Copy and Paste with Files (GNOME) and Dolphin, Open With Better Explora for folders.</li>
 <li>The app updates itself (Windows installer and AppImage), and Settings can hide built-in places in the sidebar.</li>
 </ul>
 <h3 id="os-limits">What other systems can't do</h3>
 <ul>
-<li>Finder tags and comments, Spotlight, Date Added, macOS Speech and Apple Vision belong to macOS. Windows and Linux use Better Finder's own tags; ratings and labels (XMP) are the same everywhere.</li>
+<li>Finder tags and comments, Spotlight, Date Added, macOS Speech and Apple Vision belong to macOS. Windows and Linux use Better Explora's own tags; ratings and labels (XMP) are the same everywhere.</li>
 <li>After Effects and Cinema 4D have no Linux version, so their Render Preview works on Mac and Windows only.</li>
 <li>Linux has no common “online only” flag, so a cloud folder mounted there may download a file when its thumbnail is read, and there is no Sync column or Download Now (Mac and Windows have them).</li>
 <li>Glass windows: Mac, and Windows 11 (Mica, Mica Alt or Acrylic in Settings ▸ Appearance; takes a restart). Windows 10 and Linux keep a solid window.</li>
@@ -656,13 +656,13 @@ ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính n�
 </ul>
 <h3 id="desktop-only">Chỉ có trên Windows và Linux</h3>
 <ul>
-<li>Windows: Cut, Copy, Paste qua lại với Explorer, “Open with Better Finder” trong Explorer, cột Version cho file .exe và tab Security trong Get Info.</li>
-<li>Linux: Cut, Copy, Paste với Files (GNOME) và Dolphin, Open With Better Finder cho thư mục.</li>
+<li>Windows: Cut, Copy, Paste qua lại với Explorer, “Open with Better Explora” trong Explorer, cột Version cho file .exe và tab Security trong Get Info.</li>
+<li>Linux: Cut, Copy, Paste với Files (GNOME) và Dolphin, Open With Better Explora cho thư mục.</li>
 <li>App tự cập nhật (bộ cài Windows và AppImage), và Settings ẩn được các mục có sẵn trên thanh bên.</li>
 </ul>
 <h3 id="os-limits">Những gì hệ điều hành khác không làm được</h3>
 <ul>
-<li>Tag và comment của Finder, Spotlight, Date Added, macOS Speech và Apple Vision là của riêng macOS. Windows và Linux dùng tag riêng của Better Finder; sao và nhãn màu (XMP) thì giống nhau ở mọi nơi.</li>
+<li>Tag và comment của Finder, Spotlight, Date Added, macOS Speech và Apple Vision là của riêng macOS. Windows và Linux dùng tag riêng của Better Explora; sao và nhãn màu (XMP) thì giống nhau ở mọi nơi.</li>
 <li>After Effects và Cinema 4D không có bản Linux, nên Render Preview của chúng chỉ chạy trên Mac và Windows.</li>
 <li>Linux không có cờ “online only” chung, nên thư mục cloud gắn vào Linux có thể tải file về khi đọc thumbnail, và không có cột Sync hay Download Now (Mac và Windows có).</li>
 <li>Cửa sổ kính: Mac, và Windows 11 (Mica, Mica Alt hoặc Acrylic trong Settings ▸ Appearance; cần mở lại app). Windows 10 và Linux giữ cửa sổ đặc.</li>
@@ -676,18 +676,136 @@ ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính n�
 </ul>
 ` },
 
+      // ------------------------------------------------------------------ Pro formats at a glance
+      { id: "pro-formats", icon: "🎞", t: { en: "Pro formats at a glance", vi: "Định dạng chuyên nghiệp" },
+        en: `
+<p>Press <kbd>Space</kbd> on a file to look at it, or rest the pointer on it in Grid to scrub through it (hover scrub). What you get for each kind of professional file:</p>
+<ul>
+<li><b>Blackmagic RAW (.braw)</b> ${mac}: picture, hover scrub and playback when Blackmagic RAW Player or DaVinci Resolve (both free from Blackmagic Design) is installed. Settings ▸ Camera RAW shows which one is used.</li>
+<li><b>ARRI</b>: ProRes clips from ARRI cameras (MOV and MXF) have thumbnails, hover scrub and play. ARRIRAW (.ari, .arx) shows its size, frame rate and camera facts, and a card with Open in ARRI Reference Tool or DaVinci Resolve when one is on your Mac.</li>
+<li><b>R3D</b>: listed with a card that opens the clip in DaVinci Resolve. Better Explora doesn't decode R3D.</li>
+<li><b>MXF, MKV, AVI, MTS</b>: play in Better Explora's own viewer while a playback copy is made in the background (needs FFmpeg on Mac).</li>
+<li><b>After Effects, Premiere Pro, Motion, Final Cut, Resolve and templates</b>: a sketch of the frame read from the project file, with its layers and comps. See <a href="#projects">Project and motion files</a>. Render Preview makes a real video when the app is installed.</li>
+<li><b>3D</b>: glTF / GLB, OBJ, FBX and USDZ turn in a 3D view; Blender, Cinema 4D, SketchUp and 3MF show the picture saved in the file.</li>
+<li><b>Vector</b>: SVG, PDF and Illustrator, EPS (drawn from the Illustrator data inside it, or exactly with Ghostscript), CorelDRAW, Windows metafiles, SVGZ and DXF.</li>
+<li><b>Motion graphics</b>: Lottie, dotLottie, Rive, Telegram stickers (.tgs) and animated images play in the grid and in Space.</li>
+</ul>
+${note("What isn't drawn yet is listed in <a href=\"#limitations\">Limitations</a>.")}
+<h3 id="hover-scrub">Hover scrub</h3>
+<p>In Grid, move the pointer across a clip to see it from start to end; a thin line shows where you are. Scrub previews are made once and kept in the cache (Settings ▸ Storage). Clips that are only in the cloud don't scrub until they are on your computer.</p>
+<h3 id="speech-search">Transcripts and search by speech</h3>
+<p>Transcribe a clip (right-click ▸ Transcribe…, or Settings ▸ Transcribe to do it in the background) and its words become searchable. In the search palette, type <code>said:</code> followed by words to find the sentence and play the clip from there. Transcription runs on your Mac unless you choose a cloud service in Settings ▸ Transcribe.</p>`,
+        vi: `
+<p>Bấm <kbd>Space</kbd> trên một file để xem, hoặc để chuột trên file trong Grid để xem lướt (hover scrub). Từng loại file chuyên nghiệp được hỗ trợ thế này:</p>
+<ul>
+<li><b>Blackmagic RAW (.braw)</b> ${mac}: hình, xem lướt và phát khi máy có Blackmagic RAW Player hoặc DaVinci Resolve (cả hai miễn phí của Blackmagic Design). Settings ▸ Camera RAW cho biết đang dùng cái nào.</li>
+<li><b>ARRI</b>: clip ProRes của máy ARRI (MOV và MXF) có thumbnail, xem lướt và phát được. ARRIRAW (.ari, .arx) hiện kích thước, frame rate, thông số máy quay và thẻ có nút mở bằng ARRI Reference Tool hoặc DaVinci Resolve nếu máy có.</li>
+<li><b>R3D</b>: hiện trong danh sách với thẻ mở clip bằng DaVinci Resolve. Better Explora không giải mã R3D.</li>
+<li><b>MXF, MKV, AVI, MTS</b>: phát trong trình xem riêng của Better Explora trong lúc bản phát được tạo ngầm (trên Mac cần FFmpeg).</li>
+<li><b>After Effects, Premiere Pro, Motion, Final Cut, Resolve và template</b>: bản phác khung hình đọc từ file project, có layer và comp. Xem <a href="#projects">Project và file motion</a>. Render Preview tạo video thật khi máy có app đó.</li>
+<li><b>3D</b>: glTF / GLB, OBJ, FBX và USDZ xoay được trong khung 3D; Blender, Cinema 4D, SketchUp và 3MF hiện hình lưu sẵn trong file.</li>
+<li><b>Vector</b>: SVG, PDF và Illustrator, EPS (vẽ từ dữ liệu Illustrator bên trong, hoặc chính xác bằng Ghostscript), CorelDRAW, metafile Windows, SVGZ và DXF.</li>
+<li><b>Motion graphics</b>: Lottie, dotLottie, Rive, sticker Telegram (.tgs) và ảnh động chạy ngay trong lưới và trong Space.</li>
+</ul>
+${note("Những gì chưa vẽ được có trong <a href=\"#limitations\">Giới hạn</a>.")}
+<h3 id="hover-scrub">Xem lướt (hover scrub)</h3>
+<p>Trong Grid, rê chuột ngang qua clip để xem từ đầu tới cuối; một vạch mảnh cho biết đang ở đâu. Ảnh xem lướt tạo một lần và lưu trong cache (Settings ▸ Storage). Clip chỉ có trên cloud không xem lướt được cho tới khi nó về máy.</p>
+<h3 id="speech-search">Transcript và tìm theo lời nói</h3>
+<p>Tạo transcript cho clip (chuột phải ▸ Transcribe…, hoặc Settings ▸ Transcribe để làm ngầm) là tìm được theo lời nói. Trong bảng tìm, gõ <code>said:</code> rồi các từ cần tìm để thấy câu đó và phát clip từ đúng chỗ. Transcript làm ngay trên máy, trừ khi bạn chọn dịch vụ cloud trong Settings ▸ Transcribe.</p>` },
+
+      // ------------------------------------------------------------------ Styles and colours
+      { id: "looks", icon: "🎨", t: { en: "Styles and background color", vi: "Kiểu giao diện và màu nền" },
+        en: `
+<p>Settings ▸ Appearance changes how Better Explora looks. Nothing here changes your files.</p>
+<ul>
+<li><b>Style</b>: macOS, Windows 11 or Linux GNOME, each in Light and Dark. Midnight is a pure black dark mode for grading suites.</li>
+<li><b>Background Color</b> ${mac}: tint the browser window with one of 18 colours or Custom…. Light, Medium or Strong sets how much. <b>Use as accent color</b> also colours selected files, sidebar icons and the active tab.</li>
+<li><b>Transparent window</b> ${mac}: Frosted, Liquid or Clear glass behind the files.</li>
+<li><b>Increase contrast</b>: stronger lines and text; it turns the background tint off.</li>
+</ul>
+<p>View ▸ Show View Options (<kbd>⌘</kbd> <kbd>J</kbd>) can give a folder its own background picture or video.</p>`,
+        vi: `
+<p>Settings ▸ Appearance đổi vẻ ngoài của Better Explora. Không mục nào ở đây đụng tới file của bạn.</p>
+<ul>
+<li><b>Style</b>: macOS, Windows 11 hoặc Linux GNOME, mỗi kiểu có Light và Dark. Midnight là chế độ tối đen tuyền cho phòng chỉnh màu.</li>
+<li><b>Background Color</b> ${mac}: phủ một màu lên cửa sổ duyệt file, chọn trong 18 màu hoặc Custom…. Light, Medium hay Strong là độ đậm. <b>Use as accent color</b> tô luôn file đang chọn, icon thanh bên và tab đang mở.</li>
+<li><b>Transparent window</b> ${mac}: kính Frosted, Liquid hoặc Clear phía sau vùng file.</li>
+<li><b>Increase contrast</b>: đường kẻ và chữ đậm hơn; tắt màu nền.</li>
+</ul>
+<p>View ▸ Show View Options (<kbd>⌘</kbd> <kbd>J</kbd>) cho mỗi thư mục một ảnh hay video nền riêng.</p>` },
+
+      // ------------------------------------------------------------------ Privacy
+      { id: "privacy", icon: "🔒", t: { en: "Privacy", vi: "Quyền riêng tư" },
+        en: `
+<p>Better Explora works on your computer. It has no account, no analytics and no server that collects anything.</p>
+<h3 id="privacy-local">What stays on your computer</h3>
+<p>Your files, the media index, thumbnails and scrub previews, tags and ratings, transcripts made on your Mac, Visual Search, Remove Background and the app's log. The index and cache live in <code>~/.mediaindex</code> on Mac.</p>
+<h3 id="privacy-online">What goes online, and when</h3>
+<ul>
+<li><b>Update check</b>: once a day (Settings ▸ Updates can turn it off) the app downloads the update information from this website. Nothing about you or your files is sent. On Mac (0.397 and later) the update information is signed and the app checks the signature and the download's checksum before opening anything.</li>
+<li><b>Model downloads</b>: the speech, Visual Search and Remove Background models are downloaded when you turn those features on.</li>
+<li><b>Cloud transcription and AI features</b> (only if you set them up with your own key in Settings ▸ AI Services or Transcribe): audio of the clip you transcribe, or the transcript text you send to AI Review, goes to the service you chose. Ask AI sends the words you type (with dates and group names), never file names or pictures.</li>
+</ul>
+<h3 id="privacy-reports">Crash and bug reports</h3>
+<p>Nothing is sent automatically. After a crash, the next launch shows macOS's crash report and lets you look at it, copy it or save it. Help ▸ Report a Bug… shows the whole report before anything leaves: your home folder appears as <code>~</code>, and file and folder names are replaced with [path] unless you tick <b>Include file and folder names</b>. You choose to copy it, save it, or open it in your email app.</p>`,
+        vi: `
+<p>Better Explora chạy trên máy của bạn. Không cần tài khoản, không thu thống kê, không có máy chủ nào thu thập gì.</p>
+<h3 id="privacy-local">Những gì nằm lại trên máy</h3>
+<p>File của bạn, chỉ mục media, thumbnail và ảnh xem lướt, tag và sao, transcript làm trên máy, Visual Search, Remove Background và log của app. Chỉ mục và cache nằm ở <code>~/.mediaindex</code> trên Mac.</p>
+<h3 id="privacy-online">Những gì lên mạng, và khi nào</h3>
+<ul>
+<li><b>Kiểm tra cập nhật</b>: mỗi ngày một lần (tắt được trong Settings ▸ Updates) app tải thông tin cập nhật từ website này. Không gửi gì về bạn hay file của bạn. Trên Mac (từ 0.397) thông tin cập nhật có chữ ký, app kiểm chữ ký và mã kiểm của file tải về trước khi mở.</li>
+<li><b>Tải model</b>: model nhận giọng nói, Visual Search và Remove Background được tải khi bạn bật các tính năng đó.</li>
+<li><b>Transcript qua cloud và tính năng AI</b> (chỉ khi bạn tự cài key của mình trong Settings ▸ AI Services hoặc Transcribe): âm thanh của clip bạn transcript, hoặc chữ transcript bạn gửi cho AI Review, được gửi tới dịch vụ bạn chọn. Ask AI gửi câu bạn gõ (kèm ngày và tên nhóm), không bao giờ gửi tên file hay hình.</li>
+</ul>
+<h3 id="privacy-reports">Báo cáo crash và báo lỗi</h3>
+<p>Không gì được gửi tự động. Sau một lần app bị thoát đột ngột, lần mở sau sẽ hiện báo cáo crash của macOS để bạn xem, chép hoặc lưu. Help ▸ Report a Bug… hiện toàn bộ báo cáo trước khi bạn gửi: thư mục Home hiện là <code>~</code>, tên file và thư mục được thay bằng [path] trừ khi bạn tick <b>Include file and folder names</b>. Bạn tự chọn chép, lưu, hay mở trong app email.</p>` },
+
+      // ------------------------------------------------------------------ Troubleshooting and help
+      { id: "troubleshooting", icon: "🛟", t: { en: "Troubleshooting and help", vi: "Khắc phục sự cố và hỗ trợ" },
+        en: `
+<h3 id="ts-cant-open">“Better Explora can't be opened” or “is damaged”</h3>
+<p>The Mac app isn't notarized by Apple yet, so macOS blocks the first launch. Open the app once, then System Settings ▸ Privacy &amp; Security ▸ <b>Open Anyway</b> (macOS 15 or later), or Control-click the app ▸ Open (macOS 13 and 14). If macOS says the app is damaged, run <code>xattr -dr com.apple.quarantine "/Applications/Better Explora.app"</code> in Terminal. The same happens after each update until the app is notarized.</p>
+<h3 id="ts-permissions">Permissions after the rename</h3>
+<p>Better Finder is now Better Explora. Your permissions (Full Disk Access, folders, microphone) belong to the app itself, not its name, so they normally stay. If a folder can't be read or the Trash looks empty, open System Settings ▸ Privacy &amp; Security ▸ Full Disk Access, remove any old “Better Finder” entry, add Better Explora again with <b>+</b>, then quit and reopen the app. Delete the old Better Finder app if it is still in Applications.</p>
+<h3 id="ts-cache">The cache is big</h3>
+<p>Thumbnails, scrub previews and playback copies are kept so folders open fast. Settings ▸ Storage shows what uses space, clears each part, and can keep the cache under a size limit. Clearing the cache never touches your files, tags or transcripts; thumbnails are made again when needed.</p>
+<h3 id="ts-index">Media info looks wrong or missing</h3>
+<p>Go ▸ Reload (<kbd>⌘</kbd> <kbd>R</kbd>) reads the folder again. Go ▸ Index Subfolders reads a folder and everything in it. For wrong thumbnails, clear Thumbnails &amp; scrub previews in Settings ▸ Storage.</p>
+<h3 id="ts-slow">Network and cloud folders are slow</h3>
+<p>Better Explora reads only what is on screen on network drives, and never downloads cloud-only files while you browse. See <a href="#limitations">Limitations</a>.</p>
+<h3 id="ts-crash">The app quit unexpectedly</h3>
+<p>At the next launch Better Explora shows macOS's crash report. Click <b>Report…</b> to put it in a bug report, or <b>Save as File…</b> to keep it. Nothing is sent unless you send it.</p>
+<h3 id="ts-report">Report a bug or get help</h3>
+<p>Help ▸ Report a Bug… collects the app and system version and, if you want, recent log lines; you see everything first, then copy it, save it, or paste it into a new <a href="https://github.com/gmttuts/better-finder/issues">GitHub issue</a> (issues are public). Questions go to the Discord; see <a href="support.html">Support</a>. Ideas for new features go to the <a href="feedback.html">feedback board</a>.</p>`,
+        vi: `
+<h3 id="ts-cant-open">“Better Explora can't be opened” hoặc “is damaged”</h3>
+<p>Bản Mac chưa được Apple notarize nên macOS chặn lần mở đầu. Mở app một lần, rồi vào System Settings ▸ Privacy &amp; Security ▸ <b>Open Anyway</b> (macOS 15 trở lên), hoặc Control-click vào app ▸ Open (macOS 13 và 14). Nếu macOS báo app bị hỏng (damaged), chạy <code>xattr -dr com.apple.quarantine "/Applications/Better Explora.app"</code> trong Terminal. Mỗi lần cập nhật sẽ gặp lại cho tới khi app được notarize.</p>
+<h3 id="ts-permissions">Quyền truy cập sau khi đổi tên</h3>
+<p>Better Finder giờ là Better Explora. Quyền (Full Disk Access, thư mục, micro) gắn với chính app chứ không với tên, nên thường vẫn còn. Nếu không đọc được thư mục hoặc Thùng rác trống trơn, mở System Settings ▸ Privacy &amp; Security ▸ Full Disk Access, xoá dòng “Better Finder” cũ nếu có, thêm lại Better Explora bằng <b>+</b>, rồi thoát và mở lại app. Xoá app Better Finder cũ nếu nó còn trong Applications.</p>
+<h3 id="ts-cache">Cache chiếm nhiều chỗ</h3>
+<p>Thumbnail, ảnh xem lướt và bản phát được giữ lại để thư mục mở nhanh. Settings ▸ Storage cho biết phần nào chiếm chỗ, xoá từng phần, và giữ cache dưới một giới hạn. Xoá cache không đụng tới file, tag hay transcript; thumbnail được tạo lại khi cần.</p>
+<h3 id="ts-index">Thông tin media sai hoặc thiếu</h3>
+<p>Go ▸ Reload (<kbd>⌘</kbd> <kbd>R</kbd>) đọc lại thư mục. Go ▸ Index Subfolders đọc lại thư mục và mọi thứ bên trong. Thumbnail sai thì xoá Thumbnails &amp; scrub previews trong Settings ▸ Storage.</p>
+<h3 id="ts-slow">Thư mục mạng và cloud chậm</h3>
+<p>Trên ổ mạng, Better Explora chỉ đọc những gì đang hiện, và không bao giờ tải file chỉ có trên cloud khi bạn duyệt. Xem <a href="#limitations">Giới hạn</a>.</p>
+<h3 id="ts-crash">App bị thoát đột ngột</h3>
+<p>Lần mở sau, Better Explora hiện báo cáo crash của macOS. Bấm <b>Report…</b> để đưa nó vào báo lỗi, hoặc <b>Save as File…</b> để lưu. Không gì được gửi nếu bạn không tự gửi.</p>
+<h3 id="ts-report">Báo lỗi hoặc cần hỗ trợ</h3>
+<p>Help ▸ Report a Bug… gom phiên bản app và hệ điều hành, thêm vài dòng log gần nhất nếu bạn muốn; bạn xem hết trước, rồi chép, lưu, hoặc dán vào một <a href="https://github.com/gmttuts/better-finder/issues">GitHub issue</a> mới (issue là công khai). Câu hỏi gửi lên Discord; xem trang <a href="support.html">Hỗ trợ</a>. Ý tưởng tính năng mới gửi lên <a href="feedback.html">bảng góp ý</a>.</p>` },
+
       // ------------------------------------------------------------------ Limitations
       { id: "limitations", icon: "⚠️", t: { en: "Limitations", vi: "Giới hạn" },
         en: `
-<p>What Better Finder can't do, or only does approximately, and why. Differences between Mac, Windows and Linux are in <a href="#os-limits">Mac, Windows and Linux</a>.</p>
+<p>What Better Explora can't do, or only does approximately, and why. Differences between Mac, Windows and Linux are in <a href="#os-limits">Mac, Windows and Linux</a>.</p>
 <h3 id="lim-aep">After Effects viewer</h3>
-<p>The frame is a sketch read from the project file. Not drawn: effects other than Gaussian Blur, Fill and Drop Shadow, plugins, adjustment layers, motion blur, expressions other than simple and common rig ones (time, value, expression controls and effect sliders, linear / ease, loopOut / loopIn, framesToTime, simple maths), 3D layers, cameras and lights, luma mattes (drawn as alpha), shape operators such as Repeater and Trim Paths, text animators, and layer styles other than Stroke, Drop Shadow, Outer Glow and Color Overlay. Label colours are After Effects' defaults. <b>Why:</b> only After Effects can render its own projects; Better Finder draws what it can read from the file. To see the real picture, use Render Preview, which needs After Effects installed. The viewer has not been tried on a real Windows or Linux computer yet.</p>
+<p>The frame is a sketch read from the project file. Not drawn: effects other than Gaussian Blur, Fill and Drop Shadow, plugins, adjustment layers, motion blur, expressions other than simple and common rig ones (time, value, expression controls and effect sliders, linear / ease, loopOut / loopIn, framesToTime, simple maths), 3D layers, cameras and lights, luma mattes (drawn as alpha), shape operators such as Repeater and Trim Paths, text animators, and layer styles other than Stroke, Drop Shadow, Outer Glow and Color Overlay. Label colours are After Effects' defaults. <b>Why:</b> only After Effects can render its own projects; Better Explora draws what it can read from the file. To see the real picture, use Render Preview, which needs After Effects installed. The viewer has not been tried on a real Windows or Linux computer yet.</p>
 <h3 id="lim-prproj">Premiere Pro viewer</h3>
-<p>The frame is a sketch: effects, transitions, titles and graphics (a labelled box) and blending modes are not drawn, keyframes with ease are drawn straight, and label colours are Premiere's defaults. <b>Why:</b> Better Finder reads the project file without Premiere. Open the project in Premiere for the real picture. The viewer has not been tried on a real Windows or Linux computer yet.</p>
+<p>The frame is a sketch: effects, transitions, titles and graphics (a labelled box) and blending modes are not drawn, keyframes with ease are drawn straight, and label colours are Premiere's defaults. <b>Why:</b> Better Explora reads the project file without Premiere. Open the project in Premiere for the real picture. The viewer has not been tried on a real Windows or Linux computer yet.</p>
 <h3 id="lim-psd">Photoshop viewer</h3>
-<p>The canvas shows the picture Photoshop saved in the file. When you show or hide layers one by one, layer effects (drop shadow, stroke…) and adjustment layers aren't drawn. A file saved without Maximize Compatibility shows only its small preview, and says so. <b>Why:</b> Better Finder reads the file without Photoshop and can't redo Photoshop's effects. The viewer has not been tried on a real Windows or Linux computer yet.</p>
+<p>The canvas shows the picture Photoshop saved in the file. When you show or hide layers one by one, layer effects (drop shadow, stroke…) and adjustment layers aren't drawn. A file saved without Maximize Compatibility shows only its small preview, and says so. <b>Why:</b> Better Explora reads the file without Photoshop and can't redo Photoshop's effects. The viewer has not been tried on a real Windows or Linux computer yet.</p>
 <h3 id="lim-projects">Resolve, Final Cut, Filmora, VEGAS, Motion and template viewers</h3>
-<p>The frame is a sketch from the project file and its media. Not drawn: DaVinci Resolve's Inspector values, effects, Fusion, colour and transitions; Final Cut Pro's effects, title looks, colour, transitions and speed ramps (a library shows no timeline: export the project as XML); Filmora's effects, masks, transitions, titles and keyframes; VEGAS Pro's track motion, masks, compositing and effects; Apple Motion's behaviours (other than Ramp, Overshoot and Rig), filters, particles, replicators, 3D and text animation. Template stills have no animation, masks or effects, and fonts that aren't on your computer are replaced. The Premiere version a .mogrt needs is a guess: Adobe doesn't write it. <b>Why:</b> Better Finder reads these files without their apps, and much of what they keep is compressed or not published. Open the project in its app for the real picture.</p>
+<p>The frame is a sketch from the project file and its media. Not drawn: DaVinci Resolve's Inspector values, effects, Fusion, colour and transitions; Final Cut Pro's effects, title looks, colour, transitions and speed ramps (a library shows no timeline: export the project as XML); Filmora's effects, masks, transitions, titles and keyframes; VEGAS Pro's track motion, masks, compositing and effects; Apple Motion's behaviours (other than Ramp, Overshoot and Rig), filters, particles, replicators, 3D and text animation. Template stills have no animation, masks or effects, and fonts that aren't on your computer are replaced. The Premiere version a .mogrt needs is a guess: Adobe doesn't write it. <b>Why:</b> Better Explora reads these files without their apps, and much of what they keep is compressed or not published. Open the project in its app for the real picture.</p>
 <h3 id="lim-cavalry">Cavalry scenes</h3>
 <p>Cavalry pictures need your own copy of the Cavalry Web Player (Settings ▸ File Types ▸ Cavalry). Some Cavalry features aren't in the Web Player yet (JavaScript layers, some filters), so a few pictures can differ from Cavalry. Pictures a scene uses are found only beside the .cv file or in its assets folder, and a scene that takes more than 15 seconds is skipped. <b>Why:</b> the Web Player is Scene Group's, and its terms may not allow other apps to ship it. It runs hidden and offline, reading only its own files and the scene it draws.</p>
 <h3 id="lim-web">Web pages and SVG</h3>
@@ -695,24 +813,24 @@ ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính n�
 <h3 id="lim-search">Search</h3>
 <p>The name index covers your Home folder (and the cloud folders in it) and the drives you choose to index; elsewhere the palette uses Spotlight on Mac or reads the folder you search. Visual Search needs its model (Settings ▸ Visual Search), and English words work best. Colours are read in the background as folders open, so a folder you never opened isn't found by colour yet, and cloud-only files are never downloaded for it. Ask AI needs your own API key. <b>Why:</b> everything is read on your computer, without uploading your files.</p>
 <h3 id="lim-render">Render Preview</h3>
-<p>Needs the project's app installed (After Effects, Blender, Cinema 4D signed in, Nuke or Fusion). Previews are short and small (After Effects up to 30 seconds, Blender up to 10 seconds, 720 px). <b>Why:</b> Better Finder asks that app to render a copy; it can't render projects by itself. Without the app, use Choose Preview File. On Linux only Blender, Nuke and Fusion can render previews: After Effects and Cinema 4D have no Linux version.</p>
+<p>Needs the project's app installed (After Effects, Blender, Cinema 4D signed in, Nuke or Fusion). Previews are short and small (After Effects up to 30 seconds, Blender up to 10 seconds, 720 px). <b>Why:</b> Better Explora asks that app to render a copy; it can't render projects by itself. Without the app, use Choose Preview File. On Linux only Blender, Nuke and Fusion can render previews: After Effects and Cinema 4D have no Linux version.</p>
 <h3 id="lim-figma">Figma files</h3>
-<p>Not drawn yet: variables and their modes, inner shadows and shadow spread, image filters (exposure, contrast…). Prototypes and FigJam boards don't open, and files over about 600,000 layers or 2 GB aren't opened. <b>Why:</b> Better Finder reads the .fig file itself, without Figma, and Figma's file format isn't published; these parts aren't decoded yet.</p>
+<p>Not drawn yet: variables and their modes, inner shadows and shadow spread, image filters (exposure, contrast…). Prototypes and FigJam boards don't open, and files over about 600,000 layers or 2 GB aren't opened. <b>Why:</b> Better Explora reads the .fig file itself, without Figma, and Figma's file format isn't published; these parts aren't decoded yet.</p>
 <h3 id="lim-pptx">PowerPoint files</h3>
-<p>Charts and SmartArt show as a labelled box; videos show as their still picture; animations and transitions don't play; fonts embedded in the file aren't used (similar fonts replace them). Old .ppt files and Keynote files don't open in the viewer. <b>Why:</b> Better Finder draws the slides itself from the .pptx file, without PowerPoint. Open sends the file to PowerPoint or Keynote for the real thing.</p>
+<p>Charts and SmartArt show as a labelled box; videos show as their still picture; animations and transitions don't play; fonts embedded in the file aren't used (similar fonts replace them). Old .ppt files and Keynote files don't open in the viewer. <b>Why:</b> Better Explora draws the slides itself from the .pptx file, without PowerPoint. Open sends the file to PowerPoint or Keynote for the real thing.</p>
 <h3 id="lim-pdf">PDF viewer</h3>
 <p>It is a viewer: forms and annotations are shown but can't be filled in or edited. Use Open in Preview (Mac) or your PDF app for that.</p>
 <h3 id="lim-exr">EXR, DPX and TGA</h3>
 <p>Only the main picture is shown, not other layers or channels. On Windows and Linux one frame is read through FFmpeg.</p>
 <h3 id="lim-archives">Archives</h3>
-<p>Read-only: nothing inside can be renamed, moved or deleted, and you can't drag a file out of a browsed archive (use Extract to Archive's Folder). A whole folder inside can't be extracted on its own, and a lone .xz or .bz2 file isn't listed. <b>Why:</b> Better Finder reads archives without unpacking them, to keep your disk clean.</p>
+<p>Read-only: nothing inside can be renamed, moved or deleted, and you can't drag a file out of a browsed archive (use Extract to Archive's Folder). A whole folder inside can't be extracted on its own, and a lone .xz or .bz2 file isn't listed. <b>Why:</b> Better Explora reads archives without unpacking them, to keep your disk clean.</p>
 <h3 id="lim-cloud">Cloud-only files</h3>
 <p>A file that is only in the cloud shows the thumbnail its cloud app gives (or none), with no hover-scrub or media details until it's on your computer. <b>Why:</b> reading it would make Dropbox, iCloud or OneDrive download it, and browsing should never fill your disk.</p>
 <h3 id="lim-network">Network drives</h3>
-<p>Folder sizes aren't added up, and media details come only for the files on screen. <b>Why:</b> asking a server about every file is slow; Better Finder reads what you look at.</p>
+<p>Folder sizes aren't added up, and media details come only for the files on screen. <b>Why:</b> asking a server about every file is slow; Better Explora reads what you look at.</p>
 <h3 id="lim-raw">Camera RAW</h3>
-<p>Blackmagic RAW, RED R3D and ARRIRAW clips need an add-on (Settings ▸ Camera RAW) that isn't included, and the add-ons aren't released yet. Without it, RAW clips open in their maker's app. <b>Why:</b> they are kept out of the app to keep it small, and each maker's software kit has its own licence.</p>
-<p>Camera RAW photos (CR2, CR3, NEF, ARW and others) on Windows and Linux show the JPEG preview the camera saved inside the file, not the RAW itself: no change of white balance or exposure, and a smaller picture when the camera kept only a small preview (Canon CR3: about 1620 pixels wide; some old or rare formats have a small one or none). <b>Why:</b> the Mac uses macOS's own RAW decoder; Windows and Linux have no common one, so Better Finder reads the camera's preview.</p>
+<p>Blackmagic RAW clips need Blackmagic RAW Player or DaVinci Resolve on the Mac (both free); on Windows and Linux they aren't decoded yet. ARRIRAW pictures need an add-on that isn't released yet; the card offers ARRI Reference Tool or DaVinci Resolve. R3D isn't decoded at all: the card opens the clip in DaVinci Resolve. <b>Why:</b> each maker's decoder has its own licence, so Better Explora uses the maker's own software instead of bundling it.</p>
+<p>Camera RAW photos (CR2, CR3, NEF, ARW and others) on Windows and Linux show the JPEG preview the camera saved inside the file, not the RAW itself: no change of white balance or exposure, and a smaller picture when the camera kept only a small preview (Canon CR3: about 1620 pixels wide; some old or rare formats have a small one or none). <b>Why:</b> the Mac uses macOS's own RAW decoder; Windows and Linux have no common one, so Better Explora reads the camera's preview.</p>
 <h3 id="lim-ffmpeg">Without FFmpeg (Mac, Linux AppImage)</h3>
 <p>MKV, WebM and AVI, burning subtitles, image sequences, trimming GIFs, Compare and cloud transcription need FFmpeg. <b>Why:</b> macOS can't decode these by itself, and FFmpeg isn't bundled with the Mac app or the AppImage (<a href="#extras">Mac</a>, <a href="#install-linux">Linux</a>).</p>
 <h3 id="lim-ai">AI features</h3>
@@ -720,15 +838,15 @@ ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính n�
 <h3 id="lim-signing">Unsigned apps</h3>
 <p>The Mac app isn't notarized and the Windows app isn't signed with a paid certificate, so macOS and SmartScreen warn on first launch (<a href="#getting-started">see Getting started</a>).</p>`,
         vi: `
-<p>Những gì Better Finder chưa làm được, hoặc chỉ làm gần đúng, và lý do. Khác biệt giữa Mac, Windows và Linux nằm ở <a href="#os-limits">Mac, Windows và Linux</a>.</p>
+<p>Những gì Better Explora chưa làm được, hoặc chỉ làm gần đúng, và lý do. Khác biệt giữa Mac, Windows và Linux nằm ở <a href="#os-limits">Mac, Windows và Linux</a>.</p>
 <h3 id="lim-aep">Trình xem After Effects</h3>
-<p>Khung hình là bản phác đọc từ file project. Chưa vẽ: effect ngoài Gaussian Blur, Fill và Drop Shadow, plugin, adjustment layer, motion blur, expression ngoài loại đơn giản và loại rig thường gặp (time, value, expression control và slider của effect, linear / ease, loopOut / loopIn, framesToTime, phép tính đơn giản), layer 3D, camera và đèn, luma matte (vẽ như alpha), shape operator như Repeater và Trim Paths, text animator, và layer style ngoài Stroke, Drop Shadow, Outer Glow và Color Overlay. Màu nhãn là màu mặc định của After Effects. <b>Lý do:</b> chỉ After Effects render được project của chính nó; Better Finder vẽ những gì đọc được từ file. Muốn xem hình thật, dùng Render Preview, cần cài After Effects. Trình xem chưa được thử trên máy Windows hay Linux thật.</p>
+<p>Khung hình là bản phác đọc từ file project. Chưa vẽ: effect ngoài Gaussian Blur, Fill và Drop Shadow, plugin, adjustment layer, motion blur, expression ngoài loại đơn giản và loại rig thường gặp (time, value, expression control và slider của effect, linear / ease, loopOut / loopIn, framesToTime, phép tính đơn giản), layer 3D, camera và đèn, luma matte (vẽ như alpha), shape operator như Repeater và Trim Paths, text animator, và layer style ngoài Stroke, Drop Shadow, Outer Glow và Color Overlay. Màu nhãn là màu mặc định của After Effects. <b>Lý do:</b> chỉ After Effects render được project của chính nó; Better Explora vẽ những gì đọc được từ file. Muốn xem hình thật, dùng Render Preview, cần cài After Effects. Trình xem chưa được thử trên máy Windows hay Linux thật.</p>
 <h3 id="lim-prproj">Trình xem Premiere Pro</h3>
-<p>Khung hình là bản phác: effect, transition, title và graphic (một khung có nhãn) và blending mode chưa được vẽ, keyframe có ease được vẽ thẳng, màu nhãn là màu mặc định của Premiere. <b>Lý do:</b> Better Finder đọc file project mà không cần Premiere. Mở project bằng Premiere để xem hình thật. Trình xem chưa được thử trên máy Windows hay Linux thật.</p>
+<p>Khung hình là bản phác: effect, transition, title và graphic (một khung có nhãn) và blending mode chưa được vẽ, keyframe có ease được vẽ thẳng, màu nhãn là màu mặc định của Premiere. <b>Lý do:</b> Better Explora đọc file project mà không cần Premiere. Mở project bằng Premiere để xem hình thật. Trình xem chưa được thử trên máy Windows hay Linux thật.</p>
 <h3 id="lim-psd">Trình xem Photoshop</h3>
-<p>Canvas hiện hình mà Photoshop đã lưu trong file. Khi bật / tắt từng layer, layer effect (drop shadow, stroke…) và adjustment layer không được vẽ. File lưu mà không bật Maximize Compatibility chỉ hiện ảnh xem trước nhỏ, và app có báo. <b>Lý do:</b> Better Finder đọc file mà không cần Photoshop và không tự làm lại được effect của Photoshop. Trình xem chưa được thử trên máy Windows hay Linux thật.</p>
+<p>Canvas hiện hình mà Photoshop đã lưu trong file. Khi bật / tắt từng layer, layer effect (drop shadow, stroke…) và adjustment layer không được vẽ. File lưu mà không bật Maximize Compatibility chỉ hiện ảnh xem trước nhỏ, và app có báo. <b>Lý do:</b> Better Explora đọc file mà không cần Photoshop và không tự làm lại được effect của Photoshop. Trình xem chưa được thử trên máy Windows hay Linux thật.</p>
 <h3 id="lim-projects">Trình xem Resolve, Final Cut, Filmora, VEGAS, Motion và template</h3>
-<p>Khung hình là bản phác từ file project và media của nó. Chưa vẽ: giá trị Inspector, effect, Fusion, màu và transition của DaVinci Resolve; effect, kiểu title, màu, transition và speed ramp của Final Cut Pro (library không có timeline: hãy xuất project ra XML); effect, mask, transition, title và keyframe của Filmora; track motion, mask, compositing và effect của VEGAS Pro; behaviour (ngoài Ramp, Overshoot và Rig), filter, particle, replicator, 3D và text animation của Apple Motion. Hình tĩnh của template không có chuyển động, mask hay effect, và font không có trên máy được thay bằng font khác. Bản Premiere mà file .mogrt cần chỉ là phỏng đoán: Adobe không ghi thông tin này. <b>Lý do:</b> Better Finder đọc các file này mà không cần app của chúng, và phần lớn dữ liệu bên trong bị nén hoặc không công khai. Mở project bằng app của nó để xem hình thật.</p>
+<p>Khung hình là bản phác từ file project và media của nó. Chưa vẽ: giá trị Inspector, effect, Fusion, màu và transition của DaVinci Resolve; effect, kiểu title, màu, transition và speed ramp của Final Cut Pro (library không có timeline: hãy xuất project ra XML); effect, mask, transition, title và keyframe của Filmora; track motion, mask, compositing và effect của VEGAS Pro; behaviour (ngoài Ramp, Overshoot và Rig), filter, particle, replicator, 3D và text animation của Apple Motion. Hình tĩnh của template không có chuyển động, mask hay effect, và font không có trên máy được thay bằng font khác. Bản Premiere mà file .mogrt cần chỉ là phỏng đoán: Adobe không ghi thông tin này. <b>Lý do:</b> Better Explora đọc các file này mà không cần app của chúng, và phần lớn dữ liệu bên trong bị nén hoặc không công khai. Mở project bằng app của nó để xem hình thật.</p>
 <h3 id="lim-cavalry">Scene Cavalry</h3>
 <p>Hình của Cavalry cần bản Cavalry Web Player bạn tự tải (Settings ▸ File Types ▸ Cavalry). Một số tính năng của Cavalry chưa có trong Web Player (JavaScript layer, vài filter), nên vài hình có thể khác Cavalry. Ảnh mà scene dùng chỉ được tìm cạnh file .cv hoặc trong thư mục assets của nó, và scene vẽ quá 15 giây thì bị bỏ qua. <b>Lý do:</b> Web Player là của Scene Group, và điều khoản của họ có thể không cho app khác đóng gói kèm. Player chạy ẩn, không có mạng, chỉ đọc file của chính nó và scene đang vẽ.</p>
 <h3 id="lim-web">Trang web và SVG</h3>
@@ -736,24 +854,24 @@ ${note("Bản Pro chưa bán: ở các phiên bản hiện tại, mọi tính n�
 <h3 id="lim-search">Tìm kiếm</h3>
 <p>Chỉ mục tên gồm thư mục Home (và các thư mục cloud trong đó) và những ổ bạn chọn lập chỉ mục; ở nơi khác, bảng tìm dùng Spotlight trên Mac hoặc đọc thư mục bạn đang tìm. Visual Search cần model của nó (Settings ▸ Visual Search), và gõ tiếng Anh cho kết quả tốt nhất. Màu được đọc ở chế độ nền khi bạn mở thư mục, nên thư mục chưa từng mở thì chưa tìm theo màu được, và file chỉ có trên cloud không bao giờ bị tải về để đọc màu. Ask AI cần API key của bạn. <b>Lý do:</b> mọi thứ được đọc ngay trên máy, không tải file của bạn lên đâu cả.</p>
 <h3 id="lim-render">Render Preview</h3>
-<p>Cần cài app của project (After Effects, Blender, Cinema 4D đã đăng nhập, Nuke hoặc Fusion). Preview ngắn và nhỏ (After Effects tối đa 30 giây, Blender tối đa 10 giây, 720 px). <b>Lý do:</b> Better Finder nhờ app đó render một bản sao; tự nó không render được project. Không có app thì dùng Choose Preview File. Trên Linux chỉ Blender, Nuke và Fusion render preview được: After Effects và Cinema 4D không có bản Linux.</p>
+<p>Cần cài app của project (After Effects, Blender, Cinema 4D đã đăng nhập, Nuke hoặc Fusion). Preview ngắn và nhỏ (After Effects tối đa 30 giây, Blender tối đa 10 giây, 720 px). <b>Lý do:</b> Better Explora nhờ app đó render một bản sao; tự nó không render được project. Không có app thì dùng Choose Preview File. Trên Linux chỉ Blender, Nuke và Fusion render preview được: After Effects và Cinema 4D không có bản Linux.</p>
 <h3 id="lim-figma">File Figma</h3>
-<p>Chưa vẽ được: variables và mode của chúng, inner shadow và độ loang (spread) của bóng, filter ảnh (exposure, contrast…). Prototype và bảng FigJam không mở được, và file trên khoảng 600.000 layer hoặc 2 GB thì không mở. <b>Lý do:</b> Better Finder tự đọc file .fig, không cần Figma, mà định dạng file của Figma không công khai; các phần này chưa giải mã được.</p>
+<p>Chưa vẽ được: variables và mode của chúng, inner shadow và độ loang (spread) của bóng, filter ảnh (exposure, contrast…). Prototype và bảng FigJam không mở được, và file trên khoảng 600.000 layer hoặc 2 GB thì không mở. <b>Lý do:</b> Better Explora tự đọc file .fig, không cần Figma, mà định dạng file của Figma không công khai; các phần này chưa giải mã được.</p>
 <h3 id="lim-pptx">File PowerPoint</h3>
-<p>Chart và SmartArt hiện thành một khung có nhãn; video chỉ hiện hình tĩnh; hiệu ứng chuyển động và chuyển slide không chạy; font nhúng trong file không được dùng (thay bằng font tương tự). File .ppt cũ và file Keynote không mở được trong trình xem. <b>Lý do:</b> Better Finder tự vẽ slide từ file .pptx, không dùng PowerPoint. Nút Open mở file bằng PowerPoint hoặc Keynote để xem đúng như thật.</p>
+<p>Chart và SmartArt hiện thành một khung có nhãn; video chỉ hiện hình tĩnh; hiệu ứng chuyển động và chuyển slide không chạy; font nhúng trong file không được dùng (thay bằng font tương tự). File .ppt cũ và file Keynote không mở được trong trình xem. <b>Lý do:</b> Better Explora tự vẽ slide từ file .pptx, không dùng PowerPoint. Nút Open mở file bằng PowerPoint hoặc Keynote để xem đúng như thật.</p>
 <h3 id="lim-pdf">Trình xem PDF</h3>
 <p>Chỉ để xem: form và ghi chú có hiện nhưng không điền hay sửa được. Muốn làm việc đó, dùng Open in Preview (Mac) hoặc app PDF của bạn.</p>
 <h3 id="lim-exr">EXR, DPX và TGA</h3>
 <p>Chỉ hiện hình chính, không hiện các layer hay kênh khác. Trên Windows và Linux, một khung hình được đọc qua FFmpeg.</p>
 <h3 id="lim-archives">File nén</h3>
-<p>Chỉ đọc: không đổi tên, di chuyển hay xoá được gì bên trong, và không kéo file ra khỏi file nén đang duyệt được (dùng Extract to Archive's Folder). Không giải nén riêng cả một thư mục bên trong, và file .xz hoặc .bz2 đứng riêng không liệt kê được. <b>Lý do:</b> Better Finder đọc file nén mà không bung ra, để ổ đĩa của bạn sạch.</p>
+<p>Chỉ đọc: không đổi tên, di chuyển hay xoá được gì bên trong, và không kéo file ra khỏi file nén đang duyệt được (dùng Extract to Archive's Folder). Không giải nén riêng cả một thư mục bên trong, và file .xz hoặc .bz2 đứng riêng không liệt kê được. <b>Lý do:</b> Better Explora đọc file nén mà không bung ra, để ổ đĩa của bạn sạch.</p>
 <h3 id="lim-cloud">File chỉ có trên cloud</h3>
 <p>File chỉ nằm trên cloud hiện thumbnail do app cloud cung cấp (hoặc không có), không rê xem lướt và không có thông tin media cho tới khi file về máy. <b>Lý do:</b> đọc file sẽ khiến Dropbox, iCloud hay OneDrive tải nó về, mà duyệt file thì không bao giờ được làm đầy ổ đĩa.</p>
 <h3 id="lim-network">Ổ mạng</h3>
-<p>Không tính dung lượng thư mục, và chỉ đọc thông tin media cho các file đang thấy. <b>Lý do:</b> hỏi máy chủ về từng file rất chậm; Better Finder chỉ đọc thứ bạn đang xem.</p>
+<p>Không tính dung lượng thư mục, và chỉ đọc thông tin media cho các file đang thấy. <b>Lý do:</b> hỏi máy chủ về từng file rất chậm; Better Explora chỉ đọc thứ bạn đang xem.</p>
 <h3 id="lim-raw">Camera RAW</h3>
-<p>Clip Blackmagic RAW, RED R3D và ARRIRAW cần add-on (Settings ▸ Camera RAW), không đi kèm app và hiện chưa phát hành. Khi chưa có, clip RAW mở bằng app của hãng. <b>Lý do:</b> để app gọn nhẹ, và bộ công cụ (SDK) của mỗi hãng có giấy phép riêng.</p>
-<p>Ảnh RAW máy ảnh (CR2, CR3, NEF, ARW và các loại khác) trên Windows và Linux hiện ảnh JPEG xem trước mà máy ảnh lưu sẵn trong file, không phải chính file RAW: không chỉnh được cân bằng trắng hay độ sáng, và ảnh nhỏ hơn khi máy ảnh chỉ lưu ảnh xem trước nhỏ (Canon CR3: rộng khoảng 1620 pixel; vài định dạng cũ hoặc hiếm chỉ có ảnh nhỏ hoặc không có). <b>Lý do:</b> Mac dùng bộ giải mã RAW của macOS; Windows và Linux không có bộ chung nào, nên Better Finder đọc ảnh xem trước của máy ảnh.</p>
+<p>Clip Blackmagic RAW cần Blackmagic RAW Player hoặc DaVinci Resolve trên Mac (đều miễn phí); trên Windows và Linux chưa giải mã được. Hình ARRIRAW cần add-on chưa phát hành; thẻ của clip có nút mở bằng ARRI Reference Tool hoặc DaVinci Resolve. R3D hoàn toàn không giải mã: thẻ mở clip bằng DaVinci Resolve. <b>Lý do:</b> bộ giải mã của mỗi hãng có giấy phép riêng, nên Better Explora dùng phần mềm của chính hãng thay vì đóng gói kèm.</p>
+<p>Ảnh RAW máy ảnh (CR2, CR3, NEF, ARW và các loại khác) trên Windows và Linux hiện ảnh JPEG xem trước mà máy ảnh lưu sẵn trong file, không phải chính file RAW: không chỉnh được cân bằng trắng hay độ sáng, và ảnh nhỏ hơn khi máy ảnh chỉ lưu ảnh xem trước nhỏ (Canon CR3: rộng khoảng 1620 pixel; vài định dạng cũ hoặc hiếm chỉ có ảnh nhỏ hoặc không có). <b>Lý do:</b> Mac dùng bộ giải mã RAW của macOS; Windows và Linux không có bộ chung nào, nên Better Explora đọc ảnh xem trước của máy ảnh.</p>
 <h3 id="lim-ffmpeg">Khi không có FFmpeg (Mac, AppImage trên Linux)</h3>
 <p>MKV, WebM, AVI, đốt phụ đề, chuỗi ảnh, cắt GIF, Compare và transcript qua cloud cần FFmpeg. <b>Lý do:</b> macOS không tự giải mã được các định dạng này, và FFmpeg không đi kèm app Mac hay AppImage (<a href="#extras">Mac</a>, <a href="#install-linux">Linux</a>).</p>
 <h3 id="lim-ai">Tính năng AI</h3>

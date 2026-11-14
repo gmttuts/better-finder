@@ -1,4 +1,4 @@
-// A mock Better Finder window drawn in HTML. The same file tiles fly between Grid, List, Columns and Gallery
+// A mock Better Explora window drawn in HTML. The same file tiles fly between Grid, List, Columns and Gallery
 // (Finder's order, ⌘1 to ⌘4). Buttons with data-view (anywhere on the page) switch it.
 // It cycles by itself until the visitor clicks a view.
 // Several windows can exist: data-views-still="grid" makes a quiet one (the MacBook in the hero) that starts in
@@ -16,7 +16,7 @@
   document.querySelectorAll("[data-macbook]").forEach((mb) => {
     mb.innerHTML = `
       <div class="mbp-lid"><div class="mbp-display"><div class="mbp-canvas">
-        <div class="mbp-menubar"><span class="mbp-apple"></span><b class="mbp-app"><span class="was">Finder</span><span class="now">Better Finder</span></b><span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Window</span><span>Help</span>
+        <div class="mbp-menubar"><span class="mbp-apple"></span><b class="mbp-app"><span class="was">Finder</span><span class="now">Better Explora</span></b><span>File</span><span>Edit</span><span>View</span><span>Go</span><span>Window</span><span>Help</span>
           <span class="mbp-right"><span>⌕</span><span>◉</span><span>Tue 21 Oct&nbsp; 9:41</span></span></div>
         <div class="mbp-icons"><span class="hd"><i></i>Macintosh HD</span><span><i></i>Projects</span><span><i></i>Footage</span></div>
         <div class="mbp-win vd" data-views-demo data-views-still="grid" data-views-filters></div>
@@ -28,7 +28,7 @@
     macIntro(mb);
   });
 
-  // The opening scene: an old, plain Finder; Better Finder drops into the Dock, kicks the old icon away,
+  // The opening scene: an old, plain Finder; Better Explora drops into the Dock, kicks the old icon away,
   // and the window upgrades (thumbnails, tags, filter chips, mini player). Click the MacBook to replay.
   function macIntro(mb) {
     const bf = mb.querySelector(".mbp-bf"), old = mb.querySelector(".mbp-old");
@@ -37,7 +37,7 @@
     const later = (ms, fn) => timers.push(setTimeout(fn, ms));
     const items = () => [...mb.querySelectorAll(".vd-item")];
     function finish() { mb.classList.remove("intro", "old"); items().forEach((el) => el.classList.remove("old")); }
-    // The Better Finder icon hides behind the plain grey tiles of the old window and peeks out (3 times),
+    // The Better Explora icon hides behind the plain grey tiles of the old window and peeks out (3 times),
     // then leaps out, flips twice on the way down to the Dock and kicks the old icon away.
     let peekEl = null;
     const stage = () => mb.querySelector(".mbp-win .vd-stage");

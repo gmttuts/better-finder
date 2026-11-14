@@ -3,6 +3,11 @@
 
 [hidden] { display: none !important; }
 
+/* No words left alone on a last line: running text wraps "pretty", headings, table cells and short blocks "balance". */
+p, li, dd, summary, figcaption, blockquote, .fine, .lead { text-wrap: pretty; }
+h1, h2, h3, h4, dt, td, th, .kicker, .pill { text-wrap: balance; }
+.faq code { font: .9em var(--mono); overflow-wrap: anywhere; }
+
 /* ---------- Screenshot placeholder ---------- */
 .window > img, .window > video { width: 100%; display: block; }
 .shot-missing { position: relative; display: grid; grid-template-columns: 180px 1fr; aspect-ratio: 16 / 9; }
@@ -64,6 +69,13 @@
 .btn-momo { background: #a50064; color: #fff; }
 .btn-momo:hover { box-shadow: 0 8px 30px rgba(165,0,100,.4); }
 .momo-dot { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 6px; background: #fff; color: #a50064; font-size: 12px; font-weight: 800; }
+/* the quiet support line in the footer: one sentence and two small buttons that open the QR pop-up */
+.foot-support { flex-basis: 100%; display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin: 0; color: var(--muted); font-size: 13px; }
+.foot-btn { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px 3px 8px; border: 1px solid var(--line); border-radius: 999px; background: none;
+  color: var(--text); font: 13px var(--font); cursor: pointer; }
+.foot-btn:hover { background: color-mix(in srgb, var(--text) 6%, transparent); }
+.foot-btn:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
+.foot-btn .momo-dot { width: 16px; height: 16px; border-radius: 4px; font-size: 10px; color: #fff; background: #a50064; }
 .support-modal { border: 0; padding: 32px 32px 24px; border-radius: 22px; width: min(360px, calc(100vw - 32px)); text-align: center;
   background: var(--card); color: var(--text); box-shadow: 0 30px 80px rgba(0,0,0,.45), 0 0 0 1px var(--line); }
 .support-modal::backdrop { background: rgba(0,0,0,.55); backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px); }
@@ -100,7 +112,7 @@
   .compare thead th.bf img { display: none; }
 }
 
-/* ---------- Animated Better Finder window (views-demo.js, the MacBook in the hero) ---------- */
+/* ---------- Animated Better Explora window (views-demo.js, the MacBook in the hero) ---------- */
 .vd { --w-bg: #fbfbfa; --w-bar: #ecebe8; --w-side: #f3f2ef; --w-line: rgba(0,0,0,.08); --w-text: #1d1d1f; --w-muted: #86868b; --w-sel: #0a64d8; --w-row: rgba(0,0,0,.025);
   position: relative; max-width: 1080px; margin: 0 auto; border-radius: 12px; overflow: hidden; text-align: left; color: var(--w-text);
   background: var(--w-bg); box-shadow: 0 30px 60px rgba(0,0,0,.14), 0 0 0 1px rgba(0,0,0,.08); font: 13px/1.3 var(--font); user-select: none; -webkit-user-select: none; }
@@ -546,7 +558,7 @@
 .mbp.old .mbp-mini { opacity: 0; transform: translateY(40px) scale(.7); transition-delay: 0s; }
 .mbp.old .mbp-note { animation: none; opacity: 0; }
 .mbp.old .mbp-icons { opacity: .9; }
-/* the Better Finder icon hiding behind the old window's tiles (z-index 0, tiles are 1) */
+/* the Better Explora icon hiding behind the old window's tiles (z-index 0, tiles are 1) */
 .mbp-peek { position: absolute; left: 0; top: 0; width: 64px; height: 64px; z-index: 0; opacity: 0; pointer-events: none; filter: drop-shadow(0 4px 8px rgba(0,0,0,.25)); }
 
 /* the icon may peek past the tiles into the sidebar / title bar of the hero window */
@@ -808,7 +820,7 @@ h2 .pro-badge, .kicker .pro-badge, .pro-kicker .pro-badge { height: 22px; paddin
 .sv-run { display: flex; align-items: center; gap: 6px; padding: 8px 12px 10px; background: var(--w-bar); border-top: 1px solid var(--w-line); }
 .sv-nav { display: flex; align-items: center; gap: 6px; }
 /* the Space key in the window's bottom bar, a key cap that goes down when the window moves to the next file */
-.sv-run .sv-key { --key-a: #ffffff; --key-b: #f1f0ec; --key-side: #cfccc4; --key-line: rgba(0,0,0,.1);
+.sv-run .sv-key, .fd-bar .sv-key { --key-a: #ffffff; --key-b: #f1f0ec; --key-side: #cfccc4; --key-line: rgba(0,0,0,.1);
   display: flex; align-items: center; gap: 10px; width: auto; height: auto; margin-right: 10px; padding: 0 6px 0 0; border-radius: 9px;
   border: 0; background: none; color: var(--w-text); font: 13px var(--font); cursor: pointer; }
 .sv-key kbd { display: grid; place-items: center; width: 116px; height: 32px; border-radius: 8px; font: 600 13px var(--font); letter-spacing: .04em; color: var(--w-text);
@@ -1209,7 +1221,9 @@ button.fd-cond { cursor: pointer; }
 .fd button:focus-visible, .fd-tries button:focus-visible { outline: 3px solid var(--orange); outline-offset: 2px; }
 .find-points { max-width: 1080px; margin: 32px auto 0; }
 .find-pro { max-width: 1080px; margin: 24px auto 0; }
-.find-key span[aria-hidden] { letter-spacing: .08em; }
+.fd-bar { display: flex; align-items: center; gap: 4px; padding: 8px 12px 10px 16px; border-top: 1px solid var(--w-line); }
+.fd-bar .fd-foot { flex: 1; min-width: 0; padding: 0; border: 0; }
+.fd-key kbd { width: 72px; }
 @media (max-width: 900px) {
   .fd-where { max-width: 160px; }
   .fd-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
@@ -1235,7 +1249,9 @@ button.fd-cond { cursor: pointer; }
   .fd-where:not(:has(.fd-drive)) { display: none; }
   .fd-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px 10px; }
   .fd-conds { padding-left: 6px; }
-  .fd-foot { gap: 12px; padding: 8px 12px; }
+  .fd-foot { gap: 12px; }
+  .fd-bar { padding: 8px 10px 10px; }
+  .fd-key span { position: absolute; width: 1px; height: 1px; overflow: hidden; clip-path: inset(50%); white-space: nowrap; }
   .fd-foot span:nth-of-type(n+3) { display: none; }
   .find-points { grid-template-columns: 1fr; }
   .find-panel.stage-panel { padding: 12px; }

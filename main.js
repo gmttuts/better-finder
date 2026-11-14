@@ -30,12 +30,13 @@
     each("[data-lang]", (b) => b.setAttribute("aria-pressed", b.dataset.lang === lang));
     each("[data-requires]", (el) => { el.textContent = `${tv(S.download.requires)} · ${S.download.size}`; });
     each("[data-desk-requires]", (el) => { el.textContent = tv((S.desktop || {}).requires); });
+    renderHeroDownload();
     each(".shot-missing span", (el) => { el.textContent = t("shot.missing"); });
     renderFeatures();
     renderDesktopNext();
+    renderCompare();
     renderSoon();
     renderReleases();
-    renderCompare();
     renderDemoHints();
     window.BF.lang = lang;
     document.dispatchEvent(new CustomEvent("langchange", { detail: lang }));
@@ -43,8 +44,38 @@
   each("[data-lang]", (b) => b.addEventListener("click", () => {
     lang = b.dataset.lang; store.set("bf.lang", lang); applyLang();
   }));
+  // No word alone on the last line: where "text-wrap: pretty" can't help (long words, narrow cards), the last two words of
+  // a block are joined with a no-break space, but only when they are short together (so nothing overflows on a phone).
+  const GLUE = "main p, main li, main dd, main summary, main figcaption, footer p, footer span, [data-docs-body] p, [data-docs-body] li";
+  const measure = document.createElement("canvas").getContext("2d");
+  function glue(root = document) {
+    root.querySelectorAll(GLUE).forEach((el) => {
+      if (el.closest(".vd, .fd, .sv, .mbp, nav, pre")) return;
+      const nodes = [];
+      const w = document.createTreeWalker(el, NodeFilter.SHOW_TEXT);
+      for (let n; (n = w.nextNode()); ) nodes.push(n);
+      let tail = 0;
+      for (let i = nodes.length - 1; i >= 0; i--) {
+        const n = nodes[i], data = i === nodes.length - 1 ? n.data.replace(/\s+$/, "") : n.data;
+        const at = n.parentElement.closest("code, kbd, a, b") && n.parentElement !== el ? -1 : data.lastIndexOf(" ");
+        if (at < 0) { tail += data.length; if (tail > 22) return; continue; }
+        if (tail + data.length - at > 22 || !data.slice(0, at).trim() && i === 0) return;
+        if (data.slice(at).includes("\u00a0")) return;   // already joined
+        // the joined words must fit inside the block, measured with its font (narrow table cells on a phone would grow otherwise)
+        const cs = getComputedStyle(el), box = el.clientWidth ? el : el.parentElement, bs = getComputedStyle(box);
+        measure.font = cs.font;
+        const room = box.clientWidth - parseFloat(bs.paddingLeft) - parseFloat(bs.paddingRight);
+        const joined = measure.measureText(el.textContent.trimEnd().slice(-(tail + data.length - at))).width;
+        if (joined > room * 0.9) return;
+        n.data = n.data.slice(0, at) + "\u00a0" + n.data.slice(at + 1);
+        return;
+      }
+    });
+  }
+  document.addEventListener("langchange", () => requestAnimationFrame(() => glue()));
+
   // For views-demo.js / feature-demos.js / space-demo.js (loaded after this file).
-  window.BF = { t, lang };
+  window.BF = { t, lang, glue };
 
   // ---------- Download + version + stats ----------
   each("[data-download]", (a) => { a.href = S.download.file; a.setAttribute("download", ""); });
@@ -65,7 +96,7 @@
       c.id = "download";
       const btn = (href, key, soft) => `<a class="btn${soft ? " btn-soft" : ""}" href="${href}" download><span data-i18n="${key}"></span></a>`;
       c.innerHTML = `<img src="assets/icon.png" alt="" width="56" height="56">
-        <div><strong>Better Finder <span data-i18n="desk.title"></span> v${D.version}</strong>
+        <div><strong>Better Explora <span data-i18n="desk.title"></span> v${D.version}</strong>
         <span class="fine" data-desk-requires></span>
         <span class="fine"><span data-i18n="desk.other"></span> <a href="${D.linux.deb}">Ubuntu / Debian .deb</a></span>
         <span class="fine" data-i18n="desk.help"></span></div>
@@ -82,6 +113,8 @@
       if (label) label.dataset.i18n = os === "windows" ? "desk.win" : "desk.linux";
       a.querySelector("svg.apple")?.remove();
     });
+    // The hero's second button offers the other systems (the #install cards have every download).
+    each("[data-other-os]", (a) => { a.hidden = false; });
     // Under the Mac download buttons: say Windows and Linux are here too (the #install card has its own Windows / Linux card).
     each(".soon", (el) => {
       if (el.closest("#install") || !S.windowsSection) {
@@ -95,6 +128,21 @@
     // Texts that said "Windows and Linux soon" say they're here.
     for (const k of ["hero.sub", "footer.made", "faq.6.a"]) if (S.text[k + ".out"]) S.text[k] = S.text[k + ".out"];
   }
+
+  // Hero: the line under the buttons describes what the main button downloads for this visitor, with a link to Free and Pro;
+  // the second button names the other systems (hidden until a Windows / Linux version is out).
+  function renderHeroDownload() {
+    const mac = os === "mac" || !D.version;
+    const plans = ` · <a href="docs.html#free-pro">${t("hero.plans")}</a>`;
+    each("[data-hero-requires]", (el) => {
+      el.innerHTML = mac ? `${tv(S.download.requires)} · ${S.download.size}${plans}`
+        : os === "windows" ? `${t("hero.req.windows")} v${D.version} · ${D.windows.size}${plans}`
+        : `${t("hero.req.linux")} v${D.version} · ${D.linux.size} · <a href="${D.linux.deb}" download>${t("hero.req.deb")}</a>${plans}`;
+    });
+    each("[data-other-os]", (a) => { a.textContent = t("hero.other." + (mac ? "mac" : os)); });
+  }
+  each("[data-other-os]", (a) => { if (!D.version) a.hidden = true; });
+  window.BF.os = os;   // search-demo.js shows ⌘ K or Ctrl K
 
   // ---------- Screenshots / screen recordings (placeholder when the file isn't there yet) ----------
   function placeholder(name) {
@@ -158,7 +206,7 @@
     });
   }
 
-  // ---------- Better Finder vs Finder ----------
+  // ---------- Better Explora vs Finder ----------
   function cell(v) {
     if (v === true) return `<span class="yes" aria-label="yes">✓</span>`;
     if (v === false) return `<span class="no" aria-label="no">✕</span>`;
@@ -166,7 +214,7 @@
   }
   function renderCompare() {
     each("[data-compare]", (tb) => {
-      tb.innerHTML = S.compare.map((r) => `<tr><th scope="row">${t(r.row)}</th><td class="bf">${cell(r.bf)}</td><td>${cell(r.finder)}</td></tr>`).join("");
+      tb.innerHTML = S.compare.map((r) => `<tr><th scope="row">${t(r.row)}${r.pro ? ' <span class="pro-badge">PRO</span>' : ""}</th><td class="bf">${cell(r.bf)}</td><td>${cell(r.finder)}</td></tr>`).join("");
     });
   }
 

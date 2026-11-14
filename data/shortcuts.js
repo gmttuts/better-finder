@@ -907,7 +907,7 @@ window.DOCS_SHORTCUTS = {
 {
 "id": "app.hide",
 "group": "App",
-"title": "Hide Better Finder",
+"title": "Hide Better Explora",
 "keys": "⌘H",
 "fixed": false
 },

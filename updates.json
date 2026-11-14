@@ -1,6 +1,677 @@
 {
  "versions": [
   {
+   "version": "0.399",
+   "build": 399,
+   "date": "14 Nov 2026",
+   "title": "Hidden files, Compare Folders and SFTP / FTP servers",
+   "notes": [
+    "Show Hidden Files (⇧⌘.) is now one switch for the whole app, columns included; the status bar says when hidden files are showing. Items macOS marks as hidden (Library, /usr…) follow it too, like in Finder.",
+    "Go ▸ System Folders opens places that are hidden by default: your Library, /Library, ~/.config, /usr/local, Homebrew and /private/var.",
+    "Copy Path in Quotes and Copy Path as URL join Copy Path (⌥⌘C) in the Edit menu.",
+    "Indexing a whole folder tree now skips hidden folders such as .git and .Trash, so they are not probed or thumbnailed, and clips indexed there earlier leave the library (unless they have a transcript).",
+    "New File ▸ Compare Folders…: compare two folders (the two panes, or any two you choose) and see what is only on one side, newer, or different. Filter the list and search by name.",
+    "Sync Folders in the same window: Update, Mirror or Two-way. A preview column shows what Sync would do first. Replaced and removed files go to the Trash, and ⌘Z undoes the whole sync. Online-only cloud files are never copied.",
+    "Servers in the sidebar: save SFTP, FTP and FTPS servers under Locations and browse them in a Server window. Download, upload, rename and delete with progress and Stop. Passwords are kept in your Keychain, never in a file.",
+    "SFTP asks you to confirm a server's fingerprint the first time and refuses a server whose key changed. Plain FTP warns that the password is sent unencrypted."
+   ],
+   "url": "https://github.com/gmttuts/better-finder/releases/download/v0.399/BetterExplora-0.399.dmg",
+   "beta": false,
+   "sha256": "bae8b279f3f403fd37f1ed7903ba52a1ea099eadcc2e2ea65fd87cabdde3b287"
+  },
+  {
+   "version": "0.398",
+   "build": 398,
+   "date": "14 Nov 2026",
+   "title": "Steadier with big libraries and network drives",
+   "notes": [
+    "Fixed: \"Could not open the media database (database is locked)\" on the first launch or after an update, when several parts of the app opened the library at the same moment. Saving to the library also waits its turn instead of failing while a folder is being indexed.",
+    "Network drives and servers: opening a folder, moving the selection, the path bar, the window and tab titles, Finder tags, folder icons and the sidebar no longer wait for the server on the main thread. On a slow share the window stays responsive (on a test share answering in 50 ms, opening a folder froze the window about 1.4 s, now about 0.2 s, and moving through the files no longer stops it).",
+    "A disk ejected or a share dropped while its clips were being indexed no longer leaves them marked as unreadable: they are read again when the disk is back.",
+    "Linux style: the path bar separates folders with a dim \"/\" like GNOME Files, and the current folder is bold.",
+    "Path bar in every style: when the window is narrow, folders in the middle are left out (the first and the current one stay) instead of names shrinking to a few letters and the arrows between them disappearing. The Windows 11 address box no longer runs past the window's edge."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.397",
+   "build": 397,
+   "date": "14 Nov 2026",
+   "title": "Help menu, bug reports and safer updates",
+   "notes": [
+    "Updates are now signed: Better Explora checks the update information's signature before reading it, downloads the new version itself, and opens it only when its checksum matches. Anything changed on the way is refused with a clear message.",
+    "Download… in Settings ▸ Updates now downloads the disk image into Downloads with a progress bar and opens it for you.",
+    "New Help menu: Better Explora Help, What's New, Keyboard Shortcuts, Report a Bug…, Contact Support, Check for Updates and Troubleshooting.",
+    "Help ▸ Report a Bug… is a short form that shows the whole report before anything leaves: app and macOS version, Mac model, your style and theme, and if you like the last lines of the app's log and the last crash report. Copy it, save it, open it in your email app, or copy it and open a new GitHub issue to paste it into. Nothing is uploaded.",
+    "Your home folder appears as ~ in reports, and file and folder names are replaced with [path] unless you tick Include file and folder names.",
+    "After the app quits unexpectedly, the next launch shows a small notice with Show Report, Copy, Save as File and Report…, and Don't ask again.",
+    "Settings ▸ Updates has a Privacy section that says what stays on your Mac and what goes online."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.396",
+   "build": 396,
+   "date": "14 Nov 2026",
+   "title": "Better Finder is now Better Explora",
+   "notes": [
+    "Better Finder is now Better Explora. Same app, new name: your settings, tags, library, permissions and Pro license stay as they were.",
+    "The menus, windows, Settings and messages use the new name, and the app in Applications is called Better Explora.",
+    "Updating from the DMG: if the old \"Better Finder\" is still in Applications, the app offers once to move that old copy to the Trash."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.395",
+   "build": 395,
+   "date": "14 Nov 2026",
+   "title": "Background color for the window",
+   "notes": [
+    "Settings ▸ Appearance ▸ Background Color: give the file browser a tint of one colour. Pick Default (the usual look), one of 18 colours, or Custom… for any colour.",
+    "The files get a light touch of the colour; the sidebar, toolbar, path bar and status bar a little more. Light, Medium or Strong sets how much.",
+    "Light and Dark each get their own shade of the colour, so names stay easy to read.",
+    "Use as accent color (on by default): selected files, the sidebar icons, the selected filter and the active tab take the colour instead of the system accent. A colour you gave a sidebar place, or Gray / Custom in Settings ▸ Sidebar, still wins.",
+    "Works in the macOS, Windows 11 and Linux styles and with the transparent window (the glass takes the tint). Midnight keeps pure black behind the files; Increase contrast turns the tint off.",
+    "Settings, Get Info, the player and the Space viewer keep their usual colours."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.394",
+   "build": 394,
+   "date": "13 Nov 2026",
+   "title": "Extracting shows its progress, and never runs twice",
+   "notes": [
+    "While an archive is being extracted, its icon shows a ring that fills up (with the percent on a big tile), and the status bar says \"Extracting “name”… 45 %\" with a progress bar and a Stop button.",
+    "The new folder appears only when extracting is done, so you never open a half-written one.",
+    "Asking again to extract an archive that is already being extracted (a second double-click, another tab or window) doesn't start it again: the archive is selected and the status bar says it is already being extracted. Extracting again after it finished still makes \"name 2\".",
+    "Right-click ▸ Stop Extracting, the status bar's Stop button, or quitting the app stops it and removes what was extracted so far.",
+    "Several archives at once: two are extracted at a time, the others wait their turn, each with its own ring.",
+    "A password-protected or damaged archive, or a full disk, now says so clearly (with Open with Archive Utility for a password)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.393",
+   "build": 393,
+   "date": "13 Nov 2026",
+   "title": "R3D clips open in DaVinci Resolve",
+   "notes": [
+    "Better Finder no longer decodes or reads R3D files. They are still listed; Space shows a card with Open in DaVinci Resolve when it is on your Mac (free from Blackmagic Design), and says so when it isn't.",
+    "Settings ▸ Camera RAW now lists Blackmagic RAW and ARRIRAW only."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.392",
+   "build": 392,
+   "date": "13 Nov 2026",
+   "title": "R3D clips show their picture (removed in 0.393)",
+   "notes": [
+    "R3D clips get thumbnails, hover scrub and play in Space, decoded by the R3D SDK inside Better Finder. Playback uses a quick 1K preview copy (an 8K clip takes a little longer than its length to get ready); Open in DaVinci Resolve for full quality.",
+    "Get Info shows the camera facts the R3D decoder reads: camera, sensor, reel, timecode and edge code, ISO, white balance, shutter, frame rate shot at, ND, lens, look.",
+    "A clip recorded over several R3D files plays as one clip from its first file. Nikon N-RAW (.NEV) files are listed as clips too.",
+    "Clips already listed are read again when you open their folder."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.391",
+   "build": 391,
+   "date": "13 Nov 2026",
+   "title": "Camera RAW card: open the clip in an app that shows it",
+   "notes": [
+    "Space on an R3D or ARRIRAW clip shows a tidier card: the camera facts laid out like Get Info.",
+    "When DaVinci Resolve or ARRI Reference Tool is on your Mac, the card has an Open in button for it (for an ARRIRAW frame sequence, its first frame). Otherwise one line says which free apps can show the picture."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.390",
+   "build": 390,
+   "date": "13 Nov 2026",
+   "title": "Camera RAW clips listed before 0.386 are read again",
+   "notes": [
+    "Blackmagic RAW, ARRIRAW, R3D and other camera files that Better Finder had already listed before 0.386 are read again once when you open their folder: BRAW clips get their thumbnails and hover scrub, ARRIRAW clips their size.",
+    "Space on a camera RAW clip: Blackmagic RAW plays in the viewer; R3D and ARRIRAW (MXF, .ari, .arx) show a card with the camera, exposure, white balance, shutter, lens, reel and timecode, and which decoder the picture needs. No more blank system panel or ffmpeg error.",
+    "ARRIRAW HDE frames (.arx) are now listed as clips, with their camera facts and the number of frames in their sequence.",
+    "Hovering a clip whose picture can't be decoded no longer moves the scrub line over a blank icon."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.389",
+   "build": 389,
+   "date": "13 Nov 2026",
+   "title": "Space plays MKV, MXF, AVI and MTS clips",
+   "notes": [
+    "Space on an MKV, MXF, AVI, MTS or another clip macOS can't play now plays it in Better Finder's own viewer (Quick Look showed only an icon). A long clip starts in under a second, while its playback copy is still being made.",
+    "MP4 and MOV clips macOS plays keep Quick Look, as before.",
+    "While a clip plays during its playback copy, the seek bar shows how much of it is ready.",
+    "MTS, M2TS and AVI clips that are large or have AC-3 sound play again: their playback copy could fail since 0.387."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.388",
+   "build": 388,
+   "date": "13 Nov 2026",
+   "title": "Blackmagic RAW plays sooner",
+   "notes": [
+    "Playing a 6K Blackmagic RAW clip is about 6 times quicker to get ready: a 10 second clip takes about 3 seconds instead of 20.",
+    "23.976 fps Blackmagic RAW clips keep their exact frame rate when played.",
+    "Get Info no longer names a Blackmagic RAW clip's LUT as its look when the LUT is turned off in the clip."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.387",
+   "build": 387,
+   "date": "13 Nov 2026",
+   "title": "Previews start sooner: clips that need a playback copy play at once",
+   "notes": [
+    "MKV, WebM, MXF and other clips that need a playback copy start playing in under a second, while the copy is still being made. A 2 minute WebM used to wait about 7 seconds, a 10 minute one over half a minute.",
+    "When the copy is done it takes over at the next pause, at the same frame. Frame steps, trim and subtitles work as before.",
+    "Space on a long WebM plays it right away the same way.",
+    "Hover scrub on ProRes and DNxHR clips (camera clips too) is ready several times sooner and uses far less of the processor.",
+    "Hover scrub on long clips (over a minute and a half) shows its first pictures sooner."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.386",
+   "build": 386,
+   "date": "13 Nov 2026",
+   "title": "Camera files: ARRI, R3D and Blackmagic RAW",
+   "notes": [
+    "ProRes clips from ARRI cameras (MOV and MXF) now have thumbnails and hover scrub, and play, compare and compress. Before, ffmpeg refused their pictures.",
+    "Get Info has a Camera section: camera, reel, timecode, ISO or exposure index, white balance, shutter, lens, look and more, for ARRI, R3D and Blackmagic RAW clips and any clip with a timecode track.",
+    "Blackmagic RAW (.braw) clips show their picture, hover scrub and play when Blackmagic RAW Player or DaVinci Resolve (free from Blackmagic Design) is installed on this Mac. Settings ▸ Camera RAW shows which one is used.",
+    "R3D and ARRIRAW clips show their size, frame rate and length, and say which decoder their picture needs (not included yet)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.385",
+   "build": 385,
+   "date": "13 Nov 2026",
+   "title": "Recent Folders and new windows skip folders that are gone",
+   "notes": [
+    "Go ▸ Recent Folders drops a folder that no longer exists on your Mac. Folders on drives and network shares stay, ready for when they come back.",
+    "If New windows open is set to Other Folder and that folder is gone, new windows show Recents instead of your home folder."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.384",
+   "build": 384,
+   "date": "13 Nov 2026",
+   "title": "Faster: tabs switch at once, smoother grid, quicker hover",
+   "notes": [
+    "Switching tabs is several times faster: a tab you go back to is shown as you left it instead of being built again (about 0.2 s of work before on a busy window, a few hundredths now).",
+    "Scrolling the Grid is smoother: each tile is lighter (the badges it rarely shows are made only when needed), so a frame takes about half the work and far fewer frames are late.",
+    "Hover scrub on a short clip (up to 20 seconds) starts almost at once: its frames are made in one go instead of twice, and the app no longer waits a moment before starting them (not in Low Power Mode, on a hot Mac or on a network drive). A clip without frames yet shows its first frame in about a quarter of a second instead of about half a second."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.383",
+   "build": 383,
+   "date": "12 Nov 2026",
+   "title": "Name column keeps its width",
+   "notes": [
+    "List view: the Name column stays as wide as you made it, like Finder. Opening a folder in place or a long name no longer widens it; long names are shortened in the middle.",
+    "Drag the Name column's edge to change its width: it is remembered for every window, tab and pane, and after a restart. Double-click the edge to fit the longest name."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.382",
+   "build": 382,
+   "date": "12 Nov 2026",
+   "title": "Editing spreadsheets is free",
+   "notes": [
+    "Editing CSV, TSV and Excel files in Space and saving them in place is now part of the free version, like viewing them."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.381",
+   "build": 381,
+   "date": "12 Nov 2026",
+   "title": "Faster: big folders open sooner, new files show at once",
+   "notes": [
+    "A big folder opened for the first time shows much sooner: star ratings and labels are now read several files at a time (a folder of 20,000 files: about 7 seconds before, under 1 second now).",
+    "Big folders open faster every time: the list of files comes from the core in a leaner form and is read about three times faster (20,000 files: about 0.65 s before, about 0.4 s now). The app also keeps less memory after browsing big folders.",
+    "A file added, saved or renamed by another app shows within about a quarter of a second (it took about a second). A copy of many files still waits until it is done, then shows once.",
+    "Scrolling the grid and the list is smoother: pictures and videos waiting for their thumbnail show their type's icon without asking the disk, and thumbnails are prepared before they reach the screen.",
+    "Nothing else changes: the same views, columns, icons and thumbnails as before."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.380",
+   "build": 380,
+   "date": "12 Nov 2026",
+   "title": "Spreadsheets in Space: view and edit CSV and Excel files",
+   "notes": [
+    "Space on a CSV, TSV or Excel file (.xlsx, .xlsm) shows it as a table: column names stay at the top, row numbers on the side, columns as wide as their words. Big files (100,000 rows and more) open at once.",
+    "Excel files show one tab per sheet under the table, dates as dates, and the formula of the selected cell on the line under the table.",
+    "Find Rows shows only the rows with the words you type.",
+    "Edit a cell: double-click it, press Return or just start typing. Return, Tab and the arrows move on, Esc drops the edit. In Excel files, start with = to type a formula.",
+    "Rows & Columns inserts and deletes rows and columns in CSV files. Excel files can get new rows and columns at the end (moving cells inside a workbook is better left to Excel or Numbers).",
+    "⌘S saves over the file, ⌘Z and ⇧⌘Z undo and redo. Closing with changes asks first.",
+    "Saving keeps the file as it was: a CSV keeps its separator, quotes, line endings and text encoding, and rows you didn't touch stay exactly the same. An Excel file keeps its styles, formulas, charts and other sheets; only the cells you changed are written, and Excel or Numbers works the formulas out again when it opens the file.",
+    "If another app changed the file since it was opened, Better Finder asks before saving. A copy of the file as it was is kept, and Rows & Columns ▸ Revert to Original puts it back.",
+    "Cells that can't be changed safely here (a formula shared with other cells, a table's header, merged cells, protected sheets, workbooks with macros) say why on the line under the table.",
+    "Viewing tables is free. Editing and saving them is part of Better Finder Pro (not locked yet)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.379",
+   "build": 379,
+   "date": "12 Nov 2026",
+   "title": "EPS, CorelDRAW and other vector files in Space",
+   "notes": [
+    "Space shows EPS files again. macOS no longer draws PostScript, so Better Finder draws the Illustrator drawing kept inside the EPS itself: sharp at any zoom. Old Illustrator files (.ai saved without PDF) show the same way.",
+    "When the drawing may miss something (text, pictures, some Illustrator 2024 colours), Space opens on the preview picture stored in the file instead. Embedded Preview / Vector Drawing switches between the two, and the line under the picture says what is shown and what isn't drawn.",
+    "With Ghostscript installed (Homebrew: brew install ghostscript), Space draws any EPS or PostScript file exactly.",
+    "CorelDRAW files (.cdr, .cdt, Corel DESIGNER) show their stored picture and the CorelDRAW version that saved them, for old and new files.",
+    "Windows metafiles (.wmf, .emf, .wmz, .emz), compressed SVG (.svgz) and 2D CAD drawings (.dxf) show in Space. A 3D .dxf shows a view of its model.",
+    "These files get real thumbnails in the grid, and so do LibreOffice Draw and Visio files. Illustrator files with PDF content get a sharper thumbnail.",
+    "Filter chips: .svgz and metafiles are Images; EPS variants, CorelDRAW, FreeHand, LibreOffice Draw, DXF and CGM are Projects & Design; PostScript and Visio are Documents.",
+    "The bar shows the size in points, the format, the app and version that made the file, and its size on disk. Open in names the app that opens the file."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.378",
+   "build": 378,
+   "date": "12 Nov 2026",
+   "title": "HTML5 banners in Space",
+   "notes": [
+    "Space on an HTML5 banner zip (an index.html with its CSS, scripts and pictures) plays the banner right from the zip, nothing unzipped, at its ad size. Replay starts it again; Show Files shows what's inside the zip, as before.",
+    "The bar shows the banner's size, its weight (zipped and unzipped), the number of files, whether it has a clickTag, and a note when it is over the common 150 KB limit.",
+    "Banners play offline. Clicks don't open anything: the note under the banner says where the click goes. If the banner needs files from the internet (fonts, GSAP, Google's Enabler), Load Online Content allows them for this view only.",
+    "An unzipped banner folder plays the same way with Space.",
+    "Banner zips and folders show a picture of the banner in the grid and the Gallery, taken about a second in.",
+    "A web page with an ad.size tag shows at that size in Space. Other zips keep their file tree."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.377",
+   "build": 377,
+   "date": "12 Nov 2026",
+   "title": "Telegram stickers, Android vector drawables and Lava in Space",
+   "notes": [
+    "Space on a Telegram sticker (.tgs) plays it in the Lottie player, with its size, frame rate and length. Stickers get a thumbnail and play when you hover over them.",
+    "Android vector drawables (.xml) show as pictures. An animated one (animated-vector) plays in Space: rotation, moves, scale, shape morphs, trim paths, colours and fades, with play / pause and a position slider. Its drawable, animators and colours are found in the project's res folder; what can't be found is named under the picture.",
+    "Lava animations (a folder with a manifest.json and its images, or a .lava / .olava file) play in Space, show their first frame as the thumbnail and play on hover. A Lava folder still opens like a folder with a double-click.",
+    "Stickers, animated vector drawables and Lava are in the Motion filter.",
+    "Hover over an SVG with animation in Grid and it plays.",
+    "Double-click on a vector drawable .xml still opens it in its app; View XML in Space shows its code."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.376",
+   "build": 376,
+   "date": "12 Nov 2026",
+   "title": "WebM and animated pictures in Space",
+   "notes": [
+    "Space on a WebM plays it in Better Finder (Quick Look can't on macOS 26). A short clip starts in about a second; a longer one shows its progress while its preview copy is made.",
+    "WebM with transparency keeps it: the clip plays over a checkerboard, and its thumbnail keeps the transparent parts too.",
+    "Animated WebP, AVIF and APNG play in Space at their own speed and loop as the file says. Still pictures still open in Quick Look.",
+    "Animated AVIF and .apng files get a thumbnail in the grid.",
+    "Hover over an animated WebP, AVIF or APNG in Grid to scrub through its frames, like a GIF.",
+    "APNG files are in the Images filter."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.375",
+   "build": 375,
+   "date": "8 Nov 2026",
+   "title": "Space windows fit the picture",
+   "notes": [
+    "Caddis, Cavalry, Plate and Autograph in Space: Choose File and the other buttons sit under the player, on the right, next to the space kept for Caddis drawing its frames.",
+    "The facts line at the top wraps to two or three lines when the window is narrow instead of being cut short.",
+    "The Space window takes the picture's shape when a file opens (motion projects, Lottie, Rive and PDF), so there is no blank area under the player. Make it bigger and the picture grows, centred.",
+    "A wide file after a tall one gets the window's width back: it starts from the width you last gave it."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.374",
+   "build": 374,
+   "date": "8 Nov 2026",
+   "title": "More facts read from projects",
+   "notes": [
+    "Photoshop files: Get Info and the viewer's Info show the Photoshop version that saved them, when they were created and saved, the color depth and mode, and the number of layers.",
+    "Figma files: their name in Figma and when the copy was saved.",
+    "DaVinci Resolve projects show the Resolve version that saved them; Final Cut Pro XML shows when the project was last changed.",
+    "Final Cut Pro XML no longer shows its file format version as the app that saved it."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.373",
+   "build": 373,
+   "date": "8 Nov 2026",
+   "title": "The same facts line in every viewer",
+   "notes": [
+    "After Effects, Motion, Premiere, Final Cut, DaVinci Resolve, Filmora, VEGAS, Photoshop and Figma files in Space show their key facts on one line, in the same order as the other viewers: size, frame rate, frames, length, the app that saved it, layers or clips, file size.",
+    "An Info button next to it lists everything Get Info knows about the project, laid out the same way.",
+    "Motion Graphics Templates and Affinity documents show their facts with the same names and layout as Get Info."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.372",
+   "build": 372,
+   "date": "8 Nov 2026",
+   "title": "File info looks the same everywhere",
+   "notes": [
+    "Get Info, Gallery, the search panel's preview and the Space cards show a file's facts the same way: labels on the left, values in one column, the same names in the same order.",
+    "Caddis, Plate, Cavalry and Autograph projects in Space look like the Lottie player: the picture fills the window, the key facts sit on one line in the top bar with Choose File, Render Preview or Install on the right, and Info shows the rest.",
+    "In Get Info and Gallery the project buttons sit above the facts.",
+    "Facts a file doesn't have are left out. A project's media count shows with how many are missing."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.371",
+   "build": 371,
+   "date": "8 Nov 2026",
+   "title": "Keep Audio Only in any format",
+   "notes": [
+    "Remove Video (Keep Audio Only) now asks how to save the sound: M4A (AAC), MP3, WAV, AIFF, FLAC, or the original audio copied as it is.",
+    "Quality presets for each format: 96 to 320 kbps or variable bit rate for M4A and MP3, 16-bit, 24-bit or 32-bit float for WAV and AIFF, 16 or 24-bit for FLAC.",
+    "Advanced: sample rate (44.1, 48 or 96 kHz), stereo or mono, which audio track when the clip has several, FLAC compression, loudness (-14, -16 or -23 LUFS) and trimming silence at the start and end.",
+    "The sheet shows the estimated size and remembers your last choice.",
+    "Works from the right-click menu, the player's ⋯ menu and bar, Quick Actions and the Drop Zone's actions, on one clip or many at once. Stop removes the unfinished file.",
+    "Title and artist are kept where the format holds them. Nothing is ever overwritten: a new name is picked when the file exists."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.370",
+   "build": 370,
+   "date": "8 Nov 2026",
+   "title": "Cavalry in two clicks",
+   "notes": [
+    "Space on a Cavalry scene without the player now has two buttons: Download Player opens Scene Group's page, Install sets up what you downloaded. Cavalry's licence doesn't let apps include the player, so you add it once.",
+    "Install finds the download in Downloads, Desktop or Documents (zip or unzipped folder), copies the player into Better Finder and the scene plays right away. Your download stays where it is.",
+    "After Download Player, Better Finder watches Downloads for a few minutes: Install is ready the moment the zip lands.",
+    "A file that isn't the player, or one from another website, is never installed on its own: Choose… lets you pick one.",
+    "Settings ▸ File Types ▸ Cavalry shows Ready, Not installed or Folder missing, with the same buttons and Remove.",
+    "Cavalry scenes in Space are drawn at the size they're shown, sharp on Retina screens. Open folders show Cavalry thumbnails as soon as the player is in."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.369",
+   "build": 369,
+   "date": "8 Nov 2026",
+   "title": "Caddis previews bigger, sharper and faster",
+   "notes": [
+    "A Caddis project in Space now fills the window: tall compositions as tall as the window, wide ones as wide. Resize the window and the picture follows. The project's details are under it.",
+    "Frames are twice as sharp (960 px) and drawn about three times as fast on busy projects (strings: 30 s down to 9.5 s), with the first frame in a quarter of a second.",
+    "Better Finder runs a few Caddis engines side by side when that helps, and only one when it doesn't.",
+    "While the rest is drawn, the preview loops over the frames it has; you can scrub anywhere.",
+    "Cavalry scenes playing live are bigger too."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.368",
+   "build": 368,
+   "date": "8 Nov 2026",
+   "title": "No crash message for test copies",
+   "notes": [
+    "\"Better Finder quit unexpectedly last time\" is asked only about crashes of your own Better Finder. Crashes of test copies of the app (made while building it) are no longer offered.",
+    "The Services in the right-click menu can never ask the app in a loop."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.367",
+   "build": 367,
+   "date": "8 Nov 2026",
+   "title": "Cloud folders and Services in the right-click menu",
+   "notes": [
+    "In Dropbox, Google Drive, OneDrive, iCloud Drive and other cloud folders, the right-click menu has a section with the cloud app's name, icon and the items' state (Online-Only, On This Mac, Not Synced).",
+    "Make Available Offline downloads the files, and for a folder every file inside it (a big folder asks first). Make Online-Only frees the space. In iCloud Drive they are called Download Now and Remove Download, as in Finder.",
+    "Do Not Sync… and Sync Again in Dropbox folders, Open on Dropbox.com, Open on Google Drive and Copy Google Drive Link.",
+    "More Dropbox Actions in Finder… selects the items in Finder for the cloud app's own items (Transfer a copy, Copy link, Version history), which macOS lets only Finder show.",
+    "macOS Services work on the selected files and folders, as from Finder: New Terminal at Folder, Folder Actions Setup, TeamViewer and others appear in the right-click menu and in Better Finder ▸ Services. Choose them in System Settings ▸ Keyboard ▸ Keyboard Shortcuts ▸ Services.",
+    "The empty-space menu's own Terminal item is now called Open in Terminal."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.366",
+   "build": 366,
+   "date": "8 Nov 2026",
+   "title": "Caddis and Cavalry projects move in Space",
+   "notes": [
+    "Space on a Caddis project now plays it: your own Caddis draws the main composition frame after frame, the first frames show in a moment and the rest fill in while it plays. Play / pause, a scrubber, the frame and time, and loop sit under it. Next time it plays at once.",
+    "Long compositions play every second (or third…) frame, at most 300, so they still last as long.",
+    "Without Caddis, or before signing in to it, the card keeps its picture and says why in one line.",
+    "Cavalry scenes play live in Space with the Cavalry Web Player you chose, with the same controls.",
+    "Without that player, the Cavalry card now says so, with Download Page and Choose Folder… right there (no need to look in Settings). A player folder that was moved or damaged is named too."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.365",
+   "build": 365,
+   "date": "7 Nov 2026",
+   "title": "Arrow keys in every viewer",
+   "notes": [
+    "While Space shows a file, ↑ and ↓ go to the previous or next file in every viewer (Lottie, Rive, 3D, code, web pages, SVG, After Effects, Premiere, archives, templates, Motion cards, Affinity, PDF), as in Finder's Quick Look. In Grid and Gallery ← and → do too.",
+    "The viewer follows the selection: a file of another kind opens in the viewer it needs, or in Quick Look.",
+    "Keys the viewers use themselves stay: ← → step frames in Lottie and the After Effects and Premiere timelines, turn PDF pages and open folders in archives. A viewer's own ↑ ↓ (After Effects layers, Premiere edits, an archive's list, template rows, panning in Figma and Photoshop files) work with ⌥.",
+    "Quick Look in Columns and Gallery views now moves through those views (it moved the hidden list before)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.364",
+   "build": 364,
+   "date": "7 Nov 2026",
+   "title": "Drag the Drop Zone onto web pages and other apps",
+   "notes": [
+    "Files dragged out of the Drop Zone now drop onto a web page's upload area in Chrome, Safari or Arc, and into Slack, Mail, Figma and other apps, also when the switch is on Move. Before, with Move on, those apps refused the drop.",
+    "With Move on, Finder still moves the files on the same disk. Web pages, other disks and most apps get a copy, and the label by the pointer says Move or Copy while you are over another app. Files stay in the Drop Zone unless they were really moved away.",
+    "Files that are only in the cloud start downloading as soon as you drag them out of Better Finder, so the app you drop them on can read them sooner."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.363",
+   "build": 363,
+   "date": "7 Nov 2026",
+   "title": "The search palette waits while you are in another app",
+   "notes": [
+    "Switch to another app (Command-Tab, a click on its window, Mission Control) and come back: the search palette is still there exactly as you left it, with its words, tab, results, choice and preview or grid.",
+    "It closes with Escape, a click elsewhere in Better Finder, opening a result, Command-K, or when its window closes.",
+    "Closed with Escape or a click elsewhere and opened again within 5 minutes, it brings back your last words and tab, selected so typing replaces them. Up arrow in an empty field still brings back the last search."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.362",
+   "build": 362,
+   "date": "7 Nov 2026",
+   "title": "Preview and grid in the search palette",
+   "notes": [
+    "Command-Y in the search palette shows the chosen result large on the right: its picture, a clip playing without sound, and its kind, size, length, frame, codec and date. The arrows move through the results and the preview follows. Command-Y again hides it; Escape hides it for now.",
+    "Command-G shows the results as a grid of pictures with each clip's length. The arrows move in the grid, Space opens Quick Look and Return opens the file. In the Visual tab Command-G switches its grid to a list.",
+    "Drag a result or a picture out of the palette into Premiere Pro, Resolve or Finder: it goes as the file (a copy, never moved).",
+    "The palette remembers whether preview and grid were on. Both are free."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.361",
+   "build": 361,
+   "date": "7 Nov 2026",
+   "title": "One top bar for every viewer",
+   "notes": [
+    "The viewers that open with Space (web pages, SVG, code, PDF, Lottie, After Effects and Premiere projects, archives) share one top bar: the same height, a thin line under it, and buttons that show their frame only when you point at them.",
+    "The PDF viewer's bar is now at the top. In full screen it floats over the top of the page, below the camera notch.",
+    "Archives show their name, contents and any warning on one line.",
+    "Figma and Photoshop files keep their floating tools, now with the same buttons and menus."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.360",
+   "build": 360,
+   "date": "7 Nov 2026",
+   "title": "Empty folders say so",
+   "notes": [
+    "An empty folder now says “This folder is empty” in every view, with a hint to drop files or press ⇧⌘N for a new folder.",
+    "When a search or a filter hides everything, the view says “No items match”.",
+    "Gallery no longer shows the details of a file from the folder you just left.",
+    "Small buttons (AI Review, Settings, Get Info, Tidy Up and others) use small text that fits them. Refresh in All Tags and Open in Preview are regular size."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.359",
+   "build": 359,
+   "date": "7 Nov 2026",
+   "title": "The final Free and Pro list",
+   "notes": [
+    "Free for good: search by what is said, editing transcripts, Advanced Search, image sequences, GIF trimming, moving backgrounds, glass windows, your own sounds and Control Bar, Keep Audio Only and choosing a project's preview.",
+    "Some features are shared: the free version keeps a basic part (for example 3 transcribed clips a month, 1 playlist, 3 files at a time, Reframe to 9:16 and 4:5) and Pro removes the limits.",
+    "Nothing is locked yet: everything stays available until Better Finder Pro launches."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.358",
+   "build": 358,
+   "date": "7 Nov 2026",
+   "title": "Pro list: FPS, Aspect Ratio and Workspaces",
+   "notes": [
+    "The FPS and Aspect Ratio columns join the AI column in Better Finder Pro, with sorting and grouping by them. Every other List column stays free.",
+    "Workspaces: Standard is free; Editor, Motion, Designer, Developer and the workspaces you save are part of Pro, and so is saving a new one.",
+    "Nothing is locked yet: everything stays available until Better Finder Pro launches. Your saved workspaces and column choices are always kept."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.357",
+   "build": 357,
+   "date": "7 Nov 2026",
+   "title": "Sharp icons in the search palette's actions",
+   "notes": [
+    "The icons in the search palette's actions (Command-K on a result) keep their own shape: Open With, Quick Look's eye, Add to Drop Zone, Copy Path, Transcribe and the others were squeezed into squares.",
+    "The same for the file's picture at the top of the actions, the icons of results and suggestions, and the chips' icons.",
+    "The actions card is solid: the results behind it no longer show through, in every look."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.355",
+   "build": 355,
+   "date": "7 Nov 2026",
+   "title": "Pro trial reminder",
+   "notes": [
+    "During the 14-day Pro trial, the Better Finder menu shows how many days are left. Choosing it opens the Pro page.",
+    "In the trial's last 3 days, the status bar shows “Pro trial · 2 days left” with Buy Pro in place of the key hints. After it ends it says “Pro trial ended” for a week. Right-click it to hide it.",
+    "Nothing pops up, and nothing shows before the last 3 days."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.354",
+   "build": 354,
+   "date": "7 Nov 2026",
+   "title": "4:3 for Crop and Reframe, ratio always shown",
+   "notes": [
+    "Crop and Reframe have a 4:3 shape, for photos, iPad screens and classic TV.",
+    "The frame's ratio is always shown next to its size while you crop, and changes as you drag the frame or type a size: the shape's name (16:9, 4:3), or the exact ratio such as 2.70:1 with Free.",
+    "A free frame that comes close to a common shape is named after it (3:2, 16:10, 9:16)."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.353",
+   "build": 353,
+   "date": "7 Nov 2026",
+   "title": "List columns stay where you put them",
+   "notes": [
+    "Dragging column titles in List view always works now. Columns no longer grow to a huge width when the window is resized or a column is turned on or off, which pushed others out of reach.",
+    "Name stays the first column, like in Finder. A column dropped before Name lands right after it.",
+    "Only the widths you set by dragging a column edge are remembered. Very wide columns saved by older versions go back to their normal width."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
+   "version": "0.352",
+   "build": 352,
+   "date": "7 Nov 2026",
+   "title": "Get Info in tidy columns",
+   "notes": [
+    "Get Info lines up: the names on the left start on the same line as the group titles and the notes, and every value starts on one column, in every group.",
+    "Each name sits level with its value, also next to the tag fields, the stars and the Label menu.",
+    "Sizes, dates and durations use even-width digits, so they line up from row to row."
+   ],
+   "url": "https://gmttuts.github.io/better-finder/#install",
+   "beta": false
+  },
+  {
    "version": "0.351",
    "build": 351,
    "date": "6 Nov 2026",
@@ -10,7 +681,7 @@
     "It opens a panel with the ready-made sizes, a Custom width × height (Return or Use applies it, Up and Down change it by 1, with Shift by 10, and a button swaps width and height), and the custom sizes you used lately.",
     "The separate width field at the right of the bar is gone. The zoom percentage stays next to the zoom buttons."
    ],
-   "url": "https://github.com/gmttuts/better-finder/releases/download/v0.351/BetterFinder-0.351.dmg",
+   "url": "https://gmttuts.github.io/better-finder/#install",
    "beta": false
   },
   {
@@ -1411,9 +2082,9 @@
    "date": "30 Oct 2026",
    "title": "Camera RAW add-ons",
    "notes": [
-    "New Settings ▸ Camera RAW: Blackmagic RAW, RED R3D and ARRIRAW decoding comes as optional add-ons you install from a file, so Better Finder itself stays small.",
+    "New Settings ▸ Camera RAW: Blackmagic RAW, R3D and ARRIRAW decoding comes as optional add-ons you install from a file, so Better Finder itself stays small.",
     "With the Blackmagic RAW add-on installed, .braw clips show their size, frame rate, length and a thumbnail, and play in the player from a playback copy (picture only for now).",
-    "The add-ons themselves are not out yet: the Blackmagic RAW one comes first, RED R3D and ARRIRAW later. Without one, RAW clips work exactly as before."
+    "The add-ons themselves are not out yet: the Blackmagic RAW one comes first, R3D and ARRIRAW later. Without one, RAW clips work exactly as before."
    ],
    "url": "https://gmttuts.github.io/better-finder/#install",
    "beta": false

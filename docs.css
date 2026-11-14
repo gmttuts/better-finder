@@ -78,6 +78,15 @@ h2:hover > .anchor, h3:hover > .anchor, .anchor:focus { opacity: 1; }
   .docs-toc nav a:hover, .docs-toc nav a[aria-current] { background: var(--card); }
   .anchor { display: none; }
 }
+/* narrower screens (the docs sidebar takes room up to here): tables with a header (Free / Pro) as stacked cards,
+   so no cell is squeezed to a word per line */
+@media (max-width: 1180px) {
+  .doc-table:has(thead) thead { display: none; }
+  .doc-table:has(thead) tr { display: block; padding: 10px 0; border-bottom: 1px solid var(--line); }
+  .doc-table:has(thead) th, .doc-table:has(thead) td { display: block; padding: 2px 0; border: 0; white-space: normal; }
+  .doc-table:has(thead) tbody th { font-size: 15px; }
+  .doc-table:has(thead) td[data-label]::before { content: attr(data-label) ": "; font-weight: 600; }
+}
 @media (max-width: 600px) {
   .doc-table { font-size: 14px; }
   .doc-table th, .doc-table td { padding: 8px 6px; }

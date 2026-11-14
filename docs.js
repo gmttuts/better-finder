@@ -44,6 +44,11 @@
     // Every sub-heading links to itself.
     $$(".doc-section h3[id]").forEach((h) => h.insertAdjacentHTML("afterbegin", `<a class="anchor" href="#${h.id}" aria-hidden="true">#</a>`));
     $$(".pro-badge").forEach((el) => { el.title = window.BF ? window.BF.t("pro.tip") : ""; });
+    // Tables with a header (Free / Pro) turn into stacked cards on narrow screens: each cell names its column.
+    $$(".doc-table").forEach((t) => {
+      const heads = [...t.querySelectorAll("thead th")].map((th) => th.textContent.trim());
+      if (heads.length) t.querySelectorAll("tbody tr").forEach((tr) => [...tr.children].forEach((c, i) => { if (c.tagName === "TD" && heads[i]) c.dataset.label = heads[i]; }));
+    });
     drawKeys();
     buildIndex();
     search($("[data-docs-search]").value);
@@ -116,7 +121,8 @@
     if (el) el.scrollIntoView({ behavior: "instant" });
   }
 
-  document.addEventListener("langchange", (e) => { lang = e.detail; render(); goHash(); });
+  document.addEventListener("langchange", (e) => { lang = e.detail; render(); window.BF?.glue?.(); goHash(); });
   render();
+  window.BF?.glue?.();
   goHash();
 })();

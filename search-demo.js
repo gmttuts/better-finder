@@ -84,7 +84,7 @@
           <button type="button" role="tab" id="fd-tab-${id}" aria-controls="fd-panel" data-tab="${id}" tabindex="-1">${ICON[id]}<b>${name}</b>${id === "visual" ? '<span class="pro-badge">PRO</span>' : ""}<span class="fd-n"></span><kbd>⌘${i + 1}</kbd></button>`).join("")}
           <i class="fd-line" aria-hidden="true"></i></div>
         <div class="fd-body" id="fd-panel" role="tabpanel" tabindex="0"></div>
-        <div class="fd-foot" aria-hidden="true"></div>
+        <div class="fd-bar"><button class="sv-key fd-key" type="button"><kbd aria-hidden="true"></kbd><span></span></button><div class="fd-foot" aria-hidden="true"></div></div>
       </div>
     </div>
     <p class="sp-sr" aria-live="off" data-live></p>
@@ -158,7 +158,7 @@
   const empty = (a, b = "", tag = "li") => `<${tag} class="fd-empty" role="option" aria-disabled="true"><b>${a}</b>${b ? `<span>${b}</span>` : ""}</${tag}>`;
 
   // ---------------------------------------------------------------- Visual tab (all of it is Pro: colour, Visual Search, Find Similar)
-  const PRO_NOTE = `<p class="fd-pro"><span class="pro-badge">PRO</span>The Visual tab is part of Better Finder Pro: colours, what pictures and clips show, and pictures like yours.</p>`;
+  const PRO_NOTE = `<p class="fd-pro"><span class="pro-badge">PRO</span>The Visual tab is part of Better Explora Pro: colours, what pictures and clips show, and pictures like yours.</p>`;
   function visualTab(q) {
     const sw = `<div class="fd-sw" role="group" aria-label="Colours">${COLORS.map(([c, hex]) =>
       `<button type="button" data-color="${c}" aria-pressed="${st.colors.includes(c)}"><i style="--c:${hex}"></i>${cap(c)}</button>`).join("")}
@@ -178,7 +178,7 @@
           <figcaption>${esc(f.n)}</figcaption></figure>`).join("") || empty("No picture is mostly this colour.", "", "div")}</div>` };
     }
     if (words.length) {
-      // what the picture shows: Visual Search, part of Better Finder Pro
+      // what the picture shows: Visual Search, part of Better Explora Pro
       const hits = FILES.filter((f) => f.sees).map((f) => ({ f, s: words.filter((w) => f.sees.includes(w)).length / words.length }))
         .filter((h) => h.s > 0).sort((a, b) => b.s - a.s);
       return { n: hits.length, html: sw + PRO_NOTE + `
@@ -370,17 +370,15 @@
   }
   tries.forEach((b) => b.addEventListener("click", () => { took(); play(+b.dataset.try, !reduce); say(); }));
 
-  // ⌘K on the big key: puts the cursor in the palette, the way ⌘K opens it in the app
-  const key = document.querySelector("[data-find-key]");
-  key?.addEventListener("click", () => {
-    took();
-    key.classList.remove("down"); void key.offsetWidth; key.classList.add("down");
-    input.focus(); input.select();
-  });
+  // The ⌘K key (Ctrl K on Windows / Linux) in the palette's bottom bar: it goes down each time the demo starts a search,
+  // and a click puts the cursor in the field, the way ⌘K opens the palette in the app.
+  const key = $(".fd-key");
+  const press = () => { if (reduce) return; key.classList.remove("down"); void key.offsetWidth; key.classList.add("down"); };
+  key.addEventListener("click", () => { took(); press(); input.focus(); input.select(); });
 
   let auto = 0, next = 0, onScreen = false;
-  const step = () => { next = (next + 1) % D.tries.length; play(next, true); };
-  const startAuto = () => { if (!user && !reduce && !auto && onScreen && !document.hidden) { play(next, true); auto = setInterval(step, 4800); } };
+  const step = () => { next = (next + 1) % D.tries.length; press(); play(next, true); };
+  const startAuto = () => { if (!user && !reduce && !auto && onScreen && !document.hidden) { press(); play(next, true); auto = setInterval(step, 4800); } };
   const stopAuto = () => { clearInterval(auto); auto = 0; clearInterval(typing); };
   document.addEventListener("visibilitychange", () => (document.hidden ? stopAuto() : startAuto()));
   if ("IntersectionObserver" in window) {
@@ -391,6 +389,8 @@
     $(".fd-try-t").textContent = t("find.try");
     tries.forEach((b, i) => (b.textContent = t("find.try." + i)));
     input.setAttribute("aria-label", t("find.type"));
+    $("kbd", key).textContent = BF.os === "mac" ? "⌘ K" : "Ctrl K";
+    $("span", key).textContent = t("find.key");
   }
   document.addEventListener("langchange", texts);
   const underline = () => { const tab = $(`[data-tab="${st.tab}"]`); $(".fd-line").style.cssText = `left:${tab.offsetLeft}px;width:${tab.offsetWidth}px`; };
